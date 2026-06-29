@@ -48,6 +48,34 @@ def parse_hex(s):
     return tuple(int(s[i:i+2], 16) for i in (0, 2, 4))
 
 
+def print_preview(pixels, w, h, multicolor, c0, c1, c2, c3):
+    """Stampa una preview ASCII dello sprite nel terminale."""
+    chars = {0: " ", 1: "█", 2: "▒", 3: "░"}
+    if multicolor:
+        print("\nPreview Sprite (Multicolor):")
+        for row in range(h):
+            line = ""
+            for col in range(w):
+                r, g, b, a = pixels[row * w + col]
+                if a < 128 or (r, g, b) == c0: bits = 0
+                elif (r, g, b) == c1: bits = 1
+                elif (r, g, b) == c2: bits = 2
+                else: bits = 3
+                line += chars[bits] * 2  # Double width for better aspect ratio
+            print(line)
+    else:
+        print("\nPreview Sprite (HIRES):")
+        for row in range(h):
+            line = ""
+            for col in range(w):
+                r, g, b, a = pixels[row * w + col]
+                if a < 128 or (r, g, b) in (c0, (0, 0, 0)): bit = 0
+                else: bit = 1
+                line += chars[bit]
+            print(line)
+    print()
+
+
 def main():
     import argparse
 
@@ -81,6 +109,8 @@ def main():
     c3 = parse_hex(args.color3)
 
     pixels = list(img.getdata())
+
+    print_preview(pixels, w, h, args.multicolor, c0, c1, c2, c3)
 
     output = []
     output.append(f"; Convertito da: {args.input}")

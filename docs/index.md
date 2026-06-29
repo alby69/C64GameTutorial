@@ -1,6 +1,5 @@
 # C64 Game Tutorial — Manuale di Programmazione Arcade
 
-[![Validate](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml/badge.svg)](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml)
 [![Licence](https://img.shields.io/badge/licence-CC--BY--4.0-blue)](LICENCE)
 
 Manuale completo in italiano per creare videogiochi arcade su Commodore 64 usando Turbo Macro Pro e assembly 6502.
@@ -53,27 +52,13 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 - **~10000 righe** traduzione inglese (24 capitoli tradotti)
 - **22/22 ROADMAP completati** → **30/32 completati**
 
-## Come iniziare (Quick Start)
+## Come iniziare
 
-1.  **Leggi il manuale:** Inizia da `md/01-introduzione-c64-tmp.md` o visita il [sito web](https://anomalyco.github.io/C64GameTutorial/).
-2.  **Prerequisiti:** Installa `tmpx` (cross-assembler) e `VICE` (emulatore).
-3.  **Assembla un esempio:**
-    ```bash
-    tmpx -o cap01.prg soluzioni/cap01-introduzione.asm
-    ```
-4.  **Esegui:** Trascina `cap01.prg` su VICE o usa `x64sc cap01.prg`.
-
+Leggi il manuale in ordine sequenziale partendo da `md/01-introduzione-c64-tmp.md`.
 Ogni capitolo include esercizi con soluzioni in `soluzioni/`.
 
-## Dipendenze di sistema
-
-Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
-
-- **TMPx:** Cross-assembler 6502 ([Download](https://style64.org/release/tmpx-v1.1.0-style)).
-- **VICE:** Emulatore Commodore 64 (raccomandato `x64sc`).
-- **Make:** Per automatizzare i task (`all`, `validate`, `stats`).
-- **Pandoc & XeLaTeX:** (Opzionale) Per generare il PDF (`make pdf`).
-- **Python 3 & Pillow:** Per gli script in `tools/` (es. `png2sprite.py`).
+Per assemblare il codice serve Turbo Macro Pro (nativo su C64) o TMPx (cross-assembler).
+Vedi `md/appendice-turbo-macro-pro.md` per installazione e comandi.
 
 ## Riferimenti
 

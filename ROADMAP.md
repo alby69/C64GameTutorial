@@ -20,7 +20,7 @@ miglioramenti proposti per la prossima fase del progetto.
 | 28 | Capitolo caricatore turbo (fast loader) | ✅ |
 | 29 | Capitolo REU (RAM Expansion Unit) | ✅ |
 | 30 | Integrazione music tracker (GoatTracker/DefMon) | ✅ |
-| 31 | Sito web statico del manuale | ❌ |
+| 31 | Sito web statico del manuale | ✅ |
 | 32 | Mappa dipendenze tra capitoli | ✅ |
 
 **Riepilogo:** 9/10 nuovi completati, 0 in corso, 1 aperto.
@@ -173,5 +173,5 @@ Mostra quali prerequisiti servono prima di ogni capitolo.
 | 28 | ✅ | Capitolo caricatore turbo | 3-4 giorni |
 | 29 | ✅ | Capitolo REU | 2-3 giorni |
 | 30 | ✅ | Integrazione music tracker | 3-4 giorni |
-| 31 | BASSA | Sito web statico | 1 settimana |
+| 31 | ✅ | Sito web statico | 1 settimana |
 | 32 | ✅ | Mappa dipendenze capitoli | 1 giorno |
