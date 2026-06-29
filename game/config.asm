@@ -55,6 +55,7 @@ BOSS_ACTIVE      = $1884
 SCHED_PHASE      = $10
 SHOT_COOLDOWN    = $11
 TITLE_BLINK      = $12
+TITLE_VISIBLE    = $21
 ENEMY_TIMER_LO   = $13
 ENEMY_TIMER_HI   = $14
 ENEMY_DIR        = $15
@@ -65,6 +66,10 @@ WAVE_ENEMY_TYPE  = $19
 PLAYER_RESPAWN_X = $1A
 SFX_PTR          = $1B
 SFX_TIMER        = $1C
+SCROLL_FINE_X    = $1D
+SCROLL_COARSE_X  = $1E
+SCROLL_TICK      = $1F
+HS_TEMP          = $20
 
 ; ---- Hardware ----
 VIC_SPRITE_X   = $D000

@@ -12,10 +12,10 @@ miglioramenti proposti per la prossima fase del progetto.
 | # | Area | Stato |
 |---|---|---|
 | 1-22 | Punti originali (struttura, traduzioni, capitoli 22-24, tooling) | ✅ |
-| 23 | Appendici A-B in inglese | ❌ |
-| 24 | CI/CD GitHub Actions (build + validate automatici) | ❌ |
-| 25 | Generazione PDF da markdown | ❌ |
-| 26 | Template gioco espanso in gioco completo giocabile | ❌ |
+| 23 | Appendici A-B in inglese | ✅ |
+| 24 | CI/CD GitHub Actions (build + validate automatici) | ✅ |
+| 25 | Generazione PDF da markdown | ✅ |
+| 26 | Template gioco espanso (scroll + high score + title) | ✅ |
 | 27 | Tool convertitore PNG → dati sprite C64 | ❌ |
 | 28 | Capitolo caricatore turbo (fast loader) | ❌ |
 | 29 | Capitolo REU (RAM Expansion Unit) | ❌ |
@@ -23,7 +23,7 @@ miglioramenti proposti per la prossima fase del progetto.
 | 31 | Sito web statico del manuale | ❌ |
 | 32 | Mappa dipendenze tra capitoli | ❌ |
 
-**Riepilogo:** 0/10 nuovi completati, 0 in corso, 10 aperti.
+**Riepilogo:** 4/10 nuovi completati, 0 in corso, 6 aperti.
 
 ---
 
@@ -81,40 +81,39 @@ mappa memoria, comandi VICE, concetti per capitolo.
 
 ## Nuove Proposte (Fase 2)
 
-### 23. Appendici A-B in inglese
+### 23. ✅ Appendici A-B in inglese
 
-Traduzione di `md/appendice-a-tabelle.md` e `md/appendice-b-glossario.md`
-in `en/appendix-a-reference-tables.md` e `en/appendix-b-glossary.md`.
-
-**Azione:** Tradurre le due appendici mancanti.
-
----
-
-### 24. CI/CD GitHub Actions
-
-Workflow automatico che esegue `make validate` e `tools/validate.sh`
-su ogni push e pull request.
-
-**Azione:** Creare `.github/workflows/validate.yml`.
+`en/appendix-a-reference-tables.md` e `en/appendix-b-glossary.md`.
+Tabelle di riferimento (colori, memoria, registri, istruzioni) e glossario
+completo tradotti dall'italiano.
 
 ---
 
-### 25. Generazione PDF da markdown
+### 24. ✅ CI/CD GitHub Actions
 
-Script che converte tutti i capitoli in un unico PDF impaginato
-(con `pandoc` + template LaTeX o `md-to-pdf`).
-
-**Azione:** `tools/build-pdf.sh` + template.
+`.github/workflows/validate.yml` — esegue `make validate` e
+`tools/validate.sh` su ogni push/PR al branch `main`.
 
 ---
 
-### 26. Template gioco espanso in gioco completo
+### 25. ✅ Generazione PDF da markdown
 
-Completare il template `game/` in un gioco giocabile: livelli,
-scoring completo, schermata titolo, game over, high score su disco,
-boss finale, audio SFX.
+`tools/build-pdf.sh` — usa pandoc + xelatex per generare un unico PDF
+con tutti i 24 capitoli + appendici, TOC, evidenziazione sintassi.
 
-**Azione:** Espandere `game/` con contenuti dai capitoli 13, 18, 23, 24.
+---
+
+### 26. ✅ Template gioco espanso (scroll + high score + title)
+
+Nuovi file:
+- `game/scroll.asm` — scrolling starfield a 2 layer (parallax)
+- `game/highscore.asm` — salvataggio/caricamento high score su disco
+
+Modificati:
+- `game/main.asm` — include chain aggiornata
+- `game/config.asm` — nuove variabili ZP (scroll, HS)
+- `game/states.asm` — title con HS, scrolling durante il gioco,
+  game-over con verifica e salvataggio record
 
 ---
 
@@ -176,10 +175,10 @@ quali prerequisiti servono prima di affrontare un capitolo.
 
 | # | Priorità | Cosa | Sforzo |
 |---|---|---|---|
-| 23 | ALTA | Appendici A-B in inglese | 2 giorni |
-| 24 | ALTA | CI/CD GitHub Actions | 1 giorno |
-| 25 | MEDIA | Generazione PDF | 2 giorni |
-| 26 | MEDIA | Template gioco espanso | 1-2 settimane |
+| 23 | ✅ | Appendici A-B in inglese | 2 giorni |
+| 24 | ✅ | CI/CD GitHub Actions | 1 giorno |
+| 25 | ✅ | Generazione PDF | 2 giorni |
+| 26 | ✅ | Template gioco espanso | 1-2 settimane |
 | 27 | BASSA | Tool convertitore PNG → sprite | 1 giorno |
 | 28 | BASSA | Capitolo caricatore turbo | 3-4 giorni |
 | 29 | BASSA | Capitolo REU | 2-3 giorni |

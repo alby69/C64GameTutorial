@@ -39,6 +39,10 @@
 .include "audio.asm"
 .include "screen.asm"
 
+; Scroll + high score ($1300-$14FF)
+.include "scroll.asm"
+.include "highscore.asm"
+
 ; Game layer ($4000-$5FFF)
 .include "player.asm"
 .include "enemies.asm"

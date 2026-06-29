@@ -12,6 +12,8 @@ GAME_INIT
     JSR ENTITY_INIT
     JSR GAME_PLAYER_INIT
     JSR GAME_ENEMIES_INIT
+    JSR SCROLL_INIT
+    JSR HS_LOAD
 
     LDA #0
     STA GAME_STATE
@@ -36,7 +38,7 @@ TITLE_INIT
     STA VIC_COL_BK
 
     ; Center title text on row 10
-    LDX #40*10+8
+    LDX #40*8+8
     LDY #7
     LDA #<STR_TITLE
     STA PTR_LO
@@ -44,12 +46,26 @@ TITLE_INIT
     STA PTR_HI
     JSR SCREEN_PRINT
 
+    ; "PRESS FIRE TO START"
+    LDX #40*12+8
+    LDY #1
+    LDA #<STR_START
+    STA PTR_LO
+    LDA #>STR_START
+    STA PTR_HI
+    JSR SCREEN_PRINT
+
+    ; Show high score on title
+    LDX #40*16+8
+    JSR HS_PRINT
+
     LDA #0
     STA TITLE_BLINK
+    STA HS_NEW_FLAG
     RTS
 
 TITLE_UPDATE
-    ; Blink "PRESS FIRE" every 30 frames
+    ; Blink every 30 frames
     INC TITLE_BLINK
     LDA TITLE_BLINK
     CMP #30
@@ -57,21 +73,27 @@ TITLE_UPDATE
 
     LDA #0
     STA TITLE_BLINK
-    ; Toggle visibility
-    LDA VIC_COL_BORDER
-    EOR #$0F
-    STA VIC_COL_BORDER
 
-    ; Toggle press fire text
-    LDA VIC_COL_BK
-    CMP #$06
-    BEQ TU_SHOW
-    LDA #$06
-    STA VIC_COL_BK
+    ; Toggle "PRESS FIRE" visibility
+    LDX #40*12+8
+    LDY #1
+    LDA TITLE_VISIBLE
+    EOR #1
+    STA TITLE_VISIBLE
+    BEQ TU_HIDE
+    LDA #<STR_START
+    STA PTR_LO
+    LDA #>STR_START
+    STA PTR_HI
+    JSR SCREEN_PRINT
     JMP TU_FIRE_CHECK
-TU_SHOW
-    LDA #$0A
-    STA VIC_COL_BK
+TU_HIDE
+    LDY #10
+    LDA #<STR_BLANK
+    STA PTR_LO
+    LDA #>STR_BLANK
+    STA PTR_HI
+    JSR SCREEN_PRINT
 
 TU_FIRE_CHECK
     JSR FIRE_PRESSED
@@ -86,6 +108,9 @@ TU_FIRE_CHECK
 TU_DONE
     RTS
 
+STR_BLANK
+    .byte "                ",$FF
+
 ; ---- PLAY state ----
 GAME_START
     JSR SCREEN_CLEAR
@@ -93,6 +118,7 @@ GAME_START
     JSR ENTITY_INIT
     JSR GAME_PLAYER_INIT
     JSR GAME_ENEMIES_INIT
+    JSR SCROLL_INIT
 
     LDA #0
     STA SCORE_LO
@@ -102,12 +128,16 @@ GAME_START
     LDA #0
     STA VIC_COL_BK
 
+    ; Draw initial starfield
+    JSR SCROLL_DRAW_STARS
+
     ; Start first wave
     JSR WAVE_START
     RTS
 
 GAME_RENDER
     JSR SPRITE_RENDER
+    JSR SCROLL_UPDATE
     JSR HUD_DRAW
     RTS
 
@@ -135,8 +165,11 @@ GAME_OVER_SETUP
     JSR SCREEN_CLEAR
     JSR SCREEN_CLEAR_COLOR
 
+    ; Check/save high score first
+    JSR HS_CHECK
+
     ; Print GAME OVER
-    LDX #40*10+12
+    LDX #40*8+12
     LDY #2
     LDA #<STR_GAMEOVER
     STA PTR_LO
@@ -145,7 +178,7 @@ GAME_OVER_SETUP
     JSR SCREEN_PRINT
 
     ; Print final score
-    LDX #40*12+10
+    LDX #40*10+8
     LDY #5
     LDA #<STR_SCORE
     STA PTR_LO
@@ -158,8 +191,25 @@ GAME_OVER_SETUP
     LDA SCORE_LO
     JSR HUD_PRINT_HEX
 
+    ; Print high score
+    LDX #40*12+8
+    JSR HS_PRINT
+
+    ; Show new record message if applicable
+    LDA HS_NEW_FLAG
+    BEQ GOVS_RESTART
+
+    LDX #40*14+10
+    LDY #7
+    LDA #<STR_NEWREC
+    STA PTR_LO
+    LDA #>STR_NEWREC
+    STA PTR_HI
+    JSR SCREEN_PRINT
+
+GOVS_RESTART
     ; Print restart
-    LDX #40*16+8
+    LDX #40*18+8
     LDY #1
     LDA #<STR_RESTART
     STA PTR_LO
@@ -172,3 +222,6 @@ GAME_OVER_SETUP
     LDA #0
     STA VIC_COL_BK
     RTS
+
+STR_NEWREC
+    .byte "NEW RECORD!",$FF

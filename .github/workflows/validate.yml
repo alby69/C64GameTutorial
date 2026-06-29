@@ -1,0 +1,19 @@
+name: Validate
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate project (make validate)
+        run: make validate
+
+      - name: Validate project (tools/validate.sh)
+        run: bash tools/validate.sh
