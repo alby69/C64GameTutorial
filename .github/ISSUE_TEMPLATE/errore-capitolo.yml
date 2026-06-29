@@ -1,0 +1,31 @@
+name: Errore nel capitolo
+description: Segnala un refuso, errore grammaticale o tecnico nel manuale.
+title: "[DOC] Errore nel Capitolo XX"
+labels: ["documentazione", "refuso"]
+body:
+  - type: input
+    id: chapter
+    attributes:
+      label: Numero o nome del capitolo
+      placeholder: "Es: Capitolo 05 o Appendice A"
+    validations:
+      required: true
+  - type: textarea
+    id: current-text
+    attributes:
+      label: Testo attuale
+      placeholder: Copia qui il testo che contiene l'errore
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Correzione suggerita
+      placeholder: Come dovrebbe essere scritto?
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Note aggiuntive
+      placeholder: Qualsiasi altro dettaglio utile

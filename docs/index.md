@@ -1,6 +1,5 @@
 # C64 Game Tutorial — Manuale di Programmazione Arcade
 
-[![Validate](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml/badge.svg)](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml)
 [![Licence](https://img.shields.io/badge/licence-CC--BY--4.0-blue)](LICENCE)
 
 Manuale completo in italiano per creare videogiochi arcade su Commodore 64 usando Turbo Macro Pro e assembly 6502.
@@ -43,38 +42,23 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 | D | Schemi rapidi: video e sprite |
 | E | Schemi rapidi: architettura di gioco |
 | F | Schemi rapidi: audio e hardware |
-| G | Risorse esterne: libri, siti e tutorial |
 | TMP | Guida rapida a Turbo Macro Pro |
 
 ### Statistiche
 
-- **~12700 righe** di manuale (IT)
-- **36 file** in `md/` (27 capitoli + 8 appendici + indice)
-- **28 soluzioni assembly** + template gioco (13 file)
-- **~11200 righe** traduzione inglese (27 capitoli tradotti)
-- **32/32 ROADMAP completati**
+- **~12200 righe** di manuale
+- **31 file** in `md/` (24 capitoli + 7 appendici + indice)
+- **27 soluzioni assembly** + template gioco (13 file)
+- **~10000 righe** traduzione inglese (24 capitoli tradotti)
+- **22/22 ROADMAP completati** → **30/32 completati**
 
-## Come iniziare (Quick Start)
+## Come iniziare
 
-1.  **Leggi il manuale:** Inizia da `md/01-introduzione-c64-tmp.md` o visita il [sito web](https://anomalyco.github.io/C64GameTutorial/).
-2.  **Prerequisiti:** Installa `tmpx` (cross-assembler) e `VICE` (emulatore).
-3.  **Assembla un esempio:**
-    ```bash
-    tmpx -o cap01.prg soluzioni/cap01-introduzione.asm
-    ```
-4.  **Esegui:** Trascina `cap01.prg` su VICE o usa `x64sc cap01.prg`.
-
+Leggi il manuale in ordine sequenziale partendo da `md/01-introduzione-c64-tmp.md`.
 Ogni capitolo include esercizi con soluzioni in `soluzioni/`.
 
-## Dipendenze di sistema
-
-Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
-
-- **TMPx:** Cross-assembler 6502 ([Download](https://style64.org/release/tmpx-v1.1.0-style)).
-- **VICE:** Emulatore Commodore 64 (raccomandato `x64sc`).
-- **Make:** Per automatizzare i task (`all`, `validate`, `stats`).
-- **Pandoc & XeLaTeX:** (Opzionale) Per generare il PDF (`make pdf`).
-- **Python 3 & Pillow:** Per gli script in `tools/` (es. `png2sprite.py`).
+Per assemblare il codice serve Turbo Macro Pro (nativo su C64) o TMPx (cross-assembler).
+Vedi `md/appendice-turbo-macro-pro.md` per installazione e comandi.
 
 ## Riferimenti
 
@@ -82,12 +66,7 @@ Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
 - TMPx cross-assembler: <https://style64.org/release/tmpx-v1.1.0-style>
 - C64 OS Programmer's Guide: <https://c64os.com/c64os/programmersguide/devenvironment>
 - C64 Programmer's Reference Guide (PDF in `manuali/`)
-- CSDb (Commodore Scene Database): <https://csdb.dk>
-- Lemon64 Forum: <https://www.lemon64.com/forum/>
 
 ## Licenza
 
-Questo progetto è distribuito con le seguenti licenze:
-
-- **Manuale (testo e immagini):** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.it) — citare l'autore originale (@alby69).
-- **Codice sorgente (.asm):** [Licenza MIT](https://opensource.org/licenses/MIT).
+CC BY 4.0 — citare l'autore originale (@alby69) e linkare il repository.

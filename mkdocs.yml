@@ -1,0 +1,118 @@
+site_name: C64 Game Tutorial
+site_url: https://anomalyco.github.io/C64GameTutorial/
+theme:
+  name: material
+  language: it
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passa alla modalità scura
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passa alla modalità chiara
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Manuale (Italiano):
+    - Indice: it/INDICE.md
+    - Introduzione: it/01-introduzione-c64-tmp.md
+    - Istruzioni fondamentali: it/02-istruzioni-fondamentali.md
+    - Indirizzamento e cicli: it/03-indirizzamento-cicli-ritardi.md
+    - Memoria video: it/04-memoria-video-e-caratteri.md
+    - Sprite VIC-II: it/05-sprite-hardware-vic-ii.md
+    - Movimento sprite: it/06-movimento-e-controllo-sprite.md
+    - Raster interrupt: it/07-raster-interrupt.md
+    - Game loop: it/08-game-loop-sincronizzato.md
+    - Joystick e input: it/09-joystick-e-input.md
+    - Collisioni: it/10-collisioni-software.md
+    - Proiettili: it/11-sistema-proiettili.md
+    - Wave e AI: it/12-wave-system-e-ai-nemici.md
+    - Punteggio e stati: it/13-punteggio-e-stati-gioco.md
+    - Audio SID base: it/14-audio-sid-base.md
+    - Audio engine: it/15-audio-engine-e-sfx.md
+    - Sprite multiplexing: it/16-sprite-multiplexing.md
+    - Parallax e split: it/17-parallax-e-raster-split.md
+    - Boss system: it/18-boss-system.md
+    - Kernel engine: it/19-kernel-engine-riutilizzabile.md
+    - Arcade OS: it/20-arcade-os-e-oltre.md
+    - Custom loader: it/21-caricatore-personalizzato.md
+    - Debugging VICE: it/22-debugging-vice.md
+    - Titolo e High Score: it/23-titolo-highscore.md
+    - Scrolling: it/24-scrolling.md
+    - Turbo loader: it/25-turbo-loader.md
+    - REU expansion: it/26-reu-expansion.md
+    - Music tracker: it/27-music-tracker.md
+    - Appendici:
+      - A. Tabelle: it/appendice-a-tabelle.md
+      - B. Glossario: it/appendice-b-glossario.md
+      - C. CPU e Memoria: it/appendice-c-schemi-cpu-memoria.md
+      - D. Video: it/appendice-d-schemi-video.md
+      - E. Architettura: it/appendice-e-schemi-architettura.md
+      - F. Audio: it/appendice-f-schemi-audio.md
+      - G. Risorse esterne: it/appendice-g-risorse-esterne.md
+      - Turbo Macro Pro: it/appendice-turbo-macro-pro.md
+  - Manual (English):
+    - Introduction: en/01-c64-tmp-introduction.md
+    - Fundamental instructions: en/02-fundamental-instructions.md
+    - Addressing and loops: en/03-addressing-loops-delays.md
+    - Video memory: en/04-video-memory-characters.md
+    - Sprite VIC-II: en/05-sprite-hardware-vic-ii.md
+    - Sprite movement: en/06-sprite-movement-control.md
+    - Raster interrupt: en/07-raster-interrupt.md
+    - Game loop: en/08-synchronized-game-loop.md
+    - Joystick input: en/09-joystick-input.md
+    - Software collisions: en/10-software-collisions.md
+    - Bullet system: en/11-bullet-system.md
+    - Wave system: en/12-wave-system-ai.md
+    - Score and states: en/13-score-game-states.md
+    - SID audio basics: en/14-sid-audio-basics.md
+    - Audio engine: en/15-audio-engine-sfx.md
+    - Sprite multiplexing: en/16-sprite-multiplexing.md
+    - Parallax and split: en/17-parallax-raster-split.md
+    - Boss system: en/18-boss-system.md
+    - Kernel engine: en/19-reusable-kernel-engine.md
+    - Arcade OS: en/20-arcade-os-beyond.md
+    - Custom loader: en/21-custom-loader.md
+    - Debugging VICE: en/22-debugging-vice.md
+    - Title and High Score: en/23-titolo-highscore.md
+    - Scrolling: en/24-scrolling.md
+    - Turbo loader: en/25-turbo-loader.md
+    - REU expansion: en/26-reu-expansion.md
+    - Music tracker: en/27-music-tracker-integration.md
+    - Appendices:
+      - A. Reference tables: en/appendix-a-reference-tables.md
+      - B. Glossary: en/appendix-b-glossary.md
+      - C. CPU and Memory: en/appendix-c-cpu-memory.md
+      - D. Video: en/appendix-d-video-schematics.md
+      - E. Architecture: en/appendix-e-architecture-schematics.md
+      - F. Audio: en/appendix-f-audio-schematics.md
+      - G. External resources: en/appendix-g-external-resources.md
+      - Turbo Macro Pro: en/appendix-turbo-macro-pro.md
