@@ -12,7 +12,7 @@ md/
 ├── 09-13   PARTE 4 — Gameplay
 ├── 14-15   PARTE 5 — Audio SID
 ├── 16-18   PARTE 6 — Tecniche Avanzate
-├── 19-20   PARTE 7 — Architettura Professionale
+├── 19-21   PARTE 7 — Architettura Professionale
 ├── A-TMP   Appendici (A-F + TMP)
 ```
 
@@ -72,6 +72,7 @@ md/
 |---|---|---|---|
 | [19-kernel-engine-riutilizzabile.md](19-kernel-engine-riutilizzabile.md) | Kernel engine 3 strati, entity system, memoria | 469 | Struttura modulare riutilizzabile |
 | [20-arcade-os-e-oltre.md](20-arcade-os-e-oltre.md) | Arcade OS, interrupt chaining, self-mod code | 294 | Concetti finali e orizzonti |
+| [21-caricatore-personalizzato.md](21-caricatore-personalizzato.md) | Caricatore KERNAL, loader con effetti, turbo loader | 340 | Sostituire il LOAD di BASIC |
 
 ## Appendici
 
@@ -106,6 +107,6 @@ md/
 | PARTE 4 — Gameplay | 5 | ~2250 |
 | PARTE 5 — Audio | 2 | ~700 |
 | PARTE 6 — Avanzato | 3 | ~1420 |
-| PARTE 7 — Architettura | 2 | ~760 |
+| PARTE 7 — Architettura | 3 | ~1100 |
 | Appendici | 7 | ~1950 |
-| **Totale** | **27** | **~10500** |
+| **Totale** | **28** | **~10800** |

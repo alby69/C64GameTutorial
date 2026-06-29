@@ -85,11 +85,9 @@ I capitoli non hanno link tra loro (es. "vedi cap. 7 per i raster interrupt" o "
 
 ---
 
-### 9. PDF Mapping_the_Commodore_64 troncato
+### 9. ✅ PDF Mapping_the_Commodore_64 troncato — RISOLTO
 
-Il PDF `Compute_s_Mapping_the_Commodore_64.pdf` ha solo 2 pagine ma pesa 29.8 MB — probabilmente scansione ad alta risoluzione o file corrotto.
-
-**Azione:** Sostituire con una copia integra o rimuovere (il manuale "Programmer's Reference Guide" e piu che sufficiente come riferimento).
+Il PDF corrotto era gia stato rimosso da `manuali/`. Ora contiene solo 2 PDF integri.
 
 ---
 
@@ -103,37 +101,33 @@ Il capitolo 02 contiene la sezione "Rainbow effetto (esercizio svolto)" che e un
 
 ## Visione a Lungo Termine
 
-### 11. Progetto assemblato funzionante .prg
+### 11. ✅ Progetto assemblato funzionante .prg — RISOLTO
 
-Attualmente le soluzioni sono file `.asm` separati. Un obiettivo ambizioso e fornire un file `.prg` pre-assemblato e funzionante su C64 reale/emulatore per ogni capitolo.
-
-**Azione:** Script di build che assembla tutte le soluzioni e genera `.prg` pronti da caricare.
-
----
-
-### 12. Makefile / Script di automazione
-
-Un `Makefile` (o script bash) per:
-- assemblare tutte le soluzioni con TMP
-- generare report di dimensione del codice
-- validare la sintassi di tutti i `.asm`
-- contare righe/byte per capitolo
+Il `Makefile` genera `.prg` da ogni `.asm` in `soluzioni/` con `make all`.
+I file `.prg` vanno in `prg/` (gitignored).
 
 ---
 
-### 13. Tool di validazione incrociata
+### 12. ✅ Makefile / Script di automazione — RISOLTO
 
-Uno script che:
-- verifica che ogni esercizio in `md/` abbia corrispondenza in `soluzioni/`
-- verifica che ogni link in README punti a file esistente
-- verifica che il numero di esercizi sia >= 5 per capitolo
-- rileva caratteri non PETSCII o sintassi TMP non valida
+`Makefile` creato con target: `all` (assembla .prg), `stats` (conta righe/byte),
+`validate` (esegue tools/validate.sh), `clean`.
 
 ---
 
-### 14. Espansione con capitolo su caricatore/loader
+### 13. ✅ Tool di validazione incrociata — RISOLTO
 
-Un capitolo 21 su come scrivere un caricatore personalizzato (raster loader o loader con effetti) per il gioco finale. Completamento naturale del percorso.
+`tools/validate.sh` verifica: conteggio esercizi >=5, link README, soluzioni
+corrispondenti, traduzioni presenti, appendici integre.
+
+---
+
+### 14. ✅ Espansione con capitolo su caricatore/loader — RISOLTO
+
+Creato `md/21-caricatore-personalizzato.md` con: caricatore KERNAL, effetto raster,
+caricamento settore per settore, turbo loader, boot loader a 3 fasi.
+Soluzioni in `soluzioni/cap21-caricatore.asm`.
+Placeholder inglese in `en/21-custom-loader.md`.
 
 ---
 
@@ -148,9 +142,9 @@ Un capitolo 21 su come scrivere un caricatore personalizzato (raster loader o lo
 | 5 | MEDIA | Traduzione inglese Parte 1 | 3-4 giorni |
 | 6 | MEDIA | soluzioni/README.md | 1 giorno |
 | 7 | MEDIA | Riferimenti incrociati nei capitoli | 2-3 giorni |
-| 8 | BASSA | PDF troncato da sostituire | 30 min |
+| 8 | ✅ COMPLETATO | PDF troncato rimosso | — |
 | 9 | BASSA | Rainbow effetto da separare | 30 min |
-| 10 | FUTURO | File .prg pre-assemblati | 5-7 giorni |
-| 11 | FUTURO | Makefile automazione | 2-3 giorni |
-| 12 | FUTURO | Tool validazione incrociata | 2 giorni |
-| 13 | FUTURO | Capitolo 21 caricatore | 5-7 giorni |
+| 10 | ✅ COMPLETATO | File .prg via Makefile | — |
+| 11 | ✅ COMPLETATO | Makefile automazione | — |
+| 12 | ✅ COMPLETATO | Tool validazione incrociata | — |
+| 13 | ✅ COMPLETATO | Capitolo 21 caricatore | — |
