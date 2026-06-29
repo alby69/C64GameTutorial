@@ -9,10 +9,11 @@ Dal primo sprite al boss finale, dal raster interrupt al SID, dall'architettura 
 ## Contenuti
 
 ```
-md/                     Manuale originale italiano (21 capitoli + 7 appendici)
-en/                     Traduzione inglese (completa — 21 capitoli)
+md/                     Manuale originale italiano (24 capitoli + 7 appendici + indice)
+en/                     Traduzione inglese (completa — 24 capitoli)
 soluzioni/              Soluzioni degli esercizi (.asm)
 game/                   Template gioco completo (multi-file, .include)
+tools/                  Script di supporto (validate, size-report, vice-test)
 manuali/                PDF di riferimento (C64 Programmer's Guide, Mapping the C64, ecc.)
 ROADMAP.md              Miglioramenti proposti per il progetto
 ```
@@ -28,6 +29,7 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 | 5 | 14-15 | Audio SID |
 | 6 | 16-18 | Tecniche avanzate (multiplex, parallax, boss) |
 | 7 | 19-21 | Architettura professionale (kernel 3-layer, Arcade OS, custom loader) |
+| 8 | 22-24 | Strumenti e rifiniture (debugging VICE, titolo/high score, scrolling) |
 
 ### Appendici
 
@@ -43,10 +45,11 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 
 ### Statistiche
 
-- **~10800 righe** di manuale
-- **28 file** in `md/`
-- **21 soluzioni assembly** (capitoli 1-19, 20, 21)
-- **~8800 righe** traduzione inglese (21 capitoli tradotti)
+- **~12200 righe** di manuale
+- **31 file** in `md/` (24 capitoli + 7 appendici + indice)
+- **24 soluzioni assembly** + template gioco (13 file)
+- **~10000 righe** traduzione inglese (24 capitoli tradotti)
+- **19/22 ROADMAP completati** → **22/22 completati**
 
 ## Come iniziare
 

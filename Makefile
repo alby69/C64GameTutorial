@@ -19,7 +19,7 @@ CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21 22 23 24
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
 PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
-.PHONY: all validate stats clean dirs check-tmpx
+.PHONY: all validate stats clean dirs check-tmpx size-report vice-test
 
 all: dirs check-tmpx $(PRG_FILES) $(PRG_DIR)/game.prg
 
@@ -165,6 +165,14 @@ validate:
 	else \
 		echo "Nessun errore trovato."; \
 	fi
+
+# Report dimensioni codice
+size-report:
+	@tools/size-report.sh
+
+# Test automatici VICE (richiede VICE installato)
+vice-test:
+	@tools/vice-test.sh
 
 # Pulisci .prg generati
 clean:

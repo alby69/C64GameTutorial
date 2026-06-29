@@ -4,7 +4,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 
 ---
 
-## Stato Attuale (19/22 punti)
+## Stato Attuale (22/22 punti)
 
 | # | Area | Stato |
 |---|---|---|
@@ -27,11 +27,11 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 17 | Debugging con VICE (cap. 22) | ✅ |
 | 18 | Schermate titolo e high score (cap. 23) | ✅ |
 | 19 | Scrolling a schermo (cap. 24) | ✅ |
-| 20 | Tabella dimensioni codice | ❌ |
-| 21 | Test automatici con VICE headless | ❌ |
-| 22 | Indice analitico | ❌ |
+| 20 | Tabella dimensioni codice | ✅ |
+| 21 | Test automatici con VICE headless | ✅ |
+| 22 | Indice analitico | ✅ |
 
-**Riepilogo:** 19/22 completati, 0 in corso, 3 aperti.
+**Riepilogo:** 22/22 completati, 0 in corso, 0 aperti.
 
 ---
 

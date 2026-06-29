@@ -2,3 +2,6 @@ manuali/
 *.prg
 *.bin
 *.o
+prg/
+vice-screenshots/
+vice-test-report.md
