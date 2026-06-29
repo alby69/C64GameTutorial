@@ -4,7 +4,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 
 ---
 
-## Stato Attuale (35/35 punti)
+## Stato Attuale (19/22 punti)
 
 | # | Area | Stato |
 |---|---|---|
@@ -12,7 +12,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 2 | .gitignore presente | ✅ |
 | 3 | Mappa esercizi in testa ai file soluzione | ✅ |
 | 4 | docs/ vuota rimossa | ✅ |
-| 5 | Traduzione inglese en/ | ✅ 21/21 capitoli tradotti |
+| 5 | Traduzione inglese en/ | ✅ 24/24 capitoli tradotti |
 | 6 | soluzioni/README.md presente | ✅ |
 | 7 | Appendici inglesi en/ | ✅ Placeholder C,D,E,F,TMP |
 | 8 | Riferimenti incrociati tra capitoli | ✅ |
@@ -24,14 +24,14 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 14 | Capitolo 21 caricatore | ✅ |
 | 15 | Soluzione capitolo 20 mancante | ✅ |
 | 16 | Gioco completo unificato | ✅ |
-| 17 | Debugging con VICE (cap. 22) | ❌ |
-| 18 | Schermate titolo e high score (cap. 23) | ❌ |
-| 19 | Scrolling a schermo (cap. 24) | ❌ |
+| 17 | Debugging con VICE (cap. 22) | ✅ |
+| 18 | Schermate titolo e high score (cap. 23) | ✅ |
+| 19 | Scrolling a schermo (cap. 24) | ✅ |
 | 20 | Tabella dimensioni codice | ❌ |
 | 21 | Test automatici con VICE headless | ❌ |
 | 22 | Indice analitico | ❌ |
 
-**Riepilogo:** 16/22 completati, 0 in corso, 6 aperti.
+**Riepilogo:** 19/22 completati, 0 in corso, 3 aperti.
 
 ---
 
@@ -46,6 +46,7 @@ Tutti i 21 capitoli sono tradotti in inglese:
 | 01-03 | ~1000 | ✅ Tradotto |
 | 04-17 | ~5600 | ✅ Tradotto |
 | 18-21 | ~1700 | ✅ Tradotto |
+| 22-24 | ~1200 | ✅ Tradotto |
 | Appendici A-B | ~580 | ❌ Ancora da tradurre |
 | Appendici C-F, TMP | ~1400 | ✅ Placeholder esistenti |
 
