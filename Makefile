@@ -21,7 +21,7 @@ PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
 .PHONY: all validate stats clean dirs check-tmpx
 
-all: dirs check-tmpx $(PRG_FILES)
+all: dirs check-tmpx $(PRG_FILES) $(PRG_DIR)/game.prg
 
 dirs:
 	@mkdir -p $(PRG_DIR)
@@ -92,6 +92,13 @@ $(PRG_DIR)/cap19.prg: $(SOL_DIR)/cap19-kernel-engine.asm
 	$(TMPX) -o $@ $<
 
 $(PRG_DIR)/cap21.prg: $(SOL_DIR)/cap21-caricatore.asm
+	$(TMPX) -o $@ $<
+
+# Gioco completo unificato (ROADMAP #16)
+GAME_DIR := game
+GAME_DEPS := $(wildcard $(GAME_DIR)/*.asm)
+
+$(PRG_DIR)/game.prg: $(GAME_DIR)/main.asm $(GAME_DEPS)
 	$(TMPX) -o $@ $<
 
 # Statistiche

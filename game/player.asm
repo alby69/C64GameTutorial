@@ -1,0 +1,166 @@
+; =============================================
+; PLAYER — Player ship logic
+; =============================================
+
+* = $4000
+
+GAME_PLAYER_INIT
+    LDA #1
+    STA ENTITY_ACTIVE
+    LDA #T_PLAYER
+    STA ENTITY_TYPE
+    LDA #160
+    STA ENTITY_X
+    STA PLAYER_RESPAWN_X
+    LDA #PLAYER_Y_POS
+    STA ENTITY_Y
+    LDA #MAX_LIVES
+    STA PLAYER_LIVES
+    LDA #0
+    STA ENTITY_FLAGS
+    STA SHOT_COOLDOWN
+    RTS
+
+GAME_PLAYER_UPDATE
+    LDA PLAYER_LIVES
+    BEQ GPU_DEAD
+    LDA ENTITY_FLAGS
+    AND #1
+    BEQ GPU_NORMAL
+
+    ; Invincible: decrement timer
+    DEC ENTITY_TIMER
+    LDA ENTITY_TIMER
+    BMI GPU_INV_END
+    ; Flash: show/hide every 4 frames
+    LDA ENTITY_TIMER
+    LSR
+    LSR
+    AND #1
+    BEQ GPU_INV_HIDE
+    LDA VIC_SPRITE_EN
+    ORA #%00000001
+    STA VIC_SPRITE_EN
+    JMP GPU_NORMAL
+
+GPU_INV_HIDE
+    LDA VIC_SPRITE_EN
+    AND #%11111110
+    STA VIC_SPRITE_EN
+    JMP GPU_NORMAL
+
+GPU_INV_END
+    LDA #0
+    STA ENTITY_FLAGS
+    LDA VIC_SPRITE_EN
+    ORA #%00000001
+    STA VIC_SPRITE_EN
+
+GPU_NORMAL
+    ; Movement
+    LDA JOY_STATE
+    AND #%00000100
+    BEQ GPU_RIGHT
+    LDA ENTITY_X
+    CMP #PLAYER_MIN_X
+    BCC GPU_RIGHT
+    DEC ENTITY_X
+
+GPU_RIGHT
+    LDA JOY_STATE
+    AND #%00001000
+    BEQ GPU_FIRE
+    LDA ENTITY_X
+    CMP #PLAYER_MAX_X
+    BCS GPU_FIRE
+    INC ENTITY_X
+
+GPU_FIRE
+    LDA JOY_STATE
+    AND #%00010000
+    BEQ GPU_DONE
+    LDA SHOT_COOLDOWN
+    BNE GPU_DONE
+    JSR PLAYER_FIRE
+
+GPU_DONE
+    LDA SHOT_COOLDOWN
+    BEQ GPU_SKIP_CD
+    DEC SHOT_COOLDOWN
+GPU_SKIP_CD
+    RTS
+
+GPU_DEAD
+    RTS
+
+PLAYER_FIRE
+    LDA PB_ACTIVE
+    BNE PF_DONE
+    LDA #1
+    STA PB_ACTIVE
+    LDA ENTITY_X
+    STA PB_X
+    LDA ENTITY_Y
+    SEC
+    SBC #20
+    STA PB_Y
+    JSR SFX_SHOOT
+    LDA #8
+    STA SHOT_COOLDOWN
+PF_DONE
+    RTS
+
+PLAYER_HIT
+    DEC PLAYER_LIVES
+    LDA PLAYER_LIVES
+    BEQ PH_DIED
+    ; Start invincibility
+    LDA #1
+    STA ENTITY_FLAGS
+    LDA #INVINCIBLE_TICKS
+    STA ENTITY_TIMER
+    JSR SFX_DIE
+    RTS
+
+PH_DIED
+    LDA #0
+    STA ENTITY_ACTIVE
+    JSR SFX_DIE
+    JSR GAME_OVER_SETUP
+    LDA #2
+    STA GAME_STATE
+    RTS
+
+; Bullet update
+GAME_BULLETS_UPDATE
+    ; Player bullet
+    LDA PB_ACTIVE
+    BEQ GBU_EB
+    LDA PB_Y
+    SEC
+    SBC #BULLET_SPEED
+    STA PB_Y
+    CMP #10
+    BCS GBU_EB
+    LDA #0
+    STA PB_ACTIVE
+
+GBU_EB
+    ; Enemy bullets
+    LDX #0
+GBU_LOOP
+    LDA EB_ACTIVE,X
+    BEQ GBU_SKIP
+    LDA EB_Y,X
+    CLC
+    ADC #2
+    STA EB_Y,X
+    CMP #250
+    BCC GBU_SKIP
+    LDA #0
+    STA EB_ACTIVE,X
+GBU_SKIP
+    INX
+    CPX #MAX_EB
+    BNE GBU_LOOP
+    RTS

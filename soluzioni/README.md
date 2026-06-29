@@ -51,7 +51,8 @@ x64 cap01-introduzione.prg
 | 17 | `cap17-parallax-raster-split.asm` | 5 | Raster split, parallax, scroll |
 | 18 | `cap18-boss.asm` | 5 | Boss multi-fase, pattern |
 | 19 | `cap19-kernel-engine.asm` | 5 | Kernel 3-layer, scheduler, entity system |
-| 20 | *(solo esercizi concettuali)* | 5 | Arcade OS, interrupt chaining |
+| 20 | `cap20-arcade-os.asm` | 5 | Arcade OS, interrupt chaining, demo pratiche |
+| — | `game/main.asm` (multi-file) | — | **Gioco completo**: Space Commander (vertical shooter) |
 
 ## Indirizzi di assemblaggio
 

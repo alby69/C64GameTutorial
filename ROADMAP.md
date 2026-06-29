@@ -23,7 +23,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 13 | Tool validazione incrociata | ✅ |
 | 14 | Capitolo 21 caricatore | ✅ |
 | 15 | Soluzione capitolo 20 mancante | ✅ |
-| 16 | Gioco completo unificato | ❌ |
+| 16 | Gioco completo unificato | ✅ |
 | 17 | Debugging con VICE (cap. 22) | ❌ |
 | 18 | Schermate titolo e high score (cap. 23) | ❌ |
 | 19 | Scrolling a schermo (cap. 24) | ❌ |
@@ -31,7 +31,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 21 | Test automatici con VICE headless | ❌ |
 | 22 | Indice analitico | ❌ |
 
-**Riepilogo:** 15/22 completati, 0 in corso, 7 aperti.
+**Riepilogo:** 16/22 completati, 0 in corso, 6 aperti.
 
 ---
 
@@ -82,13 +82,16 @@ gli esercizi sono concettuali; il file e un riferimento didattico.
 
 ## Nuove Proposte — Miglioramenti Futuri
 
-### 16. Gioco completo unificato
+### 16. ✅ Gioco completo unificato
 
-Tutti i capitoli insegnano concetti separati. Un file `.prg` finale che
-unisca TUTTI i concetti in un unico gioco giocabile (shooter con sprite,
-multiplexing, raster, audio, loader, boss, wave system, punteggio).
-
-**Azione:** Creare `soluzioni/game-finale.asm` e `prg/game-finale.prg`.
+`game/main.asm` — template multi-file per un gioco completo.
+Include tutto:
+- 12 file sorgente + main.asm con .include chain
+- Kernel engine: IRQ, scheduler 3-fasi (INPUT→LOGIC→RENDER)
+- Engine: input, entity pool, sprite multiplexing, collision, audio SID, HUD
+- Game: player, wave system, AI nemici, boss, state machine TITLE/PLAY/GAMEOVER
+- Dati: sprite bitmap (player, nemici, boss, esplosioni), tabelle lookup, configurazioni wave
+- Build: `make game` → `prg/game.prg`
 
 ---
 
@@ -153,7 +156,7 @@ istruzioni e concetti, con link al capitolo che li introduce.
 |---|---|---|---|
 | 1-14 | ✅ COMPLETATO | Struttura progetto, traduzioni, tooling | — |
 | 15 | ✅ COMPLETATO | Soluzione cap.20 | — |
-| 16 | ALTA | Gioco completo unificato | 7-10 giorni |
+| 16 | ✅ COMPLETATO | Gioco completo unificato | — |
 | 17 | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
 | 18 | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |
 | 19 | MEDIA | Capitolo 24 scrolling | 3-4 giorni |
