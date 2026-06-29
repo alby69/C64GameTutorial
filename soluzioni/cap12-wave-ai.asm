@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 12 — Wave System e AI
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: 4 nemici si muovono insieme, rimbalzo bordo
+;   2: spawn progressivo ogni 30 frame
+;   3: ogni wave aumenta velocita di 1
+;   4: nemico spara ogni 40 frame
+;   5: 3 pattern di movimento, uno per wave
+;
+; =============================================
 ; --- ESERCIZIO 1: 4 nemici si muovono insieme, rimbalzo bordo ---
 ENEMY_X     = $10
 ENEMY_Y     = $11

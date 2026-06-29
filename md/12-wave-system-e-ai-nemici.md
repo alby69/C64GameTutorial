@@ -485,3 +485,10 @@ Hai imparato:
 - Difficolta crescente (velocita, timer)
 - Pattern di movimento alternativi (zigzag, sine)
 - Tiro casuale dei nemici
+
+## Riferimenti
+
+- [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — nemici che sparano
+- [Capitolo 13 — Punteggio](13-punteggio-e-stati-gioco.md) — punteggio per nemici uccisi
+- [Capitolo 18 — Boss system](18-boss-system.md) — wave finale con boss
+- [Soluzioni](../soluzioni/cap12-wave-ai.asm) — soluzioni degli esercizi

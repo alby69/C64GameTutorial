@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 3 — Indirizzamento e Cicli
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: 'A' in riga 10, col 15, colore verde
+;   2: A B C D nelle prime 4 celle
+;   3: prima riga con '*', ogni cella colore diverso
+;   4: tabella 0-9 nelle prime 10 posizioni
+;   5: messaggio 4 lettere scorre a destra ogni secondo
+;
+; =============================================
 ; --- ESERCIZIO 1: 'A' in riga 10, col 15, colore verde ---
 ; Formula: SCREEN_RAM + riga*40 + colonna = $0400 + 10*40 + 15
 ;         = $0400 + 400 + 15 = $0400 + $190 + $F = $059F

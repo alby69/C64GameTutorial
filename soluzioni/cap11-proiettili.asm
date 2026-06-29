@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 11 — Sistema Proiettili
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: pool 2 proiettili, fuoco per sparare
+;   2: cooldown 10 frame tra uno sparo e l'altro
+;   3: proiettile colpisce nemico fisso
+;   4: nemico spara proiettile ogni 30 frame
+;   5: power-up — raccogli per 6 proiettili
+;
+; =============================================
 ; --- ESERCIZIO 1: pool 2 proiettili, fuoco per sparare ---
 BULLET_X    = $10     ; 2 byte (X0, X1)
 BULLET_Y    = $12

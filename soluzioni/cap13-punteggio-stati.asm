@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 13 — Punteggio e Stati
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: punteggio +10 a ogni pressione fuoco
+;   2: converti e mostra punteggio 3 cifre
+;   3: state machine MENU → PLAY → GAME OVER → MENU
+;   4: 3 vite, game over a 0
+;   5: mostra WAVE 1/2/... tra le wave
+;
+; =============================================
 ; --- ESERCIZIO 1: punteggio +10 a ogni pressione fuoco ---
 SCORE      = $02     ; 2 byte
 SCORE_HI   = $03

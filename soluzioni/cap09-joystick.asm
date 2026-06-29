@@ -1,11 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 9 — Joystick
 ; =============================================
-
-JOYPORT = $DC01
-SPR_X   = $D000
-SPR_Y   = $D001
-
+;
+; Mappa esercizi:
+;   1: muovi sprite in 4 direzioni
+;   2: controllo bordi (player non esce)
+;   3: fuoco cambia colore sprite
+;   4: single shot (edge detection)
+;   5: porta 1 e porta 2 per 2 sprite
+;
+; =============================================
 ; --- ESERCIZIO 1: muovi sprite in 4 direzioni ---
 *=$8000
     LDA #%00000001

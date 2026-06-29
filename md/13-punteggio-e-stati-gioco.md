@@ -471,3 +471,10 @@ Hai imparato:
 - Reset completo del gioco
 - Gestione vite e invincibilita
 - Schermate di transizione
+
+## Riferimenti
+
+- [Capitolo 4 — Memoria video](04-memoria-video-e-caratteri.md) — visualizzare punteggio a schermo
+- [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — struttura portante del gioco
+- [Capitolo 12 — Wave system](12-wave-system-e-ai-nemici.md) — integrazione onde/punteggio
+- [Soluzioni](../soluzioni/cap13-punteggio-stati.asm) — soluzioni degli esercizi

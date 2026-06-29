@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 17 — Parallax e Raster Split
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: schermo diviso in 3 zone, 3 colori
+;   2: HUD fisso in alto, area gioco sotto
+;   3: scrolling fine $D016 ogni frame, azzera a 7
+;   4: finto parallax — cambio sfondo ogni 8 frame
+;   5: sprite dietro lo sfondo con $D01B
+;
+; =============================================
 ; --- ESERCIZIO 1: schermo diviso in 3 zone, 3 colori ---
 *=$8000
     SEI

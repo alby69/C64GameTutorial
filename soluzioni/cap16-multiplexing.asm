@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 16 — Sprite Multiplexing
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: 2 zone (0-120, 121-240), 4 sprite per zona
+;   2: 16 nemici logici, 8 per zona
+;   3: 3 zone, 8 nemici cad (24 totali)
+;   4: assegnazione dinamica (nemici piu vicini alla zona)
+;   5: misura tempo multiplexing con barra debug ($D020)
+;
+; =============================================
 ; --- ESERCIZIO 1: 2 zone (0-120, 121-240), 4 sprite per zona ---
 ZONE1_END = 120
 ZONE2_END = 240

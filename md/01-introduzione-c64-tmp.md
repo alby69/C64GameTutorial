@@ -276,6 +276,12 @@ Scrivi un programma che imposti bordo verde e resti in ciclo infinito.
 ### Esercizio 3
 Modifica il programma per usare una label chiamata `GAMELOOP` invece di `LOOP`.
 
+### Esercizio 4
+Scrivi un programma che faccia ciclare il bordo attraverso tutti i colori da 0 a 15, uno dopo l'altro, in un ciclo infinito.
+
+### Esercizio 5
+Scrivi un programma con la struttura `MAIN`/`UPDATE`: `MAIN` chiama `UPDATE` con `JSR`, `UPDATE` incrementa il bordo e torna con `RTS`, `MAIN` ripete in loop.
+
 > **Soluzioni:** [le soluzioni sono nella cartella `soluzioni/`]
 
 ---
@@ -290,3 +296,9 @@ Hai imparato:
 - Come creare, assemblare ed eseguire un programma in TMP
 - Come modificare bordo (`$D020`) e sfondo (`$D021`)
 - La struttura base di un programma per videogiochi
+
+## Riferimenti
+
+- [Capitolo 2 — Istruzioni fondamentali](02-istruzioni-fondamentali.md) — registri, confronti, delay
+- [Capitolo 3 — Indirizzamento e cicli](03-indirizzamento-cicli-ritardi.md) — tabelle, stack, sottoroutine
+- [Soluzioni](../soluzioni/cap01-introduzione.asm) — soluzioni degli esercizi

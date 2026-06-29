@@ -467,3 +467,10 @@ Hai imparato:
 - Scheduler cooperativo per task
 - Inizializzazione separata per ogni strato
 - Separazione tra logica di gioco e servizi engine
+
+## Riferimenti
+
+- [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — struttura base che il kernel sostituisce
+- [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — componente del layer Engine
+- [Capitolo 20 — Arcade OS](20-arcade-os-e-oltre.md) — evoluzione del kernel
+- [Soluzioni](../soluzioni/cap19-kernel-engine.asm) — soluzioni degli esercizi

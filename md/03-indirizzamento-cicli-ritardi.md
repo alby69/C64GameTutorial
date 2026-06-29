@@ -353,3 +353,9 @@ Hai imparato:
 - Creare tabelle dati con `.byte`
 - Strutturare il programma con `JSR`
 - Cancellare lo schermo con un ciclo
+
+## Riferimenti
+
+- [Capitolo 2 — Istruzioni fondamentali](02-istruzioni-fondamentali.md) — loop, confronti, CMP/BEQ
+- [Capitolo 4 — Memoria video](04-memoria-video-e-caratteri.md) — puntare a schermo con indicizzato
+- [Soluzioni](../soluzioni/cap03-indirizzamento.asm) — soluzioni degli esercizi

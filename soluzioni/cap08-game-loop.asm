@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 8 — Game Loop Sincronizzato
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: frame counter sul bordo
+;   2: sprite 1 pixel a destra ogni frame = 50 px/s
+;   3: alterna pointer 192/193 ogni 4 frame
+;   4: messaggio lampeggia ogni 25 frame
+;   5: programma integrato in raster IRQ 50 Hz
+;
+; =============================================
 ; --- ESERCIZIO 1: frame counter sul bordo ---
 FRAME_CNT = $02
 *=$8000

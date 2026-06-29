@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 7 — Raster Interrupt
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: raster IRQ riga 50, bordo rosso
+;   2: due IRQ — riga 50 (rosso), riga 150 (blu)
+;   3: raster bar 4 righe consecutive
+;   4: flash sfondo blu/nero ogni frame via raster
+;   5: carattere lampeggiante via raster
+;
+; =============================================
 ; --- ESERCIZIO 1: raster IRQ riga 50, bordo rosso ---
 *=$8000
     SEI

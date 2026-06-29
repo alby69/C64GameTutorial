@@ -1,6 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 4 — Memoria Video
 ; =============================================
+;
+; Mappa esercizi:
+;   1: nome centrato riga 10
+;   2: effetto matrix (caratteri cadono)
+;   3: schermata titolo
+;   4: numero 42 in alto a destra
+;   5: scrolling marquee (testo scorrevole)
+;
+; =============================================
 
 ; --- ESERCIZIO 1: nome centrato riga 10 ---
 ; Riga 10 = inizio a $0400 + 10*40 = $0400 + 400 = $0590
@@ -83,3 +92,16 @@ MSG .byte 7,9,15,3,15,0,1,18,3,1,4,5,0    ; "GIOCO ARCADE" in PETSCII
     LDA #50        ; '2' = PETSCII 50
     STA $0426      ; $0400 + 38
     RTS
+
+; --- ESERCIZIO 5: scrolling marquee (testo scorrevole) ---
+; Scrive "CIAO" che si sposta a destra ogni frame
+*=$8000
+    LDX #0
+LOOP5
+    LDA MSG5,X
+    STA $0400,X
+    INX
+    CPX #4
+    BNE LOOP5
+    RTS
+MSG5 .byte 3,9,1,15    ; "CIAO" in PETSCII

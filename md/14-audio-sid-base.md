@@ -336,3 +336,9 @@ Hai imparato:
 - Creare suoni: beep, sparo, esplosione, sweep
 - Non bloccare il game loop con delay audio
 - Inizializzare correttamente il SID
+
+## Riferimenti
+
+- [Capitolo 15 — Audio engine](15-audio-engine-e-sfx.md) — sistema audio professionale
+- [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — suoni per sparo/esplosione
+- [Soluzioni](../soluzioni/cap14-audio-base.asm) — soluzioni degli esercizi

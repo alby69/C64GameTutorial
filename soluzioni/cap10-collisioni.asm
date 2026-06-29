@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 10 — Collisioni
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: player + nemico fisso, collisione cambia colore
+;   2: collisione distrugge nemico, sparisce
+;   3: 3 nemici, collisione singola su ciascuno
+;   4: segnapunti collisioni (variabile che si incrementa)
+;   5: gestione multi-hit (nemico resiste a 3 colpi)
+;
+; =============================================
 JOYPORT = $DC01
 PLAYER_X = $D000
 PLAYER_Y = $D001

@@ -1,13 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 18 — Boss System
 ; =============================================
-
-BOSS_HP     = $50
-BOSS_STATE  = $51
-BOSS_TIMER  = $52
-BOSS_X      = $53
-BOSS_Y      = $54
-BOSS_DIR    = $55
+;
+; Mappa esercizi:
+;   1: boss 3 fasi: intro + pattern A + morte
+;   2: boss si muove dx/sx, spara ogni 30 frame
+;   3: fase enrage quando HP < 50%
+;   4: animazione morte flash + colore
+;   5: boss adatta difficolta in base ai colpi player
+;
+; =============================================
 
 ; --- ESERCIZIO 1: boss 3 fasi: intro + pattern A + morte ---
 *=$8000

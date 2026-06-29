@@ -362,3 +362,9 @@ Hai imparato:
 - Music player con dati sequenziali
 - ADSR per modellare il suono
 - Coda di comandi audio
+
+## Riferimenti
+
+- [Capitolo 14 — Audio SID base](14-audio-sid-base.md) — fondamenti del SID
+- [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — integrazione audio nel loop
+- [Soluzioni](../soluzioni/cap15-audio-engine.asm) — soluzioni degli esercizi

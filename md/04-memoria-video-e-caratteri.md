@@ -346,6 +346,9 @@ Costruisci una semplice schermata titolo con bordo decorato e testo "GIOCO ARCAD
 ### Esercizio 4
 Scrivi il numero 42 (in decimale) in alto a destra dello schermo.
 
+### Esercizio 5
+Crea un effetto "scrolling marquee": scrivi "CIAO" alla riga 0 e fallo scorrere verso destra di una posizione ogni secondo.
+
 ---
 
 ## Riepilogo
@@ -359,3 +362,9 @@ Hai imparato:
 - Animare il testo modificando i colori
 - Cancellare lo schermo con cicli
 - Convertire numeri per visualizzarli
+
+## Riferimenti
+
+- [Capitolo 5 — Sprite hardware](05-sprite-hardware-vic-ii.md) — sprite pointer e visualizzazione
+- [Capitolo 13 — Punteggio](13-punteggio-e-stati-gioco.md) — visualizzare punteggio a video
+- [Soluzioni](../soluzioni/cap04-memoria-video.asm) — soluzioni degli esercizi

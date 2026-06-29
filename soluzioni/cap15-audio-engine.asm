@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 15 — Audio Engine
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: sistema SFX_REQUEST canale 2/3
+;   2: UPDATE_AUDIO nel raster IRQ 50 Hz
+;   3: sequenza musicale 4 note in loop
+;   4: ADSR pioggia noise + attack lungo
+;   5: coda audio 8 comandi
+;
+; =============================================
 ; --- ESERCIZIO 1: sistema SFX_REQUEST canale 2/3 ---
 SFX_REQ    = $40     ; 0=nessuno, 1=sparo, 2=esplosione, 3=bonus
 SFX_CHANNEL = $41    ; canale SID da usare

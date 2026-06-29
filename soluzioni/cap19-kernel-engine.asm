@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 19 — Kernel Engine
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: separa in 3 file (kernel, engine, game)
+;   2: jump table per INIT, UPDATE, RENDER
+;   3: RUN_SCHEDULER con 3 task
+;   4: dati entita in array
+;   5: ristruttura gioco esistente in 3 strati
+;
+; =============================================
 ; --- ESERCIZIO 1: separa in 3 file ---
 ;
 ; kernel.asm — interrupt, timing, scheduler

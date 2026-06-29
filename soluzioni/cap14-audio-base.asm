@@ -1,15 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 14 — Audio SID Base
 ; =============================================
-
-; Registri SID voce 1
-SID_FREQ_LO  = $D400
-SID_FREQ_HI  = $D401
-SID_CTRL     = $D404
-SID_ADSR     = $D405   ; attack/decay
-SID_SUR      = $D406   ; sustain/release
-SID_VOL      = $D418
-
+;
+; Mappa esercizi:
+;   1: beep 1 secondo square wave
+;   2: suono laser al fuoco
+;   3: esplosione con noise 0.5 secondi
+;   4: sweep frequenza basso→alto 0.5 sec
+;   5: 3 suoni diversi: sparo, esplosione, bonus
+;
+; =============================================
 ; --- ESERCIZIO 1: beep 1 secondo square wave ---
 *=$8000
     LDA #$F0

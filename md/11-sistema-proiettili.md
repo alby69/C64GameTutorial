@@ -496,3 +496,10 @@ Hai imparato:
 - Disattivare proiettili fuori schermo
 - Assegnare sprite hardware ai proiettili
 - Proiettili nemici (verso il basso)
+
+## Riferimenti
+
+- [Capitolo 9 — Joystick](09-joystick-e-input.md) — input per sparare
+- [Capitolo 10 — Collisioni](10-collisioni-software.md) — proiettili che colpiscono
+- [Capitolo 12 — Wave system](12-wave-system-e-ai-nemici.md) — nemici da colpire
+- [Soluzioni](../soluzioni/cap11-proiettili.asm) — soluzioni degli esercizi

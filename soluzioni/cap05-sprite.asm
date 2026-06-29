@@ -1,6 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 5 — Sprite Hardware
 ; =============================================
+;
+; Mappa esercizi:
+;   1: astronave al centro (X=160, Y=100)
+;   2: due sprite, bianco sinistra, rosso destra
+;   3: alieno disegnato su carta poi convertito
+;   4: sprite 0 a $3100 (calcolo pointer)
+;   5: sprite con colore che cambia ogni frame
+;
+; =============================================
 
 ; --- ESERCIZIO 1: astronave al centro (X=160, Y=100) ---
 *=$8000
@@ -114,3 +123,22 @@
     LDA #100
     STA $D001
     RTS
+
+; --- ESERCIZIO 5: sprite con colore che cambia ogni frame ---
+*=$8000
+    LDA #%00000001
+    STA $D015
+    LDA #128
+    STA $07F8
+    LDA #160
+    STA $D000
+    LDA #100
+    STA $D001
+    LDA #0
+LOOP5
+    STA $D027
+    INC $D027
+    LDA $D027
+    CMP #16
+    BNE LOOP5
+    JMP LOOP5

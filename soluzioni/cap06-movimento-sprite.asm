@@ -1,7 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 6 — Movimento Sprite
 ; =============================================
-
+;
+; Mappa esercizi:
+;   1: sprite sinistra→destra, rimbalzo X=50↔250
+;   2: movimento diagonale
+;   3: cambio colore a ogni rimbalzo
+;   4: animazione 4 frame alieno ogni 8 iterazioni
+;   5: 3 sprite allineati in formazione
+;
+; =============================================
 ; --- ESERCIZIO 1: sprite sinistra→destra, rimbalzo X=50↔250 ---
 SPRITE_X = $D000
 SPRITE_Y = $D001

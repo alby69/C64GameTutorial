@@ -428,3 +428,10 @@ Hai imparato:
 - Usare la modalita multicolore
 - Animare sprite cambiando pointer
 - Organizzare frame sprite in memoria
+
+## Riferimenti
+
+- [Capitolo 5 — Sprite hardware](05-sprite-hardware-vic-ii.md) — basi sprite, pointer, registri
+- [Capitolo 9 — Joystick](09-joystick-e-input.md) — controllare sprite con joystick
+- [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — sprite multipli
+- [Soluzioni](../soluzioni/cap06-movimento-sprite.asm) — soluzioni degli esercizi

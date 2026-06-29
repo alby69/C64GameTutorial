@@ -408,3 +408,10 @@ Hai imparato:
 - Cambiare colore a meta schermo
 - Usare piu IRQ in cascata
 - Raster bars e debug della CPU
+
+## Riferimenti
+
+- [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — integrare IRQ nel loop principale
+- [Capitolo 17 — Raster split](17-parallax-e-raster-split.md) — multiple zone raster
+- [Capitolo 20 — Arcade OS](20-arcade-os-e-oltre.md) — interrupt chaining
+- [Soluzioni](../soluzioni/cap07-raster.asm) — soluzioni degli esercizi

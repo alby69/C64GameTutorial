@@ -416,3 +416,9 @@ Hai imparato:
 - Rilevare il pulsante con fronte di salita
 - Gestire direzioni diagonali
 - Edge detection per input "single shot"
+
+## Riferimenti
+
+- [Capitolo 6 — Movimento sprite](06-movimento-e-controllo-sprite.md) — muovere sprite
+- [Capitolo 11 — Proiettili](11-sistema-proiettili.md) — sparare con il fuoco
+- [Soluzioni](../soluzioni/cap09-joystick.asm) — soluzioni degli esercizi

@@ -464,3 +464,9 @@ Hai imparato:
 - Separare READ_INPUT, UPDATE_LOGIC, UPDATE_SPRITES
 - Gestire il budget di cicli CPU per frame
 - Usare la barra di debug per monitorare il tempo CPU
+
+## Riferimenti
+
+- [Capitolo 7 — Raster interrupt](07-raster-interrupt.md) — setup e gestione IRQ
+- [Capitolo 13 — Stati gioco](13-punteggio-e-stati-gioco.md) — MENU/PLAY/GAMEOVER nel loop
+- [Soluzioni](../soluzioni/cap08-game-loop.asm) — soluzioni degli esercizi

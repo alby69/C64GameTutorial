@@ -1,6 +1,15 @@
 ; =============================================
 ; SOLUZIONI Capitolo 2 — Istruzioni Fondamentali
 ; =============================================
+;
+; Mappa esercizi:
+;   1: bordo incrementa 0→15 poi fermo
+;   2: contatore in Zero Page
+;   3: delay ~1 secondo (3 cicli annidati)
+;   4: sfondo lampeggia blu/nero ogni secondo
+;   5: rainbow effetto (bordo cicla con delay)
+;
+; =============================================
 
 ; --- ESERCIZIO 1: bordo incrementa 0→15 poi fermo ---
 *=$8000
@@ -59,6 +68,25 @@ MID
     BNE MID
     DEX
     BNE OUTER
+    RTS
+
+; --- ESERCIZIO 5: rainbow effetto (bordo cicla con delay) ---
+*=$8000
+    LDA #0
+LOOP5
+    STA $D020
+    JSR DELAY5
+    INC $D020
+    JMP LOOP5
+DELAY5
+    LDX #$20
+D15
+    LDY #$FF
+D25
+    DEY
+    BNE D25
+    DEX
+    BNE D15
     RTS
 
 ; --- ESERCIZIO 4: sfondo lampeggia blu/nero ogni secondo ---

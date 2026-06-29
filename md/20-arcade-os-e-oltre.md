@@ -281,6 +281,27 @@ SCROLL_MAP_X
 
 ---
 
+## Esercizi
+
+### Esercizio 1
+Spiega la differenza tra interrupt chaining e polling. In quali situazioni conviene l'uno rispetto all'altro?
+
+### Esercizio 2
+Descrivi come funziona lo sprite virtualization: come si fa a gestire 32 sprite logici con solo 8 sprite hardware? Quale componente dell'Arcade OS si occupa di questo?
+
+### Esercizio 3
+Cosa si intende per self-modifying code? Fai un esempio di quando puo essere utile e spiega quali rischi comporta.
+
+### Esercizio 4
+Disegna lo schema dell'architettura a 3 strati (Kernel → Engine → Game) e spiega il flusso di una tipica chiamata: da dove parte, quali strati attraversa, cosa fa ciascuno.
+
+### Esercizio 5
+Prendi la checklist finale del capitolo e applicala mentalmente a un gioco che vorresti sviluppare. Elenca: scelta del genere, risoluzione, quanti sprite servono, tipo di audio, schema di controllo.
+
+> **Nota:** Gli esercizi di questo capitolo sono concettuali e non richiedono soluzioni assembly.
+
+---
+
 ## Riepilogo
 
 Hai imparato:
@@ -292,3 +313,10 @@ Hai imparato:
 - Scroll engine unificato
 - Checklist completa per un gioco arcade
 - Risorse per continuare a imparare
+
+## Riferimenti
+
+- [Capitolo 19 — Kernel engine](19-kernel-engine-riutilizzabile.md) — base su cui si fonda l'Arcade OS
+- [Capitolo 7 — Raster interrupt](07-raster-interrupt.md) — interrupt chaining
+- [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — sprite virtualization
+- [Tutti i capitoli precedenti](/md/) — prerequisiti per arrivare qui

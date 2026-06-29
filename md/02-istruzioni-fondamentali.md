@@ -263,7 +263,7 @@ D2
 
 ---
 
-## 2.9 Rainbow effetto (esercizio svolto)
+## 2.9 Rainbow effetto (esempio svolto)
 
 Combiniamo tutto quello che abbiamo imparato:
 
@@ -307,6 +307,9 @@ Crea un delay di circa 1 secondo (suggerimento: 3 cicli annidati).
 ### Esercizio 4
 Fai lampeggiare lo sfondo tra blu e nero ogni secondo circa.
 
+### Esercizio 5
+Realizza l'effetto rainbow: il bordo deve scorrere attraverso tutti i colori in un ciclo infinito, usando un delay per rallentare il cambiamento (vedi "Esempio svolto" nella sezione 2.9).
+
 ---
 
 ## Riepilogo
@@ -320,3 +323,9 @@ Hai imparato:
 - Creare contatori e cicli
 - Delay software
 - Strutturare il programma con sottoroutine (`JSR`)
+
+## Riferimenti
+
+- [Capitolo 1 — Introduzione](01-introduzione-c64-tmp.md) — prime istruzioni, memoria C64
+- [Capitolo 3 — Indirizzamento e cicli](03-indirizzamento-cicli-ritardi.md) — modalita di indirizzamento avanzate
+- [Soluzioni](../soluzioni/cap02-istruzioni.asm) — soluzioni degli esercizi

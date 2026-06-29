@@ -433,3 +433,10 @@ Hai imparato:
 - Gestire 24 nemici logici con 8 sprite HW
 - Assegnazione dinamica degli slot per Y
 - Calcolare il budget CPU del multiplexing
+
+## Riferimenti
+
+- [Capitolo 6 — Movimento sprite](06-movimento-e-controllo-sprite.md) — basi sprite
+- [Capitolo 7 — Raster interrupt](07-raster-interrupt.md) — IRQ per cambio zona
+- [Capitolo 19 — Kernel engine](19-kernel-engine-riutilizzabile.md) — entity system integrato
+- [Soluzioni](../soluzioni/cap16-multiplexing.asm) — soluzioni degli esercizi

@@ -369,3 +369,9 @@ Hai imparato:
 - Gestire hit: disattivazione, punteggio, suono
 - Organizzare i dati delle entita per collisioni
 - Hitbox differenziate (player vs proiettile)
+
+## Riferimenti
+
+- [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — collisioni proiettile-nemico
+- [Capitolo 18 — Boss system](18-boss-system.md) — collisioni con boss multi-fase
+- [Soluzioni](../soluzioni/cap10-collisioni.asm) — soluzioni degli esercizi

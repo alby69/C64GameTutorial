@@ -295,6 +295,9 @@ Disegna a mano su carta griglia un alieno 24×21, converti in byte e visualizzal
 ### Esercizio 4
 Assegna a Sprite 0 i dati a $3100 (calcola il pointer corretto).
 
+### Esercizio 5
+Visualizza uno sprite il cui colore cambia ogni iterazione del loop, ciclando tra tutti i 16 colori disponibili.
+
 ---
 
 ## Riepilogo
@@ -306,3 +309,9 @@ Hai imparato:
 - I puntatori sprite ($07F8-$07FF) e il calcolo indirizzo÷64
 - Come organizzare i dati sprite a 63 byte
 - Visualizzare il primo sprite a schermo
+
+## Riferimenti
+
+- [Capitolo 6 — Movimento sprite](06-movimento-e-controllo-sprite.md) — animazione, MSB, multicolore
+- [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — gestire 8+ sprite
+- [Soluzioni](../soluzioni/cap05-sprite.asm) — soluzioni degli esercizi
