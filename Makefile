@@ -15,7 +15,7 @@ SOL_DIR := soluzioni
 PRG_DIR := prg
 MD_DIR := md
 
-CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21
+CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21 22 23 24
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
 PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
@@ -94,6 +94,15 @@ $(PRG_DIR)/cap19.prg: $(SOL_DIR)/cap19-kernel-engine.asm
 $(PRG_DIR)/cap21.prg: $(SOL_DIR)/cap21-caricatore.asm
 	$(TMPX) -o $@ $<
 
+$(PRG_DIR)/cap22.prg: $(SOL_DIR)/cap22-debugging.asm
+	$(TMPX) -o $@ $<
+
+$(PRG_DIR)/cap23.prg: $(SOL_DIR)/cap23-titolo-highscore.asm
+	$(TMPX) -o $@ $<
+
+$(PRG_DIR)/cap24.prg: $(SOL_DIR)/cap24-scrolling.asm
+	$(TMPX) -o $@ $<
+
 # Gioco completo unificato (ROADMAP #16)
 GAME_DIR := game
 GAME_DEPS := $(wildcard $(GAME_DIR)/*.asm)
@@ -127,7 +136,7 @@ stats:
 validate:
 	@echo "=== Validazione progetto ==="
 	@errors=0; \
-	for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21; do \
+	for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do \
 		md_file="$$(ls $(MD_DIR)/$$ch-*.md 2>/dev/null)"; \
 		asm_file="$$(ls $(SOL_DIR)/cap$$ch-*.asm 2>/dev/null)"; \
 		if [ -z "$$md_file" ]; then \

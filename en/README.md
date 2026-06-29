@@ -31,6 +31,9 @@ Each file mirrors the Italian original in `../md/`.
 | Ch. 19 | `19-reusable-kernel-engine.md` | ✅ Translated |
 | Ch. 20 | `20-arcade-os-beyond.md` | ✅ Translated |
 | Ch. 21 | `21-custom-loader.md` | ✅ Translated |
+| Ch. 22 | `22-debugging-vice.md` | ✅ Translated |
+| Ch. 23 | `23-title-highscore.md` | ✅ Translated |
+| Ch. 24 | `24-scrolling.md` | ✅ Translated |
 | App. A | `appendix-a-reference-tables.md` | ❌ Pending |
 | App. B | `appendix-b-glossary.md` | ❌ Pending |
 | App. C | `appendix-c-cpu-memory.md` | ✅ Placeholder |
@@ -50,6 +53,7 @@ en/
 ├── 14-15   PART V — Audio
 ├── 16-18   PART VI — Advanced Techniques
 ├── 19-21   PART VII — Professional Architecture
+├── 22-24   PART VIII — Tools & Polish
 ├── A-TMP  Appendices (A-F + TMP quick ref)
 ```
 
@@ -73,6 +77,9 @@ Sprite multiplexing (8+), raster split, parallax, boss multi-phase system.
 
 ## Part VII – Professional Architecture (19–21)
 Reusable kernel engine, 3-layer architecture, Arcade OS concepts, custom loader.
+
+## Part VIII – Tools & Polish (22–24)
+Debugging with VICE, title screens, high score save/load, hardware scrolling.
 
 ## Appendices
 Color/memory/register tables, 6502 reference, CPU/video/architecture/audio schemas, TMP quick reference.

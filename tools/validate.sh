@@ -30,7 +30,7 @@ echo ""
 
 # --- 1. Verifica esercizi per capitolo ---
 echo "--- [1] Conteggio esercizi per capitolo ---"
-    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21; do
+    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do
     md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
     asm_file=$(ls "$SOL_DIR/cap$ch-"*.asm 2>/dev/null || true)
 
@@ -50,7 +50,7 @@ echo "--- [1] Conteggio esercizi per capitolo ---"
         green "  OK: $(basename "$md_file") — $ex_count esercizi"
     fi
 
-    # Verifica esistenza soluzione (solo capp. 1-19)
+    # Verifica esistenza soluzione (no cap. 20 — concettuale)
     if [ "$ch" != "20" ]; then
         if [ -z "$asm_file" ]; then
             red "  ERROR: Soluzione per capitolo $ch mancante"
@@ -98,7 +98,7 @@ echo ""
 # --- 3. Verifica traduzioni en/ ---
 echo "--- [3] Verifica traduzioni inglesi ---"
 if [ -d "$EN_DIR" ]; then
-for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21; do
+for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do
         en_file=$(ls "$EN_DIR/$ch-"*.md 2>/dev/null || true)
         md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
         if [ -z "$en_file" ]; then
