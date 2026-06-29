@@ -4,163 +4,185 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 
 ---
 
-## Stato Attuale (22/22 punti)
+## Stato Attuale (22/22 completati — Nuova Fase)
+
+Tutti i 22 punti originali sono stati completati. Di seguito i nuovi
+miglioramenti proposti per la prossima fase del progetto.
 
 | # | Area | Stato |
 |---|---|---|
-| 1 | Esercizi uniformati a 5/capitolo | ✅ |
-| 2 | .gitignore presente | ✅ |
-| 3 | Mappa esercizi in testa ai file soluzione | ✅ |
-| 4 | docs/ vuota rimossa | ✅ |
-| 5 | Traduzione inglese en/ | ✅ 24/24 capitoli tradotti |
-| 6 | soluzioni/README.md presente | ✅ |
-| 7 | Appendici inglesi en/ | ✅ Placeholder C,D,E,F,TMP |
-| 8 | Riferimenti incrociati tra capitoli | ✅ |
-| 9 | PDF troncato rimosso | ✅ |
-| 10 | Rainbow effetto in cap02 separato | ✅ |
-| 11 | Makefile: build .prg | ✅ |
-| 12 | Makefile: automazione | ✅ |
-| 13 | Tool validazione incrociata | ✅ |
-| 14 | Capitolo 21 caricatore | ✅ |
-| 15 | Soluzione capitolo 20 mancante | ✅ |
-| 16 | Gioco completo unificato | ✅ |
-| 17 | Debugging con VICE (cap. 22) | ✅ |
-| 18 | Schermate titolo e high score (cap. 23) | ✅ |
-| 19 | Scrolling a schermo (cap. 24) | ✅ |
-| 20 | Tabella dimensioni codice | ✅ |
-| 21 | Test automatici con VICE headless | ✅ |
-| 22 | Indice analitico | ✅ |
+| 1-22 | Punti originali (struttura, traduzioni, capitoli 22-24, tooling) | ✅ |
+| 23 | Appendici A-B in inglese | ❌ |
+| 24 | CI/CD GitHub Actions (build + validate automatici) | ❌ |
+| 25 | Generazione PDF da markdown | ❌ |
+| 26 | Template gioco espanso in gioco completo giocabile | ❌ |
+| 27 | Tool convertitore PNG → dati sprite C64 | ❌ |
+| 28 | Capitolo caricatore turbo (fast loader) | ❌ |
+| 29 | Capitolo REU (RAM Expansion Unit) | ❌ |
+| 30 | Integrazione music tracker (GoatTracker/DefMon) | ❌ |
+| 31 | Sito web statico del manuale | ❌ |
+| 32 | Mappa dipendenze tra capitoli | ❌ |
 
-**Riepilogo:** 22/22 completati, 0 in corso, 0 aperti.
+**Riepilogo:** 0/10 nuovi completati, 0 in corso, 10 aperti.
 
 ---
 
-## Completati
+## Completati Fase 1
 
-### 5. ✅ Traduzione inglese (en/)
+### 1–14. Struttura progetto, traduzioni, tooling
 
-Tutti i 21 capitoli sono tradotti in inglese:
+Esercizi uniformati a 5/capitolo, `.gitignore`, mappa esercizi nei file
+soluzione, traduzione inglese completa (24 capitoli), appendici inglesi
+(placeholder), Makefile con build `.prg` e automazione, validazione
+incrociata (`tools/validate.sh`, `make validate`).
 
-| Capitolo | Righe | Stato |
-|---|---|---|
-| 01-03 | ~1000 | ✅ Tradotto |
-| 04-17 | ~5600 | ✅ Tradotto |
-| 18-21 | ~1700 | ✅ Tradotto |
-| 22-24 | ~1200 | ✅ Tradotto |
-| Appendici A-B | ~580 | ❌ Ancora da tradurre |
-| Appendici C-F, TMP | ~1400 | ✅ Placeholder esistenti |
+### 15. Soluzione capitolo 20
 
-### 7. ✅ Appendici inglesi C,D,E,F (en/)
+`soluzioni/cap20-arcade-os.asm` — 5 demo concettuali (chaining interrupt,
+virtualizzazione sprite, self-modify, 3-layer, skeleton game).
 
-File placeholder creati in `en/`:
-- `en/appendix-c-cpu-memory.md`
-- `en/appendix-d-video-schematics.md`
-- `en/appendix-e-architecture-schematics.md`
-- `en/appendix-f-audio-schematics.md`
-- `en/appendix-turbo-macro-pro.md`
+### 16. Gioco completo unificato
 
-### 10. ✅ Rainbow effetto separato (cap02)
+`game/` — template vertical shooter multi-file con 13 file `.asm`,
+architettura 3-layer (INPUT→LOGIC→RENDER), scheduler a 50 Hz,
+sistema entità, player, nemici, collisioni, audio.
 
-Spostato in sezione "💡 ESEMPIO SVOLTO" prima degli esercizi, in entrambe le versioni.
+### 17. Debugging con VICE
 
----
+`md/22-debugging-vice.md` + traduzione inglese + soluzioni.
+Monitor VICE, breakpoint/watchpoint, raster debug, stack debug.
 
-## Ancora Aperti
+### 18. Schermate titolo e high score
 
-### 15. ✅ Soluzione per capitolo 20
+`md/23-titolo-highscore.md` + traduzione inglese + soluzioni.
+Titolo animato, KERNAL SAVE/LOAD per high score, game-over.
 
-`soluzioni/cap20-arcade-os.asm` creato con 5 dimostrazioni pratiche:
-1. Interrupt chaining (catena IRQ a 3 stadi)
-2. Sprite virtualization (mapping 32 -> 8 HW)
-3. Self-modifying code (jump table auto-patching)
-4. Architettura 3-layer (kernel/engine/game)
-5. Scheletro gioco completo (Space Invaders minimal)
+### 19. Scrolling hardware
 
-Nota: le soluzioni non sono assemblabili come singolo .prg perche
-gli esercizi sono concettuali; il file e un riferimento didattico.
-
----
-
-## Nuove Proposte — Miglioramenti Futuri
-
-### 16. ✅ Gioco completo unificato
-
-`game/main.asm` — template multi-file per un gioco completo.
-Include tutto:
-- 12 file sorgente + main.asm con .include chain
-- Kernel engine: IRQ, scheduler 3-fasi (INPUT→LOGIC→RENDER)
-- Engine: input, entity pool, sprite multiplexing, collision, audio SID, HUD
-- Game: player, wave system, AI nemici, boss, state machine TITLE/PLAY/GAMEOVER
-- Dati: sprite bitmap (player, nemici, boss, esplosioni), tabelle lookup, configurazioni wave
-- Build: `make game` → `prg/game.prg`
-
----
-
-### 17. Debugging con VICE (capitolo 22)
-
-Le soluzioni sono testabili solo caricandole su C64 o emulatore. Manca una
-guida al debugging con VICE: breakpoint, monitor assembly, watchpoint, trace.
-
-**Azione:** Scrivere `md/22-debugging-vice.md` con esercizi su come usare
-il monitor di VICE per trovare bug.
-
----
-
-### 18. Schermate titolo e high score (capitolo 23)
-
-Il ciclo di gioco non ha una schermata titolo ne un sistema di high score
-persistente (salvataggio su disco).
-
-**Azione:** Scrivere `md/23-titolo-highscore.md` — schermata titolo con
-sprite animate, lettura/scrittura high score su disco.
-
----
-
-### 19. Scrolling a schermo (capitolo 24)
-
-Manca lo scrolling hardware/software del C64: scroll verticale orizzontale,
-scroll a 8 pixel, scroll a 1 pixel, fine scrolling con raster.
-
-**Azione:** Scrivere `md/24-scrolling.md` con esercizi su scroll
-verticale, orizzontale, parallasse avanzato.
-
----
+`md/24-scrolling.md` + traduzione inglese + soluzioni.
+Scroll fine/grossolano, raster split, parallax, verticale.
 
 ### 20. Tabella dimensioni codice
 
-Uno script che genera una tabella markdown con righe/byte/indirizzo per
-ogni soluzione, da includere in `soluzioni/README.md`.
+`tools/size-report.sh` — genera tabella markdown con origine/righe/esercizi/byte.
+Tabella integrata in `soluzioni/README.md`. `make size-report`.
 
-**Azione:** `tools/size-report.sh` → tabella markdown.
+### 21. Test automatici VICE headless
 
----
-
-### 21. Test automatici con VICE headless
-
-Usare `x64sc -moncommands` per caricare ogni soluzione, verificare che
-non vada in crash, e catturare screenshot.
-
-**Azione:** Script che lancia VICE in modalita test per ogni `.prg`.
-
----
+`tools/vice-test.sh` — per ogni `.prg` lancia `x64sc` con cycle limit
+e screenshot. `make vice-test`.
 
 ### 22. Indice analitico
 
-Una pagina `md/INDICE.md` con elenco di tutti i registri, indirizzi,
-istruzioni e concetti, con link al capitolo che li introduce.
+`md/INDICE.md` — registri VIC-II/CIA/SID, istruzioni 6502, routine KERNAL,
+mappa memoria, comandi VICE, concetti per capitolo.
 
 ---
 
-## Riepilogo Priorita
+## Nuove Proposte (Fase 2)
 
-| # | Priorita | Cosa | Sforzo |
+### 23. Appendici A-B in inglese
+
+Traduzione di `md/appendice-a-tabelle.md` e `md/appendice-b-glossario.md`
+in `en/appendix-a-reference-tables.md` e `en/appendix-b-glossary.md`.
+
+**Azione:** Tradurre le due appendici mancanti.
+
+---
+
+### 24. CI/CD GitHub Actions
+
+Workflow automatico che esegue `make validate` e `tools/validate.sh`
+su ogni push e pull request.
+
+**Azione:** Creare `.github/workflows/validate.yml`.
+
+---
+
+### 25. Generazione PDF da markdown
+
+Script che converte tutti i capitoli in un unico PDF impaginato
+(con `pandoc` + template LaTeX o `md-to-pdf`).
+
+**Azione:** `tools/build-pdf.sh` + template.
+
+---
+
+### 26. Template gioco espanso in gioco completo
+
+Completare il template `game/` in un gioco giocabile: livelli,
+scoring completo, schermata titolo, game over, high score su disco,
+boss finale, audio SFX.
+
+**Azione:** Espandere `game/` con contenuti dai capitoli 13, 18, 23, 24.
+
+---
+
+### 27. Tool convertitore PNG → dati sprite C64
+
+Script Python che converte immagini PNG (24x21 o 12x21 pixel)
+in dati sprite C64 (64 byte, multicolor o HIRES).
+
+**Azione:** `tools/png2sprite.py` — output in formato `.asm`.
+
+---
+
+### 28. Capitolo caricatore turbo
+
+Tecniche per velocizzare il caricamento da disco 1541:
+lettura diretta della GCR, IRQ loader, parallel cable, JiffyDOS.
+
+**Azione:** `md/25-turbo-loader.md` + soluzioni.
+
+---
+
+### 29. Capitolo REU (RAM Expansion Unit)
+
+Utilizzo della REU 1700/1750/1764 per espandere la RAM
+oltre i 64 KB: copia rapida, swap banchi, DMA.
+
+**Azione:** `md/26-reu-expansion.md` + soluzioni.
+
+---
+
+### 30. Integrazione music tracker
+
+Suonare musica composta con GoatTracker o DefMon da assembly:
+formato `.sid`, player routine, integrazione con SFX.
+
+**Azione:** Capitolo su player SID + esempio musica + soluzioni.
+
+---
+
+### 31. Sito web statico del manuale
+
+Generare una versione HTML navigabile del manuale con
+indice, ricerca, link cliccabili, esempi di codice colorati.
+
+**Azione:** Template statico + script di generazione.
+
+---
+
+### 32. Mappa dipendenze tra capitoli
+
+Grafico (testuale o SVG) che mostra le dipendenze tra capitoli:
+quali prerequisiti servono prima di affrontare un capitolo.
+
+**Azione:** `tools/dep-graph.sh` → output DOT/SVG.
+
+---
+
+## Riepilogo Priorità (Fase 2)
+
+| # | Priorità | Cosa | Sforzo |
 |---|---|---|---|
-| 1-14 | ✅ COMPLETATO | Struttura progetto, traduzioni, tooling | — |
-| 15 | ✅ COMPLETATO | Soluzione cap.20 | — |
-| 16 | ✅ COMPLETATO | Gioco completo unificato | — |
-| 17 | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
-| 18 | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |
-| 19 | MEDIA | Capitolo 24 scrolling | 3-4 giorni |
-| 20 | BASSA | Tabella dimensioni codice | 1 giorno |
-| 21 | BASSA | Test automatici VICE | 3-4 giorni |
-| 22 | BASSA | Indice analitico | 1 giorno |
+| 23 | ALTA | Appendici A-B in inglese | 2 giorni |
+| 24 | ALTA | CI/CD GitHub Actions | 1 giorno |
+| 25 | MEDIA | Generazione PDF | 2 giorni |
+| 26 | MEDIA | Template gioco espanso | 1-2 settimane |
+| 27 | BASSA | Tool convertitore PNG → sprite | 1 giorno |
+| 28 | BASSA | Capitolo caricatore turbo | 3-4 giorni |
+| 29 | BASSA | Capitolo REU | 2-3 giorni |
+| 30 | BASSA | Integrazione music tracker | 3-4 giorni |
+| 31 | BASSA | Sito web statico | 1 settimana |
+| 32 | BASSA | Mappa dipendenze capitoli | 1 giorno |
