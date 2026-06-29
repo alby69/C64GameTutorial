@@ -16,14 +16,14 @@ miglioramenti proposti per la prossima fase del progetto.
 | 24 | CI/CD GitHub Actions (build + validate automatici) | ✅ |
 | 25 | Generazione PDF da markdown | ✅ |
 | 26 | Template gioco espanso (scroll + high score + title) | ✅ |
-| 27 | Tool convertitore PNG → dati sprite C64 | ❌ |
-| 28 | Capitolo caricatore turbo (fast loader) | ❌ |
-| 29 | Capitolo REU (RAM Expansion Unit) | ❌ |
-| 30 | Integrazione music tracker (GoatTracker/DefMon) | ❌ |
+| 27 | Tool convertitore PNG → dati sprite C64 | ✅ |
+| 28 | Capitolo caricatore turbo (fast loader) | ✅ |
+| 29 | Capitolo REU (RAM Expansion Unit) | ✅ |
+| 30 | Integrazione music tracker (GoatTracker/DefMon) | ✅ |
 | 31 | Sito web statico del manuale | ❌ |
-| 32 | Mappa dipendenze tra capitoli | ❌ |
+| 32 | Mappa dipendenze tra capitoli | ✅ |
 
-**Riepilogo:** 4/10 nuovi completati, 0 in corso, 6 aperti.
+**Riepilogo:** 9/10 nuovi completati, 0 in corso, 1 aperto.
 
 ---
 
@@ -117,39 +117,31 @@ Modificati:
 
 ---
 
-### 27. Tool convertitore PNG → dati sprite C64
+### 27. ✅ Tool convertitore PNG → dati sprite C64
 
-Script Python che converte immagini PNG (24x21 o 12x21 pixel)
-in dati sprite C64 (64 byte, multicolor o HIRES).
-
-**Azione:** `tools/png2sprite.py` — output in formato `.asm`.
+`tools/png2sprite.py` — converte immagini PNG (24x21 o 12x21 pixel)
+in dati sprite C64 (64 byte, multicolor o HIRES). Output in formato `.asm`.
 
 ---
 
-### 28. Capitolo caricatore turbo
+### 28. ✅ Capitolo caricatore turbo
 
-Tecniche per velocizzare il caricamento da disco 1541:
-lettura diretta della GCR, IRQ loader, parallel cable, JiffyDOS.
-
-**Azione:** `md/25-turbo-loader.md` + soluzioni.
+`md/25-turbo-loader.md` + `en/25-turbo-loader.md` + soluzioni.
+Lettura diretta GCR, IRQ loader, parallel cable.
 
 ---
 
-### 29. Capitolo REU (RAM Expansion Unit)
+### 29. ✅ Capitolo REU (RAM Expansion Unit)
 
-Utilizzo della REU 1700/1750/1764 per espandere la RAM
-oltre i 64 KB: copia rapida, swap banchi, DMA.
-
-**Azione:** `md/26-reu-expansion.md` + soluzioni.
+`md/26-reu-expansion.md` + `en/26-reu-expansion.md` + soluzioni.
+Registri DMA, copia C64↔REU, bank swapping, salvataggio stato.
 
 ---
 
-### 30. Integrazione music tracker
+### 30. ✅ Integrazione music tracker
 
-Suonare musica composta con GoatTracker o DefMon da assembly:
-formato `.sid`, player routine, integrazione con SFX.
-
-**Azione:** Capitolo su player SID + esempio musica + soluzioni.
+`md/27-music-tracker-integration.md` + `en/27-music-tracker-integration.md` + soluzioni.
+Player minimale, mixer musica+SFX, integrazione GoatTracker.
 
 ---
 
@@ -162,12 +154,10 @@ indice, ricerca, link cliccabili, esempi di codice colorati.
 
 ---
 
-### 32. Mappa dipendenze tra capitoli
+### 32. ✅ Mappa dipendenze tra capitoli
 
-Grafico (testuale o SVG) che mostra le dipendenze tra capitoli:
-quali prerequisiti servono prima di affrontare un capitolo.
-
-**Azione:** `tools/dep-graph.sh` → output DOT/SVG.
+`tools/dep-graph.sh` — genera grafico DOT delle dipendenze tra capitoli.
+Mostra quali prerequisiti servono prima di ogni capitolo.
 
 ---
 
@@ -179,9 +169,9 @@ quali prerequisiti servono prima di affrontare un capitolo.
 | 24 | ✅ | CI/CD GitHub Actions | 1 giorno |
 | 25 | ✅ | Generazione PDF | 2 giorni |
 | 26 | ✅ | Template gioco espanso | 1-2 settimane |
-| 27 | BASSA | Tool convertitore PNG → sprite | 1 giorno |
-| 28 | BASSA | Capitolo caricatore turbo | 3-4 giorni |
-| 29 | BASSA | Capitolo REU | 2-3 giorni |
-| 30 | BASSA | Integrazione music tracker | 3-4 giorni |
+| 27 | ✅ | Tool convertitore PNG → sprite | 1 giorno |
+| 28 | ✅ | Capitolo caricatore turbo | 3-4 giorni |
+| 29 | ✅ | Capitolo REU | 2-3 giorni |
+| 30 | ✅ | Integrazione music tracker | 3-4 giorni |
 | 31 | BASSA | Sito web statico | 1 settimana |
-| 32 | BASSA | Mappa dipendenze capitoli | 1 giorno |
+| 32 | ✅ | Mappa dipendenze capitoli | 1 giorno |
