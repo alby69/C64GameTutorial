@@ -22,7 +22,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 12 | Makefile: automazione | ✅ |
 | 13 | Tool validazione incrociata | ✅ |
 | 14 | Capitolo 21 caricatore | ✅ |
-| 15 | Soluzione capitolo 20 mancante | ❌ |
+| 15 | Soluzione capitolo 20 mancante | ✅ |
 | 16 | Gioco completo unificato | ❌ |
 | 17 | Debugging con VICE (cap. 22) | ❌ |
 | 18 | Schermate titolo e high score (cap. 23) | ❌ |
@@ -31,7 +31,7 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 | 21 | Test automatici con VICE headless | ❌ |
 | 22 | Indice analitico | ❌ |
 
-**Riepilogo:** 14/22 completati, 0 in corso, 8 aperti.
+**Riepilogo:** 15/22 completati, 0 in corso, 7 aperti.
 
 ---
 
@@ -66,13 +66,17 @@ Spostato in sezione "💡 ESEMPIO SVOLTO" prima degli esercizi, in entrambe le v
 
 ## Ancora Aperti
 
-### 15. ❌ Soluzione mancante per capitolo 20
+### 15. ✅ Soluzione per capitolo 20
 
-`soluzioni/cap20-arcade-os.asm` non esiste. Tutti gli altri capitoli (1-19, 21)
-hanno la loro soluzione.
+`soluzioni/cap20-arcade-os.asm` creato con 5 dimostrazioni pratiche:
+1. Interrupt chaining (catena IRQ a 3 stadi)
+2. Sprite virtualization (mapping 32 -> 8 HW)
+3. Self-modifying code (jump table auto-patching)
+4. Architettura 3-layer (kernel/engine/game)
+5. Scheletro gioco completo (Space Invaders minimal)
 
-**Azione:** Creare 5 soluzioni per il cap.20 (Arcade OS, interrupt chaining,
-self-modifying code). Nota: gli esercizi del cap.20 sono concettuali.
+Nota: le soluzioni non sono assemblabili come singolo .prg perche
+gli esercizi sono concettuali; il file e un riferimento didattico.
 
 ---
 
@@ -148,7 +152,7 @@ istruzioni e concetti, con link al capitolo che li introduce.
 | # | Priorita | Cosa | Sforzo |
 |---|---|---|---|
 | 1-14 | ✅ COMPLETATO | Struttura progetto, traduzioni, tooling | — |
-| 15 | MEDIA | Soluzione cap.20 mancante | 1 giorno |
+| 15 | ✅ COMPLETATO | Soluzione cap.20 | — |
 | 16 | ALTA | Gioco completo unificato | 7-10 giorni |
 | 17 | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
 | 18 | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |

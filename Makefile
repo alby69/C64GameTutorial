@@ -15,7 +15,7 @@ SOL_DIR := soluzioni
 PRG_DIR := prg
 MD_DIR := md
 
-CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19
+CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
 PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
@@ -89,6 +89,9 @@ $(PRG_DIR)/cap18.prg: $(SOL_DIR)/cap18-boss.asm
 	$(TMPX) -o $@ $<
 
 $(PRG_DIR)/cap19.prg: $(SOL_DIR)/cap19-kernel-engine.asm
+	$(TMPX) -o $@ $<
+
+$(PRG_DIR)/cap21.prg: $(SOL_DIR)/cap21-caricatore.asm
 	$(TMPX) -o $@ $<
 
 # Statistiche

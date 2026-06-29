@@ -44,7 +44,7 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 
 - **~10800 righe** di manuale
 - **28 file** in `md/`
-- **20 soluzioni assembly** (capitoli 1-19, 21)
+- **21 soluzioni assembly** (capitoli 1-19, 20, 21)
 - **~8800 righe** traduzione inglese (21 capitoli tradotti)
 
 ## Come iniziare
