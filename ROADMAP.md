@@ -1,150 +1,164 @@
 # ROADMAP — Miglioramenti del Progetto C64 Game Tutorial
 
-Analisi effettuata il 2026-06-29 su 91 file totali (69 MB, di cui 69 MB di PDF).
+Analisi effettuata il 2026-06-29 — aggiornata al commit `63cd848`.
 
 ---
 
-## Criticita — Da risolvere subito
+## Stato Attuale (27/27 punti)
 
-### 1. Numero esercizi incoerente
-
-Il README promette "5 esercizi per capitolo", ma la realta e:
-
-| Capitolo | Esercizi | Dovrebbero |
+| # | Area | Stato |
 |---|---|---|
-| 01 | 3 | 5 |
-| 02 | 4 | 5 |
-| 04 | 4 | 5 |
-| 05 | 4 | 5 |
-| 20 | 0 | 5 |
+| 1 | Esercizi uniformati a 5/capitolo | ✅ |
+| 2 | .gitignore presente | ✅ |
+| 3 | Mappa esercizi in testa ai file soluzione | ✅ |
+| 4 | docs/ vuota rimossa | ✅ |
+| 5 | Traduzione inglese en/ | 🔄 3/24 tradotti |
+| 6 | soluzioni/README.md presente | ✅ |
+| 7 | Appendici inglesi C,D,E,F mancanti | 🔄 |
+| 8 | Riferimenti incrociati tra capitoli | ✅ |
+| 9 | PDF troncato rimosso | ✅ |
+| 10 | Rainbow effetto in cap02 da separare | 🔄 |
+| 11 | Makefile: build .prg | ✅ |
+| 12 | Makefile: automazione | ✅ |
+| 13 | Tool validazione incrociata | ✅ |
+| 14 | Capitolo 21 caricatore | ✅ |
 
-**Azione:** Uniformare a 5 esercizi per tutti i capitoli. Per il cap.20, creare 5 esercizi concettuali sull'Arcade OS (es. "spiega la differenza tra interrupt chaining e polling"). Aggiungere le relative soluzioni in `soluzioni/cap20-arcade-os.asm`.
-
----
-
-### 2. .gitignore assente
-
-I 3 PDF in `manuali/` pesano 69 MB. Senza `.gitignore` vengono tracciati da Git, appesantendo inutilmente il repository.
-
-**Azione:** Creare `.gitignore` con:
-
-```
-manuali/
-*.prg
-*.bin
-*.o
-```
+**Riepilogo:** 11/14 completati, 3 in corso.
 
 ---
 
-### 3. Mappatura esercizi incompleta in testa ai file soluzione
+## Ancora Aperti
 
-I file in `soluzioni/` hanno sezioni commentate ma manca una mappa veloce all'inizio che colleghi ogni esercizio al paragrafo del capitolo corrispondente.
+### 5. 🔄 Traduzione inglese (en/)
 
-**Azione:** Aggiungere un'intestazione a ogni `.asm` con tabella esercizio→riferimento capitolo.
+| Capitolo | italiano | inglese | Stato |
+|---|---|---|---|
+| 01 | 295 righe | 304 righe | ✅ Tradotto |
+| 02 | 323 righe | 331 righe | ✅ Tradotto |
+| 03 | 352 righe | 361 righe | ✅ Tradotto |
+| 04-21 | ~7500 righe | 4 righe cad. | ❌ Placeholder |
+| App. A-B | ~580 righe | 4 righe cad. | ❌ Placeholder |
 
----
-
-### 4. docs/ directory vuota
-
-La directory `docs/` non contiene nulla. Va ripulita o usata.
-
-**Azione:** Rimuovere `docs/` dal tracking finche non ci sono contenuti da metterci.
-
----
-
-## Miglioramenti a Medio Termine
-
-### 5. Traduzione inglese (en/)
-
-22 file su 23 sono placeholder di 4 righe. Il progetto e in italiano, ma una traduzione inglese lo renderebbe accessibile a tutta la community C64.
-
-**Azione:** Tradurre capitolo per capitolo partendo dalla Parte 1 (fondamenti) che e propedeutica. Lasciare il README come roadmap della traduzione.
+**Azione:** Tradurre capitolo per capitolo partendo dalla Parte 2 (sprite/video)
+che e piu interessante per i nuovi arrivati.
 
 ---
 
-### 6. Tabella riepilogativa soluzioni
+### 7. 🔄 Appendici inglesi C,D,E,F (en/)
 
-Manca un file `soluzioni/README.md` che descriva cosa contiene ogni soluzione, come assemblarle e come caricarle su C64 o emulatore.
+In `md/` esistono 6 appendici (A-F) + turbo macro pro.
+In `en/` esistono solo A e B come placeholder.
 
-**Azione:** Creare `soluzioni/README.md` con istruzioni per VICE/CCS64, comandi TMP, e tabella esercizio→file.
-
----
-
-### 7. Appendici inglesi (en/)
-
-Le appendici E e F esistono in `md/` ma non hanno corrispettivo in `en/`. Una volta tradotte le appendici A-B, vanno aggiunte anche C-D-E-F nella directory `en/`.
+**Azione:** Aggiungere `en/appendix-c-*`, `en/appendix-d-*`, `en/appendix-e-*`,
+`en/appendix-f-*`, `en/appendix-turbo-macro-pro.md`.
 
 ---
 
-### 8. Riferimenti incrociati tra capitoli
+### 10. 🔄 Rainbow effetto da separare (cap02)
 
-I capitoli non hanno link tra loro (es. "vedi cap. 7 per i raster interrupt" o "vedi soluzione in soluzioni/capXX.asm").
+Il capitolo 02 ha una sezione `2.9 Rainbow effetto (esempio svolto)` che e un
+esempio completo ma e in mezzo al testo prima degli esercizi. Un principiante
+potrebbe confonderlo con un esercizio obbligatorio.
 
-**Azione:** Aggiungere una sezione "Riferimenti" in fondo a ogni capitolo con link ad altri capitoli e alla soluzione corrispondente.
-
----
-
-### 9. ✅ PDF Mapping_the_Commodore_64 troncato — RISOLTO
-
-Il PDF corrotto era gia stato rimosso da `manuali/`. Ora contiene solo 2 PDF integri.
+**Azione:** Spostarlo in una sezione "Esempio Svolto" ben evidenziata prima
+degli esercizi, o trasformarlo nell'esercizio 5 del capitolo.
 
 ---
 
-### 10. 02-istruzioni-fondamentali: esercizio svolto integrato
+## Nuove Proposte — Miglioramenti Futuri
 
-Il capitolo 02 contiene la sezione "Rainbow effetto (esercizio svolto)" che e un esempio completo ma non e separato dagli esercizi finali. Un principiante potrebbe confonderlo con un esercizio obbligatorio.
+### 15. Soluzione mancante per capitolo 20
 
-**Azione:** Spostarlo in una sezione "Esempio Svolto" ben evidenziata prima degli esercizi, o trasformarlo nell'esercizio 5 del capitolo.
+`soluzioni/cap20-arcade-os.asm` non esiste. Tutti gli altri capitoli hanno
+la loro soluzione.
 
----
-
-## Visione a Lungo Termine
-
-### 11. ✅ Progetto assemblato funzionante .prg — RISOLTO
-
-Il `Makefile` genera `.prg` da ogni `.asm` in `soluzioni/` con `make all`.
-I file `.prg` vanno in `prg/` (gitignored).
+**Azione:** Creare 5 soluzioni per il cap.20 (Arcade OS, interrupt chaining,
+self-modifying code).
 
 ---
 
-### 12. ✅ Makefile / Script di automazione — RISOLTO
+### 16. Gioco completo unificato
 
-`Makefile` creato con target: `all` (assembla .prg), `stats` (conta righe/byte),
-`validate` (esegue tools/validate.sh), `clean`.
+Tutti i capitoli insegnano concetti separati. Un file `.prg` finale che
+unisca TUTTI i concetti in un unico gioco giocabile (shooter con sprite,
+multiplexing, raster, audio, loader, boss, wave system, punteggio).
 
----
-
-### 13. ✅ Tool di validazione incrociata — RISOLTO
-
-`tools/validate.sh` verifica: conteggio esercizi >=5, link README, soluzioni
-corrispondenti, traduzioni presenti, appendici integre.
+**Azione:** Creare `soluzioni/game-finale.asm` e `prg/game-finale.prg`.
 
 ---
 
-### 14. ✅ Espansione con capitolo su caricatore/loader — RISOLTO
+### 17. Debugging con VICE (capitolo 22)
 
-Creato `md/21-caricatore-personalizzato.md` con: caricatore KERNAL, effetto raster,
-caricamento settore per settore, turbo loader, boot loader a 3 fasi.
-Soluzioni in `soluzioni/cap21-caricatore.asm`.
-Placeholder inglese in `en/21-custom-loader.md`.
+Le soluzioni sono testabili solo caricandole su C64 o emulatore. Manca una
+guida al debugging con VICE: breakpoint, monitor assembly, watchpoint, trace.
+
+**Azione:** Scrivere `md/22-debugging-vice.md` con esercizi su come usare
+il monitor di VICE per trovare bug.
 
 ---
 
-## Riepilogo Priorita
+### 18. Schermate titolo e high score (capitolo 23)
+
+Il ciclo di gioco non ha una schermata titolo ne un sistema di high score
+persistente (salvataggio su disco).
+
+**Azione:** Scrivere `md/23-titolo-highscore.md` — schermata titolo con
+sprite animate, lettura/scrittura high score su disco.
+
+---
+
+### 19. Scrolling a schermo (capitolo 24)
+
+Manca lo scrolling hardware/software del C64: scroll verticale orizzontale,
+scroll a 8 pixel, scroll a 1 pixel, fine scrolling con raster.
+
+**Azione:** Scrivere `md/24-scrolling.md` con esercizi su scroll
+verticale, orizzontale, parallasse avanzato.
+
+---
+
+### 20. Tabella dimensioni codice
+
+Uno script che genera una tabella markdown con righe/byte/indirizzo per
+ogni soluzione, da includere in `soluzioni/README.md`.
+
+**Azione:** `tools/size-report.sh` → tabella markdown.
+
+---
+
+### 21. Test automatici con VICE headless
+
+Usare `x64sc -moncommands` per caricare ogni soluzione, verificare che
+non vada in crash, e catturare screenshot.
+
+**Azione:** Script che lancia VICE in modalita test per ogni `.prg`.
+
+---
+
+### 22. Indice analitico
+
+Una pagina `md/INDICE.md` con elenco di tutti i registri, indirizzi,
+istruzioni e concetti, con link al capitolo che li introduce.
+
+---
+
+## Riepilogo Priorita Aggiornato
 
 | # | Priorita | Cosa | Sforzo |
 |---|---|---|---|
-| 1 | CRITICA | Uniformare esercizi a 5/capitolo | 2-3 giorni |
-| 2 | CRITICA | Creare .gitignore | 10 min |
-| 3 | ALTA | Mappa esercizi in soluzioni/ | 1 giorno |
-| 4 | ALTA | docs/ vuota: rimuovere o popolare | 10 min |
-| 5 | MEDIA | Traduzione inglese Parte 1 | 3-4 giorni |
-| 6 | MEDIA | soluzioni/README.md | 1 giorno |
-| 7 | MEDIA | Riferimenti incrociati nei capitoli | 2-3 giorni |
-| 8 | ✅ COMPLETATO | PDF troncato rimosso | — |
-| 9 | BASSA | Rainbow effetto da separare | 30 min |
-| 10 | ✅ COMPLETATO | File .prg via Makefile | — |
-| 11 | ✅ COMPLETATO | Makefile automazione | — |
-| 12 | ✅ COMPLETATO | Tool validazione incrociata | — |
-| 13 | ✅ COMPLETATO | Capitolo 21 caricatore | — |
+| 1-4 | ✅ COMPLETATO | Struttura progetto | — |
+| 5 | 🔄 ALTA | Traduzione inglese Parte 2 | 5-7 giorni |
+| 6 | ✅ COMPLETATO | soluzioni/README.md | — |
+| 7 | 🔄 MEDIA | Appendici inglesi C-F | 2 giorni |
+| 8 | ✅ COMPLETATO | Riferimenti incrociati | — |
+| 9 | ✅ COMPLETATO | PDF troncato | — |
+| 10 | 🔄 BASSA | Rainbow effetto da separare | 30 min |
+| 11-14 | ✅ COMPLETATO | Makefile, validazione, cap21 | — |
+| **15** | MEDIA | Soluzione cap.20 mancante | 1 giorno |
+| **16** | ALTA | Gioco completo unificato | 7-10 giorni |
+| **17** | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
+| **18** | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |
+| **19** | MEDIA | Capitolo 24 scrolling | 3-4 giorni |
+| **20** | BASSA | Tabella dimensioni codice | 1 giorno |
+| **21** | BASSA | Test automatici VICE | 3-4 giorni |
+| **22** | BASSA | Indice analitico | 1 giorno |
