@@ -13,7 +13,7 @@ md/
 ├── 14-15   PARTE 5 — Audio SID
 ├── 16-18   PARTE 6 — Tecniche Avanzate
 ├── 19-20   PARTE 7 — Architettura Professionale
-├── A-B     Appendici
+├── A-TMP   Appendici (A-F + TMP)
 ```
 
 ---
@@ -83,6 +83,7 @@ md/
 | [appendice-d-schemi-video.md](appendice-d-schemi-video.md) | Screen RAM layout, sprite data format, VIC-II registri, raster IRQ, split zone, collisioni | 255 |
 | [appendice-e-schemi-architettura.md](appendice-e-schemi-architettura.md) | 3-layer architecture, state machine, wave system, game loop, scheduler, pool, boss AI | 290 |
 | [appendice-f-schemi-audio.md](appendice-f-schemi-audio.md) | SID registri, forme d'onda, ADSR, pipeline audio, parallasse, budget cicli, CIA/VIC-II control | 232 |
+| [appendice-turbo-macro-pro.md](appendice-turbo-macro-pro.md) | Guida rapida a TMP: installazione, sintassi, pseudo-op, macro, editor, comandi, TMPx | 290 |
 
 ---
 
@@ -106,5 +107,5 @@ md/
 | PARTE 5 — Audio | 2 | ~700 |
 | PARTE 6 — Avanzato | 3 | ~1420 |
 | PARTE 7 — Architettura | 2 | ~760 |
-| Appendici | 6 | ~1650 |
-| **Totale** | **26** | **~10000** |
+| Appendici | 7 | ~1950 |
+| **Totale** | **27** | **~10500** |
