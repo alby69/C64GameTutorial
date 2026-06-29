@@ -263,9 +263,9 @@ D2
 
 ---
 
-## 2.9 Rainbow effetto (esempio svolto)
-
-Combiniamo tutto quello che abbiamo imparato:
+> **💡 ESEMPIO SVOLTO — Rainbow effetto**  
+> Questo esempio combina tutto quello che hai imparato finora. Non e un esercizio,
+> ma un riferimento da studiare prima di affrontare gli esercizi qui sotto.
 
 ```asm
 *=$8000

@@ -263,24 +263,24 @@ D2
 
 ---
 
-## 2.9 Rainbow effect (worked example)
-
-Let's combine everything we've learned:
+> **💡 WORKED EXAMPLE — Rainbow effect**  
+> This example combines everything you've learned so far. It's not an exercise,
+> but a reference to study before attempting the exercises below.
 
 ```asm
 *=$8000
 
 START
     LDA #0
-    STA $D020   ; bordo nero
+    STA $D020   ; black border
 
 LOOP
-    INC $D020   ; cambia colore
+    INC $D020   ; change color
     JSR DELAY
     JMP LOOP
 
 DELAY
-    LDX #$20    ; ridotto per velocita media
+    LDX #$20    ; reduced for medium speed
 D1
     LDY #$FF
 D2
