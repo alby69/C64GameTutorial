@@ -30,7 +30,7 @@ echo ""
 
 # --- 1. Verifica esercizi per capitolo ---
 echo "--- [1] Conteggio esercizi per capitolo ---"
-for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20; do
+    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21; do
     md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
     asm_file=$(ls "$SOL_DIR/cap$ch-"*.asm 2>/dev/null || true)
 
@@ -98,7 +98,7 @@ echo ""
 # --- 3. Verifica traduzioni en/ ---
 echo "--- [3] Verifica traduzioni inglesi ---"
 if [ -d "$EN_DIR" ]; then
-    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20; do
+for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21; do
         en_file=$(ls "$EN_DIR/$ch-"*.md 2>/dev/null || true)
         md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
         if [ -z "$en_file" ]; then

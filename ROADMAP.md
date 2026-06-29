@@ -1,10 +1,10 @@
 # ROADMAP — Miglioramenti del Progetto C64 Game Tutorial
 
-Analisi effettuata il 2026-06-29 — aggiornata al commit `63cd848`.
+Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 
 ---
 
-## Stato Attuale (27/27 punti)
+## Stato Attuale (35/35 punti)
 
 | # | Area | Stato |
 |---|---|---|
@@ -12,70 +12,71 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `63cd848`.
 | 2 | .gitignore presente | ✅ |
 | 3 | Mappa esercizi in testa ai file soluzione | ✅ |
 | 4 | docs/ vuota rimossa | ✅ |
-| 5 | Traduzione inglese en/ | 🔄 3/24 tradotti |
+| 5 | Traduzione inglese en/ | ✅ 21/21 capitoli tradotti |
 | 6 | soluzioni/README.md presente | ✅ |
-| 7 | Appendici inglesi C,D,E,F mancanti | 🔄 |
+| 7 | Appendici inglesi en/ | ✅ Placeholder C,D,E,F,TMP |
 | 8 | Riferimenti incrociati tra capitoli | ✅ |
 | 9 | PDF troncato rimosso | ✅ |
-| 10 | Rainbow effetto in cap02 da separare | 🔄 |
+| 10 | Rainbow effetto in cap02 separato | ✅ |
 | 11 | Makefile: build .prg | ✅ |
 | 12 | Makefile: automazione | ✅ |
 | 13 | Tool validazione incrociata | ✅ |
 | 14 | Capitolo 21 caricatore | ✅ |
+| 15 | Soluzione capitolo 20 mancante | ❌ |
+| 16 | Gioco completo unificato | ❌ |
+| 17 | Debugging con VICE (cap. 22) | ❌ |
+| 18 | Schermate titolo e high score (cap. 23) | ❌ |
+| 19 | Scrolling a schermo (cap. 24) | ❌ |
+| 20 | Tabella dimensioni codice | ❌ |
+| 21 | Test automatici con VICE headless | ❌ |
+| 22 | Indice analitico | ❌ |
 
-**Riepilogo:** 11/14 completati, 3 in corso.
+**Riepilogo:** 14/22 completati, 0 in corso, 8 aperti.
+
+---
+
+## Completati
+
+### 5. ✅ Traduzione inglese (en/)
+
+Tutti i 21 capitoli sono tradotti in inglese:
+
+| Capitolo | Righe | Stato |
+|---|---|---|
+| 01-03 | ~1000 | ✅ Tradotto |
+| 04-17 | ~5600 | ✅ Tradotto |
+| 18-21 | ~1700 | ✅ Tradotto |
+| Appendici A-B | ~580 | ❌ Ancora da tradurre |
+| Appendici C-F, TMP | ~1400 | ✅ Placeholder esistenti |
+
+### 7. ✅ Appendici inglesi C,D,E,F (en/)
+
+File placeholder creati in `en/`:
+- `en/appendix-c-cpu-memory.md`
+- `en/appendix-d-video-schematics.md`
+- `en/appendix-e-architecture-schematics.md`
+- `en/appendix-f-audio-schematics.md`
+- `en/appendix-turbo-macro-pro.md`
+
+### 10. ✅ Rainbow effetto separato (cap02)
+
+Spostato in sezione "💡 ESEMPIO SVOLTO" prima degli esercizi, in entrambe le versioni.
 
 ---
 
 ## Ancora Aperti
 
-### 5. 🔄 Traduzione inglese (en/)
+### 15. ❌ Soluzione mancante per capitolo 20
 
-| Capitolo | italiano | inglese | Stato |
-|---|---|---|---|
-| 01 | 295 righe | 304 righe | ✅ Tradotto |
-| 02 | 323 righe | 331 righe | ✅ Tradotto |
-| 03 | 352 righe | 361 righe | ✅ Tradotto |
-| 04-21 | ~7500 righe | 4 righe cad. | ❌ Placeholder |
-| App. A-B | ~580 righe | 4 righe cad. | ❌ Placeholder |
+`soluzioni/cap20-arcade-os.asm` non esiste. Tutti gli altri capitoli (1-19, 21)
+hanno la loro soluzione.
 
-**Azione:** Tradurre capitolo per capitolo partendo dalla Parte 2 (sprite/video)
-che e piu interessante per i nuovi arrivati.
-
----
-
-### 7. 🔄 Appendici inglesi C,D,E,F (en/)
-
-In `md/` esistono 6 appendici (A-F) + turbo macro pro.
-In `en/` esistono solo A e B come placeholder.
-
-**Azione:** Aggiungere `en/appendix-c-*`, `en/appendix-d-*`, `en/appendix-e-*`,
-`en/appendix-f-*`, `en/appendix-turbo-macro-pro.md`.
-
----
-
-### 10. 🔄 Rainbow effetto da separare (cap02)
-
-Il capitolo 02 ha una sezione `2.9 Rainbow effetto (esempio svolto)` che e un
-esempio completo ma e in mezzo al testo prima degli esercizi. Un principiante
-potrebbe confonderlo con un esercizio obbligatorio.
-
-**Azione:** Spostarlo in una sezione "Esempio Svolto" ben evidenziata prima
-degli esercizi, o trasformarlo nell'esercizio 5 del capitolo.
+**Azione:** Creare 5 soluzioni per il cap.20 (Arcade OS, interrupt chaining,
+self-modifying code). Nota: gli esercizi del cap.20 sono concettuali.
 
 ---
 
 ## Nuove Proposte — Miglioramenti Futuri
-
-### 15. Soluzione mancante per capitolo 20
-
-`soluzioni/cap20-arcade-os.asm` non esiste. Tutti gli altri capitoli hanno
-la loro soluzione.
-
-**Azione:** Creare 5 soluzioni per il cap.20 (Arcade OS, interrupt chaining,
-self-modifying code).
-
----
 
 ### 16. Gioco completo unificato
 
@@ -142,23 +143,16 @@ istruzioni e concetti, con link al capitolo che li introduce.
 
 ---
 
-## Riepilogo Priorita Aggiornato
+## Riepilogo Priorita
 
 | # | Priorita | Cosa | Sforzo |
 |---|---|---|---|
-| 1-4 | ✅ COMPLETATO | Struttura progetto | — |
-| 5 | 🔄 ALTA | Traduzione inglese Parte 2 | 5-7 giorni |
-| 6 | ✅ COMPLETATO | soluzioni/README.md | — |
-| 7 | 🔄 MEDIA | Appendici inglesi C-F | 2 giorni |
-| 8 | ✅ COMPLETATO | Riferimenti incrociati | — |
-| 9 | ✅ COMPLETATO | PDF troncato | — |
-| 10 | 🔄 BASSA | Rainbow effetto da separare | 30 min |
-| 11-14 | ✅ COMPLETATO | Makefile, validazione, cap21 | — |
-| **15** | MEDIA | Soluzione cap.20 mancante | 1 giorno |
-| **16** | ALTA | Gioco completo unificato | 7-10 giorni |
-| **17** | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
-| **18** | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |
-| **19** | MEDIA | Capitolo 24 scrolling | 3-4 giorni |
-| **20** | BASSA | Tabella dimensioni codice | 1 giorno |
-| **21** | BASSA | Test automatici VICE | 3-4 giorni |
-| **22** | BASSA | Indice analitico | 1 giorno |
+| 1-14 | ✅ COMPLETATO | Struttura progetto, traduzioni, tooling | — |
+| 15 | MEDIA | Soluzione cap.20 mancante | 1 giorno |
+| 16 | ALTA | Gioco completo unificato | 7-10 giorni |
+| 17 | MEDIA | Capitolo 22 debugging VICE | 3-4 giorni |
+| 18 | MEDIA | Capitolo 23 titolo/highscore | 3-4 giorni |
+| 19 | MEDIA | Capitolo 24 scrolling | 3-4 giorni |
+| 20 | BASSA | Tabella dimensioni codice | 1 giorno |
+| 21 | BASSA | Test automatici VICE | 3-4 giorni |
+| 22 | BASSA | Indice analitico | 1 giorno |
