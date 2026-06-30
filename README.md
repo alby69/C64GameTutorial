@@ -43,15 +43,16 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 | D | Schemi rapidi: video e sprite |
 | E | Schemi rapidi: architettura di gioco |
 | F | Schemi rapidi: audio e hardware |
+| G | Risorse esterne: libri, siti e tutorial |
 | TMP | Guida rapida a Turbo Macro Pro |
 
 ### Statistiche
 
-- **~12200 righe** di manuale
-- **31 file** in `md/` (24 capitoli + 7 appendici + indice)
-- **27 soluzioni assembly** + template gioco (13 file)
-- **~10000 righe** traduzione inglese (24 capitoli tradotti)
-- **22/22 ROADMAP completati** → **30/32 completati**
+- **~12700 righe** di manuale (IT)
+- **36 file** in `md/` (27 capitoli + 8 appendici + indice)
+- **28 soluzioni assembly** + template gioco (13 file)
+- **~11200 righe** traduzione inglese (27 capitoli tradotti)
+- **32/32 ROADMAP completati**
 
 ## Come iniziare (Quick Start)
 
@@ -81,7 +82,12 @@ Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
 - TMPx cross-assembler: <https://style64.org/release/tmpx-v1.1.0-style>
 - C64 OS Programmer's Guide: <https://c64os.com/c64os/programmersguide/devenvironment>
 - C64 Programmer's Reference Guide (PDF in `manuali/`)
+- CSDb (Commodore Scene Database): <https://csdb.dk>
+- Lemon64 Forum: <https://www.lemon64.com/forum/>
 
 ## Licenza
 
-CC BY 4.0 — citare l'autore originale (@alby69) e linkare il repository.
+Questo progetto è distribuito con le seguenti licenze:
+
+- **Manuale (testo e immagini):** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.it) — citare l'autore originale (@alby69).
+- **Codice sorgente (.asm):** [Licenza MIT](https://opensource.org/licenses/MIT).

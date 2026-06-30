@@ -84,6 +84,7 @@ def main():
     parser.add_argument("-o", "--output", help="Output .asm file")
     parser.add_argument("-n", "--name", default="SPR_DATA", help="Label name")
     parser.add_argument("-m", "--multicolor", action="store_true", help="Multicolor mode (12x21)")
+    parser.add_argument("--charset", action="store_true", help="Charset mode (8x8 chunks)")
     parser.add_argument("--color0", default="000000", help="Transparent color (hex)")
     parser.add_argument("--color1", default="ffffff", help="Sprite/color 1 (hex)")
     parser.add_argument("--color2", default="ff0000", help="Color 2 multicolor (hex)")
@@ -94,7 +95,11 @@ def main():
     img = Image.open(args.input).convert("RGBA")
     w, h = img.size
 
-    if args.multicolor:
+    if args.charset:
+        if w % 8 != 0 or h % 8 != 0:
+            print("Errore: modalità charset richiede dimensioni multiple di 8", file=sys.stderr)
+            sys.exit(1)
+    elif args.multicolor:
         if w != 12 or h != 21:
             print("Errore: multicolor richiede 12x21 pixel", file=sys.stderr)
             sys.exit(1)
@@ -118,7 +123,19 @@ def main():
     output.append(f"; Dimensioni: {w}x{h}")
     output.append("")
 
-    if args.multicolor:
+    if args.charset:
+        output.append(f"{args.name}")
+        for ty in range(0, h, 8):
+            for tx in range(0, w, 8):
+                output.append(f"; Tile {tx//8},{ty//8}")
+                for py in range(8):
+                    byte = 0
+                    for px in range(8):
+                        r, g, b, a = pixels[(ty + py) * w + (tx + px)]
+                        bit = 1 if a >= 128 and (r, g, b) != c0 else 0
+                        byte |= (bit << (7 - px))
+                    output.append(f"    .byte %{byte:08b}")
+    elif args.multicolor:
         # Multicolor: 12 pixel per riga = 24 bit = 3 byte
         # Ogni coppia di bit codifica: 00=transparent, 01=c1, 10=c2, 11=c3
         output.append(f"{args.name}")

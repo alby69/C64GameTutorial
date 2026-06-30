@@ -77,6 +77,7 @@ nav:
       - D. Video: it/appendice-d-schemi-video.md
       - E. Architettura: it/appendice-e-schemi-architettura.md
       - F. Audio: it/appendice-f-schemi-audio.md
+      - G. Risorse esterne: it/appendice-g-risorse-esterne.md
       - Turbo Macro Pro: it/appendice-turbo-macro-pro.md
   - Manual (English):
     - Introduction: en/01-c64-tmp-introduction.md
@@ -113,4 +114,5 @@ nav:
       - D. Video: en/appendix-d-video-schematics.md
       - E. Architecture: en/appendix-e-architecture-schematics.md
       - F. Audio: en/appendix-f-audio-schematics.md
+      - G. External resources: en/appendix-g-external-resources.md
       - Turbo Macro Pro: en/appendix-turbo-macro-pro.md

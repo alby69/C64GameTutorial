@@ -22,8 +22,10 @@ miglioramenti proposti per la prossima fase del progetto.
 | 30 | Integrazione music tracker (GoatTracker/DefMon) | ✅ |
 | 31 | Sito web statico del manuale | ✅ |
 | 32 | Mappa dipendenze tra capitoli | ✅ |
+| 33 | Capitolo custom charset (tiles) | ❌ |
+| 34 | Creazione immagini disco .d64 | ❌ |
 
-**Riepilogo:** 9/10 nuovi completati, 0 in corso, 1 aperto.
+**Riepilogo:** 10/10 nuovi completati (Fase 2), 2 nuovi proposti (Fase 3).
 
 ---
 

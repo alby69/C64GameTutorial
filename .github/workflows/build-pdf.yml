@@ -1,0 +1,26 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic poppler-utils
+
+      - name: Build PDF
+        run: bash tools/build-pdf.sh
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: C64-Game-Tutorial-PDF
+          path: pdf/C64-Game-Tutorial.pdf
