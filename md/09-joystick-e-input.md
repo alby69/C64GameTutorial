@@ -1,5 +1,7 @@
 # Capitolo 9 — Joystick e Controllo del Giocatore
 
+> **Comandi introdotti:** `BIT`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

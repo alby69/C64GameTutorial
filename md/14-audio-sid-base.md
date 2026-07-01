@@ -1,5 +1,7 @@
 # Capitolo 14 — Audio SID: Primi Suoni
 
+> **Comandi introdotti:** Nessuno (registri SID).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

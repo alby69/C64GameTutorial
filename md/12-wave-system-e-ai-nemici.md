@@ -1,5 +1,7 @@
 # Capitolo 12 — Wave System e AI dei Nemici
 
+> **Comandi introdotti:** Nessuno (logica complessa).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

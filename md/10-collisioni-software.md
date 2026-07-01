@@ -1,5 +1,7 @@
 # Capitolo 10 — Collisioni Software tra Sprite
 
+> **Comandi introdotti:** `EOR #$FF` (complemento a 1).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

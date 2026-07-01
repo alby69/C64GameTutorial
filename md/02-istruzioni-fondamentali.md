@@ -1,5 +1,7 @@
 # Capitolo 2 — Istruzioni Fondamentali del 6502
 
+> **Comandi introdotti:** `LDX`, `LDY`, `STX`, `STY`, `TAX`, `TAY`, `TXA`, `TYA`, `INX`, `DEX`, `INY`, `DEY`, `INC`, `DEC`, `ADC`, `SBC`, `CLC`, `SEC`, `CMP`, `CPX`, `CPY`, `BEQ`, `BNE`, `BCC`, `BCS`, `BMI`, `BPL`, `AND`, `ORA`, `EOR`, `NOP`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -7,8 +9,10 @@ Al termine di questo capitolo saprai:
 - Usare le modalita di indirizzamento del 6502
 - Dichiarare variabili in Zero Page
 - Usare `INX`, `DEX`, `INC`, `DEC`
-- Confrontare valori con `CMP`
-- Salti condizionati con `BEQ`, `BNE`
+- Operazioni matematiche `ADC` e `SBC`
+- Operazioni logiche `AND`, `ORA`, `EOR`
+- Confrontare valori con `CMP`, `CPX`, `CPY`
+- Salti condizionati con `BEQ`, `BNE`, `BCC`, `BCS`
 - Creare contatori e cicli
 
 ---
@@ -23,13 +27,20 @@ $10 = 16       $20 = 32
 $FF = 255
 ```
 
-### Notazione esadecimale
+### Notazione esadecimale e binaria
 
-In TMP il simbolo `$` indica un valore esadecimale:
+In TMP:
+- Il simbolo `$` indica un valore **esadecimale** (base 16).
+- Il simbolo `%` indica un valore **binario** (base 2).
+- Nessun simbolo indica un valore **decimale**.
 
 ```asm
-LDA #$10    ; carica il valore 16 (non 10!)
+LDA #$10       ; esadecimale ($10 = 16)
+LDA #%00010000 ; binario (%00010000 = 16)
+LDA #16        ; decimale (16)
 ```
+
+> **Consiglio:** Usa la notazione binaria (`%`) quando lavori con i registri che controllano i singoli bit, come l'abilitazione degli sprite o le maschere di interrupt. E molto piu intuitivo!
 
 | Decimale | Esadecimale |
 |---|---|
@@ -54,6 +65,8 @@ Il valore e nella stessa istruzione:
 ```asm
 LDA #10     ; A = 10 (carica il NUMERO 10)
 ```
+
+> **Attenzione:** Dimenticare il simbolo `#` e l'errore piu comune. `LDA 10` (senza `#`) cerchera di leggere il valore contenuto all'indirizzo 10 della memoria!
 
 ### Assoluto
 
@@ -131,11 +144,31 @@ DEC $D021   ; colore sfondo -1
 
 ---
 
-## 2.5 Confronti e salti condizionati
+## 2.5 Matematica: ADC e SBC
 
-### `CMP` — Confronta A con un valore
+### `ADC` — Addizione con Carry
+Sempre usare `CLC` (Clear Carry) prima di una somma se non vuoi aggiungere il carry precedente.
+```asm
+CLC
+LDA #10
+ADC #5      ; A = 15
+```
 
-`CMP` sottrae il valore da A **senza modificare A**, ma impostando i flag della CPU.
+### `SBC` — Sottrazione con Carry
+Sempre usare `SEC` (Set Carry) prima di una sottrazione.
+```asm
+SEC
+LDA #20
+SBC #5      ; A = 15
+```
+
+---
+
+## 2.6 Confronti e salti condizionati
+
+### `CMP`, `CPX`, `CPY` — Confronti
+
+Queste istruzioni sottraggono il valore dal registro **senza modificarlo**, ma impostando i flag della CPU (Zero e Carry).
 
 ```asm
 LDA #10
@@ -168,15 +201,15 @@ BNE DIVERSO ; salta perche A != 10
 | Istruzione | Salta se... |
 |---|---|
 | `BEQ` | A == valore (Zero = 1) |
-| `BNE` | A != valore (Zero = 0) |
-| `BCC` | A < valore (Carry = 0) |
-| `BCS` | A >= valore (Carry = 1) |
+| `BNE` | Registro != valore (Zero = 0) |
+| `BCC` | Registro < valore (Carry = 0) |
+| `BCS` | Registro >= valore (Carry = 1) |
 | `BMI` | Risultato negativo (Negative = 1) |
 | `BPL` | Risultato positivo (Negative = 0) |
 
 ---
 
-## 2.6 Primo contatore
+## 2.7 Primo contatore
 
 ```asm
 *=$C000
@@ -194,7 +227,7 @@ Il bordo andra da nero a bianco a rosso... fino al colore 255 poi ricomincia.
 
 ---
 
-## 2.7 Ciclo con confronto
+## 2.8 Ciclo con confronto
 
 Facciamo un ciclo che conta da 0 a 10:
 
@@ -216,7 +249,32 @@ FINE
 
 ---
 
-## 2.8 Delay software (ritardo)
+## 2.9 Operazioni Bitwise
+
+### `AND`
+Usata per "mascherare" dei bit.
+```asm
+LDA #%11001100
+AND #%11110000  ; A = %11000000
+```
+
+### `ORA`
+Usata per impostare dei bit.
+```asm
+LDA #%11000000
+ORA #%00001111  ; A = %11001111
+```
+
+### `EOR`
+Usata per invertire (flip) dei bit.
+```asm
+LDA #%11111111
+EOR #%11110000  ; A = %00001111
+```
+
+---
+
+## 2.10 Delay software (ritardo)
 
 Per rallentare il programma e renderlo visibile:
 
@@ -266,6 +324,8 @@ D2
 > **💡 ESEMPIO SVOLTO — Rainbow effetto**  
 > Questo esempio combina tutto quello che hai imparato finora. Non e un esercizio,
 > ma un riferimento da studiare prima di affrontare gli esercizi qui sotto.
+> (Nota: `JSR` e `RTS` verranno spiegati ufficialmente nel Capitolo 3, ma qui servono
+> per tenere il codice pulito).
 
 ```asm
 *=$C000
@@ -308,7 +368,7 @@ Crea un delay di circa 1 secondo (suggerimento: 3 cicli annidati).
 Fai lampeggiare lo sfondo tra blu e nero ogni secondo circa.
 
 ### Esercizio 5
-Realizza l'effetto rainbow: il bordo deve scorrere attraverso tutti i colori in un ciclo infinito, usando un delay per rallentare il cambiamento (vedi "Esempio svolto" nella sezione 2.9).
+Realizza l'effetto rainbow: il bordo deve scorrere attraverso tutti i colori in un ciclo infinito, usando un delay per rallentare il cambiamento (vedi "Esempio svolto" nella sezione 2.10).
 
 ---
 

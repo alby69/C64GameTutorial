@@ -1,5 +1,7 @@
 # Capitolo 4 — Memoria Video e Caratteri
 
+> **Comandi introdotti:** `BEQ`, `BNE` (ripasso), `SBC`, `CLC`, `ADC`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

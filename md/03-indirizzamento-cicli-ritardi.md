@@ -1,5 +1,7 @@
 # Capitolo 3 — Indirizzamento, Cicli e Prime Routine Grafiche
 
+> **Comandi introdotti:** `PHA`, `PLA`, `PHP`, `PLP`, `TSX`, `TXS`, `ROL`, `ROR`, `JSR`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -8,7 +10,8 @@ Al termine di questo capitolo saprai:
 - Scrivere caratteri sullo schermo
 - Usare lo Stack con `PHA` e `PLA`
 - Creare array con `LDA` indicizzato
-- Strutturare il programma con `JSR`
+- Usare le istruzioni di rotazione `ROL` e `ROR`
+- Strutturare il programma con `JSR` e `RTS`
 
 ---
 
@@ -70,7 +73,27 @@ RTS     ; recupera indirizzo e torna indietro
 
 ---
 
-## 3.3 Scrivere sullo schermo
+## 3.3 Rotazioni: ROL e ROR
+
+Queste istruzioni spostano i bit a sinistra o destra, facendo passare il bit che "esce" attraverso il Carry.
+
+### `ROL` (Rotate Left)
+```asm
+SEC         ; Carry = 1
+LDA #%10000000
+ROL A       ; A = %00000001, Carry = 1
+```
+
+### `ROR` (Rotate Right)
+```asm
+CLC         ; Carry = 0
+LDA #%00000001
+ROR A       ; A = %00000000, Carry = 1
+```
+
+---
+
+## 3.4 Scrivere sullo schermo
 
 La memoria video (Screen RAM) inizia a `$0400`. Ogni byte rappresenta un carattere PETSCII.
 
@@ -121,7 +144,7 @@ LOOP
 
 ---
 
-## 3.4 Scrivere in qualsiasi posizione
+## 3.5 Scrivere in qualsiasi posizione
 
 Calcoliamo l'indirizzo per riga 5, colonna 10:
 
@@ -148,7 +171,7 @@ LOOP
 
 ---
 
-## 3.5 Riempire lo schermo con un ciclo
+## 3.6 Riempire lo schermo con un ciclo
 
 Usiamo l'indirizzamento indicizzato per riempire righe di caratteri:
 
@@ -194,7 +217,7 @@ DONE
 
 ---
 
-## 3.6 Array e tabelle in memoria
+## 3.7 Array e tabelle in memoria
 
 Possiamo creare dati predefiniti con `.byte`:
 
@@ -219,7 +242,7 @@ TABELLA
 
 ---
 
-## 3.7 Primo effetto grafico animato
+## 3.8 Primo effetto grafico animato
 
 Combiniamo tabella, ciclo e delay:
 
@@ -257,7 +280,7 @@ D2
 
 ---
 
-## 3.8 Struttura professionale con JSR
+## 3.9 Struttura professionale con JSR
 
 Per giochi seri, il codice va suddiviso in sottoroutine:
 

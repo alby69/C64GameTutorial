@@ -1,5 +1,7 @@
 # Capitolo 8 — Game Loop Sincronizzato a 50 Hz
 
+> **Comandi introdotti:** Nessuno (applicazione pratica di `CMP` e `BNE`).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
