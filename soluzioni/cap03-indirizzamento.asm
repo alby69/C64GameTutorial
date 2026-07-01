@@ -13,7 +13,7 @@
 ; --- ESERCIZIO 1: 'A' in riga 10, col 15, colore verde ---
 ; Formula: SCREEN_RAM + riga*40 + colonna = $0400 + 10*40 + 15
 ;         = $0400 + 400 + 15 = $0400 + $190 + $F = $059F
-*=$8000
+*=$C000
     LDA #1         ; codice PETSCII 'A'
     STA $059F
     LDA #5         ; verde
@@ -21,7 +21,7 @@
     RTS
 
 ; --- ESERCIZIO 2: A B C D nelle prime 4 celle ---
-*=$8000
+*=$C000
     LDA #1         ; 'A'
     STA $0400
     LDA #2         ; 'B'
@@ -33,7 +33,7 @@
     RTS
 
 ; --- ESERCIZIO 3: prima riga con '*', ogni cella colore diverso ---
-*=$8000
+*=$C000
     LDX #0
     LDA #42        ; codice '*'
 LOOP
@@ -46,7 +46,7 @@ LOOP
     RTS
 
 ; --- ESERCIZIO 4: tabella 0-9 nelle prime 10 posizioni ---
-*=$8000
+*=$C000
     LDX #0
     LDA #48        ; PETSCII '0'
 LOOP4
@@ -59,7 +59,7 @@ LOOP4
     RTS
 
 ; --- ESERCIZIO 5: messaggio 4 lettere scorre a destra ogni secondo ---
-*=$8000
+*=$C000
     LDX #0
 SHIFT
     JSR DELAY

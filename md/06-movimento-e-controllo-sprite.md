@@ -20,7 +20,7 @@ Usiamo una variabile in Zero Page per la posizione:
 SPRITE_X = $02
 SPRITE_Y = $03
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -93,7 +93,7 @@ Aggiungiamo il controllo dei bordi:
 SPRITE_X   = $02
 DIRECTION  = $03   ; 0 = destra, 1 = sinistra
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -196,7 +196,7 @@ DONE
 ```asm
 SPRITE_X = $02
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001

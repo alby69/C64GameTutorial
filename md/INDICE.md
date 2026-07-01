@@ -213,7 +213,7 @@ con riferimento al capitolo che li introduce.
 | `$0400`–`$07FF` | 1024 byte | Screen RAM (default) | [4](04-memoria-video-e-caratteri.md) |
 | `$0800`–`$9FFF` | 38912 byte | BASIC / memoria programma | [1](01-introduzione-c64-tmp.md) |
 | `$0801` | — | Inizio programma BASIC | [21](21-caricatore-personalizzato.md) |
-| `$8000` | — | Indirizzo standard assemblaggio | [1](01-introduzione-c64-tmp.md) |
+| `$C000` | — | Indirizzo standard assemblaggio | [1](01-introduzione-c64-tmp.md) |
 | `$A000`–`$BFFF` | 8192 byte | BASIC ROM (o RAM) | — |
 | `$C000`–`$CFFF` | 4096 byte | Area programma alternativa | [6](06-movimento-e-controllo-sprite.md) |
 | `$D000`–`$D3FF` | 1024 byte | VIC-II registers | [4](04-memoria-video-e-caratteri.md) |
@@ -229,7 +229,7 @@ con riferimento al capitolo che li introduce.
 
 | Capitolo | Concetti principali |
 |----------|-------------------|
-| [1](01-introduzione-c64-tmp.md) | LDA/STA, `$D020`/`$D021`, assemblaggio a `$8000`, TMPx, `BSOUT $FFD2` |
+| [1](01-introduzione-c64-tmp.md) | LDA/STA, `$D020`/`$D021`, assemblaggio a `$C000`, TMPx, `BSOUT $FFD2` |
 | [2](02-istruzioni-fondamentali.md) | Istruzioni base, loop (DEX/BNE), delay (NOP), ADC/SBC, AND/ORA/EOR, CMP/CPX/CPY, INC/DEC, flag |
 | [3](03-indirizzamento-cicli-ritardi.md) | Zero page, X-indexed, Y-indexed, indirect, stack (PHA/PLA/TSX/TXS), ROL/ROR |
 | [4](04-memoria-video-e-caratteri.md) | Screen RAM (`$0400`), Color RAM (`$D800`), `$D018`, PETSCII, caratteri personalizzati |

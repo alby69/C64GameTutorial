@@ -11,7 +11,7 @@
 ;
 ; =============================================
 ; --- ESERCIZIO 1: beep 1 secondo square wave ---
-*=$8000
+*=$C000
     LDA #$F0
     STA SID_FREQ_LO    ; frequenza ~260 Hz
     LDA #$03

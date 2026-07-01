@@ -16,7 +16,7 @@ ENEMY_Y     = $11
 ENEMY_DIR   = $12      ; 0=dx, 1=sx
 ENEMY_SPEED = $13
 
-*=$8000
+*=$C000
     LDA #%00011111      ; player + 4 nemici
     STA $D015
     LDA #1

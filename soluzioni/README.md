@@ -18,7 +18,7 @@ SYS 8*4096
 ? NOMEFILE
 ←1 (exit BASIC)
 LOAD"NOMEFILE",8,1
-SYS indirizzo (di solito $8000 = 32768)
+SYS indirizzo (di solito $C000 = 49152)
 ```
 
 ### Su emulatore (VICE)
@@ -56,7 +56,7 @@ x64 cap01-introduzione.prg
 
 ## Indirizzi di assemblaggio
 
-Tutti i file si assemblano a `$8000` salvo diversa indicazione nel capitolo.
+Tutti i file si assemblano a `$C000` salvo diversa indicazione nel capitolo.
 
 ## Dimensioni Codice
 
@@ -64,24 +64,24 @@ Le righe si riferiscono al file `.asm` (commenti inclusi). I byte `.prg` sono di
 
 | Cap | File | Origine | Righe | Esercizi |
 |-----|------|---------|------:|---------:|
-| 1 | `cap01-introduzione.asm` | $8000 | 54 | 5 |
-| 2 | `cap02-istruzioni.asm` | $8000 | 113 | 5 |
-| 3 | `cap03-indirizzamento.asm` | $8000 | 80 | 5 |
-| 4 | `cap04-memoria-video.asm` | $8000 | 107 | 5 |
-| 5 | `cap05-sprite.asm` | $8000 | 144 | 5 |
-| 6 | `cap06-movimento-sprite.asm` | $8000 | 200 | 5 |
-| 7 | `cap07-raster.asm` | $8000 | 235 | 5 |
-| 8 | `cap08-game-loop.asm` | $8000 | 175 | 5 |
-| 9 | `cap09-joystick.asm` | $8000 | 279 | 5 |
-| 10 | `cap10-collisioni.asm` | $8000 | 464 | 5 |
-| 11 | `cap11-proiettili.asm` | $8000 | 395 | 5 |
-| 12 | `cap12-wave-ai.asm` | $8000 | 350 | 5 |
-| 13 | `cap13-punteggio-stati.asm` | $8000 | 308 | 5 |
-| 14 | `cap14-audio-base.asm` | $8000 | 217 | 5 |
-| 15 | `cap15-audio-engine.asm` | $8000 | 284 | 5 |
-| 16 | `cap16-multiplexing.asm` | $8000 | 373 | 5 |
-| 17 | `cap17-parallax-raster-split.asm` | $8000 | 312 | 5 |
-| 18 | `cap18-boss.asm` | $8000 | 350 | 5 |
+| 1 | `cap01-introduzione.asm` | $C000 | 54 | 5 |
+| 2 | `cap02-istruzioni.asm` | $C000 | 113 | 5 |
+| 3 | `cap03-indirizzamento.asm` | $C000 | 80 | 5 |
+| 4 | `cap04-memoria-video.asm` | $C000 | 107 | 5 |
+| 5 | `cap05-sprite.asm` | $C000 | 144 | 5 |
+| 6 | `cap06-movimento-sprite.asm` | $C000 | 200 | 5 |
+| 7 | `cap07-raster.asm` | $C000 | 235 | 5 |
+| 8 | `cap08-game-loop.asm` | $C000 | 175 | 5 |
+| 9 | `cap09-joystick.asm` | $C000 | 279 | 5 |
+| 10 | `cap10-collisioni.asm` | $C000 | 464 | 5 |
+| 11 | `cap11-proiettili.asm` | $C000 | 395 | 5 |
+| 12 | `cap12-wave-ai.asm` | $C000 | 350 | 5 |
+| 13 | `cap13-punteggio-stati.asm` | $C000 | 308 | 5 |
+| 14 | `cap14-audio-base.asm` | $C000 | 217 | 5 |
+| 15 | `cap15-audio-engine.asm` | $C000 | 284 | 5 |
+| 16 | `cap16-multiplexing.asm` | $C000 | 373 | 5 |
+| 17 | `cap17-parallax-raster-split.asm` | $C000 | 312 | 5 |
+| 18 | `cap18-boss.asm` | $C000 | 350 | 5 |
 | 19 | `cap19-kernel-engine.asm` | $A000 | 381 | 5 |
 | 20 | `cap20-arcade-os.asm` (concettuale) | N/A | 462 | 5 |
 | 21 | `cap21-caricatore.asm` | $C000 | 269 | 5 |

@@ -179,7 +179,7 @@ BNE DIVERSO ; salta perche A != 10
 ## 2.6 Primo contatore
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0      ; X = 0 (inizializza contatore)
@@ -199,7 +199,7 @@ Il bordo andra da nero a bianco a rosso... fino al colore 255 poi ricomincia.
 Facciamo un ciclo che conta da 0 a 10:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0      ; contatore = 0
@@ -238,7 +238,7 @@ Questo ciclo produce circa 255 × 255 = ~65000 iterazioni.
 ### Uso del delay:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2
@@ -268,7 +268,7 @@ D2
 > ma un riferimento da studiare prima di affrontare gli esercizi qui sotto.
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #0

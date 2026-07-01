@@ -13,7 +13,7 @@
 ; --- ESERCIZIO 1: sprite sinistra→destra, rimbalzo X=50↔250 ---
 SPRITE_X = $D000
 SPRITE_Y = $D001
-*=$8000
+*=$C000
     LDA #%00000001
     STA $D015
     LDA #1

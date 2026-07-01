@@ -91,7 +91,7 @@ address = $0400 + (row × 40) + column
 The PETSCII code for 'A' is 1:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; codice PETSCII per 'A'
@@ -106,7 +106,7 @@ LOOP
 Character colors are located at `$D800`-`$DBE7`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; carattere 'A'
@@ -133,7 +133,7 @@ address = $0400 + (5 × 40) + 10
 ```
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; 'A'
@@ -153,7 +153,7 @@ LOOP
 We use indexed addressing to fill rows of characters:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0          ; contatore = 0
@@ -172,7 +172,7 @@ DONE
 ### Filling with different colors
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -199,7 +199,7 @@ DONE
 We can create predefined data with `.byte`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -212,7 +212,7 @@ LOOP
     BNE LOOP
     JMP LOOP
 
-; Dati (messi dopo il codice, a $8000 + ...)
+; Dati (messi dopo il codice, a $C000 + ...)
 TABELLA
     .byte 1, 2, 3, 4, 5   ; A, B, C, D, E in PETSCII
 ```
@@ -224,7 +224,7 @@ TABELLA
 We combine a table, a loop, and a delay:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -262,7 +262,7 @@ D2
 For serious games, code should be split into subroutines:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ----------------------------------
 ; INIT

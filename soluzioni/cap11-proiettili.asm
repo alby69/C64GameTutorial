@@ -16,7 +16,7 @@ BULLET_Y    = $12
 BULLET_ACT  = $14
 JOYPORT     = $DC01
 
-*=$8000
+*=$C000
     LDA #%00000111
     STA $D015
     LDA #1

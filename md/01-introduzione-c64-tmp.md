@@ -98,14 +98,10 @@ TMP e un assembler con editor integrato per C64. Permette di:
 ### La direttiva `ORG`
 
 ```
-*=$8000      ; il codice inizia all'indirizzo $8000
+*=$C000      ; il codice inizia all'indirizzo $C000 (49152)
 ```
 
-Oppure:
-
-```
-*=$C000      ; indirizzo alternativo per programmi grandi
-```
+Nei primi capitoli useremo l'indirizzo `$C000` (49152), una zona di RAM tradizionalmente libera sul Commodore 64 e generalmente compatibile con Turbo Macro Pro.
 
 ---
 
@@ -114,7 +110,7 @@ Oppure:
 Il programma Assembly piu piccolo possibile:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     RTS
@@ -124,25 +120,25 @@ START
 
 | Istruzione | Significato |
 |---|---|
-| `*=$8000` | Il codice verra assemblato a partire da $8000 (32768) |
-| `START` | Etichetta (label) — TMP associa a questa label l'indirizzo $8000 |
-| `RTS` | **R**e**T**urn from **S**ubroutine — termina il programma |
+| `*=$C000` | Il codice verra assemblato a partire da $C000 (49152) |
+| `START` | Etichetta (label) — TMP associa a questa label l'indirizzo $C000 |
+| `RTS` | **R**e**T**urn from **S**ubroutine — termina il programma e torna a TMP |
 
 ### Come eseguire
 
 Da TMP:
 
-```
-A         (Assemble)
-Run       (Esegui)
-```
+1. Premi **←** (tasto freccia a sinistra, in alto a sinistra sulla tastiera) per entrare nel menu.
+2. Premi **A** per assemblare.
+3. Se non ci sono errori, premi **J** (o il comando `Run`) per eseguire.
 
 Oppure da BASIC:
 
 ```
-SYS 32768
-SYS $8000
+SYS 49152
 ```
+
+> **Nota:** Il BASIC V2 del C64 accetta solo numeri decimali per il comando `SYS`.
 
 ---
 
@@ -153,7 +149,7 @@ Facciamo qualcosa di visibile: cambiamo il **colore del bordo**.
 Registro del bordo: `$D020`
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2      ; carica il valore 2 (rosso) in A
@@ -200,7 +196,7 @@ Risultato: `D020 = 2` → bordo rosso.
 Lo sfondo si controlla con `$D021`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #6      ; colore blu
@@ -219,7 +215,7 @@ START
 Nei giochi il programma rimane in esecuzione per sempre. Usiamo `JMP`.
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2      ; bordo rosso
@@ -229,6 +225,8 @@ LOOP
     JMP LOOP    ; salta sempre a LOOP — ciclo infinito
 ```
 
+> **Attenzione:** Un programma con un ciclo infinito non tornerà mai a TMP. Per riprendere il controllo dovrai premere **RUN/STOP + RESTORE** oppure eseguire un reset.
+
 ---
 
 ## 1.9 Struttura tipica di un programma TMP
@@ -236,7 +234,7 @@ LOOP
 Da subito conviene usare una struttura ordinata:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ----------------------------------
 ; INIZIALIZZAZIONE

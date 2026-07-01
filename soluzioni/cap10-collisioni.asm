@@ -17,7 +17,7 @@ ENEMY_X  = $D002
 ENEMY_Y  = $D003
 
 ; --- ESERCIZIO 1: player + nemico fisso, collisione cambia colore ---
-*=$8000
+*=$C000
     LDA #%00000011
     STA $D015
     LDA #1

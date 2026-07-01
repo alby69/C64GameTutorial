@@ -68,7 +68,7 @@ indirizzo_colore    = $D800 + offset
 ## 4.3 Scrivere una stringa a schermo
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -101,7 +101,7 @@ TESTO
 ## 4.4 Scrivere in una riga specifica
 
 ```asm
-*=$8000
+*=$C000
 
 ; Scrive "CIAO" alla riga 12, colonna 18
 
@@ -138,7 +138,7 @@ LOOP
 In molti giochi c'e un HUD (Heads-Up Display) in alto o in basso. Vediamo come creare bordi e testo:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     JSR DRAW_HUD
@@ -182,7 +182,7 @@ HUD_LOOP
 Facciamo lampeggiare un messaggio modificando il colore:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #0
@@ -279,7 +279,7 @@ DONE_DIV
 Nei giochi, testo e sprite convivono. Ecco un esempio che prepara lo schermo e poi passa al loop di gioco:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ---- Variabili ----
 SCORE       = $02

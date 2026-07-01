@@ -11,7 +11,7 @@
 ;
 ; =============================================
 ; --- ESERCIZIO 1: raster IRQ riga 50, bordo rosso ---
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D

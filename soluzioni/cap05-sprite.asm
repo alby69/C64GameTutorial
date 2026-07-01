@@ -12,7 +12,7 @@
 ; =============================================
 
 ; --- ESERCIZIO 1: astronave al centro (X=160, Y=100) ---
-*=$8000
+*=$C000
     ; Abilita sprite 0
     LDA #%00000001
     STA $D015
@@ -111,7 +111,7 @@
 
 ; --- ESERCIZIO 4: sprite 0 a $3100 pointer ---
 ; pointer = $3100 / 64 = $3100 / $40 = $C4 = 196
-*=$8000
+*=$C000
     LDA #%00000001
     STA $D015
     LDA #196       ; $C4
@@ -125,7 +125,7 @@
     RTS
 
 ; --- ESERCIZIO 5: sprite con colore che cambia ogni frame ---
-*=$8000
+*=$C000
     LDA #%00000001
     STA $D015
     LDA #128

@@ -145,7 +145,7 @@ $07FF → Sprite 7
 Here's the complete program to see a sprite on screen:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     ; Enable sprite 0
@@ -197,7 +197,7 @@ SPRITE_DATA
     .byte 0,0,0
 ```
 
-> **Warning:** the file must be assembled all together. TMP handles the two sections `*=$8000` and `*=$3000` in the same source.
+> **Warning:** the file must be assembled all together. TMP handles the two sections `*=$C000` and `*=$3000` in the same source.
 
 ---
 

@@ -120,7 +120,7 @@ PLAYER_X   = $02
 PLAYER_Y   = $03
 JOY_STATE  = $04
 
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME
