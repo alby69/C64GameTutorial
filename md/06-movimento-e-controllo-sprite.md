@@ -1,5 +1,7 @@
 # Capitolo 6 — Movimento e Controllo degli Sprite
 
+> **Comandi introdotti:** `SEC`, `SBC` (ripasso), `AND`, `CLC`, `ADC`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

@@ -1,5 +1,7 @@
 # Capitolo 7 — Raster Interrupt
 
+> **Comandi introdotti:** `SEI`, `CLI`, `ASL`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

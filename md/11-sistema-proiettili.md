@@ -1,5 +1,7 @@
 # Capitolo 11 — Sistema Proiettili
 
+> **Comandi introdotti:** `ORA` (ripasso).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:

@@ -1,5 +1,7 @@
 # Capitolo 1 — Introduzione al C64 e Turbo Macro Pro
 
+> **Comandi introdotti:** `LDA`, `STA`, `JMP`, `RTS`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -189,6 +191,9 @@ Risultato: `D020 = 2` → bordo rosso.
 | 14 | Blu chiaro |
 | 15 | Grigio chiaro |
 
+> **Consiglio:** Puoi usare i nomi dei colori come costanti per rendere il codice piu leggibile:
+> `ROSSO = 2`, poi `LDA #ROSSO`.
+
 ---
 
 ## 1.7 Cambiare bordo e sfondo
@@ -275,10 +280,10 @@ Scrivi un programma che imposti bordo verde e resti in ciclo infinito.
 Modifica il programma per usare una label chiamata `GAMELOOP` invece di `LOOP`.
 
 ### Esercizio 4
-Scrivi un programma che faccia ciclare il bordo attraverso tutti i colori da 0 a 15, uno dopo l'altro, in un ciclo infinito.
+Scrivi un programma che imposti il bordo nero e lo sfondo bianco, quindi torni al BASIC.
 
 ### Esercizio 5
-Scrivi un programma con la struttura `MAIN`/`UPDATE`: `MAIN` chiama `UPDATE` con `JSR`, `UPDATE` incrementa il bordo e torna con `RTS`, `MAIN` ripete in loop.
+Scrivi un programma che imposti il bordo blu chiaro e resti in un ciclo infinito usando l'etichetta `FINISH`.
 
 > **Soluzioni:** [le soluzioni sono nella cartella `soluzioni/`]
 
