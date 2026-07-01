@@ -11,7 +11,7 @@
 ;
 ; =============================================
 ; --- ESERCIZIO 1: schermo diviso in 3 zone, 3 colori ---
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D

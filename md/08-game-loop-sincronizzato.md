@@ -46,7 +46,7 @@ WAIT_FRAME
 ### Esempio completo
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #%00000001

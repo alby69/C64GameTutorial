@@ -91,7 +91,7 @@ indirizzo = $0400 + (riga × 40) + colonna
 Il codice PETSCII della 'A' e 1:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; codice PETSCII per 'A'
@@ -106,7 +106,7 @@ LOOP
 I colori dei caratteri si trovano in `$D800`-`$DBE7`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; carattere 'A'
@@ -133,7 +133,7 @@ indirizzo = $0400 + (5 × 40) + 10
 ```
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #1          ; 'A'
@@ -153,7 +153,7 @@ LOOP
 Usiamo l'indirizzamento indicizzato per riempire righe di caratteri:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0          ; contatore = 0
@@ -172,7 +172,7 @@ DONE
 ### Riempire con colori diversi
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -199,7 +199,7 @@ DONE
 Possiamo creare dati predefiniti con `.byte`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -212,7 +212,7 @@ LOOP
     BNE LOOP
     JMP LOOP
 
-; Dati (messi dopo il codice, a $8000 + ...)
+; Dati (messi dopo il codice, a $C000 + ...)
 TABELLA
     .byte 1, 2, 3, 4, 5   ; A, B, C, D, E in PETSCII
 ```
@@ -224,7 +224,7 @@ TABELLA
 Combiniamo tabella, ciclo e delay:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -262,7 +262,7 @@ D2
 Per giochi seri, il codice va suddiviso in sottoroutine:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ----------------------------------
 ; INIT

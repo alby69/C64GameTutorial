@@ -12,7 +12,7 @@
 ; =============================================
 ; --- ESERCIZIO 1: frame counter sul bordo ---
 FRAME_CNT = $02
-*=$8000
+*=$C000
     LDA #0
     STA FRAME_CNT
 LOOP1

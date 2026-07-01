@@ -14,7 +14,7 @@
 ; --- ESERCIZIO 1: nome centrato riga 10 ---
 ; Riga 10 = inizio a $0400 + 10*40 = $0400 + 400 = $0590
 ; "MARCO" = 5 lettere, colonna = (40-5)/2 = 17.5 → 17
-*=$8000
+*=$C000
     LDA #13        ; 'M'
     STA $05A1      ; $0590 + 17
     LDA #1         ; 'A'
@@ -28,7 +28,7 @@
     RTS
 
 ; --- ESERCIZIO 2: effetto matrix (caratteri cadono) ---
-*=$8000
+*=$C000
     LDX #0
 LOOPM
     LDA #81        ; carattere casuale '@'
@@ -63,7 +63,7 @@ BG      = $D021
 SCREEN  = $0400
 COLOR   = $D800
 
-*=$8000
+*=$C000
     ; Bordo decorato
     LDA #0
     STA BORDER
@@ -86,7 +86,7 @@ MSG .byte 7,9,15,3,15,0,1,18,3,1,4,5,0    ; "GIOCO ARCADE" in PETSCII
 
 ; --- ESERCIZIO 4: numero 42 in alto a destra ---
 ; Colonna 37-38 (40-3 = 37 per 2 cifre)
-*=$8000
+*=$C000
     LDA #52        ; '4' = PETSCII 52
     STA $0425      ; $0400 + 37
     LDA #50        ; '2' = PETSCII 50
@@ -95,7 +95,7 @@ MSG .byte 7,9,15,3,15,0,1,18,3,1,4,5,0    ; "GIOCO ARCADE" in PETSCII
 
 ; --- ESERCIZIO 5: scrolling marquee (testo scorrevole) ---
 ; Scrive "CIAO" che si sposta a destra ogni frame
-*=$8000
+*=$C000
     LDX #0
 LOOP5
     LDA MSG5,X

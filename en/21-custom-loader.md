@@ -11,7 +11,7 @@ So far we have loaded programs with:
 
 ```
 LOAD"NAME",8,1
-SYS 32768
+SYS 49152
 ```
 
 This works, but has limitations:

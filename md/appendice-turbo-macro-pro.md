@@ -200,9 +200,9 @@ tmp = $FF                ; tmp locale al blocco
 ```asm
      * = $2000
 start bit base0          ; bit $2009
-     bit base            ; bit $8000
+     bit base            ; bit $C000
      jmp *               ; jmp $2006
-base0 * = $8000
+base0 * = $C000
 base .offs base0-*
      lda #>start         ; lda #$20
      jmp *               ; jmp $8002

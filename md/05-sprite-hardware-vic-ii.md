@@ -145,7 +145,7 @@ $07FF → Sprite 7
 Ecco il programma completo per vedere uno sprite a schermo:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     ; Abilita sprite 0
@@ -197,7 +197,7 @@ SPRITE_DATA
     .byte 0,0,0
 ```
 
-> **Attenzione:** il file va assemblato tutto insieme. TMP gestisce le due sezioni `*=$8000` e `*=$3000` nello stesso sorgente.
+> **Attenzione:** il file va assemblato tutto insieme. TMP gestisce le due sezioni `*=$C000` e `*=$3000` nello stesso sorgente.
 
 ---
 

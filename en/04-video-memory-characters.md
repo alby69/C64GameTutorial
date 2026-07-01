@@ -68,7 +68,7 @@ color_address = $D800 + offset
 ## 4.3 Writing a string to screen
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0
@@ -101,7 +101,7 @@ TEXT
 ## 4.4 Writing to a specific row
 
 ```asm
-*=$8000
+*=$C000
 
 ; Writes "CIAO" at row 12, column 18
 
@@ -138,7 +138,7 @@ LOOP
 Many games have a HUD (Heads-Up Display) at the top or bottom. Here's how to create borders and text:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     JSR DRAW_HUD
@@ -182,7 +182,7 @@ HUD_LOOP
 Let's make a message flash by modifying the color:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #0
@@ -279,7 +279,7 @@ DONE_DIV
 In games, text and sprites coexist. Here's an example that prepares the screen and then enters the game loop:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ---- Variables ----
 SCORE       = $02

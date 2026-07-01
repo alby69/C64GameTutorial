@@ -12,7 +12,7 @@
 ; =============================================
 
 ; --- ESERCIZIO 1: boss 3 fasi: intro + pattern A + morte ---
-*=$8000
+*=$C000
     LDA #%00000001
     STA $D015
     LDA #7

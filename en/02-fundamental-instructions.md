@@ -179,7 +179,7 @@ BNE DIVERSO ; salta perche A != 10
 ## 2.6 First counter
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0      ; X = 0 (inizializza contatore)
@@ -199,7 +199,7 @@ The border will go from black to white to red... up to color 255, then it wraps 
 Let's make a loop that counts from 0 to 10:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDX #0      ; contatore = 0
@@ -238,7 +238,7 @@ This loop produces about 255 × 255 = ~65000 iterations.
 ### Using the delay:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2
@@ -268,7 +268,7 @@ D2
 > but a reference to study before attempting the exercises below.
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #0

@@ -179,7 +179,7 @@ STATE_GAMEOVER = 2
 ### State machine in the main loop
 
 ```asm
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME

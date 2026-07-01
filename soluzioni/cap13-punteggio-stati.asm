@@ -16,7 +16,7 @@ SCORE_HI   = $03
 JOYPORT    = $DC01
 OLD_FIRE   = $04
 
-*=$8000
+*=$C000
     LDA #0
     STA SCORE
     STA SCORE_HI

@@ -68,7 +68,7 @@ $10 = Square only (Gate OFF)
 The simplest program to hear something:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #$20        ; frequency

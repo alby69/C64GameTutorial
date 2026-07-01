@@ -15,7 +15,7 @@ ZONE1_END = 120
 ZONE2_END = 240
 IRQ_VECTOR = $0314
 
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D

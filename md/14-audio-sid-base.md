@@ -68,7 +68,7 @@ $10 = Solo Square (Gate OFF)
 Il programma piu semplice per sentire qualcosa:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #$20        ; frequenza

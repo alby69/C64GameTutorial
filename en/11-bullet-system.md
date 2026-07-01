@@ -185,7 +185,7 @@ TEMP = $05
 Integrate with the joystick:
 
 ```asm
-*=$8000
+*=$C000
 
 PLAYER_X    = $02
 PLAYER_Y    = $03

@@ -98,14 +98,10 @@ TMP is an assembler with a built-in editor for the C64. It allows you to:
 ### The `ORG` directive
 
 ```
-*=$8000      ; code starts at address $8000
+*=$C000      ; code starts at address $C000 (49152)
 ```
 
-Or:
-
-```
-*=$C000      ; alternate address for large programs
-```
+In the first chapters, we will use the address `$C000` (49152), a RAM area that is traditionally free on the Commodore 64 and generally compatible with Turbo Macro Pro.
 
 ---
 
@@ -114,7 +110,7 @@ Or:
 The smallest possible Assembly program:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     RTS
@@ -124,25 +120,25 @@ START
 
 | Instruction | Meaning |
 |---|---|
-| `*=$8000` | The code will be assembled starting at $8000 (32768) |
-| `START` | Label — TMP associates address $8000 with this label |
-| `RTS` | **R**e**T**urn from **S**ubroutine — terminates the program |
+| `*=$C000` | The code will be assembled starting at $C000 (49152) |
+| `START` | Label — TMP associates address $C000 with this label |
+| `RTS` | **R**e**T**urn from **S**ubroutine — terminates the program and returns to TMP |
 
 ### How to run
 
 From TMP:
 
-```
-A         (Assemble)
-Run       (Run)
-```
+1. Press **←** (left arrow key, top left on the keyboard) to enter the menu.
+2. Press **A** to assemble.
+3. If there are no errors, press **J** (or the `Run` command) to execute.
 
 Or from BASIC:
 
 ```
-SYS 32768
-SYS $8000
+SYS 49152
 ```
+
+> **Note:** The C64's BASIC V2 only accepts decimal numbers for the `SYS` command.
 
 ---
 
@@ -153,7 +149,7 @@ Let's do something visible: change the **border color**.
 Border register: `$D020`
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2      ; load value 2 (red) into A
@@ -200,7 +196,7 @@ Result: `D020 = 2` → red border.
 The background is controlled by `$D021`:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #6      ; blue color
@@ -219,7 +215,7 @@ START
 In games, the program runs forever. We use `JMP`.
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #2      ; red border
@@ -229,6 +225,8 @@ LOOP
     JMP LOOP    ; always jump to LOOP — infinite loop
 ```
 
+> **Warning:** A program with an infinite loop will never return to TMP. To regain control, you will need to press **RUN/STOP + RESTORE** or perform a reset.
+
 ---
 
 ## 1.9 Typical TMP program structure
@@ -236,7 +234,7 @@ LOOP
 From the start it's good to use an organized structure:
 
 ```asm
-*=$8000
+*=$C000
 
 ; ----------------------------------
 ; INITIALIZATION
