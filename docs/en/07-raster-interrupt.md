@@ -414,4 +414,4 @@ You have learned:
 - [Chapter 8 — Game loop](08-synchronized-game-loop.md) — integrating IRQ into the main loop
 - [Chapter 17 — Raster split](17-parallax-raster-split.md) — multiple raster zones
 - [Chapter 20 — Arcade OS](20-arcade-os-beyond.md) — interrupt chaining
-- [Solutions](../soluzioni/cap07-raster.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap07-raster.asm) — exercise solutions

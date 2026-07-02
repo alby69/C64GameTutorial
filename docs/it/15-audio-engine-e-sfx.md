@@ -367,4 +367,4 @@ Hai imparato:
 
 - [Capitolo 14 — Audio SID base](14-audio-sid-base.md) — fondamenti del SID
 - [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — integrazione audio nel loop
-- [Soluzioni](../soluzioni/cap15-audio-engine.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap15-audio-engine.asm) — soluzioni degli esercizi

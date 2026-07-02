@@ -13,9 +13,9 @@
 set -e
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-MD_DIR="$ROOT/md"
+MD_DIR="$ROOT/docs/it"
 SOL_DIR="$ROOT/soluzioni"
-EN_DIR="$ROOT/en"
+EN_DIR="$ROOT/docs/en"
 ERRORS=0
 WARNS=0
 
@@ -30,12 +30,12 @@ echo ""
 
 # --- 1. Verifica esercizi per capitolo ---
 echo "--- [1] Conteggio esercizi per capitolo ---"
-    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do
+    for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27; do
     md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
     asm_file=$(ls "$SOL_DIR/cap$ch-"*.asm 2>/dev/null || true)
 
     if [ -z "$md_file" ]; then
-        red "  ERROR: Capitolo $ch mancante in md/"
+        red "  ERROR: Capitolo $ch mancante in docs/it/"
         ERRORS=$((ERRORS + 1))
         continue
     fi
@@ -69,7 +69,7 @@ echo ""
 
 # --- 2. Verifica link in README.md ---
 echo "--- [2] Verifica link README.md ---"
-readme="$MD_DIR/README.md"
+readme="$ROOT/README.md"
 if [ -f "$readme" ]; then
     # Estrai tutti i link [testo](file) e verifica che i file esistano
     # Formato: [testo](percorso)
@@ -79,30 +79,27 @@ if [ -f "$readme" ]; then
         [ -z "$target" ] && continue
         # Salta link esterni (http/https)
         [[ "$target" =~ ^https?:// ]] && continue
-        # Risolvi percorso relativo a md/
-        full="$MD_DIR/$target"
+        # Risolvi percorso relativo a root
+        full="$ROOT/$target"
         if [ ! -f "$full" ] && [ ! -d "$full" ]; then
-            full2="$ROOT/$target"
-            if [ ! -f "$full2" ] && [ ! -d "$full2" ]; then
-                red "  BROKEN LINK: $target (da README.md)"
-                ERRORS=$((ERRORS + 1))
-            fi
+            red "  BROKEN LINK: $target (da README.md)"
+            ERRORS=$((ERRORS + 1))
         fi
     done < <(grep -o '\[.*\](.*)' "$readme" || true)
     green "  OK: link README.md verificati"
 else
-    yellow "  WARN: README.md non trovato in md/"
+    yellow "  WARN: README.md non trovato in root"
 fi
 echo ""
 
 # --- 3. Verifica traduzioni en/ ---
 echo "--- [3] Verifica traduzioni inglesi ---"
 if [ -d "$EN_DIR" ]; then
-for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do
+for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27; do
         en_file=$(ls "$EN_DIR/$ch-"*.md 2>/dev/null || true)
         md_file=$(ls "$MD_DIR/$ch-"*.md 2>/dev/null || true)
         if [ -z "$en_file" ]; then
-            yellow "  WARN: Traduzione capitolo $ch mancante in en/"
+            yellow "  WARN: Traduzione capitolo $ch mancante in docs/en/"
             WARNS=$((WARNS + 1))
         elif [ -f "$en_file" ]; then
             en_lines=$(wc -l < "$en_file")
@@ -112,9 +109,9 @@ for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 2
             fi
         fi
     done
-    green "  OK: Verifica en/ completata"
+    green "  OK: Verifica docs/en/ completata"
 else
-    yellow "  WARN: Directory en/ non trovata"
+    yellow "  WARN: Directory docs/en/ non trovata"
 fi
 echo ""
 

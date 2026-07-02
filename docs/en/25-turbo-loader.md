@@ -255,4 +255,4 @@ how long does each take to load 8 KB?
 
 - [Chapter 21 — Custom Loader](21-custom-loader.md) — KERNAL LOAD/SAVE basics
 - [$DD00 — CIA2](appendix-a-reference-tables.md) — serial port
-- [Solutions](../soluzioni/cap25-turbo-loader.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap25-turbo-loader.asm) — exercise solutions

@@ -514,4 +514,4 @@ Hai imparato:
 - [Capitolo 10 — Collisioni](10-collisioni-software.md) — rilevare colpi sul boss
 - [Capitolo 12 — Wave system](12-wave-system-e-ai-nemici.md) — gestione ondate pre-boss
 - [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — sprite extra per il boss
-- [Soluzioni](../soluzioni/cap18-boss.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap18-boss.asm) — soluzioni degli esercizi

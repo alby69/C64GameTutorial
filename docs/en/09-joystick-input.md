@@ -120,7 +120,7 @@ PLAYER_X   = $02
 PLAYER_Y   = $03
 JOY_STATE  = $04
 
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME
@@ -421,4 +421,4 @@ You have learned:
 
 - [Chapter 6 — Sprite movement](06-sprite-movement-control.md) — moving sprites
 - [Chapter 11 — Bullet system](11-bullet-system.md) — shooting with fire button
-- [Solutions](../soluzioni/cap09-joystick.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap09-joystick.asm) — exercise solutions

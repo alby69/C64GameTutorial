@@ -68,7 +68,7 @@ $10 = Square only (Gate OFF)
 The simplest program to hear something:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #$20        ; frequency
@@ -341,4 +341,4 @@ You have learned:
 
 - [Chapter 15 — Audio engine](15-audio-engine-sfx.md) — professional audio system
 - [Chapter 11 — Bullet system](11-bullet-system.md) — sounds for shots/explosions
-- [Solutions](../soluzioni/cap14-audio-base.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap14-audio-base.asm) — exercise solutions

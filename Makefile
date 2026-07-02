@@ -13,7 +13,7 @@
 TMPX := tmpx
 SOL_DIR := soluzioni
 PRG_DIR := prg
-MD_DIR := md
+MD_DIR := docs/it
 
 CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21 22 23 24 25 26 27
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
@@ -123,14 +123,14 @@ $(PRG_DIR)/game.prg: $(GAME_DIR)/main.asm $(GAME_DEPS)
 stats:
 	@echo "=== Statistiche progetto ==="
 	@echo ""
-	@echo "--- Capitoli (md/) ---"
+	@echo "--- Capitoli (docs/it/) ---"
 	@wc -l $(MD_DIR)/[0-9]*.md | sort -t/ -k2
 	@echo ""
 	@echo "--- Soluzioni (soluzioni/) ---"
 	@wc -l $(SOL_DIR)/*.asm | sort -t/ -k2
 	@echo ""
-	@echo "--- Traduzioni (en/) ---"
-	@wc -l en/[0-9]*.md en/README.md 2>/dev/null | sort -t/ -k2 || echo "(nessuna traduzione)"
+	@echo "--- Traduzioni (docs/en/) ---"
+	@wc -l docs/en/[0-9]*.md docs/en/README.md 2>/dev/null | sort -t/ -k2 || echo "(nessuna traduzione)"
 	@echo ""
 	@echo "--- Totale righe ---"
 	@echo -n "  Capitoli: "; cat $(MD_DIR)/[0-9]*.md | wc -l

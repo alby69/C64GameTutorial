@@ -1,10 +1,10 @@
 # C64 Arcade Game Programming Manual — English Version
 
 > **Status:** Fully translated (chapters 1-21 + appendices)
-> **Original (Italian):** `../md/`
+> **Original (Italian):** `../it/`
 
 This directory contains the English translation of the C64 arcade game programming tutorial.
-Each file mirrors the Italian original in `../md/`.
+Each file mirrors the Italian original in `../it/`.
 
 ## Translation progress
 

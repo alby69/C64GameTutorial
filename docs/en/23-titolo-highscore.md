@@ -408,4 +408,4 @@ Complete the cycle: title → game → game over → check HS → return to titl
 - [Chapter 13 — Game States](13-score-game-states.md) — state machine for title/HS integration
 - [Chapter 21 — Custom Loader](21-custom-loader.md) — disk I/O (SETNAM, SETLFS, LOAD)
 - [Appendix A](appendix-a-reference-tables.md) — KERNAL jump table ($FFD5 LOAD, $FFD8 SAVE)
-- [Solutions](../soluzioni/cap23-titolo-highscore.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap23-titolo-highscore.asm) — exercise solutions

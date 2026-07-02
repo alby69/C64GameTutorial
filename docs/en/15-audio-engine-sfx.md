@@ -367,4 +367,4 @@ You have learned:
 
 - [Chapter 14 — SID audio basics](14-sid-audio-basics.md) — SID fundamentals
 - [Chapter 8 — Game loop](08-synchronized-game-loop.md) — audio integration in the loop
-- [Solutions](../soluzioni/cap15-audio-engine.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap15-audio-engine.asm) — exercise solutions

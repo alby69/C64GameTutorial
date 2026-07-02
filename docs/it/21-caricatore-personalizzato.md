@@ -11,7 +11,7 @@ Finora abbiamo caricato i programmi con:
 
 ```
 LOAD"NOME",8,1
-SYS 32768
+SYS 49152
 ```
 
 Questo funziona, ma ha limiti:

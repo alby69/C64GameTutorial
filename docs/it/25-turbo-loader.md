@@ -257,4 +257,4 @@ quanto tempo impiega ciascuno per caricare 8 KB?
 
 - [Capitolo 21 — Caricatore Personalizzato](21-caricatore-personalizzato.md) — basi KERNAL LOAD/SAVE
 - [$DD00 — CIA2](appendice-a-tabelle.md) — porta seriale
-- [Soluzioni](../soluzioni/cap25-turbo-loader.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap25-turbo-loader.asm) — soluzioni degli esercizi

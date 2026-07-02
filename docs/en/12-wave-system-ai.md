@@ -492,4 +492,4 @@ You have learned:
 - [Chapter 11 — Bullet system](11-bullet-system.md) — enemies that shoot
 - [Chapter 13 — Score](13-score-game-states.md) — score for killed enemies
 - [Chapter 18 — Boss system](18-boss-system.md) — final wave with boss
-- [Solutions](../soluzioni/cap12-wave-ai.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap12-wave-ai.asm) — exercise solutions

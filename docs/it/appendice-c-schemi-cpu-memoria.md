@@ -157,9 +157,9 @@ Indiretto:       LDA ($02),Y    ; A = byte in (indirizzo in $02/$03) + Y
 ### Esempio: LDA $D020
 
 ```
-Ciclo 1: FETCH opcode ($AD) da $8000
-Ciclo 2: FETCH indirizzo basso ($20) da $8001
-Ciclo 3: FETCH indirizzo alto ($D0) da $8002
+Ciclo 1: FETCH opcode ($AD) da $C000
+Ciclo 2: FETCH indirizzo basso ($20) da $C001
+Ciclo 3: FETCH indirizzo alto ($D0) da $C002
 Ciclo 4: LEGGE byte da $D020 → A
 ```
 

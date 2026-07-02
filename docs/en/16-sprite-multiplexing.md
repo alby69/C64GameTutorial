@@ -439,4 +439,4 @@ You have learned:
 - [Chapter 6 — Sprite movement](06-sprite-movement-control.md) — sprite basics
 - [Chapter 7 — Raster interrupt](07-raster-interrupt.md) — IRQ for zone switching
 - [Chapter 19 — Kernel engine](19-reusable-kernel-engine.md) — integrated entity system
-- [Solutions](../soluzioni/cap16-multiplexing.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap16-multiplexing.asm) — exercise solutions

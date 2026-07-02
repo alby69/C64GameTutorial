@@ -1,5 +1,7 @@
 # Capitolo 10 — Collisioni Software tra Sprite
 
+> **Comandi introdotti:** `EOR #$FF` (complemento a 1).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -374,4 +376,4 @@ Hai imparato:
 
 - [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — collisioni proiettile-nemico
 - [Capitolo 18 — Boss system](18-boss-system.md) — collisioni con boss multi-fase
-- [Soluzioni](../soluzioni/cap10-collisioni.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap10-collisioni.asm) — soluzioni degli esercizi

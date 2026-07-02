@@ -269,4 +269,4 @@ con `.include`. Scrivi le routine INIT/PLAY.
 - [Capitolo 14 — Audio SID Base](14-audio-sid-base.md) — registri SID, waveform, ADSR
 - [Capitolo 15 — Audio Engine e SFX](15-audio-engine-e-sfx.md) — coda SFX
 - [GoatTracker](https://sourceforge.net/projects/goattracker2/) — music tracker per C64
-- [Soluzioni](../soluzioni/cap27-music-tracker.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap27-music-tracker.asm) — soluzioni degli esercizi

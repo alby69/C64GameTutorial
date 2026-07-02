@@ -235,4 +235,4 @@ and reload it after a reset (REU retains data).
 
 - [Chapter 21 — Custom Loader](21-custom-loader.md) — disk load vs REU
 - [$DF00-$DF0F — REU registers](appendix-a-reference-tables.md) — register map
-- [Solutions](../soluzioni/cap26-reu-expansion.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap26-reu-expansion.asm) — exercise solutions

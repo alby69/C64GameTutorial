@@ -1,5 +1,7 @@
 # Capitolo 6 — Movimento e Controllo degli Sprite
 
+> **Comandi introdotti:** `SEC`, `SBC` (ripasso), `AND`, `CLC`, `ADC`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -20,7 +22,7 @@ Usiamo una variabile in Zero Page per la posizione:
 SPRITE_X = $02
 SPRITE_Y = $03
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -93,7 +95,7 @@ Aggiungiamo il controllo dei bordi:
 SPRITE_X   = $02
 DIRECTION  = $03   ; 0 = destra, 1 = sinistra
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -196,7 +198,7 @@ DONE
 ```asm
 SPRITE_X = $02
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -434,4 +436,4 @@ Hai imparato:
 - [Capitolo 5 — Sprite hardware](05-sprite-hardware-vic-ii.md) — basi sprite, pointer, registri
 - [Capitolo 9 — Joystick](09-joystick-e-input.md) — controllare sprite con joystick
 - [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — sprite multipli
-- [Soluzioni](../soluzioni/cap06-movimento-sprite.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap06-movimento-sprite.asm) — soluzioni degli esercizi

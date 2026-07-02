@@ -321,4 +321,4 @@ Simulate a stack overflow with recursive calls and use the VICE monitor to obser
 - [VICE Monitor Manual](https://vice-emu.sourceforge.io/vice_15.html)
 - [Chapter 7 — Raster Interrupt](07-raster-interrupt.md) — IRQ setup for debugging
 - [Chapter 4 — Video Memory](04-video-memory-characters.md) — screen RAM for visual debug
-- [Solutions](../soluzioni/cap22-debugging.asm) — debug examples
+- [Solutions](../../soluzioni/cap22-debugging.asm) — debug examples

@@ -185,7 +185,7 @@ TEMP = $05
 Integrate with the joystick:
 
 ```asm
-*=$8000
+*=$C000
 
 PLAYER_X    = $02
 PLAYER_Y    = $03
@@ -502,4 +502,4 @@ You have learned:
 - [Chapter 9 — Joystick](09-joystick-input.md) — input for shooting
 - [Chapter 10 — Collisions](10-software-collisions.md) — bullets that hit
 - [Chapter 12 — Wave system](12-wave-system-ai.md) — enemies to shoot
-- [Solutions](../soluzioni/cap11-proiettili.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap11-proiettili.asm) — exercise solutions

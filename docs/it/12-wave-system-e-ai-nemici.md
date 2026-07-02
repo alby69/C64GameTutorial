@@ -1,5 +1,7 @@
 # Capitolo 12 — Wave System e AI dei Nemici
 
+> **Comandi introdotti:** Nessuno (logica complessa).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -491,4 +493,4 @@ Hai imparato:
 - [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — nemici che sparano
 - [Capitolo 13 — Punteggio](13-punteggio-e-stati-gioco.md) — punteggio per nemici uccisi
 - [Capitolo 18 — Boss system](18-boss-system.md) — wave finale con boss
-- [Soluzioni](../soluzioni/cap12-wave-ai.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap12-wave-ai.asm) — soluzioni degli esercizi

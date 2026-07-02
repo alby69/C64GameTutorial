@@ -1,5 +1,7 @@
 # Capitolo 8 — Game Loop Sincronizzato a 50 Hz
 
+> **Comandi introdotti:** Nessuno (applicazione pratica di `CMP` e `BNE`).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -46,7 +48,7 @@ WAIT_FRAME
 ### Esempio completo
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -469,4 +471,4 @@ Hai imparato:
 
 - [Capitolo 7 — Raster interrupt](07-raster-interrupt.md) — setup e gestione IRQ
 - [Capitolo 13 — Stati gioco](13-punteggio-e-stati-gioco.md) — MENU/PLAY/GAMEOVER nel loop
-- [Soluzioni](../soluzioni/cap08-game-loop.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap08-game-loop.asm) — soluzioni degli esercizi

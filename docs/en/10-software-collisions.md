@@ -374,4 +374,4 @@ You have learned:
 
 - [Chapter 11 — Bullet system](11-bullet-system.md) — bullet-enemy collisions
 - [Chapter 18 — Boss system](18-boss-system.md) — multi-phase boss collisions
-- [Solutions](../soluzioni/cap10-collisioni.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap10-collisioni.asm) — exercise solutions

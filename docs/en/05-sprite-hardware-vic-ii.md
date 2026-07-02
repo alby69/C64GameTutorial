@@ -145,7 +145,7 @@ $07FF → Sprite 7
 Here's the complete program to see a sprite on screen:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     ; Enable sprite 0
@@ -197,7 +197,7 @@ SPRITE_DATA
     .byte 0,0,0
 ```
 
-> **Warning:** the file must be assembled all together. TMP handles the two sections `*=$8000` and `*=$3000` in the same source.
+> **Warning:** the file must be assembled all together. TMP handles the two sections `*=$C000` and `*=$3000` in the same source.
 
 ---
 
@@ -314,4 +314,4 @@ You have learned:
 
 - [Chapter 6 — Sprite movement](06-sprite-movement-control.md) — animation, MSB, multicolor
 - [Chapter 16 — Sprite multiplexing](16-sprite-multiplexing.md) — managing 8+ sprites
-- [Solutions](../soluzioni/cap05-sprite.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap05-sprite.asm) — exercise solutions
