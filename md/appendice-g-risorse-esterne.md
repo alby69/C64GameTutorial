@@ -31,6 +31,12 @@ Se il tuo obiettivo è diventare davvero bravo nello sviluppo di giochi C64 in A
 | **Demo Scene** | Demo Coding | C64 Demo Coding | [Codebase64 Demo Section](https://codebase64.org/doku.php?id=base:start) |
 | **Reverse Engineering** | ROM Source | C64 ROM Disassembly | [C64 ROM Disassembly](https://github.com/mist64/c64rom) |
 | **Reverse Engineering** | KERNAL Source | KERNAL Source Study | [C64 KERNAL Source](https://github.com/mist64/c64rom/tree/master/kernal) |
+| **Code Archaeology** | Elite C64 | Elite Source Code Commentato | [bbcelite.com](https://bbcelite.com/c64/) |
+| **Code Archaeology** | Elite C64 | Repository Mark Moxon | [GitHub Repo](https://github.com/markmoxon/elite-source-code-commodore-64) |
+| **Framework Prof.** | C64 Game Framework | Cadaver's Framework (MW Ultra) | [GitHub Repo](https://github.com/cadaver/c64gameframework) |
+| **Framework Prof.** | Sprite Multiplexer | Sorting ottimizzato (Cadaver) | [Cadaver Rants](https://cadaver.github.io/rants/sprite.html) |
+| **Demoscene** | Demo Programming | An Introduction to Programming C-64 Demos | [Puterman/Linus Åkerlund](https://github.com/p-a/c64-demo-coding) |
+| **Libri Avanzati** | SID Audio | The Commodore 64 Music Book | [Vogel & Scrimshaw](https://archive.org/details/The_Commodore_64_Music_Book) |
 | **Assembler Moderni** | Cross Assembler | KickAssembler | [KickAssembler](https://theweb.dk/KickAssembler/Main.html) |
 | **Assembler Moderni** | IDE | C64Studio | [C64Studio](https://www.georg-rottensteiner.de/c64studio/) |
 | **Assembler Reale C64** | Native Assembler | Turbo Macro Pro | [Turbo Macro Pro](https://github.com/Style64/Turbo-Macro-Pro) |
@@ -56,5 +62,6 @@ Se il tuo obiettivo è diventare davvero bravo nello sviluppo di giochi C64 in A
     - Sprite multiplexing
     - Smooth scrolling
     - Double buffering
-5.  **Fase 5:** Analizzare codice sorgente di giochi e demo moderne.
-6.  **Fase 6:** Studiare le ROM disassemblate del KERNAL e del BASIC.
+5.  **Fase 5:** Analizzare codice sorgente di giochi leggendari (Elite) e framework professionali (Cadaver).
+6.  **Fase 6:** Studiare le tecniche della demoscene (stable raster, FLI, FLD).
+7.  **Fase 7:** Studiare le ROM disassemblate del KERNAL e del BASIC.

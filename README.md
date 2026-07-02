@@ -5,7 +5,7 @@
 
 Manuale completo in italiano per creare videogiochi arcade su Commodore 64 usando Turbo Macro Pro e assembly 6502.
 
-Dal primo sprite al boss finale, dal raster interrupt al SID, dall'architettura 3-layer all'Arcade OS.
+Dal primo sprite al boss finale, dall'architettura 3-layer alle tecniche di ottimizzazione estrema dei maestri degli anni '80.
 
 ## Contenuti
 
@@ -32,6 +32,7 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 | 7 | 19-21 | Architettura professionale (kernel 3-layer, Arcade OS, custom loader) |
 | 8 | 22-24 | Strumenti e rifiniture (debugging VICE, titolo/high score, scrolling) |
 | 9 | 25-27 | Hardware avanzato (turbo loader, REU, music tracker) |
+| 10 | 28+ | **Tecniche dei Maestri** (SMC, ECS, Full-screen scrolling, Code Archaeology) |
 
 ### Appendici
 
