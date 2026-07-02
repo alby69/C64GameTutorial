@@ -23,8 +23,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 SITE_DIR="site"
-MD_DIR="md"
-EN_DIR="en"
+MD_DIR="docs/it"
+EN_DIR="docs/en"
 SOL_DIR="soluzioni"
 CSS_FILE="$SITE_DIR/assets/style.css"
 JS_FILE="$SITE_DIR/assets/script.js"
@@ -181,7 +181,7 @@ HTML
   for entry in "${md_files[@]}"; do
     IFS='|' read -r num base title <<< "$entry"
     cat >> "$SITE_DIR/index.html" << HTML
-  <li><a href="md/${base}.html">${title}</a> <small>cap. ${num}</small></li>
+  <li><a href="it/${base}.html">${title}</a> <small>cap. ${num}</small></li>
 HTML
   done
 
@@ -232,7 +232,7 @@ HTML
     base=$(basename "$f" .md)
     title=$(head -1 "$f" 2>/dev/null | sed 's/^# *//' || echo "$base")
     cat >> "$SITE_DIR/index.html" << HTML
-  <li><a href="md/${base}.html">${title}</a></li>
+  <li><a href="it/${base}.html">${title}</a></li>
 HTML
   done
 
@@ -253,7 +253,7 @@ HTML
 # ── 3. Convert markdown to HTML ────────────────────────
 convert_md_to_html() {
   local src_dir="$1"
-  local dst_dir="$SITE_DIR/$1"
+  local dst_dir="$SITE_DIR/$(basename "$src_dir")"
   mkdir -p "$dst_dir"
 
   for f in "$src_dir"/*.md; do
@@ -366,11 +366,11 @@ generate_wiki_graph
 echo "2. Index page..."
 generate_index
 
-echo "3. Capitoli (md/ → HTML)..."
-convert_md_to_html "md"
+echo "3. Capitoli (docs/it/ → HTML)..."
+convert_md_to_html "$MD_DIR"
 
-echo "4. Traduzioni (en/ → HTML)..."
-convert_md_to_html "en"
+echo "4. Traduzioni (docs/en/ → HTML)..."
+convert_md_to_html "$EN_DIR"
 
 echo "5. Soluzioni (.asm → HTML)..."
 convert_sol_to_html

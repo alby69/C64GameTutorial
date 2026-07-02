@@ -1,5 +1,7 @@
 # Capitolo 11 — Sistema Proiettili
 
+> **Comandi introdotti:** `ORA` (ripasso).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -185,7 +187,7 @@ TEMP = $05
 Integriamo con il joystick:
 
 ```asm
-*=$8000
+*=$C000
 
 PLAYER_X    = $02
 PLAYER_Y    = $03
@@ -502,4 +504,4 @@ Hai imparato:
 - [Capitolo 9 — Joystick](09-joystick-e-input.md) — input per sparare
 - [Capitolo 10 — Collisioni](10-collisioni-software.md) — proiettili che colpiscono
 - [Capitolo 12 — Wave system](12-wave-system-e-ai-nemici.md) — nemici da colpire
-- [Soluzioni](../soluzioni/cap11-proiettili.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap11-proiettili.asm) — soluzioni degli esercizi

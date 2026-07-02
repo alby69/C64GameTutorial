@@ -404,4 +404,4 @@ Implementa parallax a 2 layer con raster split: cielo (scroll lento) e terreno (
 - [Capitolo 17 — Parallax](17-parallax-e-raster-split.md) — base per raster split e parallax
 - [Capitolo 7 — Raster Interrupt](07-raster-interrupt.md) — setup IRQ per split
 - [Appendice A](appendice-a-tabelle.md) — registri VIC-II ($D016, $D011)
-- [Soluzioni](../soluzioni/cap24-scrolling.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap24-scrolling.asm) — soluzioni degli esercizi

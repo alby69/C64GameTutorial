@@ -170,7 +170,7 @@ $0400-$07E7   Screen RAM (video)
 $0800-$1FFF   Kernel engine (fixed)
 $2000-$3FFF   Sprite data and animations
 $4000-$7FFF   Game module (logic)
-$8000-$9FFF   Level data, tables
+$C000-$9FFF   Level data, tables
 $C000-$CFFF   Jump table + dispatcher
 $D000-$DFFF   VIC-II / SID / CIA (hardware)
 ```
@@ -473,4 +473,4 @@ You have learned:
 - [Chapter 8 — Game loop](08-synchronized-game-loop.md) — basic structure that the kernel replaces
 - [Chapter 16 — Sprite multiplexing](16-sprite-multiplexing.md) — Engine layer component
 - [Chapter 20 — Arcade OS](20-arcade-os-beyond.md) — evolution of the kernel
-- [Solutions](../soluzioni/cap19-kernel-engine.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap19-kernel-engine.asm) — exercise solutions

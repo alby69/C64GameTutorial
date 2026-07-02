@@ -28,10 +28,8 @@ jobs:
 
       - name: Prepare docs folder
         run: |
-          mkdir -p docs/it docs/en docs/soluzioni
+          mkdir -p docs/soluzioni
           cp README.md docs/index.md
-          cp md/*.md docs/it/
-          cp en/*.md docs/en/
           cp soluzioni/*.asm docs/soluzioni/
 
       - name: Build docs

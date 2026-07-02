@@ -1,5 +1,7 @@
 # Capitolo 14 — Audio SID: Primi Suoni
 
+> **Comandi introdotti:** Nessuno (registri SID).
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -68,7 +70,7 @@ $10 = Solo Square (Gate OFF)
 Il programma piu semplice per sentire qualcosa:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #$20        ; frequenza
@@ -341,4 +343,4 @@ Hai imparato:
 
 - [Capitolo 15 — Audio engine](15-audio-engine-e-sfx.md) — sistema audio professionale
 - [Capitolo 11 — Sistema proiettili](11-sistema-proiettili.md) — suoni per sparo/esplosione
-- [Soluzioni](../soluzioni/cap14-audio-base.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap14-audio-base.asm) — soluzioni degli esercizi

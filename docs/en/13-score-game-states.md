@@ -179,7 +179,7 @@ STATE_GAMEOVER = 2
 ### State machine in the main loop
 
 ```asm
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME
@@ -477,4 +477,4 @@ You have learned:
 - [Chapter 4 — Video memory](04-video-memory-characters.md) — displaying score on screen
 - [Chapter 8 — Game loop](08-synchronized-game-loop.md) — core game structure
 - [Chapter 12 — Wave system](12-wave-system-ai.md) — wave/score integration
-- [Solutions](../soluzioni/cap13-punteggio-stati.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap13-punteggio-stati.asm) — exercise solutions

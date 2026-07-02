@@ -5,7 +5,7 @@ Grazie per l'interesse nel contribuire a **C64 Game Tutorial**! Questo progetto 
 ## Come puoi aiutare
 
 - **Segnalazione di errori:** Se trovi refusi nel testo, errori nei diagrammi o bug nelle soluzioni assembly, apri una Issue.
-- **Traduzioni:** Aiutaci a mantenere e migliorare la traduzione inglese in `en/`.
+- **Traduzioni:** Aiutaci a mantenere e migliorare la traduzione inglese in `docs/en/`.
 - **Esercizi:** Se hai idee per nuovi esercizi o varianti interessanti per i capitoli esistenti.
 - **Tooling:** Miglioramenti agli script in `tools/` o al Makefile.
 

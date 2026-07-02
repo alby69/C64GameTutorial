@@ -402,4 +402,4 @@ Implement 2-layer parallax with raster split: sky (slow scroll) and ground (fast
 - [Chapter 17 — Parallax](17-parallax-raster-split.md) — raster split and parallax foundation
 - [Chapter 7 — Raster Interrupt](07-raster-interrupt.md) — IRQ setup for split
 - [Appendix A](appendix-a-reference-tables.md) — VIC-II registers ($D016, $D011)
-- [Solutions](../soluzioni/cap24-scrolling.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap24-scrolling.asm) — exercise solutions

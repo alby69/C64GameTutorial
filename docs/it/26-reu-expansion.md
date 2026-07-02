@@ -243,4 +243,4 @@ posizione player) e ricaricarlo dopo un reset (REU retained).
 
 - [Capitolo 21 — Caricatore Personalizzato](21-caricatore-personalizzato.md) — load da disco vs REU
 - [$DF00-$DF0F — REU registers](appendice-a-tabelle.md) — mappa registri
-- [Soluzioni](../soluzioni/cap26-reu-expansion.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap26-reu-expansion.asm) — soluzioni degli esercizi

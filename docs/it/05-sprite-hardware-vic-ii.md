@@ -145,7 +145,7 @@ $07FF → Sprite 7
 Ecco il programma completo per vedere uno sprite a schermo:
 
 ```asm
-*=$8000
+*=$C000
 
 START
     ; Abilita sprite 0
@@ -197,7 +197,7 @@ SPRITE_DATA
     .byte 0,0,0
 ```
 
-> **Attenzione:** il file va assemblato tutto insieme. TMP gestisce le due sezioni `*=$8000` e `*=$3000` nello stesso sorgente.
+> **Attenzione:** il file va assemblato tutto insieme. TMP gestisce le due sezioni `*=$C000` e `*=$3000` nello stesso sorgente.
 
 ---
 
@@ -314,4 +314,4 @@ Hai imparato:
 
 - [Capitolo 6 — Movimento sprite](06-movimento-e-controllo-sprite.md) — animazione, MSB, multicolore
 - [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — gestire 8+ sprite
-- [Soluzioni](../soluzioni/cap05-sprite.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap05-sprite.asm) — soluzioni degli esercizi

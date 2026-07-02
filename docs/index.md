@@ -9,8 +9,8 @@ Dal primo sprite al boss finale, dal raster interrupt al SID, dall'architettura 
 ## Contenuti
 
 ```
-md/                     Manuale originale italiano (27 capitoli + 7 appendici + indice)
-en/                     Traduzione inglese (completa — 27 capitoli)
+docs/it/                Manuale originale italiano (27 capitoli + 7 appendici + indice)
+docs/en/                Traduzione inglese (completa — 27 capitoli)
 soluzioni/              Soluzioni degli esercizi (.asm)
 game/                   Template gioco completo (multi-file, .include)
 tools/                  Script di supporto (validate, size-report, vice-test)
@@ -46,19 +46,19 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 
 ### Statistiche
 
-- **~12200 righe** di manuale
-- **31 file** in `md/` (24 capitoli + 7 appendici + indice)
-- **27 soluzioni assembly** + template gioco (13 file)
-- **~10000 righe** traduzione inglese (24 capitoli tradotti)
-- **22/22 ROADMAP completati** → **30/32 completati**
+- **~12700 righe** di manuale
+- **36 file** in `docs/it/` (27 capitoli + 8 appendici + indice)
+- **28 soluzioni assembly** + template gioco (13 file)
+- **~11200 righe** traduzione inglese (27 capitoli tradotti)
+- **32/32 ROADMAP completati**
 
 ## Come iniziare
 
-Leggi il manuale in ordine sequenziale partendo da `md/01-introduzione-c64-tmp.md`.
+Leggi il manuale in ordine sequenziale partendo da `it/01-introduzione-c64-tmp.md`.
 Ogni capitolo include esercizi con soluzioni in `soluzioni/`.
 
 Per assemblare il codice serve Turbo Macro Pro (nativo su C64) o TMPx (cross-assembler).
-Vedi `md/appendice-turbo-macro-pro.md` per installazione e comandi.
+Vedi `it/appendice-turbo-macro-pro.md` per installazione e comandi.
 
 ## Riferimenti
 

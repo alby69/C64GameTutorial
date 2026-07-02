@@ -20,7 +20,7 @@ We use a Zero Page variable for position:
 SPRITE_X = $02
 SPRITE_Y = $03
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -93,7 +93,7 @@ Let's add boundary checking:
 SPRITE_X   = $02
 DIRECTION  = $03   ; 0 = right, 1 = left
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -196,7 +196,7 @@ DONE
 ```asm
 SPRITE_X = $02
 
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -434,4 +434,4 @@ You have learned:
 - [Chapter 5 — Hardware sprites](05-sprite-hardware-vic-ii.md) — sprite basics, pointers, registers
 - [Chapter 9 — Joystick input](09-joystick-input.md) — controlling sprites with joystick
 - [Chapter 16 — Sprite multiplexing](16-sprite-multiplexing.md) — multiple sprites
-- [Solutions](../soluzioni/cap06-movimento-sprite.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap06-movimento-sprite.asm) — exercise solutions

@@ -46,7 +46,7 @@ WAIT_FRAME
 ### Complete example
 
 ```asm
-*=$8000
+*=$C000
 
 START
     LDA #%00000001
@@ -469,4 +469,4 @@ You have learned:
 
 - [Chapter 7 — Raster interrupt](07-raster-interrupt.md) — IRQ setup and management
 - [Chapter 13 — Game states](13-score-game-states.md) — MENU/PLAY/GAMEOVER in the loop
-- [Solutions](../soluzioni/cap08-game-loop.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap08-game-loop.asm) — exercise solutions

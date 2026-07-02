@@ -1,7 +1,7 @@
 # C64 Game Tutorial — Manuale di Programmazione Arcade
 
 [![Validate](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml/badge.svg)](https://github.com/anomalyco/C64GameTutorial/actions/workflows/validate.yml)
-[![Licence](https://img.shields.io/badge/licence-CC--BY--4.0-blue)](LICENCE)
+[![Licence](https://img.shields.io/badge/licence-CC--BY--4.0-blue)](https://creativecommons.org/licenses/by/4.0/deed.it)
 
 Manuale completo in italiano per creare videogiochi arcade su Commodore 64 usando Turbo Macro Pro e assembly 6502.
 
@@ -10,8 +10,8 @@ Dal primo sprite al boss finale, dall'architettura 3-layer alle tecniche di otti
 ## Contenuti
 
 ```
-md/                     Manuale originale italiano (27 capitoli + 7 appendici + indice)
-en/                     Traduzione inglese (completa — 27 capitoli)
+docs/it/                Manuale originale italiano (27 capitoli + 7 appendici + indice)
+docs/en/                Traduzione inglese (completa — 27 capitoli)
 soluzioni/              Soluzioni degli esercizi (.asm)
 game/                   Template gioco completo (multi-file, .include)
 tools/                  Script di supporto (validate, size-report, vice-test)
@@ -50,14 +50,14 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 ### Statistiche
 
 - **~12700 righe** di manuale (IT)
-- **36 file** in `md/` (27 capitoli + 8 appendici + indice)
+- **36 file** in `docs/it/` (27 capitoli + 8 appendici + indice)
 - **28 soluzioni assembly** + template gioco (13 file)
 - **~11200 righe** traduzione inglese (27 capitoli tradotti)
 - **32/32 ROADMAP completati**
 
 ## Come iniziare (Quick Start)
 
-1.  **Leggi il manuale:** Inizia da `md/01-introduzione-c64-tmp.md` o visita il [sito web](https://anomalyco.github.io/C64GameTutorial/).
+1.  **Leggi il manuale:** Inizia da `docs/it/01-introduzione-c64-tmp.md` o visita il [sito web](https://anomalyco.github.io/C64GameTutorial/).
 2.  **Prerequisiti:** Installa `tmpx` (cross-assembler) e `VICE` (emulatore).
 3.  **Assembla un esempio:**
     ```bash

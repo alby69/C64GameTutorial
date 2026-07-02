@@ -1,5 +1,7 @@
 # Capitolo 7 — Raster Interrupt
 
+> **Comandi introdotti:** `SEI`, `CLI`, `ASL`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -414,4 +416,4 @@ Hai imparato:
 - [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — integrare IRQ nel loop principale
 - [Capitolo 17 — Raster split](17-parallax-e-raster-split.md) — multiple zone raster
 - [Capitolo 20 — Arcade OS](20-arcade-os-e-oltre.md) — interrupt chaining
-- [Soluzioni](../soluzioni/cap07-raster.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap07-raster.asm) — soluzioni degli esercizi

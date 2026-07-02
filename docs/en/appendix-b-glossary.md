@@ -66,7 +66,7 @@
 
 **DEY** — DEcrement Y. Y = Y - 1.
 
-**Directive** — An instruction for the assembler (e.g. `*=$8000`, `.byte`), not for the CPU.
+**Directive** — An instruction for the assembler (e.g. `*=$C000`, `.byte`), not for the CPU.
 
 ## E
 
@@ -150,7 +150,7 @@
 
 ## O
 
-**ORG** — Assembler directive that specifies the address to generate code at (`*=$8000`).
+**ORG** — Assembler directive that specifies the address to generate code at (`*=$C000`).
 
 ## P
 
@@ -264,4 +264,4 @@
 
 `%` — Prefix for binary numbers (e.g. `%00000001`).
 
-`*=` — ORG directive in TMP (e.g. `*=$8000`).
+`*=` — ORG directive in TMP (e.g. `*=$C000`).

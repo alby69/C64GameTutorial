@@ -319,4 +319,4 @@ You have learned:
 - [Chapter 19 — Kernel engine](19-reusable-kernel-engine.md) — foundation for the Arcade OS
 - [Chapter 7 — Raster interrupt](07-raster-interrupt.md) — interrupt chaining
 - [Chapter 16 — Sprite multiplexing](16-sprite-multiplexing.md) — sprite virtualization
-- [All previous chapters](../md/) — prerequisites to get here
+- [All previous chapters](../it/) — prerequisites to get here

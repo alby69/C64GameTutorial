@@ -408,4 +408,4 @@ Completa il ciclo: titolo → gioco → game over → verifica HS → torna al t
 - [Capitolo 13 — Stati Gioco](13-punteggio-e-stati-gioco.md) — state machine per integrare titolo/HS
 - [Capitolo 21 — Caricatore](21-caricatore-personalizzato.md) — I/O su disco (SETNAM, SETLFS, LOAD)
 - [Appendice A](appendice-a-tabelle.md) — tabella KERNAL ($FFD5 LOAD, $FFD8 SAVE)
-- [Soluzioni](../soluzioni/cap23-titolo-highscore.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap23-titolo-highscore.asm) — soluzioni degli esercizi

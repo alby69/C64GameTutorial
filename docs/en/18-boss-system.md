@@ -514,4 +514,4 @@ You have learned:
 - [Chapter 10 — Collisions](10-software-collisions.md) — detect hits on the boss
 - [Chapter 12 — Wave system](12-wave-system-ai.md) — pre-boss wave management
 - [Chapter 16 — Sprite multiplexing](16-sprite-multiplexing.md) — extra sprites for the boss
-- [Solutions](../soluzioni/cap18-boss.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap18-boss.asm) — exercise solutions

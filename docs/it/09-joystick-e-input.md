@@ -1,5 +1,7 @@
 # Capitolo 9 — Joystick e Controllo del Giocatore
 
+> **Comandi introdotti:** `BIT`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -120,7 +122,7 @@ PLAYER_X   = $02
 PLAYER_Y   = $03
 JOY_STATE  = $04
 
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME
@@ -421,4 +423,4 @@ Hai imparato:
 
 - [Capitolo 6 — Movimento sprite](06-movimento-e-controllo-sprite.md) — muovere sprite
 - [Capitolo 11 — Proiettili](11-sistema-proiettili.md) — sparare con il fuoco
-- [Soluzioni](../soluzioni/cap09-joystick.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap09-joystick.asm) — soluzioni degli esercizi

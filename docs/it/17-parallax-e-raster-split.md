@@ -483,4 +483,4 @@ Hai imparato:
 - [Capitolo 7 — Raster interrupt](07-raster-interrupt.md) — setup IRQ per split
 - [Capitolo 16 — Sprite multiplexing](16-sprite-multiplexing.md) — zone raster multiple
 - [Capitolo 19 — Kernel engine](19-kernel-engine-riutilizzabile.md) — scheduler a priorita
-- [Soluzioni](../soluzioni/cap17-parallax-raster-split.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap17-parallax-raster-split.asm) — soluzioni degli esercizi

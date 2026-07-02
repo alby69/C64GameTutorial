@@ -1,5 +1,7 @@
 # Capitolo 13 — Punteggio e Stati del Gioco
 
+> **Comandi introdotti:** `SED`, `CLD`.
+
 ## Obiettivi
 
 Al termine di questo capitolo saprai:
@@ -12,7 +14,24 @@ Al termine di questo capitolo saprai:
 
 ---
 
-## 13.1 Punteggio a 16 bit
+## 13.1 Punteggio in BCD (Binary Coded Decimal)
+
+Il 6502 ha una modalita speciale chiamata **Decimal Mode**. Quando e attiva, le operazioni `ADC` e `SBC` funzionano in base 10 (0-99 per byte) invece che in base 16. Questo e utilissimo per i punteggi!
+
+### Attivare il modo decimale
+
+```asm
+SED         ; Set Decimal flag: da ora in poi ADC somma in decimale
+CLC
+LDA #$15    ; interpretato come 15
+ADC #$10    ; somma 10
+STA SCORE   ; SCORE ora contiene $25 (che stampato in esadecimale sembra 25)
+CLD         ; Clear Decimal flag: TORNA SEMPRE in modo normale dopo!
+```
+
+---
+
+## 13.2 Punteggio a 16 bit (Binario)
 
 Il punteggio in un arcade puo arrivare a 9999 o piu. Usiamo 2 byte (16 bit):
 
@@ -74,7 +93,7 @@ ENEMY_POINTS
 
 ---
 
-## 13.2 Visualizzare il punteggio
+## 13.3 Visualizzare il punteggio
 
 Per mostrare numeri, dobbiamo convertire il binario in caratteri PETSCII.
 
@@ -141,7 +160,7 @@ DRAW_SCORE_16
 
 ---
 
-## 13.3 Stato del gioco (State Machine)
+## 13.4 Stato del gioco (State Machine)
 
 Un gioco arcade ha stati ben definiti:
 
@@ -179,7 +198,7 @@ STATE_GAMEOVER = 2
 ### Macchina a stati nel loop principale
 
 ```asm
-*=$8000
+*=$C000
 
 START
     JSR INIT_GAME
@@ -215,7 +234,7 @@ DO_GAMEOVER
 
 ---
 
-## 13.4 Stato MENU
+## 13.5 Stato MENU
 
 ```asm
 UPDATE_MENU
@@ -248,7 +267,7 @@ DT_DONE
 
 ---
 
-## 13.5 Stato PLAY
+## 13.6 Stato PLAY
 
 ```asm
 UPDATE_GAME
@@ -269,7 +288,7 @@ UPDATE_GAME
 
 ---
 
-## 13.6 Stato GAME OVER
+## 13.7 Stato GAME OVER
 
 ```asm
 UPDATE_GAMEOVER
@@ -315,7 +334,7 @@ DGO_DONE
 
 ---
 
-## 13.7 Reset del gioco completo
+## 13.8 Reset del gioco completo
 
 ```asm
 RESET_GAME
@@ -363,7 +382,7 @@ REN_LOOP
 
 ---
 
-## 13.8 Player death e vite
+## 13.9 Player death e vite
 
 ```asm
 LIVES = $11
@@ -400,7 +419,7 @@ GAME_OVER_STATE
 
 ---
 
-## 13.9 Schermata di transizione tra wave
+## 13.10 Schermata di transizione tra wave
 
 ```asm
 WAVE_TRANSITION
@@ -477,4 +496,4 @@ Hai imparato:
 - [Capitolo 4 — Memoria video](04-memoria-video-e-caratteri.md) — visualizzare punteggio a schermo
 - [Capitolo 8 — Game loop](08-game-loop-sincronizzato.md) — struttura portante del gioco
 - [Capitolo 12 — Wave system](12-wave-system-e-ai-nemici.md) — integrazione onde/punteggio
-- [Soluzioni](../soluzioni/cap13-punteggio-stati.asm) — soluzioni degli esercizi
+- [Soluzioni](../../soluzioni/cap13-punteggio-stati.asm) — soluzioni degli esercizi

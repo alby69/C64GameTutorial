@@ -31,7 +31,7 @@ LOAD"TMP",8,1
 SYS 8*4096
 ```
 
-Il binario si carica a `$8000`, parte con `SYS 8*4096`.
+Il binario si carica a `$C000`, parte con `SYS 8*4096`.
 
 ### Cross-assembler TMPx (PC/Mac/Linux)
 
@@ -175,7 +175,7 @@ NTSC = 1
      .endif
 
      .ifpl VALORE         ; se positivo ($0000-$7FFF)
-     .ifmi VALORE         ; se negativo ($8000-$FFFF)
+     .ifmi VALORE         ; se negativo ($C000-$FFFF)
 
      .ifdef DEBUG         ; se il simbolo e' definito
      .ifndef DEBUG        ; se il simbolo NON e' definito
@@ -200,9 +200,9 @@ tmp = $FF                ; tmp locale al blocco
 ```asm
      * = $2000
 start bit base0          ; bit $2009
-     bit base            ; bit $8000
+     bit base            ; bit $C000
      jmp *               ; jmp $2006
-base0 * = $8000
+base0 * = $C000
 base .offs base0-*
      lda #>start         ; lda #$20
      jmp *               ; jmp $8002

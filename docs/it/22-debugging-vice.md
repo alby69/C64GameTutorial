@@ -323,4 +323,4 @@ Simula uno stack overflow con chiamate ricorsive e usa il monitor VICE per osser
 - [VICE Manual](https://vice-emu.sourceforge.io/vice_15.html) — sezione monitor
 - [Capitolo 7 — Raster Interrupt](07-raster-interrupt.md) — setup IRQ da debuggare
 - [Capitolo 4 — Memoria Video](04-memoria-video-e-caratteri.md) — screen RAM per debug visivo
-- [Soluzioni](../soluzioni/cap22-debugging.asm) — esempi di debug
+- [Soluzioni](../../soluzioni/cap22-debugging.asm) — esempi di debug

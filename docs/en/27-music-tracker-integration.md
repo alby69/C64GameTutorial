@@ -269,4 +269,4 @@ project with `.include`. Write the INIT/PLAY routines.
 - [Chapter 14 — SID Audio Basics](14-sid-audio-basics.md) — SID registers, waveforms, ADSR
 - [Chapter 15 — Audio Engine and SFX](15-audio-engine-sfx.md) — SFX queue
 - [GoatTracker](https://sourceforge.net/projects/goattracker2/) — C64 music tracker
-- [Solutions](../soluzioni/cap27-music-tracker.asm) — exercise solutions
+- [Solutions](../../soluzioni/cap27-music-tracker.asm) — exercise solutions
