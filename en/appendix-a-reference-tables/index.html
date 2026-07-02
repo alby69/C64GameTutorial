@@ -1,0 +1,4282 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://anomalyco.github.io/C64GameTutorial/en/appendix-a-reference-tables/">
+      
+      
+        <link rel="prev" href="../27-music-tracker-integration/">
+      
+      
+        <link rel="next" href="../appendix-b-glossary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>A. Reference tables - C64 Game Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#appendix-a-reference-tables" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="C64 Game Tutorial" class="md-header__button md-logo" aria-label="C64 Game Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C64 Game Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A. Reference tables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passa alla modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passa alla modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passa alla modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passa alla modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../it/INDICE/" class="md-tabs__link">
+          
+  
+  
+  Manuale (Italiano)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-c64-tmp-introduction/" class="md-tabs__link">
+          
+  
+  
+  Manual (English)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="C64 Game Tutorial" class="md-nav__button md-logo" aria-label="C64 Game Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    C64 Game Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuale (Italiano)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuale (Italiano)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/INDICE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/01-introduzione-c64-tmp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduzione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/02-istruzioni-fondamentali/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Istruzioni fondamentali
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/03-indirizzamento-cicli-ritardi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indirizzamento e cicli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/04-memoria-video-e-caratteri/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memoria video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/05-sprite-hardware-vic-ii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprite VIC-II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/06-movimento-e-controllo-sprite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Movimento sprite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/07-raster-interrupt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster interrupt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/08-game-loop-sincronizzato/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/09-joystick-e-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick e input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/10-collisioni-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collisioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/11-sistema-proiettili/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proiettili
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/12-wave-system-e-ai-nemici/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave e AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/13-punteggio-e-stati-gioco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Punteggio e stati
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/14-audio-sid-base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio SID base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/15-audio-engine-e-sfx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/16-sprite-multiplexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprite multiplexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/17-parallax-e-raster-split/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parallax e split
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/18-boss-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boss system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/19-kernel-engine-riutilizzabile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/20-arcade-os-e-oltre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arcade OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/21-caricatore-personalizzato/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/22-debugging-vice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging VICE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/23-titolo-highscore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Titolo e High Score
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/24-scrolling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scrolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/25-turbo-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turbo loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/26-reu-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REU expansion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/27-music-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Music tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_29" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_29" id="__nav_2_29_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendici
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_29_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_29">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendici
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-a-tabelle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Tabelle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-b-glossario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-c-schemi-cpu-memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. CPU e Memoria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-d-schemi-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D. Video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-e-schemi-architettura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E. Architettura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-f-schemi-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F. Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-g-risorse-esterne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G. Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it/appendice-turbo-macro-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turbo Macro Pro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual (English)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manual (English)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-c64-tmp-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-fundamental-instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamental instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-addressing-loops-delays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Addressing and loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-video-memory-characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-sprite-hardware-vic-ii/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprite VIC-II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-sprite-movement-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprite movement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-raster-interrupt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster interrupt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-synchronized-game-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-joystick-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-software-collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software collisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-bullet-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bullet system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-wave-system-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wave system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-score-game-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score and states
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-sid-audio-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SID audio basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-audio-engine-sfx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-sprite-multiplexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprite multiplexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-parallax-raster-split/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parallax and split
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-boss-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boss system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-reusable-kernel-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-arcade-os-beyond/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arcade OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-custom-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-debugging-vice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging VICE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-titolo-highscore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Title and High Score
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-scrolling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scrolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-turbo-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turbo loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reu-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REU expansion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-music-tracker-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Music tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_28" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_28" id="__nav_3_28_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_28_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Reference tables
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Reference tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c64-color-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C64 Color Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c64-memory-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C64 Memory Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vic-ii-registers-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIC-II Registers (video)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VIC-II Registers (video)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main addresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprite-pointers-07f8-07ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprite pointers ($07F8-$07FF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sid-registers-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SID Registers (audio)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SID Registers (audio)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waveforms-control-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waveforms (control register)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cia-registers-joystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIA Registers (joystick)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CIA Registers (joystick)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joystick-port-1-bits-dc01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joystick port 1 bits ($DC01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-6502-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential 6502 Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential 6502 Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-and-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare and branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-and-jumps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and jumps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-petscii-codes-uppercase-letters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common PETSCII Codes (uppercase letters)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powers-of-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powers of 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprite-bit-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprite Bit Masks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-b-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-c-cpu-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. CPU and Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-d-video-schematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D. Video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-e-architecture-schematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E. Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-f-audio-schematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F. Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-g-external-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    G. External resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix-turbo-macro-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turbo Macro Pro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c64-color-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C64 Color Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c64-memory-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C64 Memory Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vic-ii-registers-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIC-II Registers (video)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VIC-II Registers (video)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main addresses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprite-pointers-07f8-07ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprite pointers ($07F8-$07FF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sid-registers-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SID Registers (audio)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SID Registers (audio)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waveforms-control-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waveforms (control register)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cia-registers-joystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIA Registers (joystick)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CIA Registers (joystick)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joystick-port-1-bits-dc01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joystick port 1 bits ($DC01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-6502-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential 6502 Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential 6502 Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-and-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare and branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-and-jumps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack and jumps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-petscii-codes-uppercase-letters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common PETSCII Codes (uppercase letters)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powers-of-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powers of 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprite-bit-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprite Bit Masks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="appendix-a-reference-tables">Appendix A — Reference Tables</h1>
+<h2 id="c64-color-table">C64 Color Table</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Color</th>
+<th>Hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Black</td>
+<td><code>$00</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>White</td>
+<td><code>$01</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Red</td>
+<td><code>$02</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cyan</td>
+<td><code>$03</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Purple</td>
+<td><code>$04</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Green</td>
+<td><code>$05</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Blue</td>
+<td><code>$06</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Yellow</td>
+<td><code>$07</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Orange</td>
+<td><code>$08</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Brown</td>
+<td><code>$09</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Light red</td>
+<td><code>$0A</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Dark gray</td>
+<td><code>$0B</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Medium gray</td>
+<td><code>$0C</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Light green</td>
+<td><code>$0D</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Light blue</td>
+<td><code>$0E</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Light gray</td>
+<td><code>$0F</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c64-memory-map">C64 Memory Map</h2>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$0000</code>-<code>$00FF</code></td>
+<td>256 bytes</td>
+<td>Zero Page (fast RAM)</td>
+</tr>
+<tr>
+<td><code>$0100</code>-<code>$01FF</code></td>
+<td>256 bytes</td>
+<td>Stack</td>
+</tr>
+<tr>
+<td><code>$0200</code>-<code>$03FF</code></td>
+<td>512 bytes</td>
+<td>System/variable area</td>
+</tr>
+<tr>
+<td><code>$0400</code>-<code>$07E7</code></td>
+<td>1000 bytes</td>
+<td>Screen RAM (text display)</td>
+</tr>
+<tr>
+<td><code>$07F8</code>-<code>$07FF</code></td>
+<td>8 bytes</td>
+<td>Sprite pointers</td>
+</tr>
+<tr>
+<td><code>$0800</code>-<code>$9FFF</code></td>
+<td>—</td>
+<td>Free RAM</td>
+</tr>
+<tr>
+<td><code>$A000</code>-<code>$BFFF</code></td>
+<td>—</td>
+<td>BASIC ROM</td>
+</tr>
+<tr>
+<td><code>$C000</code>-<code>$CFFF</code></td>
+<td>—</td>
+<td>RAM</td>
+</tr>
+<tr>
+<td><code>$D000</code>-<code>$DFFF</code></td>
+<td>—</td>
+<td>VIC-II / SID / CIA</td>
+</tr>
+<tr>
+<td><code>$E000</code>-<code>$FFFF</code></td>
+<td>—</td>
+<td>KERNAL ROM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vic-ii-registers-video">VIC-II Registers (video)</h2>
+<h3 id="main-addresses">Main addresses</h3>
+<table>
+<thead>
+<tr>
+<th>Register</th>
+<th>Address</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SPRITE_X</code></td>
+<td><code>$D000</code>-<code>$D00F</code></td>
+<td>X/Y coordinates sprites 0-7</td>
+</tr>
+<tr>
+<td><code>SPRITE_MSB_X</code></td>
+<td><code>$D010</code></td>
+<td>Bits 0-7: MSB X for sprites 0-7</td>
+</tr>
+<tr>
+<td><code>VIC_CTRL1</code></td>
+<td><code>$D011</code></td>
+<td>Bits 4-5: scroll Y, Bit 7: raster MSB</td>
+</tr>
+<tr>
+<td><code>RASTER</code></td>
+<td><code>$D012</code></td>
+<td>Current/compare raster line</td>
+</tr>
+<tr>
+<td><code>VIC_CTRL2</code></td>
+<td><code>$D016</code></td>
+<td>Bits 0-2: scroll X, Bit 3: 38/40 columns</td>
+</tr>
+<tr>
+<td><code>SPRITE_ENABLE</code></td>
+<td><code>$D015</code></td>
+<td>Sprite enable (1 bit per sprite)</td>
+</tr>
+<tr>
+<td><code>SPRITE_EXPAND_Y</code></td>
+<td><code>$D017</code></td>
+<td>Vertical expansion</td>
+</tr>
+<tr>
+<td><code>SPRITE_EXPAND_X</code></td>
+<td><code>$D01D</code></td>
+<td>Horizontal expansion</td>
+</tr>
+<tr>
+<td><code>SPRITE_MULTICOLOR</code></td>
+<td><code>$D01C</code></td>
+<td>Multicolor mode</td>
+</tr>
+<tr>
+<td><code>SPRITE_BG_PRIO</code></td>
+<td><code>$D01B</code></td>
+<td>Sprite/background priority</td>
+</tr>
+<tr>
+<td><code>SPRITE_COL_0</code></td>
+<td><code>$D025</code></td>
+<td>Common multicolor 0</td>
+</tr>
+<tr>
+<td><code>SPRITE_COL_1</code></td>
+<td><code>$D026</code></td>
+<td>Common multicolor 1</td>
+</tr>
+<tr>
+<td><code>SPRITE_COLOR</code></td>
+<td><code>$D027</code>-<code>$D02E</code></td>
+<td>Sprite colors 0-7</td>
+</tr>
+<tr>
+<td><code>BORDER_COLOR</code></td>
+<td><code>$D020</code></td>
+<td>Border color</td>
+</tr>
+<tr>
+<td><code>BG_COLOR</code></td>
+<td><code>$D021</code></td>
+<td>Background color</td>
+</tr>
+<tr>
+<td><code>BG_COLOR_1</code></td>
+<td><code>$D022</code></td>
+<td>Background color 1</td>
+</tr>
+<tr>
+<td><code>BG_COLOR_2</code></td>
+<td><code>$D023</code></td>
+<td>Background color 2</td>
+</tr>
+<tr>
+<td><code>BG_COLOR_3</code></td>
+<td><code>$D024</code></td>
+<td>Background color 3</td>
+</tr>
+<tr>
+<td><code>IRQ_ENABLE</code></td>
+<td><code>$D01A</code></td>
+<td>Interrupt enable</td>
+</tr>
+<tr>
+<td><code>IRQ_STATUS</code></td>
+<td><code>$D019</code></td>
+<td>Interrupt status (acknowledge)</td>
+</tr>
+<tr>
+<td><code>SPRITE_COLL</code></td>
+<td><code>$D01E</code></td>
+<td>Sprite-sprite collisions</td>
+</tr>
+<tr>
+<td><code>SPRITE_BG_COLL</code></td>
+<td><code>$D01F</code></td>
+<td>Sprite-background collisions</td>
+</tr>
+<tr>
+<td><code>COLOR_RAM</code></td>
+<td><code>$D800</code>-<code>$DBE7</code></td>
+<td>Character colors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sprite-pointers-07f8-07ff">Sprite pointers ($07F8-$07FF)</h3>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Sprite</th>
+<th>Pointer formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$07F8</code></td>
+<td>Sprite 0</td>
+<td>Pointer = data_address / 64</td>
+</tr>
+<tr>
+<td><code>$07F9</code></td>
+<td>Sprite 1</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FA</code></td>
+<td>Sprite 2</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FB</code></td>
+<td>Sprite 3</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FC</code></td>
+<td>Sprite 4</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FD</code></td>
+<td>Sprite 5</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FE</code></td>
+<td>Sprite 6</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>$07FF</code></td>
+<td>Sprite 7</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sid-registers-audio">SID Registers (audio)</h2>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Voice</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$D400</code></td>
+<td>1</td>
+<td>Frequency low</td>
+</tr>
+<tr>
+<td><code>$D401</code></td>
+<td>1</td>
+<td>Frequency high</td>
+</tr>
+<tr>
+<td><code>$D404</code></td>
+<td>1</td>
+<td>Control (gate, waveform)</td>
+</tr>
+<tr>
+<td><code>$D405</code></td>
+<td>1</td>
+<td>Attack/Decay</td>
+</tr>
+<tr>
+<td><code>$D406</code></td>
+<td>1</td>
+<td>Sustain/Release</td>
+</tr>
+<tr>
+<td><code>$D410</code></td>
+<td>2</td>
+<td>Frequency low</td>
+</tr>
+<tr>
+<td><code>$D411</code></td>
+<td>2</td>
+<td>Frequency high</td>
+</tr>
+<tr>
+<td><code>$D414</code></td>
+<td>2</td>
+<td>Control</td>
+</tr>
+<tr>
+<td><code>$D415</code></td>
+<td>2</td>
+<td>Attack/Decay</td>
+</tr>
+<tr>
+<td><code>$D416</code></td>
+<td>2</td>
+<td>Sustain/Release</td>
+</tr>
+<tr>
+<td><code>$D420</code></td>
+<td>3</td>
+<td>Frequency low</td>
+</tr>
+<tr>
+<td><code>$D421</code></td>
+<td>3</td>
+<td>Frequency high</td>
+</tr>
+<tr>
+<td><code>$D424</code></td>
+<td>3</td>
+<td>Control</td>
+</tr>
+<tr>
+<td><code>$D425</code></td>
+<td>3</td>
+<td>Attack/Decay</td>
+</tr>
+<tr>
+<td><code>$D426</code></td>
+<td>3</td>
+<td>Sustain/Release</td>
+</tr>
+<tr>
+<td><code>$D418</code></td>
+<td>Global</td>
+<td>Volume (0-15)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="waveforms-control-register">Waveforms (control register)</h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Waveform</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$10</code></td>
+<td>Square</td>
+<td>Waveform only (gate OFF)</td>
+</tr>
+<tr>
+<td><code>$11</code></td>
+<td>Square</td>
+<td>Square wave + gate ON</td>
+</tr>
+<tr>
+<td><code>$20</code></td>
+<td>Triangle</td>
+<td>Triangle only (gate OFF)</td>
+</tr>
+<tr>
+<td><code>$21</code></td>
+<td>Triangle</td>
+<td>Triangle + gate ON</td>
+</tr>
+<tr>
+<td><code>$40</code></td>
+<td>Sawtooth</td>
+<td>Sawtooth only</td>
+</tr>
+<tr>
+<td><code>$41</code></td>
+<td>Sawtooth</td>
+<td>Sawtooth + gate ON</td>
+</tr>
+<tr>
+<td><code>$80</code></td>
+<td>Noise</td>
+<td>Noise only</td>
+</tr>
+<tr>
+<td><code>$81</code></td>
+<td>Noise</td>
+<td>Noise + gate ON</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cia-registers-joystick">CIA Registers (joystick)</h2>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$DC00</code></td>
+<td>Joystick port 2</td>
+</tr>
+<tr>
+<td><code>$DC01</code></td>
+<td>Joystick port 1</td>
+</tr>
+<tr>
+<td><code>$DC0D</code></td>
+<td>CIA Interrupt Control</td>
+</tr>
+</tbody>
+</table>
+<h3 id="joystick-port-1-bits-dc01">Joystick port 1 bits ($DC01)</h3>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Direction</th>
+<th>Active</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Up</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Down</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Left</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Right</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Button</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5-7</td>
+<td>Unused</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="essential-6502-instructions">Essential 6502 Instructions</h2>
+<h3 id="data-transfer">Data transfer</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LDA #val</code></td>
+<td>Load immediate into A</td>
+</tr>
+<tr>
+<td><code>LDA addr</code></td>
+<td>Load from address into A</td>
+</tr>
+<tr>
+<td><code>LDX #val</code></td>
+<td>Load immediate into X</td>
+</tr>
+<tr>
+<td><code>LDY #val</code></td>
+<td>Load immediate into Y</td>
+</tr>
+<tr>
+<td><code>STA addr</code></td>
+<td>Store A to address</td>
+</tr>
+<tr>
+<td><code>STX addr</code></td>
+<td>Store X to address</td>
+</tr>
+<tr>
+<td><code>STY addr</code></td>
+<td>Store Y to address</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arithmetic">Arithmetic</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ADC #val</code></td>
+<td>A = A + val + Carry</td>
+</tr>
+<tr>
+<td><code>SBC #val</code></td>
+<td>A = A - val - (1-Carry)</td>
+</tr>
+<tr>
+<td><code>INC addr</code></td>
+<td>addr = addr + 1</td>
+</tr>
+<tr>
+<td><code>DEC addr</code></td>
+<td>addr = addr - 1</td>
+</tr>
+<tr>
+<td><code>INX</code></td>
+<td>X = X + 1</td>
+</tr>
+<tr>
+<td><code>DEX</code></td>
+<td>X = X - 1</td>
+</tr>
+<tr>
+<td><code>INY</code></td>
+<td>Y = Y + 1</td>
+</tr>
+<tr>
+<td><code>DEY</code></td>
+<td>Y = Y - 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logic">Logic</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AND #val</code></td>
+<td>A = A AND val</td>
+</tr>
+<tr>
+<td><code>ORA #val</code></td>
+<td>A = A OR val</td>
+</tr>
+<tr>
+<td><code>EOR #val</code></td>
+<td>A = A XOR val</td>
+</tr>
+<tr>
+<td><code>ASL</code></td>
+<td>Shift left</td>
+</tr>
+<tr>
+<td><code>LSR</code></td>
+<td>Shift right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compare-and-branches">Compare and branches</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CMP #val</code></td>
+<td>Compare A with val</td>
+</tr>
+<tr>
+<td><code>CPX #val</code></td>
+<td>Compare X with val</td>
+</tr>
+<tr>
+<td><code>CPY #val</code></td>
+<td>Compare Y with val</td>
+</tr>
+<tr>
+<td><code>BEQ label</code></td>
+<td>Branch if equal (Z=1)</td>
+</tr>
+<tr>
+<td><code>BNE label</code></td>
+<td>Branch if not equal (Z=0)</td>
+</tr>
+<tr>
+<td><code>BCC label</code></td>
+<td>Branch if Carry=0</td>
+</tr>
+<tr>
+<td><code>BCS label</code></td>
+<td>Branch if Carry=1</td>
+</tr>
+<tr>
+<td><code>BMI label</code></td>
+<td>Branch if negative (N=1)</td>
+</tr>
+<tr>
+<td><code>BPL label</code></td>
+<td>Branch if positive (N=0)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stack-and-jumps">Stack and jumps</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JMP label</code></td>
+<td>Unconditional jump</td>
+</tr>
+<tr>
+<td><code>JSR label</code></td>
+<td>Jump to subroutine</td>
+</tr>
+<tr>
+<td><code>RTS</code></td>
+<td>Return from subroutine</td>
+</tr>
+<tr>
+<td><code>RTI</code></td>
+<td>Return from interrupt</td>
+</tr>
+<tr>
+<td><code>PHA</code></td>
+<td>Push A onto stack</td>
+</tr>
+<tr>
+<td><code>PLA</code></td>
+<td>Pull A from stack</td>
+</tr>
+<tr>
+<td><code>TXA</code></td>
+<td>Copy X to A</td>
+</tr>
+<tr>
+<td><code>TYA</code></td>
+<td>Copy Y to A</td>
+</tr>
+<tr>
+<td><code>TAX</code></td>
+<td>Copy A to X</td>
+</tr>
+<tr>
+<td><code>TAY</code></td>
+<td>Copy A to Y</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flags">Flags</h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SEC</code></td>
+<td>Set Carry = 1</td>
+</tr>
+<tr>
+<td><code>CLC</code></td>
+<td>Clear Carry = 0</td>
+</tr>
+<tr>
+<td><code>SEI</code></td>
+<td>Set Interrupt disable</td>
+</tr>
+<tr>
+<td><code>CLI</code></td>
+<td>Clear Interrupt disable</td>
+</tr>
+<tr>
+<td><code>SED</code></td>
+<td>Set Decimal mode</td>
+</tr>
+<tr>
+<td><code>CLD</code></td>
+<td>Clear Decimal mode</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-petscii-codes-uppercase-letters">Common PETSCII Codes (uppercase letters)</h2>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C</td>
+<td>3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>4</td>
+</tr>
+<tr>
+<td>E</td>
+<td>5</td>
+</tr>
+<tr>
+<td>F</td>
+<td>6</td>
+</tr>
+<tr>
+<td>G</td>
+<td>7</td>
+</tr>
+<tr>
+<td>H</td>
+<td>8</td>
+</tr>
+<tr>
+<td>I</td>
+<td>9</td>
+</tr>
+<tr>
+<td>J</td>
+<td>10</td>
+</tr>
+<tr>
+<td>K</td>
+<td>11</td>
+</tr>
+<tr>
+<td>L</td>
+<td>12</td>
+</tr>
+<tr>
+<td>M</td>
+<td>13</td>
+</tr>
+<tr>
+<td>N</td>
+<td>14</td>
+</tr>
+<tr>
+<td>O</td>
+<td>15</td>
+</tr>
+<tr>
+<td>P</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>17</td>
+</tr>
+<tr>
+<td>R</td>
+<td>18</td>
+</tr>
+<tr>
+<td>S</td>
+<td>19</td>
+</tr>
+<tr>
+<td>T</td>
+<td>20</td>
+</tr>
+<tr>
+<td>U</td>
+<td>21</td>
+</tr>
+<tr>
+<td>V</td>
+<td>22</td>
+</tr>
+<tr>
+<td>W</td>
+<td>23</td>
+</tr>
+<tr>
+<td>X</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>32</td>
+</tr>
+<tr>
+<td>0-9</td>
+<td>48-57</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="powers-of-2">Powers of 2</h2>
+<table>
+<thead>
+<tr>
+<th>Power</th>
+<th>Value</th>
+<th>Hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2^0</td>
+<td>1</td>
+<td><code>$01</code></td>
+</tr>
+<tr>
+<td>2^1</td>
+<td>2</td>
+<td><code>$02</code></td>
+</tr>
+<tr>
+<td>2^2</td>
+<td>4</td>
+<td><code>$04</code></td>
+</tr>
+<tr>
+<td>2^3</td>
+<td>8</td>
+<td><code>$08</code></td>
+</tr>
+<tr>
+<td>2^4</td>
+<td>16</td>
+<td><code>$10</code></td>
+</tr>
+<tr>
+<td>2^5</td>
+<td>32</td>
+<td><code>$20</code></td>
+</tr>
+<tr>
+<td>2^6</td>
+<td>64</td>
+<td><code>$40</code></td>
+</tr>
+<tr>
+<td>2^7</td>
+<td>128</td>
+<td><code>$80</code></td>
+</tr>
+<tr>
+<td>2^8</td>
+<td>256</td>
+<td><code>$100</code></td>
+</tr>
+<tr>
+<td>2^9</td>
+<td>512</td>
+<td><code>$200</code></td>
+</tr>
+<tr>
+<td>2^10</td>
+<td>1024</td>
+<td><code>$400</code></td>
+</tr>
+<tr>
+<td>2^11</td>
+<td>2048</td>
+<td><code>$800</code></td>
+</tr>
+<tr>
+<td>2^12</td>
+<td>4096</td>
+<td><code>$1000</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sprite-bit-masks">Sprite Bit Masks</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">; Masks for enabling/disabling sprites</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">SPRITE_0</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00000001</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nf">SPRITE_1</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00000010</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">SPRITE_2</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00000100</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nf">SPRITE_3</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00001000</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nf">SPRITE_4</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00010000</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nf">SPRITE_5</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00100000</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nf">SPRITE_6</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">01000000</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nf">SPRITE_7</span><span class="w">  </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">10000000</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">; Masks for $D010 (MSB X)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nf">MSB_SPRITE_0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00000001</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nf">MSB_SPRITE_1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="mi">00000010</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1">; ... same pattern ...</span>
+</code></pre></div>
+<hr />
+<h2 id="useful-numbers">Useful Numbers</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Decimal</th>
+<th>Hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Screen RAM start</td>
+<td>1024</td>
+<td><code>$0400</code></td>
+</tr>
+<tr>
+<td>Screen RAM end</td>
+<td>2023</td>
+<td><code>$07E7</code></td>
+</tr>
+<tr>
+<td>Color RAM start</td>
+<td>55296</td>
+<td><code>$D800</code></td>
+</tr>
+<tr>
+<td>Color RAM end</td>
+<td>56295</td>
+<td><code>$DBE7</code></td>
+</tr>
+<tr>
+<td>Sprite data size</td>
+<td>63 bytes</td>
+<td><code>$3F</code></td>
+</tr>
+<tr>
+<td>Max raster PAL</td>
+<td>311</td>
+<td><code>$0137</code></td>
+</tr>
+<tr>
+<td>Max raster NTSC</td>
+<td>262</td>
+<td><code>$0106</code></td>
+</tr>
+<tr>
+<td>Characters per row</td>
+<td>40</td>
+<td><code>$28</code></td>
+</tr>
+<tr>
+<td>Screen rows</td>
+<td>25</td>
+<td><code>$19</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
