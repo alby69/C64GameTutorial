@@ -76,8 +76,6 @@ L'integrazione permette di:
 - **Validazione Automatica:** Utilizzare `c64validator` per testare le soluzioni degli esercizi.
 - **RAG (Retrieval-Augmented Generation):** I sorgenti sono annotati con metadati per una migliore indicizzazione da parte dei modelli LLM.
 
-Per approfondire, consulta [Integrazione SDK](docs/it/integrazione-sdk.md).
-
 ## Dipendenze di sistema
 
 Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
