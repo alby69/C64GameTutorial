@@ -26,6 +26,8 @@ tecniche dei leggendari programmatori degli anni '80.
 | 43 | **Capitolo: Compressione e Fast Loader IRQ** | ❌ |
 | 44 | **Capitolo: Debug e Profiling su Hardware Reale** | ❌ |
 | 45 | **Sezione: Code Archaeology** (Analisi Elite/Cadaver) | ❌ |
+| 46 | **Integrazione: Unit Testing Assembly via SDK** | ❌ |
+| 47 | **Integrazione: RAG optimization per Manuale** | ❌ |
 
 ---
 

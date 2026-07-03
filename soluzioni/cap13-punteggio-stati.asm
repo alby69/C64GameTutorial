@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 13 — Punteggio e Stati
+; --- METADATA ---
+; chapter: 13
+; title: Punteggio e Stati
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

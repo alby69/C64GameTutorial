@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 23 — Schermate Titolo e High Score
+; --- METADATA ---
+; chapter: 23
+; title: Titolo e High Score
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 19 — Kernel Engine
+; --- METADATA ---
+; chapter: 19
+; title: Kernel Engine
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

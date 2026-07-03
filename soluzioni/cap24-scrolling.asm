@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 24 — Scrolling su C64
+; --- METADATA ---
+; chapter: 24
+; title: Scrolling
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

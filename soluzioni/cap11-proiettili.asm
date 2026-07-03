@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 11 — Sistema Proiettili
+; --- METADATA ---
+; chapter: 11
+; title: Sistema Proiettili
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

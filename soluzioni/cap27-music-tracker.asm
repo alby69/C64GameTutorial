@@ -1,5 +1,10 @@
 ; ─────────────────────────────────────────────────────
 ; Soluzioni esercizi Capitolo 27 — Music Tracker
+; --- METADATA ---
+; chapter: 27
+; title: Music Tracker
+; difficulty: advanced
+; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
 
 ; ─────────────────────────────────────────────────────

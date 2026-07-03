@@ -13,16 +13,23 @@
 
 set -e
 
+JSON_OUTPUT=false
+if [[ "$*" == *"--json"* ]]; then
+    JSON_OUTPUT=true
+fi
+
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SOL_DIR="$ROOT/soluzioni"
 PRG_DIR="$ROOT/prg"
 
-echo "# Report Dimensioni Codice"
-echo ""
-echo "Generato il: $(date '+%Y-%m-%d %H:%M')"
-echo ""
-echo "| Cap | File | Origine | Righe | Esercizi | PRG byte |"
-echo "|-----|------|---------|------:|---------:|---------:|"
+if [ "$JSON_OUTPUT" = false ]; then
+    echo "# Report Dimensioni Codice"
+    echo ""
+    echo "Generato il: $(date '+%Y-%m-%d %H:%M')"
+    echo ""
+    echo "| Cap | File | Origine | Righe | Esercizi | PRG byte |"
+    echo "|-----|------|---------|------:|---------:|---------:|"
+fi
 
 # Processa file in ordine numerico
 for f in "$SOL_DIR"/cap[0-9]*.asm; do
@@ -51,7 +58,9 @@ for f in "$SOL_DIR"/cap[0-9]*.asm; do
         prg_size="$prg_size B"
     fi
 
-    echo "| $ch | \`$base\` | $origin | $lines | $ex | $prg_size |"
+    if [ "$JSON_OUTPUT" = false ]; then
+        echo "| $ch | \`$base\` | $origin | $lines | $ex | $prg_size |"
+    fi
 done
 
 # Aggiungi game/ se disponibile
@@ -63,10 +72,18 @@ if [ -d "$ROOT/game" ]; then
         prg_size=$(wc -c < "$PRG_DIR/game.prg")
         prg_size="$prg_size B"
     fi
-    echo "| — | \`game/\` ($game_files file) | — | $game_lines | — | $prg_size |"
+    if [ "$JSON_OUTPUT" = false ]; then
+        echo "| — | \`game/\` ($game_files file) | — | $game_lines | — | $prg_size |"
+    fi
 fi
 
-echo ""
-echo "---"
-echo ""
-echo "Righe totali soluzioni: $(cat "$SOL_DIR"/*.asm 2>/dev/null | wc -l)"
+total_sol_lines=$(cat "$SOL_DIR"/*.asm 2>/dev/null | wc -l)
+
+if [ "$JSON_OUTPUT" = true ]; then
+    echo "{\"total_solutions_lines\": $total_sol_lines}"
+else
+    echo ""
+    echo "---"
+    echo ""
+    echo "Righe totali soluzioni: $total_sol_lines"
+fi

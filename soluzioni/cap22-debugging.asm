@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 22 — Debugging con VICE
+; --- METADATA ---
+; chapter: 22
+; title: Debugging VICE
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

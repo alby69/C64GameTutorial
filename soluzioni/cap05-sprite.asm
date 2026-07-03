@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 5 — Sprite Hardware
+; --- METADATA ---
+; chapter: 5
+; title: Sprite VIC-II
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

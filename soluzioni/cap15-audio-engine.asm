@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 15 — Audio Engine
+; --- METADATA ---
+; chapter: 15
+; title: Audio Engine
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

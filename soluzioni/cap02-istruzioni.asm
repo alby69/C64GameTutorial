@@ -1,5 +1,11 @@
 ; =============================================
 ; SOLUZIONI Capitolo 2 — Istruzioni Fondamentali
+; --- METADATA ---
+; chapter: 2
+; title: Istruzioni Fondamentali
+; instructions: [LDA, STA, INC, DEC, CMP, BEQ, BNE, JMP, JSR, RTS]
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

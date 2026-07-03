@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 18 — Boss System
+; --- METADATA ---
+; chapter: 18
+; title: Boss System
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

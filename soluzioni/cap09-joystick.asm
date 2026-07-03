@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 9 — Joystick
+; --- METADATA ---
+; chapter: 9
+; title: Joystick e Input
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

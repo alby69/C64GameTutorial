@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 14 — Audio SID Base
+; --- METADATA ---
+; chapter: 14
+; title: Audio SID Base
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 17 — Parallax e Raster Split
+; --- METADATA ---
+; chapter: 17
+; title: Parallax e Raster Split
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

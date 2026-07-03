@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 12 — Wave System e AI
+; --- METADATA ---
+; chapter: 12
+; title: Wave System e AI
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

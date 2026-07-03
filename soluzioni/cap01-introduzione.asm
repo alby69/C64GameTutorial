@@ -1,5 +1,11 @@
 ; =============================================
 ; SOLUZIONI Capitolo 1 — Introduzione
+; --- METADATA ---
+; chapter: 1
+; title: Introduzione al 6502 e TMP
+; instructions: [LDA, STA, JMP, RTS]
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

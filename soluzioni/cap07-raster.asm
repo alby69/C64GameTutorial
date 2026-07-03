@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 7 — Raster Interrupt
+; --- METADATA ---
+; chapter: 7
+; title: Raster Interrupt
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
