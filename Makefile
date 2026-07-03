@@ -141,39 +141,13 @@ stats:
 	@echo "--- Byte dei .prg (se generati) ---"
 	@ls -la $(PRG_DIR)/*.prg 2>/dev/null | awk '{print $$5, $$9}' || echo "(nessun .prg)"
 
-# Validazione
+# Validazione standard
 validate:
-	@echo "=== Validazione progetto ==="
-	@errors=0; \
-	for ch in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27; do \
-		md_file="$$(ls $(MD_DIR)/$$ch-*.md 2>/dev/null)"; \
-		asm_file="$$(ls $(SOL_DIR)/cap$$ch-*.asm 2>/dev/null)"; \
-		if [ -z "$$md_file" ]; then \
-			echo "  WARN: capitolo $$ch mancante in md/"; \
-			continue; \
-		fi; \
-		ex_count=$$(sed -n '/^### Esercizio/,/^### Esercizio/p' "$$md_file" | grep -c "^### Esercizio"); \
-		if [ "$$ex_count" -lt 5 ] && [ "$$ch" != "20" ]; then \
-			echo "  ERROR: $$md_file ha $$ex_count esercizi (servono 5)"; \
-			errors=$$((errors + 1)); \
-		elif [ "$$ch" = "20" ] && [ "$$ex_count" -lt 5 ]; then \
-			echo "  ERROR: $$md_file ha $$ex_count esercizi (servono 5)"; \
-			errors=$$((errors + 1)); \
-		else \
-			echo "  OK: $$md_file ($$ex_count esercizi)"; \
-		fi; \
-		if [ "$$ch" != "20" ] && [ -z "$$asm_file" ]; then \
-			echo "  ERROR: soluzione per capitolo $$ch mancante"; \
-			errors=$$((errors + 1)); \
-		fi; \
-	done; \
-	echo ""; \
-	if [ "$$errors" -gt 0 ]; then \
-		echo "Trovati $$errors errori."; \
-		exit 1; \
-	else \
-		echo "Nessun errore trovato."; \
-	fi
+	@tools/validate.sh
+
+# Validazione per Intelligence SDK (output JSON)
+validate-sdk:
+	@tools/validate.sh --json
 
 # Report dimensioni codice
 size-report:

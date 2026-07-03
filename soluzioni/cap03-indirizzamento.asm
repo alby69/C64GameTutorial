@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 3 — Indirizzamento e Cicli
+; --- METADATA ---
+; chapter: 3
+; title: Indirizzamento e Cicli
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

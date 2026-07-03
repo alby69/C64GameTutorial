@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 20 — Arcade OS e Oltre
+; --- METADATA ---
+; chapter: 20
+; title: Arcade OS
+; difficulty: master
+; --- END METADATA ---
 ; =============================================
 ;
 ; NOTA: Gli esercizi di questo capitolo sono

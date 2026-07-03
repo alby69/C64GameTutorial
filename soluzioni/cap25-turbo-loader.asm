@@ -1,5 +1,10 @@
 ; ─────────────────────────────────────────────────────
 ; Soluzioni esercizi Capitolo 25 — Turbo Loader
+; --- METADATA ---
+; chapter: 25
+; title: Turbo Loader
+; difficulty: master
+; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
 
 ; ─────────────────────────────────────────────────────

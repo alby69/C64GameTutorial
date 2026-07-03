@@ -1,0 +1,15 @@
+
+
+
+
+
+{
+  "status": "success",
+  "errors": 0,
+  "warnings": 3,
+  "stats": {
+    "chapters_lines": 10721,
+    "appendices_lines": 2092,
+    "solutions_lines": 7098
+  }
+}

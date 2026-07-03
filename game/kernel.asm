@@ -1,5 +1,10 @@
 ; =============================================
 ; KERNEL — IRQ chain, scheduler, frame
+; --- METADATA ---
+; module: kernel
+; features: [IRQ, Scheduler, Phase Management]
+; memory_address: $0800
+; --- END METADATA ---
 ; =============================================
 
 * = $0800

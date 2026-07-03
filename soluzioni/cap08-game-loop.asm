@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 8 — Game Loop Sincronizzato
+; --- METADATA ---
+; chapter: 8
+; title: Game Loop
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

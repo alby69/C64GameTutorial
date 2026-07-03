@@ -43,6 +43,7 @@ nav:
   - Home: index.md
   - Manuale (Italiano):
     - Indice: it/INDICE.md
+    - Integrazione SDK: it/integrazione-sdk.md
     - Introduzione: it/01-introduzione-c64-tmp.md
     - Istruzioni fondamentali: it/02-istruzioni-fondamentali.md
     - Indirizzamento e cicli: it/03-indirizzamento-cicli-ritardi.md
@@ -81,6 +82,7 @@ nav:
       - Turbo Macro Pro: it/appendice-turbo-macro-pro.md
   - Manual (English):
     - Introduction: en/01-c64-tmp-introduction.md
+    - SDK Integration: en/sdk-integration.md
     - Fundamental instructions: en/02-fundamental-instructions.md
     - Addressing and loops: en/03-addressing-loops-delays.md
     - Video memory: en/04-video-memory-characters.md

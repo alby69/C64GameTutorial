@@ -67,6 +67,17 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 
 Ogni capitolo include esercizi con soluzioni in `soluzioni/`.
 
+## Integrazione con C64-Intelligence-SDK
+
+Questo progetto è parte integrante dell'ecosistema **[C64-Intelligence-SDK](https://github.com/alby69/C64-Intelligence-SDK)**.
+
+L'integrazione permette di:
+- **AI Assistant:** Usare l'assistente multi-agente per spiegare il codice del tutorial.
+- **Validazione Automatica:** Utilizzare `c64validator` per testare le soluzioni degli esercizi.
+- **RAG (Retrieval-Augmented Generation):** I sorgenti sono annotati con metadati per una migliore indicizzazione da parte dei modelli LLM.
+
+Per approfondire, consulta [Integrazione SDK](docs/it/integrazione-sdk.md).
+
 ## Dipendenze di sistema
 
 Per compilare ed eseguire gli esempi e generare il manuale sono necessari:

@@ -1,5 +1,11 @@
 ; =============================================
 ; MAIN — Punto d'ingresso: memory map + include chain
+; --- METADATA ---
+; project: Space Commander
+; type: Main Entry Point
+; structure: Modular (include)
+; description: Full game template combining all tutorial concepts
+; --- END METADATA ---
 ; =============================================
 ;
 ; Assemblare con:

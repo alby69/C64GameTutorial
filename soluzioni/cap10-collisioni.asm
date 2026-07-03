@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 10 — Collisioni
+; --- METADATA ---
+; chapter: 10
+; title: Collisioni Software
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

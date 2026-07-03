@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 4 — Memoria Video
+; --- METADATA ---
+; chapter: 4
+; title: Memoria Video
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

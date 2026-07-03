@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 16 — Sprite Multiplexing
+; --- METADATA ---
+; chapter: 16
+; title: Sprite Multiplexing
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

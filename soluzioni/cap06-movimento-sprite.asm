@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 6 — Movimento Sprite
+; --- METADATA ---
+; chapter: 6
+; title: Movimento Sprite
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

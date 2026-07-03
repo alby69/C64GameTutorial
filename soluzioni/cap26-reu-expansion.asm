@@ -1,5 +1,10 @@
 ; ─────────────────────────────────────────────────────
 ; Soluzioni esercizi Capitolo 26 — REU Expansion
+; --- METADATA ---
+; chapter: 26
+; title: REU Expansion
+; difficulty: master
+; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
 
 ; ─────────────────────────────────────────────────────
