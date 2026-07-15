@@ -6,6 +6,10 @@ prg/
 vice-screenshots/
 vice-test-report.md
 
+# Python cache
+__pycache__/
+*.pyc
+
 # MkDocs
 site/
 docs/
