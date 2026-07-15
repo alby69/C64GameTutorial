@@ -38,13 +38,13 @@ LDA #10     ; carica il valore 10 nel registro A
 **Registro X** — Usato spesso come contatore o indice.
 
 ```
-LDX #0      ; carica 0 in X
+LDX #0      ; carica 0 nel registro X
 ```
 
 **Registro Y** — Molto simile a X.
 
 ```
-LDY #0      ; carica 0 in Y
+LDY #0      ; carica 0 nel registro Y
 ```
 
 ---
@@ -56,23 +56,23 @@ Il processore vede 65536 indirizzi: da `$0000` a `$FFFF` (0 a 65535).
 ### Mappa semplificata
 
 ```
-  $0000 ┌──────────────────────┐
+  $0000  ┌──────────────────────┐
          │ Zero Page (256 byte) │  RAM piu veloce
-  $0100 ├──────────────────────┤
+  $0100  ├──────────────────────┤
          │ Stack (256 byte)     │
-  $0200 ├──────────────────────┤
+  $0200  ├──────────────────────┤
          │ RAM libera           │
-  $0400 ├──────────────────────┤
+  $0400  ├──────────────────────┤
          │ Screen RAM (video)   │
-  $0801 ├──────────────────────┤
+  $0801  ├──────────────────────┤
          │ Programmi BASIC      │
-  $A000 ├──────────────────────┤
+  $A000  ├──────────────────────┤
          │ BASIC ROM            │
-  $D000 ├──────────────────────┤
+  $D000  ├──────────────────────┤
          │ VIC-II / SID / CIA   │  Chip hardware
-  $E000 ├──────────────────────┤
+  $E000  ├──────────────────────┤
          │ KERNAL ROM           │
-  $FFFF └──────────────────────┘
+  $FFFF  └──────────────────────┘
 ```
 
 ### Zone che useremo spesso
@@ -192,7 +192,7 @@ Risultato: `D020 = 2` → bordo rosso.
 | 15 | Grigio chiaro |
 
 > **Consiglio:** Puoi usare i nomi dei colori come costanti per rendere il codice piu leggibile:
-> `ROSSO = 2`, poi `LDA #ROSSO`.
+> `rosso = 2`, poi `LDA #rosso`.
 
 ---
 
