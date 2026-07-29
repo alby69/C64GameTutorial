@@ -34,14 +34,17 @@ GAMELOOP
     JMP GAMELOOP
 
 ; --- ESERCIZIO 4: bordo cicla attraverso tutti i colori 0-15 ---
-*=$c000
+*=$C000
     LDA #0
+
 LOOP4
     STA $D020
-    INC
-    INC $D020
+    CLC
+    ADC #1
     CMP #16
     BNE LOOP4
+
+    LDA #0
     JMP LOOP4
 
 ; --- ESERCIZIO 5: struttura MAIN/UPDATE con JSR/RTS ---
