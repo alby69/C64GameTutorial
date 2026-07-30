@@ -333,6 +333,7 @@ US3_E3
     ORA #%00000100
     STA $D015
 ; Continua per nemico 3...
+US3_E4
     RTS
 
 WAIT3

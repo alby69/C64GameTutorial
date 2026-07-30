@@ -1,5 +1,11 @@
 ; =============================================
 ; SOLUZIONI Capitolo 2 — Istruzioni Fondamentali
+; --- METADATA ---
+; chapter: 2
+; title: Istruzioni Fondamentali
+; instructions: [LDA, STA, INC, DEC, CMP, BEQ, BNE, JMP, JSR, RTS]
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -12,11 +18,11 @@
 ; =============================================
 
 ; --- ESERCIZIO 1: bordo incrementa 0→15 poi fermo ---
-*=$8000
+*=$C000
     LDA #0
 LOOP
     STA $D020
-    INC            ; non serve A, INC $D020
+    ; non serve A, INC $D020
     INC $D020      ; incrementa registro bordo
     LDA $D020
     CMP #15
@@ -26,7 +32,7 @@ DONE
     JMP DONE
 
 ; Versione piu pulita:
-*=$8000
+*=$C000
     LDA #0
 LOOP2
     STA $D020
@@ -39,7 +45,7 @@ HALT
 
 ; --- ESERCIZIO 2: contatore in Zero Page ---
 COUNTER = $02     ; variabile in Zero Page
-*=$8000
+*=$C000
     LDA #0
     STA COUNTER
 LOOP3
@@ -53,7 +59,7 @@ DONE3
     JMP DONE3
 
 ; --- ESERCIZIO 3: delay ~1 secondo (3 cicli annidati) ---
-*=$8000
+*=$C000
 DELAY
     LDX #$FF       ; ciclo esterno
 OUTER
@@ -71,7 +77,7 @@ MID
     RTS
 
 ; --- ESERCIZIO 5: rainbow effetto (bordo cicla con delay) ---
-*=$8000
+*=$C000
     LDA #0
 LOOP5
     STA $D020
@@ -90,17 +96,17 @@ D25
     RTS
 
 ; --- ESERCIZIO 4: sfondo lampeggia blu/nero ogni secondo ---
-*=$8000
+*=$C000
 MAIN
     LDA #6         ; blu
     STA $D021
-    JSR DELAY
+    JSR DELAY_EX4
     LDA #0         ; nero
     STA $D021
-    JSR DELAY
+    JSR DELAY_EX4
     JMP MAIN
 
-DELAY
+DELAY_EX4
     LDX #$FF
 OUTER2
     LDY #$FF

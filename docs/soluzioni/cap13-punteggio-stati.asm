@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 13 — Punteggio e Stati
+; --- METADATA ---
+; chapter: 13
+; title: Punteggio e Stati
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -10,13 +15,16 @@
 ;   5: mostra WAVE 1/2/... tra le wave
 ;
 ; =============================================
+INVINCIBLE = $35
+INV_TIMER  = $36
+
 ; --- ESERCIZIO 1: punteggio +10 a ogni pressione fuoco ---
 SCORE      = $02     ; 2 byte
 SCORE_HI   = $03
 JOYPORT    = $DC01
 OLD_FIRE   = $04
 
-*=$8000
+*=$C000
     LDA #0
     STA SCORE
     STA SCORE_HI
@@ -305,4 +313,9 @@ WAIT5
     LDA $D012
     CMP #$F8
     BNE WAIT2
+    RTS
+
+INIT_PLAY
+    RTS
+GAME_UPDATE
     RTS

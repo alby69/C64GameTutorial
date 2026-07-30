@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 4 — Memoria Video
+; --- METADATA ---
+; chapter: 4
+; title: Memoria Video
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -14,7 +19,7 @@
 ; --- ESERCIZIO 1: nome centrato riga 10 ---
 ; Riga 10 = inizio a $0400 + 10*40 = $0400 + 400 = $0590
 ; "MARCO" = 5 lettere, colonna = (40-5)/2 = 17.5 → 17
-*=$8000
+*=$C000
     LDA #13        ; 'M'
     STA $05A1      ; $0590 + 17
     LDA #1         ; 'A'
@@ -28,7 +33,7 @@
     RTS
 
 ; --- ESERCIZIO 2: effetto matrix (caratteri cadono) ---
-*=$8000
+*=$C000
     LDX #0
 LOOPM
     LDA #81        ; carattere casuale '@'
@@ -49,12 +54,18 @@ FALL
     JMP $8000      ; restart
 
 SHIFT_DOWN
-    LDY #960       ; 24 righe * 40
-    STY $02        ; contatore
-    LDA #$04+24
-    STA $04
-LOOPS
-    ; sposta caratteri verso il basso
+    LDX #240
+LOOP_S
+    LDA $0400+720-1,X
+    STA $0400+760-1,X
+    LDA $0400+480-1,X
+    STA $0400+520-1,X
+    LDA $0400+240-1,X
+    STA $0400+280-1,X
+    LDA $0400-1,X
+    STA $0400+40-1,X
+    DEX
+    BNE LOOP_S
     RTS
 
 ; --- ESERCIZIO 3: schermata titolo ---
@@ -63,7 +74,7 @@ BG      = $D021
 SCREEN  = $0400
 COLOR   = $D800
 
-*=$8000
+*=$C000
     ; Bordo decorato
     LDA #0
     STA BORDER
@@ -86,7 +97,7 @@ MSG .byte 7,9,15,3,15,0,1,18,3,1,4,5,0    ; "GIOCO ARCADE" in PETSCII
 
 ; --- ESERCIZIO 4: numero 42 in alto a destra ---
 ; Colonna 37-38 (40-3 = 37 per 2 cifre)
-*=$8000
+*=$C000
     LDA #52        ; '4' = PETSCII 52
     STA $0425      ; $0400 + 37
     LDA #50        ; '2' = PETSCII 50
@@ -95,7 +106,7 @@ MSG .byte 7,9,15,3,15,0,1,18,3,1,4,5,0    ; "GIOCO ARCADE" in PETSCII
 
 ; --- ESERCIZIO 5: scrolling marquee (testo scorrevole) ---
 ; Scrive "CIAO" che si sposta a destra ogni frame
-*=$8000
+*=$C000
     LDX #0
 LOOP5
     LDA MSG5,X

@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 19 — Kernel Engine
+; --- METADATA ---
+; chapter: 19
+; title: Kernel Engine
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -10,6 +15,27 @@
 ;   5: ristruttura gioco esistente in 3 strati
 ;
 ; =============================================
+; Equates per compatibilità standalone
+FRAME_CNT       = $02
+GAME_STATE      = $03
+SCORE           = $04
+PLAYER_LIVES    = $06
+BULLET_ACTIVE   = $10
+
+READ_INPUT      = STUB_RTS
+UPDATE_LOGIC    = STUB_RTS
+RENDER_SPRITES  = STUB_RTS
+MOVE_PLAYER_X   = STUB_RTS
+UPDATE_AUDIO    = STUB_RTS
+MENU_UPDATE     = STUB_RTS
+PLAYER_UPDATE   = STUB_RTS
+ENEMY_UPDATE    = STUB_RTS
+CHECK_WAVE      = STUB_RTS
+GAMEOVER_UPDATE = STUB_RTS
+
+STUB_RTS
+    RTS
+
 ; --- ESERCIZIO 1: separa in 3 file ---
 ;
 ; kernel.asm — interrupt, timing, scheduler
@@ -24,9 +50,9 @@
     SEI
     LDA #$7F
     STA $DC0D
-    LDA #<KERNEL_IRQ
+    LDA #<KERNEL_IRQ5
     STA $0314
-    LDA #>KERNEL_IRQ
+    LDA #>KERNEL_IRQ5
     STA $0315
     LDA #200
     STA $D012
@@ -294,12 +320,12 @@ UE_SKIP
     CLI
 
     JSR ENGINE_INIT
-    JSR GAME_INIT
+    JSR GAME_INIT5
 
-KERNEL_MAIN
-    JMP KERNEL_MAIN
+KERNEL_MAIN5
+    JMP KERNEL_MAIN5
 
-KERNEL_IRQ
+KERNEL_IRQ5
     PHA
     TXA
     PHA
@@ -349,7 +375,7 @@ ENGINE_COLLISION
     RTS
 
 ; game.asm
-GAME_INIT
+GAME_INIT5
     LDA #0
     STA GAME_STATE
     STA SCORE
@@ -357,7 +383,7 @@ GAME_INIT
     STA PLAYER_LIVES
     RTS
 
-GAME_UPDATE
+GAME_UPDATE5
     LDA GAME_STATE
     CMP #0
     BEQ GM_MENU

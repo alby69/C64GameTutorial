@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 7 — Raster Interrupt
+; --- METADATA ---
+; chapter: 7
+; title: Raster Interrupt
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -11,7 +16,7 @@
 ;
 ; =============================================
 ; --- ESERCIZIO 1: raster IRQ riga 50, bordo rosso ---
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D

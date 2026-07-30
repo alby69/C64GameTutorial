@@ -7,13 +7,18 @@
 ; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
 
+SERIAL_PORT = $DD00
+SCREEN_RAM = $0400
+COLOR_RAM  = $D800
+COLOR_CYAN = 3
+
+*=$C000
+
 ; ─────────────────────────────────────────────────────
 ; Esercizio 1 — Lettura byte dal serial bus ($DD00)
 ; ─────────────────────────────────────────────────────
 ; Legge 8 bit dal serial bus (bit DATA in = bit 6)
 ; Output: A = byte letto (MSB first)
-
-SERIAL_PORT = $DD00
 
 READ_SERIAL_BYTE
     LDX #8
@@ -135,7 +140,7 @@ GCR_BUF
     .byte 0
 WRITE_IDX
     .byte 0
-CIRC_BUF = * + 1
+CIRC_BUF = $3000
 
 ; ─────────────────────────────────────────────────────
 ; Esercizio 4 — Barra di progresso
@@ -146,13 +151,10 @@ UPDATE_PROGRESS
     LDX LD_BYTE_COUNT
     LDA #$A0          ; carattere blocco
     STA SCREEN_RAM+40*23,X
-    LDA COLOR_CYAN
+    LDA #COLOR_CYAN   ; usa # per il valore immediato
     STA COLOR_RAM+40*23,X
     INC LD_BYTE_COUNT
     RTS
 
-SCREEN_RAM = $0400
-COLOR_RAM  = $D800
-COLOR_CYAN = 3
 LD_BYTE_COUNT
     .byte 0

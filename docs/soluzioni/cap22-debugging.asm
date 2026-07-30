@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 22 — Debugging con VICE
+; --- METADATA ---
+; chapter: 22
+; title: Debugging VICE
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -91,9 +96,11 @@ SLOW_LOOP
     STA $D020           ; bordo rosso
 
     LDX #99
-    STX $0400,X         ; X contiene gia il valore
+FAST_LOOP
+    TXA
+    STA $0400,X         ; X contiene gia il valore
     DEX
-    BPL $-3
+    BPL FAST_LOOP
 
     LDA #0
     STA $D020           ; bordo nero

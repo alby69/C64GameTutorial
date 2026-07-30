@@ -54,12 +54,18 @@ FALL
     JMP $8000      ; restart
 
 SHIFT_DOWN
-    LDY #960       ; 24 righe * 40
-    STY $02        ; contatore
-    LDA #$04+24
-    STA $04
-LOOPS
-    ; sposta caratteri verso il basso
+    LDX #240
+LOOP_S
+    LDA $0400+720-1,X
+    STA $0400+760-1,X
+    LDA $0400+480-1,X
+    STA $0400+520-1,X
+    LDA $0400+240-1,X
+    STA $0400+280-1,X
+    LDA $0400-1,X
+    STA $0400+40-1,X
+    DEX
+    BNE LOOP_S
     RTS
 
 ; --- ESERCIZIO 3: schermata titolo ---

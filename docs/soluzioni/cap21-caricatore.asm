@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 21 — Caricatore Personalizzato
+; --- METADATA ---
+; chapter: 21
+; title: Custom Loader
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:

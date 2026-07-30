@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 16 — Sprite Multiplexing
+; --- METADATA ---
+; chapter: 16
+; title: Sprite Multiplexing
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -15,7 +20,7 @@ ZONE1_END = 120
 ZONE2_END = 240
 IRQ_VECTOR = $0314
 
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D
@@ -124,6 +129,9 @@ INIT_E2
     INX
     CPX #LOGICAL_CNT
     BNE INIT_E2
+    JMP MAIN2
+
+MAIN2
     JMP MAIN2
 
 MULTIPLEX_2ZONES

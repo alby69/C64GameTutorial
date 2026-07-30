@@ -12,6 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install TMPx cross-assembler
+        run: |
+          sudo apt-get update && sudo apt-get install -y wget unzip
+          wget -q https://style64.org/file/TMPx_v1.1.0-STYLE.zip -O /tmp/tmpx.zip
+          unzip -q -o /tmp/tmpx.zip -d /tmp/tmpx-extracted
+          sudo cp /tmp/tmpx-extracted/TMPx_v1.1.0-STYLE/linux-x86_64/tmpx /usr/local/bin/tmpx
+          sudo chmod +x /usr/local/bin/tmpx
+
       - name: Validate project (make validate)
         run: make validate
 

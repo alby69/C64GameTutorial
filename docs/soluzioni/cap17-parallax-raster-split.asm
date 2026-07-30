@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 17 — Parallax e Raster Split
+; --- METADATA ---
+; chapter: 17
+; title: Parallax e Raster Split
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -10,8 +15,10 @@
 ;   5: sprite dietro lo sfondo con $D01B
 ;
 ; =============================================
+WAIT4 = WAIT3
+
 ; --- ESERCIZIO 1: schermo diviso in 3 zone, 3 colori ---
-*=$8000
+*=$C000
     SEI
     LDA #$7F
     STA $DC0D

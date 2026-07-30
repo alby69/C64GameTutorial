@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 8 — Game Loop Sincronizzato
+; --- METADATA ---
+; chapter: 8
+; title: Game Loop
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -12,7 +17,7 @@
 ; =============================================
 ; --- ESERCIZIO 1: frame counter sul bordo ---
 FRAME_CNT = $02
-*=$8000
+*=$C000
     LDA #0
     STA FRAME_CNT
 LOOP1

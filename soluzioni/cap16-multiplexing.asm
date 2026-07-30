@@ -131,6 +131,9 @@ INIT_E2
     BNE INIT_E2
     JMP MAIN2
 
+MAIN2
+    JMP MAIN2
+
 MULTIPLEX_2ZONES
     ; Zona 1 (Y < 120): assegna primi 8
     ; Zona 2 (Y >= 120): assegna secondi 8

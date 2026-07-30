@@ -1,6 +1,13 @@
 ; ─────────────────────────────────────────────────────
 ; Soluzioni esercizi Capitolo 26 — REU Expansion
+; --- METADATA ---
+; chapter: 26
+; title: REU Expansion
+; difficulty: master
+; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
+
+REU_ADDR_L = $02
 
 ; ─────────────────────────────────────────────────────
 ; Esercizio 1 — Copia 256 byte da $C000 a REU $000000

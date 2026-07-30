@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 10 — Collisioni
+; --- METADATA ---
+; chapter: 10
+; title: Collisioni Software
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -17,7 +22,7 @@ ENEMY_X  = $D002
 ENEMY_Y  = $D003
 
 ; --- ESERCIZIO 1: player + nemico fisso, collisione cambia colore ---
-*=$8000
+*=$C000
     LDA #%00000011
     STA $D015
     LDA #1
@@ -328,6 +333,7 @@ US3_E3
     ORA #%00000100
     STA $D015
 ; Continua per nemico 3...
+US3_E4
     RTS
 
 WAIT3

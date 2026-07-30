@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 12 — Wave System e AI
+; --- METADATA ---
+; chapter: 12
+; title: Wave System e AI
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -10,13 +15,20 @@
 ;   5: 3 pattern di movimento, uno per wave
 ;
 ; =============================================
+WAIT2 = WAIT
+WAIT3 = WAIT
+WAIT4 = WAIT
+WAIT5 = WAIT
+MOVE_GROUP3 = MOVE_GROUP
+FRAME_CNT = $07
+
 ; --- ESERCIZIO 1: 4 nemici si muovono insieme, rimbalzo bordo ---
 ENEMY_X     = $10
 ENEMY_Y     = $11
 ENEMY_DIR   = $12      ; 0=dx, 1=sx
 ENEMY_SPEED = $13
 
-*=$8000
+*=$C000
     LDA #%00011111      ; player + 4 nemici
     STA $D015
     LDA #1
@@ -347,4 +359,11 @@ RM_C3
     LDA #200
     STA ENEMY_Y
 RM_END
+    RTS
+
+; --- Helper per compilazione standalone ---
+WAIT
+    LDA $D012
+    CMP #$F8
+    BNE WAIT
     RTS

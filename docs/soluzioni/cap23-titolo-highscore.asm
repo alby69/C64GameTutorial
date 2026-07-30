@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 23 — Schermate Titolo e High Score
+; --- METADATA ---
+; chapter: 23
+; title: Titolo e High Score
+; difficulty: intermediate
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -31,7 +36,8 @@ DONE1
     RTS
 
 TITLE1
-    .byte "SHOOTER 64",0
+    .text "SHOOTER 64"
+    .byte 0
 
 ; --- ESERCIZIO 2: sprite animato che cambia colore ---
 *= $C000
@@ -206,11 +212,14 @@ GO4_WAIT
     RTS
 
 GOV_TEXT4
-    .byte "GAME OVER",0
+    .text "GAME OVER"
+    .byte 0
 HS_TEXT4
-    .byte "HIGH: ",0
+    .text "HIGH: "
+    .byte 0
 NR_TEXT4
-    .byte "NUOVO RECORD!",0
+    .text "NUOVO RECORD!"
+    .byte 0
 SCORE_LO
     .byte 0
 SCORE_HI
@@ -340,11 +349,14 @@ NR_FLAG
     .byte 0
 
 TIT5_T
-    .byte "SHOOTER 64",0
+    .text "SHOOTER 64"
+    .byte 0
 GOV5_T
-    .byte "GAME OVER",0
+    .text "GAME OVER"
+    .byte 0
 NR5_T
-    .byte "NUOVO RECORD!",0
+    .text "NUOVO RECORD!"
+    .byte 0
 
 ; Utility: stampa A come esadecimale
 PRINT_HEX
