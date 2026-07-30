@@ -1,18 +1,24 @@
 ; =============================================
 ; SOLUZIONI Capitolo 1 — Introduzione
+; --- METADATA ---
+; chapter: 1
+; title: Introduzione al 6502 e TMP
+; instructions: [LDA, STA, JMP, RTS]
+; difficulty: beginner
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
 ;   1: bordo giallo, sfondo blu
 ;   2: bordo verde, ciclo infinito
 ;   3: label GAMELOOP invece di LOOP
-;   4: bordo cicla attraverso tutti i colori 0-15
-;   5: struttura MAIN/UPDATE con JSR/RTS
+;   4: bordo nero, sfondo bianco
+;   5: bordo blu chiaro, ciclo infinito FINISH
 ;
 ; =============================================
 
 ; --- ESERCIZIO 1: bordo giallo, sfondo blu ---
-*=$c000
+*=$C000
     LDA #7      ; giallo
     STA $D020   ; bordo
     LDA #6      ; blu
@@ -20,38 +26,30 @@
     RTS
 
 ; --- ESERCIZIO 2: bordo verde, ciclo infinito ---
-*=$c000
+*=$C000
     LDA #5      ; verde
     STA $D020   ; bordo
 LOOP
     JMP LOOP    ; programma resta in esecuzione
 
 ; --- ESERCIZIO 3: label GAMELOOP invece di LOOP ---
-*=$c000
+*=$C000
     LDA #5
     STA $D020
 GAMELOOP
     JMP GAMELOOP
 
-; --- ESERCIZIO 4: bordo cicla attraverso tutti i colori 0-15 ---
+; --- ESERCIZIO 4: bordo nero, sfondo bianco ---
 *=$C000
-    LDA #0
-
-LOOP4
-    STA $D020
-    CLC
-    ADC #1
-    CMP #16
-    BNE LOOP4
-
-    LDA #0
-    JMP LOOP4
-
-; --- ESERCIZIO 5: struttura MAIN/UPDATE con JSR/RTS ---
-*=$c000
-MAIN
-    JSR UPDATE
-    JMP MAIN
-UPDATE
-    INC $D020
+    LDA #0      ; nero
+    STA $D020   ; bordo
+    LDA #1      ; bianco
+    STA $D021   ; sfondo
     RTS
+
+; --- ESERCIZIO 5: bordo blu chiaro, ciclo infinito FINISH ---
+*=$C000
+    LDA #14     ; blu chiaro
+    STA $D020   ; bordo
+FINISH
+    JMP FINISH

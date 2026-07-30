@@ -152,9 +152,44 @@ for app in appendice-a-tabelle appendice-b-glossario \
 done
 [ "$JSON_OUTPUT" = false ] && echo ""
 
-# --- 5. Statistiche ---
+# --- 5. Verifica compilazione TMPx ---
 if [ "$JSON_OUTPUT" = false ]; then
-    echo "--- [5] Statistiche rapide ---"
+    echo "--- [5] Verifica compilazione TMPx ---"
+fi
+
+TMPX_BIN="tmpx"
+# Se tmpx non è nel PATH, cerchiamo in /tmp/tmpx
+if ! command -v tmpx &>/dev/null; then
+    if [ -f "/tmp/tmpx" ]; then
+        TMPX_BIN="/tmp/tmpx"
+    fi
+fi
+
+if command -v "$TMPX_BIN" &>/dev/null || [ -f "$TMPX_BIN" ]; then
+    for f in "$SOL_DIR"/*.asm; do
+        out_prg="/tmp/$(basename "$f" .asm).prg"
+        if ! "$TMPX_BIN" -i "$f" -o "$out_prg" -q &>/dev/null; then
+            [ "$JSON_OUTPUT" = false ] && red "  ERROR: $f non compila con TMPx"
+            ERRORS=$((ERRORS + 1))
+        else
+            [ "$JSON_OUTPUT" = false ] && green "  OK: $(basename "$f") compilato"
+        fi
+        rm -f "$out_prg"
+    done
+else
+    [ "$JSON_OUTPUT" = false ] && yellow "  WARN: tmpx non trovato. Salto la verifica di compilazione."
+    if [ -n "$CI" ]; then
+        [ "$JSON_OUTPUT" = false ] && red "  ERROR: tmpx è obbligatorio in CI!"
+        ERRORS=$((ERRORS + 1))
+    else
+        WARNS=$((WARNS + 1))
+    fi
+fi
+[ "$JSON_OUTPUT" = false ] && echo ""
+
+# --- 6. Statistiche ---
+if [ "$JSON_OUTPUT" = false ]; then
+    echo "--- [6] Statistiche rapide ---"
 fi
 cap_lines=$(cat "$MD_DIR"/[0-9]*.md 2>/dev/null | wc -l)
 app_lines=$(cat "$MD_DIR"/appendice-*.md 2>/dev/null | wc -l)

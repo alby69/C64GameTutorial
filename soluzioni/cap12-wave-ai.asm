@@ -15,6 +15,13 @@
 ;   5: 3 pattern di movimento, uno per wave
 ;
 ; =============================================
+WAIT2 = WAIT
+WAIT3 = WAIT
+WAIT4 = WAIT
+WAIT5 = WAIT
+MOVE_GROUP3 = MOVE_GROUP
+FRAME_CNT = $07
+
 ; --- ESERCIZIO 1: 4 nemici si muovono insieme, rimbalzo bordo ---
 ENEMY_X     = $10
 ENEMY_Y     = $11
@@ -352,4 +359,11 @@ RM_C3
     LDA #200
     STA ENEMY_Y
 RM_END
+    RTS
+
+; --- Helper per compilazione standalone ---
+WAIT
+    LDA $D012
+    CMP #$F8
+    BNE WAIT
     RTS

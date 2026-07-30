@@ -208,12 +208,17 @@ SCROLL4
     BNE NO_CV
 
     ; Coarse vertical — shift su
-    LDX #0
+    LDX #240
 CV_LOOP
     LDA $0400+40,X
     STA $0400,X
-    INX
-    CPX #40*24
+    LDA $0400+40+240,X
+    STA $0400+240,X
+    LDA $0400+40+480,X
+    STA $0400+480,X
+    LDA $0400+40+720,X
+    STA $0400+720,X
+    DEX
     BNE CV_LOOP
 
     ; Nuova ultima riga
@@ -251,24 +256,45 @@ SCROLL_Y4
     CLI
 
     ; Scrivi cieli (righe 0-15) e terreno (righe 16-24)
+    ; Cieli (righe 0-15) — 640 bytes (512 + 128)
     LDX #0
-SKY_FILL
+SKY_FILL1
     LDA #$53            ; "S"
     STA $0400,X
+    STA $0500,X
     LDA #1
     STA $D800,X
+    STA $D900,X
     INX
-    CPX #40*16
-    BNE SKY_FILL
+    BNE SKY_FILL1
 
-GROUND_FILL
+    LDX #128
+SKY_FILL2
+    LDA #$53            ; "S"
+    STA $0600-1,X
+    LDA #1
+    STA $DA00-1,X
+    DEX
+    BNE SKY_FILL2
+
+    ; Terreno (righe 16-24) — 360 bytes (128 + 232)
+    LDX #128
+GROUND_LOOP1
     LDA #$47            ; "G"
-    STA $0400+40*16,X
+    STA $0680-1,X
     LDA #5
-    STA $D800+40*16,X
-    INX
-    CPX #40*9
-    BNE GROUND_FILL
+    STA $DA80-1,X
+    DEX
+    BNE GROUND_LOOP1
+
+    LDX #232
+GROUND_LOOP2
+    LDA #$47            ; "G"
+    STA $0700-1,X
+    LDA #5
+    STA $DB00-1,X
+    DEX
+    BNE GROUND_LOOP2
 
 MAIN5
     INC SKY_SCROLL5

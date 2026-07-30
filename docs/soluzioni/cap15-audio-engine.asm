@@ -1,5 +1,10 @@
 ; =============================================
 ; SOLUZIONI Capitolo 15 — Audio Engine
+; --- METADATA ---
+; chapter: 15
+; title: Audio Engine
+; difficulty: advanced
+; --- END METADATA ---
 ; =============================================
 ;
 ; Mappa esercizi:
@@ -10,6 +15,8 @@
 ;   5: coda audio 8 comandi
 ;
 ; =============================================
+WAIT4 = WAIT3
+
 ; --- ESERCIZIO 1: sistema SFX_REQUEST canale 2/3 ---
 SFX_REQ    = $40     ; 0=nessuno, 1=sparo, 2=esplosione, 3=bonus
 SFX_CHANNEL = $41    ; canale SID da usare
@@ -22,7 +29,7 @@ CHAN3_FREQ = $D420
 CHAN3_ADSR = $D425
 CHAN3_SUR  = $D426
 
-*=$8000
+*=$C000
     LDA #15
     STA $D418
 
@@ -82,6 +89,9 @@ PS2_BONUS
     STA CHAN2_SUR
     LDA #$21
     STA CHAN2_CTRL
+
+PS_CH3
+    JMP PS_END
 
 PS_END
     LDA #0
@@ -281,4 +291,10 @@ PQ_NEXT
     STA QUEUE_HEAD
 
 PQ_END
+    RTS
+
+WAIT3
+    LDA $D012
+    CMP #$F8
+    BNE WAIT3
     RTS

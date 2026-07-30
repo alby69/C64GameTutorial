@@ -1,6 +1,14 @@
 ; ─────────────────────────────────────────────────────
 ; Soluzioni esercizi Capitolo 27 — Music Tracker
+; --- METADATA ---
+; chapter: 27
+; title: Music Tracker
+; difficulty: advanced
+; --- END METADATA ---
 ; ─────────────────────────────────────────────────────
+
+MUSIC_INIT = $1000
+MUSIC_PLAY = $1003
 
 ; ─────────────────────────────────────────────────────
 ; Esercizio 1 — Player scala di note mininale

@@ -15,6 +15,9 @@
 ;   5: mostra WAVE 1/2/... tra le wave
 ;
 ; =============================================
+INVINCIBLE = $35
+INV_TIMER  = $36
+
 ; --- ESERCIZIO 1: punteggio +10 a ogni pressione fuoco ---
 SCORE      = $02     ; 2 byte
 SCORE_HI   = $03
@@ -310,4 +313,9 @@ WAIT5
     LDA $D012
     CMP #$F8
     BNE WAIT2
+    RTS
+
+INIT_PLAY
+    RTS
+GAME_UPDATE
     RTS

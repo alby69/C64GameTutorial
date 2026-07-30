@@ -15,6 +15,10 @@
 ;   5: porta 1 e porta 2 per 2 sprite
 ;
 ; =============================================
+SPR_X   = $D000
+SPR_Y   = $D001
+JOYPORT = $DC00
+
 ; --- ESERCIZIO 1: muovi sprite in 4 direzioni ---
 *=$C000
     LDA #%00000001
@@ -185,9 +189,7 @@ LOOP4
     BNE RELEASED      ; 1 = rilasciato
 
     ; Premuto ora
-    LDA $D020
-    INC
-    STA $D020
+    INC $D020
 
 RELEASED
     LDA $03

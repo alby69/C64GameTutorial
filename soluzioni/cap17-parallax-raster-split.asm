@@ -15,6 +15,8 @@
 ;   5: sprite dietro lo sfondo con $D01B
 ;
 ; =============================================
+WAIT4 = WAIT3
+
 ; --- ESERCIZIO 1: schermo diviso in 3 zone, 3 colori ---
 *=$C000
     SEI

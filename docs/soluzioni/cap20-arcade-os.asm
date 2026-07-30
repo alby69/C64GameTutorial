@@ -1,6 +1,30 @@
 ; =============================================
 ; SOLUZIONI Capitolo 20 — Arcade OS e Oltre
+; --- METADATA ---
+; chapter: 20
+; title: Arcade OS
+; difficulty: master
+; --- END METADATA ---
 ; =============================================
+
+VSPRITE_X       = $0300
+VSPRITE_Y       = $0320
+VSPRITE_TYPE    = $0340
+VSPRITE_ACTIVE  = $0360
+MAX_VSPRITE     = 32
+GAME_STATE = $02
+GAME_INIT_PTR   = $C000
+GAME_UPDATE_PTR = $C003
+GAME_RENDER_PTR = $C006
+JOY_STATE = $10
+JOY_OLD   = $11
+JOY_EDGE  = $12
+SCORE = $14
+JOY = $16
+BULLET_ACTIVE = $17
+BULLET_X = $18
+BULLET_Y = $19
+FLASH_TIMER = $1A
 ;
 ; NOTA: Gli esercizi di questo capitolo sono
 ; concettuali. Le soluzioni qui sotto sono
@@ -117,11 +141,6 @@ AUDIO_UPDATE
 ; (parte del kernel) ordina per Y e assegna
 ; agli slot HW, aggiornando nei raster interrupt.
 
-VSPRITE_X       = $0300
-VSPRITE_Y       = $0320
-VSPRITE_TYPE    = $0340
-VSPRITE_ACTIVE  = $0360
-MAX_VSPRITE     = 32
 
 ; Mappa gli sprite virtuali sugli 8 slot HW
 RESOLVE_VSPRITES
@@ -165,7 +184,6 @@ RV_DONE
 ; Rischi: difficile da debuggare, non funziona
 ; su ROM, pericoloso su C64 (codice in RAM).
 
-GAME_STATE = $02   ; 0=menu, 1=play, 2=gameover
 
 SMC_UPDATE
     ; Modifica l'istruzione JMP al volo
@@ -215,9 +233,6 @@ GAMEOVER_UPDATE
 ;   6. GAME_UPDATE -> logica specifica del gioco
 
 ; Jump table per il modulo gioco
-GAME_INIT_PTR   = $C000
-GAME_UPDATE_PTR = $C003
-GAME_RENDER_PTR = $C006
 
 ; Kernel layer (fisso)
 KERNEL_INIT
@@ -282,9 +297,6 @@ ENGINE_SOUND
     ; Gestione audio SID
     RTS
 
-JOY_STATE = $10
-JOY_OLD   = $11
-JOY_EDGE  = $12
 
 ; =============================================
 
@@ -327,8 +339,6 @@ INIT_GAME
     STA $D418          ; volume max
     RTS
 
-SCORE = $14
-SCORE+1 = $15
 
 MAIN_GAME_LOOP
     JSR READ_JOYSTICK
@@ -345,7 +355,6 @@ READ_JOYSTICK
     STA JOY
     RTS
 
-JOY = $16
 
 UPDATE_PLAYER
     LDA JOY
@@ -384,9 +393,6 @@ FIRE_BULLET
 FB_DONE
     RTS
 
-BULLET_ACTIVE = $17
-BULLET_X = $18
-BULLET_Y = $19
 
 UPDATE_BULLET
     LDA BULLET_ACTIVE
@@ -433,7 +439,6 @@ UPDATE_SCORE
 US_DONE
     RTS
 
-FLASH_TIMER = $1A
 
 EXPLODE_SOUND
     LDA #$FF
@@ -459,4 +464,7 @@ DEBUG_RASTER
     BCS DR_END
     INC $D020
 DR_END
+    RTS
+
+GAME_INIT
     RTS

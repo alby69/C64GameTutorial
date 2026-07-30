@@ -22,7 +22,7 @@
     LDA #0
 LOOP
     STA $D020
-    INC            ; non serve A, INC $D020
+    ; non serve A, INC $D020
     INC $D020      ; incrementa registro bordo
     LDA $D020
     CMP #15
@@ -100,13 +100,13 @@ D25
 MAIN
     LDA #6         ; blu
     STA $D021
-    JSR DELAY
+    JSR DELAY_EX4
     LDA #0         ; nero
     STA $D021
-    JSR DELAY
+    JSR DELAY_EX4
     JMP MAIN
 
-DELAY
+DELAY_EX4
     LDX #$FF
 OUTER2
     LDY #$FF

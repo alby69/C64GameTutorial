@@ -398,3 +398,13 @@ CP_P2
 
 CP_END
     RTS
+
+; --- Aliases per compatibilità e compilazione standalone ---
+READ_JOY2       = READ_JOY1
+UPDATE_BULLETS2 = UPDATE_BULLETS
+UPDATE_BULLETS3 = UPDATE_BULLETS
+WAIT2           = WAIT
+WAIT3           = WAIT
+WAIT4           = WAIT
+WAIT5           = WAIT
+FRAME_CNT       = $07

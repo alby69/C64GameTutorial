@@ -15,6 +15,16 @@
 ;   5: boss adatta difficolta in base ai colpi player
 ;
 ; =============================================
+BOSS_X     = $10
+BOSS_Y     = $11
+BOSS_STATE = $12
+BOSS_HP    = $13
+BOSS_DIR   = $14
+BOSS_TIMER = $15
+FRAME_CNT  = $07
+WAIT2      = WAIT
+WAIT3      = WAIT
+WAIT5      = WAIT
 
 ; --- ESERCIZIO 1: boss 3 fasi: intro + pattern A + morte ---
 *=$C000
@@ -352,4 +362,11 @@ PB_BAD
     STA BOSS_TIMER
 
 ADAPT_DONE
+    RTS
+
+; --- Helper per compilazione standalone ---
+WAIT
+    LDA $D012
+    CMP #$F8
+    BNE WAIT
     RTS
