@@ -1,144 +1,158 @@
-; =============================================
-; COLLISION — Bounding box collision detection
-; =============================================
+#importonce
+// =============================================
+// COLLISION — Bounding box collision detection
+// =============================================
 
 * = $0F00
 
-ENGINE_COLLISION
-    ; Check player bullet vs enemies
-    LDA PB_ACTIVE
-    BEQ EC_ENEMY_BULLETS
-    JSR CHECK_PB_VS_ENEMIES
+ENGINE_COLLISION:
 
-EC_ENEMY_BULLETS
-    ; Check enemy bullets vs player
-    JSR CHECK_EB_VS_PLAYER
+    // Check player bullet vs enemies
+    lda PB_ACTIVE
+    beq EC_ENEMY_BULLETS
+    jsr CHECK_PB_VS_ENEMIES
 
-EC_DONE
-    RTS
+EC_ENEMY_BULLETS:
 
-; Player bullet vs all enemies
-CHECK_PB_VS_ENEMIES
-    LDX #0
-CPVE_LOOP
-    LDA ENTITY_ACTIVE,X
-    BEQ CPVE_SKIP
-    LDA ENTITY_TYPE,X
-    CMP #T_ENEMY
-    BEQ CPVE_TEST
-    CMP #T_BOSS
-    BEQ CPVE_TEST
-    JMP CPVE_SKIP
+    // Check enemy bullets vs player
+    jsr CHECK_EB_VS_PLAYER
 
-CPVE_TEST
-    ; Bounding box check
-    LDA PB_X
-    CLC
-    ADC #4
-    STA TEMP
-    LDA ENTITY_X,X
-    SEC
-    SBC #8
-    CMP TEMP
-    BCS CPVE_SKIP
-    LDA ENTITY_X,X
-    CLC
-    ADC #12
-    CMP PB_X
-    BCC CPVE_SKIP
+EC_DONE:
 
-    LDA PB_Y
-    CMP ENTITY_Y,X
-    BCC CPVE_SKIP
-    LDA ENTITY_Y,X
-    CLC
-    ADC #16
-    CMP PB_Y
-    BCC CPVE_SKIP
+    rts
 
-    ; Hit! Deactivate bullet
-    LDA #0
-    STA PB_ACTIVE
+// Player bullet vs all enemies
+CHECK_PB_VS_ENEMIES:
 
-    ; Damage enemy
-    DEC ENTITY_HP,X
-    LDA ENTITY_HP,X
-    BNE CPVE_HIT
+    ldx #0
+CPVE_LOOP:
 
-    ; Enemy destroyed
-    LDA #0
-    STA ENTITY_ACTIVE,X
-    DEC ENEMIES_LEFT
-    JSR ADD_SCORE
-    JSR SFX_EXPLOSION
-    JMP CPVE_SKIP
+    lda ENTITY_ACTIVE,X
+    beq CPVE_SKIP
+    lda ENTITY_TYPE,X
+    cmp #T_ENEMY
+    beq CPVE_TEST
+    cmp #T_BOSS
+    beq CPVE_TEST
+    jmp CPVE_SKIP
 
-CPVE_HIT
-    JSR SFX_HIT
+CPVE_TEST:
 
-CPVE_SKIP
-    INX
-    CPX #MAX_ENTITIES
-    BNE CPVE_LOOP
-    RTS
+    // Bounding box check
+    lda PB_X
+    clc
+    adc #4
+    sta TEMP
+    lda ENTITY_X,X
+    sec
+    sbc #8
+    cmp TEMP
+    bcs CPVE_SKIP
+    lda ENTITY_X,X
+    clc
+    adc #12
+    cmp PB_X
+    bcc CPVE_SKIP
 
-; Enemy bullets vs player
-CHECK_EB_VS_PLAYER
-    LDA PLAYER_LIVES
-    BEQ CEV_DONE
-    LDA ENTITY_FLAGS
-    AND #1
-    BNE CEV_DONE        ; invincible
+    lda PB_Y
+    cmp ENTITY_Y,X
+    bcc CPVE_SKIP
+    lda ENTITY_Y,X
+    clc
+    adc #16
+    cmp PB_Y
+    bcc CPVE_SKIP
 
-    LDX #0
-CEV_LOOP
-    LDA EB_ACTIVE,X
-    BEQ CEV_SKIP
+    // Hit! Deactivate bullet
+    lda #0
+    sta PB_ACTIVE
 
-    ; Bounding box
-    LDA EB_X,X
-    CLC
-    ADC #4
-    STA TEMP
-    LDA ENTITY_X
-    SEC
-    SBC #8
-    CMP TEMP
-    BCS CEV_SKIP
-    LDA ENTITY_X
-    CLC
-    ADC #12
-    CMP EB_X,X
-    BCC CEV_SKIP
+    // Damage enemy
+    dec ENTITY_HP,X
+    lda ENTITY_HP,X
+    bne CPVE_HIT
 
-    LDA EB_Y,X
-    CMP ENTITY_Y
-    BCS CEV_SKIP
-    LDA ENTITY_Y
-    SEC
-    SBC #10
-    CMP EB_Y,X
-    BCS CEV_SKIP
+    // Enemy destroyed
+    lda #0
+    sta ENTITY_ACTIVE,X
+    dec ENEMIES_LEFT
+    jsr ADD_SCORE
+    jsr SFX_EXPLOSION
+    jmp CPVE_SKIP
 
-    ; Player hit!
-    LDA #0
-    STA EB_ACTIVE,X
-    JSR PLAYER_HIT
+CPVE_HIT:
 
-CEV_SKIP
-    INX
-    CPX #MAX_EB
-    BNE CEV_LOOP
+    jsr SFX_HIT
 
-CEV_DONE
-    RTS
+CPVE_SKIP:
 
-ADD_SCORE
-    CLC
-    LDA SCORE_LO
-    ADC #10
-    STA SCORE_LO
-    LDA SCORE_HI
-    ADC #0
-    STA SCORE_HI
-    RTS
+    inx
+    cpx #MAX_ENTITIES
+    bne CPVE_LOOP
+    rts
+
+// Enemy bullets vs player
+CHECK_EB_VS_PLAYER:
+
+    lda PLAYER_LIVES
+    beq CEV_DONE
+    lda ENTITY_FLAGS
+    and #1
+    bne CEV_DONE        // invincible
+
+    ldx #0
+CEV_LOOP:
+
+    lda EB_ACTIVE,X
+    beq CEV_SKIP
+
+    // Bounding box
+    lda EB_X,X
+    clc
+    adc #4
+    sta TEMP
+    lda ENTITY_X
+    sec
+    sbc #8
+    cmp TEMP
+    bcs CEV_SKIP
+    lda ENTITY_X
+    clc
+    adc #12
+    cmp EB_X,X
+    bcc CEV_SKIP
+
+    lda EB_Y,X
+    cmp ENTITY_Y
+    bcs CEV_SKIP
+    lda ENTITY_Y
+    sec
+    sbc #10
+    cmp EB_Y,X
+    bcs CEV_SKIP
+
+    // Player hit!
+    lda #0
+    sta EB_ACTIVE,X
+    jsr PLAYER_HIT
+
+CEV_SKIP:
+
+    inx
+    cpx #MAX_EB
+    bne CEV_LOOP
+
+CEV_DONE:
+
+    rts
+
+ADD_SCORE:
+
+    clc
+    lda SCORE_LO
+    adc #10
+    sta SCORE_LO
+    lda SCORE_HI
+    adc #0
+    sta SCORE_HI
+    rts

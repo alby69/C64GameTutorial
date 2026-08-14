@@ -1,90 +1,98 @@
-; =============================================
-; AUDIO — SID engine + SFX
-; =============================================
+#importonce
+// =============================================
+// AUDIO — SID engine + SFX
+// =============================================
 
 * = $1000
 
-; Init SID
-ENGINE_AUDIO_INIT
-    LDA #$0F
-    STA SID_VOL
-    LDA #0
-    STA SID_V1_CTRL
-    STA SID_V2_CTRL
-    STA SID_V3_CTRL
-    STA SFX_PTR
-    RTS
+// Init SID
+ENGINE_AUDIO_INIT:
 
-; Called each frame from IRQ
-ENGINE_AUDIO_UPDATE
-    LDA SFX_TIMER
-    BEQ AU_DONE
-    DEC SFX_TIMER
-    BNE AU_DONE
-    ; Timer expired, silence voice
-    LDA #0
-    STA SID_V1_CTRL
-AU_DONE
-    RTS
+    lda #$0F
+    sta SID_VOL
+    lda #0
+    sta SID_V1_CTRL
+    sta SID_V2_CTRL
+    sta SID_V3_CTRL
+    sta SFX_PTR
+    rts
 
-; Shoot sound effect
-SFX_SHOOT
-    LDA #$80
-    STA SID_V1_FREQ_LO
-    LDA #$20
-    STA SID_V1_FREQ_HI
-    LDA #$09
-    STA SID_V1_AD
-    LDA #$0F
-    STA SID_V1_SR
-    LDA #$11
-    STA SID_V1_CTRL
-    LDA #8
-    STA SFX_TIMER
-    RTS
+// Called each frame from IRQ
+ENGINE_AUDIO_UPDATE:
 
-; Hit sound
-SFX_HIT
-    LDA #$40
-    STA SID_V1_FREQ_LO
-    LDA #$10
-    STA SID_V1_FREQ_HI
-    LDA #$05
-    STA SID_V1_AD
-    LDA #$0A
-    STA SID_V1_SR
-    LDA #$81
-    STA SID_V1_CTRL
-    LDA #4
-    STA SFX_TIMER
-    RTS
+    lda SFX_TIMER
+    beq AU_DONE
+    dec SFX_TIMER
+    bne AU_DONE
+    // Timer expired, silence voice
+    lda #0
+    sta SID_V1_CTRL
+AU_DONE:
 
-; Explosion sound
-SFX_EXPLOSION
-    LDA #$FF
-    STA SID_V1_FREQ_LO
-    LDA #$30
-    STA SID_V1_FREQ_HI
-    LDA #$0F
-    STA SID_V1_AD
-    LDA #$F0
-    STA SID_V1_SR
-    LDA #$41
-    STA SID_V1_CTRL
-    LDA #15
-    STA SFX_TIMER
-    RTS
+    rts
 
-; Player die sound
-SFX_DIE
-    LDA #$80
-    STA SID_V2_FREQ_LO
-    LDA #$05
-    STA SID_V2_FREQ_HI
-    LDA #$0E
-    STA SID_V2_AD
-    LDA #$FF
-    STA SID_V2_SR
-    LDA #$81
-    STA SID_V2_CTRL
-    RTS
+// Shoot sound effect
+SFX_SHOOT:
+
+    lda #$80
+    sta SID_V1_FREQ_LO
+    lda #$20
+    sta SID_V1_FREQ_HI
+    lda #$09
+    sta SID_V1_AD
+    lda #$0F
+    sta SID_V1_SR
+    lda #$11
+    sta SID_V1_CTRL
+    lda #8
+    sta SFX_TIMER
+    rts
+
+// Hit sound
+SFX_HIT:
+
+    lda #$40
+    sta SID_V1_FREQ_LO
+    lda #$10
+    sta SID_V1_FREQ_HI
+    lda #$05
+    sta SID_V1_AD
+    lda #$0A
+    sta SID_V1_SR
+    lda #$81
+    sta SID_V1_CTRL
+    lda #4
+    sta SFX_TIMER
+    rts
+
+// Explosion sound
+SFX_EXPLOSION:
+
+    lda #$FF
+    sta SID_V1_FREQ_LO
+    lda #$30
+    sta SID_V1_FREQ_HI
+    lda #$0F
+    sta SID_V1_AD
+    lda #$F0
+    sta SID_V1_SR
+    lda #$41
+    sta SID_V1_CTRL
+    lda #15
+    sta SFX_TIMER
+    rts
+
+// Player die sound
+SFX_DIE:
+
+    lda #$80
+    sta SID_V2_FREQ_LO
+    lda #$05
+    sta SID_V2_FREQ_HI
+    lda #$0E
+    sta SID_V2_AD
+    lda #$FF
+    sta SID_V2_SR
+    lda #$81
+    sta SID_V2_CTRL
+    rts

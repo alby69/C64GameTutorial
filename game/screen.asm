@@ -1,154 +1,182 @@
-; =============================================
-; SCREEN — HUD, text, screen utilities
-; =============================================
+#importonce
+// =============================================
+// SCREEN — HUD, text, screen utilities
+// =============================================
 
 * = $1100
 
-; Clear screen (fill with space)
-SCREEN_CLEAR
-    LDX #0
-    LDA #$20
-SCL_LOOP
-    STA SCREEN_RAM,X
-    STA SCREEN_RAM+250,X
-    STA SCREEN_RAM+500,X
-    STA SCREEN_RAM+750,X
-    INX
-    CPX #250
-    BNE SCL_LOOP
-    RTS
+// Clear screen (fill with space)
+SCREEN_CLEAR:
 
-; Clear color RAM (set to white)
-SCREEN_CLEAR_COLOR
-    LDX #0
-    LDA #1
-SCC_LOOP
-    STA COLOR_RAM,X
-    STA COLOR_RAM+250,X
-    STA COLOR_RAM+500,X
-    STA COLOR_RAM+750,X
-    INX
-    CPX #250
-    BNE SCC_LOOP
-    RTS
+    ldx #0
+    lda #$20
+SCL_LOOP:
 
-; Print string at (X = screen offset, Y = color)
-; String pointed by PTR_LO/PTR_HI, terminated by $FF
-SCREEN_PRINT
-    STY TEMP2
-    LDY #0
-SPL_LOOP
-    LDA (PTR_LO),Y
-    CMP #$FF
-    BEQ SPL_DONE
-    STA SCREEN_RAM,X
-    LDA TEMP2
-    STA COLOR_RAM,X
-    INX
-    INY
-    JMP SPL_LOOP
-SPL_DONE
-    RTS
+    sta SCREEN_RAM,X
+    sta SCREEN_RAM+250,X
+    sta SCREEN_RAM+500,X
+    sta SCREEN_RAM+750,X
+    inx
+    cpx #250
+    bne SCL_LOOP
+    rts
 
-; Draw HUD (score, lives, wave)
-HUD_DRAW
-    ; Score label
-    LDX #1
-    LDY #1
-    LDA #<STR_SCORE
-    STA PTR_LO
-    LDA #>STR_SCORE
-    STA PTR_HI
-    JSR SCREEN_PRINT
+// Clear color RAM (set to white)
+SCREEN_CLEAR_COLOR:
 
-    ; Score digits
-    LDA SCORE_HI
-    JSR HUD_PRINT_HEX
-    LDA SCORE_LO
-    JSR HUD_PRINT_HEX
+    ldx #0
+    lda #1
+SCC_LOOP:
 
-    ; Lives
-    LDX #25
-    LDY #1
-    LDA #<STR_LIVES
-    STA PTR_LO
-    LDA #>STR_LIVES
-    STA PTR_HI
-    JSR SCREEN_PRINT
+    sta COLOR_RAM,X
+    sta COLOR_RAM+250,X
+    sta COLOR_RAM+500,X
+    sta COLOR_RAM+750,X
+    inx
+    cpx #250
+    bne SCC_LOOP
+    rts
 
-    LDA PLAYER_LIVES
-    CLC
-    ADC #$30
-    STA SCREEN_RAM+27
+// Print string at (X = screen offset, Y = color)
+// String pointed by PTR_LO/PTR_HI, terminated by $FF
+SCREEN_PRINT:
 
-    ; Wave
-    LDX #33
-    LDY #1
-    LDA #<STR_WAVE
-    STA PTR_LO
-    LDA #>STR_WAVE
-    STA PTR_HI
-    JSR SCREEN_PRINT
+    sty TEMP2
+    ldy #0
+SPL_LOOP:
 
-    LDA WAVE_NUM
-    CLC
-    ADC #$30
-    STA SCREEN_RAM+37
+    lda (PTR_LO),Y
+    cmp #$FF
+    beq SPL_DONE
+    sta SCREEN_RAM,X
+    lda TEMP2
+    sta COLOR_RAM,X
+    inx
+    iny
+    jmp SPL_LOOP
+SPL_DONE:
 
-    ; Top border line
-    LDA #$40
-    STA SCREEN_RAM+39
-    STA SCREEN_RAM+38
-    STA SCREEN_RAM+0
+    rts
 
-    RTS
+// Draw HUD (score, lives, wave)
+HUD_DRAW:
 
-HUD_PRINT_HEX
-    PHA
-    LSR
-    LSR
-    LSR
-    LSR
-    CLC
-    ADC #$30
-    CMP #$3A
-    BCC HPH_OK
-    ADC #6
-HPH_OK
-    STA SCREEN_RAM,X
-    INX
-    PLA
-    AND #$0F
-    CLC
-    ADC #$30
-    CMP #$3A
-    BCC HPH_OK2
-    ADC #6
-HPH_OK2
-    STA SCREEN_RAM,X
-    INX
-    RTS
+    // Score label
+    ldx #1
+    ldy #1
+    lda #<STR_SCORE
+    sta PTR_LO
+    lda #>STR_SCORE
+    sta PTR_HI
+    jsr SCREEN_PRINT
 
-STR_SCORE
-.byte "SCORE:",$FF
+    // Score digits
+    lda SCORE_HI
+    jsr HUD_PRINT_HEX
+    lda SCORE_LO
+    jsr HUD_PRINT_HEX
 
-STR_LIVES
-.byte "LIVES:",$FF
+    // Lives
+    ldx #25
+    ldy #1
+    lda #<STR_LIVES
+    sta PTR_LO
+    lda #>STR_LIVES
+    sta PTR_HI
+    jsr SCREEN_PRINT
 
-STR_WAVE
-.byte "WAVE:",$FF
+    lda PLAYER_LIVES
+    clc
+    adc #$30
+    sta SCREEN_RAM+27
 
-STR_TITLE
-.byte "  SPACE COMMANDER",$FF
+    // Wave
+    ldx #33
+    ldy #1
+    lda #<STR_WAVE
+    sta PTR_LO
+    lda #>STR_WAVE
+    sta PTR_HI
+    jsr SCREEN_PRINT
 
-STR_START
-.byte "PRESS FIRE TO START",$FF
+    lda WAVE_NUM
+    clc
+    adc #$30
+    sta SCREEN_RAM+37
 
-STR_GAMEOVER
-.byte "    GAME OVER",$FF
+    // Top border line
+    lda #$40
+    sta SCREEN_RAM+39
+    sta SCREEN_RAM+38
+    sta SCREEN_RAM+0
 
-STR_RESTART
-.byte "PRESS FIRE TO RESTART",$FF
+    rts
 
-STR_WAVE_LABEL
-.byte "WAVE ",$FF
+HUD_PRINT_HEX:
+
+    pha
+    lsr
+    lsr
+    lsr
+    lsr
+    clc
+    adc #$30
+    cmp #$3A
+    bcc HPH_OK
+    adc #6
+HPH_OK:
+
+    sta SCREEN_RAM,X
+    inx
+    pla
+    and #$0F
+    clc
+    adc #$30
+    cmp #$3A
+    bcc HPH_OK2
+    adc #6
+HPH_OK2:
+
+    sta SCREEN_RAM,X
+    inx
+    rts
+
+STR_SCORE:
+
+.text "SCORE:"
+.byte $FF
+
+STR_LIVES:
+
+.text "LIVES:"
+.byte $FF
+
+STR_WAVE:
+
+.text "WAVE:"
+.byte $FF
+
+STR_TITLE:
+
+.text "  SPACE COMMANDER"
+.byte $FF
+
+STR_START:
+
+.text "PRESS FIRE TO START"
+.byte $FF
+
+STR_GAMEOVER:
+
+.text "    GAME OVER"
+.byte $FF
+
+STR_RESTART:
+
+.text "PRESS FIRE TO RESTART"
+.byte $FF
+
+STR_WAVE_LABEL:
+
+.text "WAVE "
+.byte $FF

@@ -1,100 +1,112 @@
-; =============================================
-; KERNEL — IRQ chain, scheduler, frame
-; --- METADATA ---
-; module: kernel
-; features: [IRQ, Scheduler, Phase Management]
-; memory_address: $0800
-; --- END METADATA ---
-; =============================================
+#importonce
+// =============================================
+// KERNEL — IRQ chain, scheduler, frame
+// --- METADATA ---
+// module: kernel
+// features: [IRQ, Scheduler, Phase Management]
+// memory_address: $0800
+// --- END METADATA ---
+// =============================================
 
-* = $0800
+* = $0900
 
-; ---- Init ----
-KERNEL_INIT
-    SEI
-    LDA #$7F
-    STA $DC0D
-    LDA #<KERNEL_IRQ
-    STA $0314
-    LDA #>KERNEL_IRQ
-    STA $0315
-    LDA #250
-    STA VIC_RAST
-    LDA VIC_CTRL1
-    AND #$7F
-    STA VIC_CTRL1
-    LDA #1
-    STA VIC_IRQ_EN
-    CLI
-    RTS
+// ---- Init ----
+KERNEL_INIT:
 
-; ---- Main loop (idle, everything runs in IRQ) ----
-KERNEL_MAIN
-    JMP KERNEL_MAIN
+    sei
+    lda #$7F
+    sta $DC0D
+    lda #<KERNEL_IRQ
+    sta $0314
+    lda #>KERNEL_IRQ
+    sta $0315
+    lda #250
+    sta VIC_RAST
+    lda VIC_CTRL1
+    and #$7F
+    sta VIC_CTRL1
+    lda #1
+    sta VIC_IRQ_EN
+    cli
+    rts
 
-; ---- Main IRQ handler ----
-KERNEL_IRQ
-    PHA
-    TXA
-    PHA
-    TYA
-    PHA
+// ---- Main loop (idle, everything runs in IRQ) ----
+KERNEL_MAIN:
 
-    INC FRAME_CNT
+    jmp KERNEL_MAIN
 
-    LDA GAME_STATE
-    CMP #0
-    BEQ KIRQ_TITLE
-    CMP #1
-    BEQ KIRQ_PLAY
-    JMP KIRQ_GAMEOVER
+// ---- Main IRQ handler ----
+KERNEL_IRQ:
 
-KIRQ_TITLE
-    JSR TITLE_UPDATE
-    JMP KIRQ_END
+    pha
+    txa
+    pha
+    tya
+    pha
 
-KIRQ_PLAY
-    JSR RUN_SCHEDULER
-    JSR ENGINE_AUDIO_UPDATE
-    JMP KIRQ_END
+    inc FRAME_CNT
 
-KIRQ_GAMEOVER
-    JSR GAMEOVER_UPDATE
-    JMP KIRQ_END
+    lda GAME_STATE
+    cmp #0
+    beq KIRQ_TITLE
+    cmp #1
+    beq KIRQ_PLAY
+    jmp KIRQ_GAMEOVER
 
-KIRQ_END
-    PLA
-    TAY
-    PLA
-    TAX
-    PLA
-    LDA VIC_IRQ_STAT
-    STA VIC_IRQ_STAT
-    JMP $EA31
+KIRQ_TITLE:
 
-; ---- 3-phase scheduler ----
-RUN_SCHEDULER
-    LDA SCHED_PHASE
-    BEQ SCH_INPUT
-    CMP #1
-    BEQ SCH_LOGIC
-    JMP SCH_RENDER
+    jsr TITLE_UPDATE
+    jmp KIRQ_END
 
-SCH_INPUT
-    JSR ENGINE_INPUT
-    JSR GAME_PLAYER_UPDATE
-    INC SCHED_PHASE
-    RTS
+KIRQ_PLAY:
 
-SCH_LOGIC
-    JSR GAME_ENEMIES_UPDATE
-    JSR GAME_BULLETS_UPDATE
-    JSR ENGINE_COLLISION
-    INC SCHED_PHASE
-    RTS
+    jsr RUN_SCHEDULER
+    jsr ENGINE_AUDIO_UPDATE
+    jmp KIRQ_END
 
-SCH_RENDER
-    JSR GAME_RENDER
-    LDA #0
-    STA SCHED_PHASE
-    RTS
+KIRQ_GAMEOVER:
+
+    jsr GAMEOVER_UPDATE
+    jmp KIRQ_END
+
+KIRQ_END:
+
+    pla
+    tay
+    pla
+    tax
+    pla
+    lda VIC_IRQ_STAT
+    sta VIC_IRQ_STAT
+    jmp $EA31
+
+// ---- 3-phase scheduler ----
+RUN_SCHEDULER:
+
+    lda SCHED_PHASE
+    beq SCH_INPUT
+    cmp #1
+    beq SCH_LOGIC
+    jmp SCH_RENDER
+
+SCH_INPUT:
+
+    jsr ENGINE_INPUT
+    jsr GAME_PLAYER_UPDATE
+    inc SCHED_PHASE
+    rts
+
+SCH_LOGIC:
+
+    jsr GAME_ENEMIES_UPDATE
+    jsr GAME_BULLETS_UPDATE
+    jsr ENGINE_COLLISION
+    inc SCHED_PHASE
+    rts
+
+SCH_RENDER:
+
+    jsr GAME_RENDER
+    lda #0
+    sta SCHED_PHASE
+    rts

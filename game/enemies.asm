@@ -1,331 +1,368 @@
-; =============================================
-; ENEMIES — Wave system, AI, boss
-; =============================================
+#importonce
+// =============================================
+// ENEMIES — Wave system, AI, boss
+// =============================================
 
 * = $5000
 
-GAME_ENEMIES_INIT
-    LDA #1
-    STA WAVE_NUM
-    STA ENEMIES_PER_WAVE
-    LDA #60
-    STA WAVE_DELAY
-    LDA #0
-    STA BOSS_ACTIVE
-    RTS
+GAME_ENEMIES_INIT:
 
-GAME_ENEMIES_UPDATE
-    LDA BOSS_ACTIVE
-    BNE GEU_BOSS
+    lda #1
+    sta WAVE_NUM
+    sta ENEMIES_PER_WAVE
+    lda #60
+    sta WAVE_DELAY
+    lda #0
+    sta BOSS_ACTIVE
+    rts
 
-    ; Check if wave complete
-    LDA ENEMIES_LEFT
-    BNE GEU_MOVE
+GAME_ENEMIES_UPDATE:
 
-    ; Wave complete: start next wave
-    DEC WAVE_DELAY
-    BNE GEU_DONE
-    JSR WAVE_START
+    lda BOSS_ACTIVE
+    bne GEU_BOSS
 
-GEU_MOVE
-    JSR ENEMY_MOVE
-    JSR ENEMY_SHOOT
-    JMP GEU_DONE
+    // Check if wave complete
+    lda ENEMIES_LEFT
+    bne GEU_MOVE
 
-GEU_BOSS
-    JSR BOSS_UPDATE
+    // Wave complete: start next wave
+    dec WAVE_DELAY
+    bne GEU_DONE
+    jsr WAVE_START
 
-GEU_DONE
-    RTS
+GEU_MOVE:
 
-WAVE_START
-    LDA #60
-    STA WAVE_DELAY
-    INC WAVE_NUM
-    LDA WAVE_NUM
-    CMP #9
-    BNE WS_NORMAL
-    JMP WS_BOSS
+    jsr ENEMY_MOVE
+    jsr ENEMY_SHOOT
+    jmp GEU_DONE
 
-WS_NORMAL
-    ; Get wave config
-    SEC
-    SBC #1
-    ASL
-    ASL
-    ASL
-    ASL
-    TAX
-    LDA WAVE_DATA,X
-    STA ENEMIES_PER_WAVE
-    STA ENEMIES_LEFT
-    LDA WAVE_DATA+1,X
-    STA WAVE_ENEMY_TYPE
-    LDA WAVE_DATA+2,X
-    STA ENEMY_SHOOT_INTERVAL
+GEU_BOSS:
 
-    ; Spawn enemies in formation
-    LDA #0
-    STA ENEMY_TIMER_LO
-    LDA #60
-    STA ENEMY_TIMER_HI
-    LDA #1
-    STA ENEMY_DIR
+    jsr BOSS_UPDATE
 
-    LDX #2
-    LDY #0
-WS_SPAWN
-    LDA #1
-    STA ENTITY_ACTIVE,X
-    LDA #T_ENEMY
-    STA ENTITY_TYPE,X
-    LDA WAVE_ENEMY_TYPE
-    STA ENTITY_FLAGS,X
-    LDA FORMATION_X,Y
-    STA ENTITY_X,X
-    LDA FORMATION_Y,Y
-    STA ENTITY_Y,X
-    LDA WAVE_ENEMY_TYPE
-    ASL
-    TAY
-    LDA ENEMY_DATA+1,Y
-    STA ENTITY_HP,X
+GEU_DONE:
 
-    LDA #10
-    STA ENTITY_TIMER,X
+    rts
 
-    INX
-    INY
-    CPY ENEMIES_PER_WAVE
-    BNE WS_SPAWN
-    RTS
+WAVE_START:
 
-WS_BOSS
-    ; Boss wave
-    LDA #1
-    STA BOSS_ACTIVE
-    LDA #1
-    STA ENEMIES_LEFT
-    LDA #BOSS_HP
-    STA BOSS_CURRENT_HP
+    lda #60
+    sta WAVE_DELAY
+    inc WAVE_NUM
+    lda WAVE_NUM
+    cmp #9
+    bne WS_NORMAL
+    jmp WS_BOSS
 
-    ; Spawn boss in entity slot 2
-    LDA #1
-    STA ENTITY_ACTIVE+2
-    LDA #T_BOSS
-    STA ENTITY_TYPE+2
-    LDA #160
-    STA ENTITY_X+2
-    LDA #60
-    STA ENTITY_Y+2
-    LDA #BOSS_HP
-    STA ENTITY_HP+2
-    LDA #0
-    STA ENTITY_TIMER+2
-    LDA #1
-    STA BOSS_DIR
-    RTS
+WS_NORMAL:
 
-; Formation positions (max 14)
-FORMATION_X
+    // Get wave config
+    sec
+    sbc #1
+    asl
+    asl
+    asl
+    asl
+    tax
+    lda WAVE_DATA,X
+    sta ENEMIES_PER_WAVE
+    sta ENEMIES_LEFT
+    lda WAVE_DATA+1,X
+    sta WAVE_ENEMY_TYPE
+    lda WAVE_DATA+2,X
+    sta ENEMY_SHOOT_INTERVAL
+
+    // Spawn enemies in formation
+    lda #0
+    sta ENEMY_TIMER_LO
+    lda #60
+    sta ENEMY_TIMER_HI
+    lda #1
+    sta ENEMY_DIR
+
+    ldx #2
+    ldy #0
+WS_SPAWN:
+
+    lda #1
+    sta ENTITY_ACTIVE,X
+    lda #T_ENEMY
+    sta ENTITY_TYPE,X
+    lda WAVE_ENEMY_TYPE
+    sta ENTITY_FLAGS,X
+    lda FORMATION_X,Y
+    sta ENTITY_X,X
+    lda FORMATION_Y,Y
+    sta ENTITY_Y,X
+    lda WAVE_ENEMY_TYPE
+    asl
+    tay
+    lda ENEMY_DATA+1,Y
+    sta ENTITY_HP,X
+
+    lda #10
+    sta ENTITY_TIMER,X
+
+    inx
+    iny
+    cpy ENEMIES_PER_WAVE
+    bne WS_SPAWN
+    rts
+
+WS_BOSS:
+
+    // Boss wave
+    lda #1
+    sta BOSS_ACTIVE
+    lda #1
+    sta ENEMIES_LEFT
+    lda #BOSS_HP
+    sta BOSS_CURRENT_HP
+
+    // Spawn boss in entity slot 2
+    lda #1
+    sta ENTITY_ACTIVE+2
+    lda #T_BOSS
+    sta ENTITY_TYPE+2
+    lda #160
+    sta ENTITY_X+2
+    lda #60
+    sta ENTITY_Y+2
+    lda #BOSS_HP
+    sta ENTITY_HP+2
+    lda #0
+    sta ENTITY_TIMER+2
+    lda #1
+    sta BOSS_DIR
+    rts
+
+// Formation positions (max 14)
+FORMATION_X:
+
 .byte 40,80,120,160,200,240,280,40,80,120,160,200,240,280
-FORMATION_Y
+FORMATION_Y:
+
 .byte 40,40,40,40,40,40,40,70,70,70,70,70,70,70
 
-; Move all enemies
-ENEMY_MOVE
-    DEC ENEMY_TIMER_LO
-    LDA ENEMY_TIMER_LO
-    CMP #$FF
-    BNE EM_CONT
-    DEC ENEMY_TIMER_HI
-EM_CONT
-    LDA ENEMY_TIMER_HI
-    AND #$0F
-    BNE EM_MOVE
+// Move all enemies
+ENEMY_MOVE:
 
-    LDX #2
-EM_LOOP
-    LDA ENTITY_ACTIVE,X
-    BEQ EM_SKIP
-    LDA ENTITY_TYPE,X
-    CMP #T_ENEMY
-    BNE EM_SKIP
+    dec ENEMY_TIMER_LO
+    lda ENEMY_TIMER_LO
+    cmp #$FF
+    bne EM_CONT
+    dec ENEMY_TIMER_HI
+EM_CONT:
 
-    ; Move in formation (side to side + slight descend)
-    LDA ENEMY_DIR
-    BEQ EM_LEFT
-    INC ENTITY_X,X
-    JMP EM_CHK
-EM_LEFT
-    DEC ENTITY_X,X
-EM_CHK
-    ; Update animation frame
-    LDA ENTITY_TIMER,X
-    BEQ EM_NEXT
-    DEC ENTITY_TIMER,X
-EM_NEXT
-EM_SKIP
-    INX
-    CPX #MAX_ENTITIES
-    BNE EM_LOOP
+    lda ENEMY_TIMER_HI
+    and #$0F
+    bne EM_MOVE
 
-    ; Change direction at edges
-    LDA ENTITY_X+1
-    CMP #300
-    BCS EM_FLIP
-    LDA ENTITY_X+2
-    CMP #20
-    BCC EM_FLIP
-    JMP EM_MOVE
+    ldx #2
+EM_LOOP:
 
-EM_FLIP
-    LDA ENEMY_DIR
-    EOR #1
-    STA ENEMY_DIR
+    lda ENTITY_ACTIVE,X
+    beq EM_SKIP
+    lda ENTITY_TYPE,X
+    cmp #T_ENEMY
+    bne EM_SKIP
 
-    ; Descend formation
-    LDX #2
-EM_DESCEND
-    LDA ENTITY_ACTIVE,X
-    BEQ EM_DSKIP
-    LDA ENTITY_TYPE,X
-    CMP #T_ENEMY
-    BNE EM_DSKIP
-    INC ENTITY_Y,X
-EM_DSKIP
-    INX
-    CPX #MAX_ENTITIES
-    BNE EM_DESCEND
+    // Move in formation (side to side + slight descend)
+    lda ENEMY_DIR
+    beq EM_LEFT
+    inc ENTITY_X,X
+    jmp EM_CHK
+EM_LEFT:
 
-EM_MOVE
-    RTS
+    dec ENTITY_X,X
+EM_CHK:
 
-; Enemy shooting
-ENEMY_SHOOT
-    DEC ENEMY_SHOOT_INTERVAL
-    BPL ES_DONE
-    LDA #30
-    STA ENEMY_SHOOT_INTERVAL
+    // Update animation frame
+    lda ENTITY_TIMER,X
+    beq EM_NEXT
+    dec ENTITY_TIMER,X
+EM_NEXT:
 
-    ; Find a random active enemy to shoot
-    JSR RANDOM
-    AND #7
-    TAX
-    LDA ENTITY_ACTIVE,X
-    BEQ ES_DONE
-    LDA ENTITY_TYPE,X
-    CMP #T_ENEMY
-    BNE ES_DONE
+EM_SKIP:
 
-    ; Find free bullet slot
-    LDY #0
-ES_BSLOT
-    LDA EB_ACTIVE,Y
-    BEQ ES_FIRE
-    INY
-    CPY #MAX_EB
-    BNE ES_BSLOT
-    RTS
+    inx
+    cpx #MAX_ENTITIES
+    bne EM_LOOP
 
-ES_FIRE
-    LDA #1
-    STA EB_ACTIVE,Y
-    LDA ENTITY_X,X
-    STA EB_X,Y
-    LDA ENTITY_Y,X
-    CLC
-    ADC #16
-    STA EB_Y,Y
-ES_DONE
-    RTS
+    // Change direction at edges
+    lda ENTITY_X+1
+    cmp #300
+    bcs EM_FLIP
+    lda ENTITY_X+2
+    cmp #20
+    bcc EM_FLIP
+    jmp EM_MOVE
 
-; Boss update
-BOSS_UPDATE
-    LDX #2
-    LDA ENTITY_ACTIVE+2
-    BEQ BU_DEAD
+EM_FLIP:
 
-    ; Movement: side to side
-    LDA BOSS_DIR
-    BEQ BU_LEFT
-    INC ENTITY_X+2
-    LDA ENTITY_X+2
-    CMP #280
-    BCC BU_SHOOT
-    LDA #0
-    STA BOSS_DIR
-    JMP BU_SHOOT
-BU_LEFT
-    DEC ENTITY_X+2
-    LDA ENTITY_X+2
-    CMP #40
-    BCS BU_SHOOT
-    LDA #1
-    STA BOSS_DIR
+    lda ENEMY_DIR
+    eor #1
+    sta ENEMY_DIR
 
-BU_SHOOT
-    ; Boss shoots every N frames
-    LDA ENTITY_TIMER+2
-    BNE BU_DEC
-    LDA #BOSS_SHOOT_INTERVAL
-    STA ENTITY_TIMER+2
+    // Descend formation
+    ldx #2
+EM_DESCEND:
 
-    ; Fire 2 bullets
-    LDY #0
-BU_BSLOT
-    LDA EB_ACTIVE,Y
-    BEQ BU_FIRE
-    INY
-    CPY #MAX_EB
-    BNE BU_BSLOT
-    JMP BU_DEC
+    lda ENTITY_ACTIVE,X
+    beq EM_DSKIP
+    lda ENTITY_TYPE,X
+    cmp #T_ENEMY
+    bne EM_DSKIP
+    inc ENTITY_Y,X
+EM_DSKIP:
 
-BU_FIRE
-    LDA #1
-    STA EB_ACTIVE,Y
-    LDA ENTITY_X+2
-    STA EB_X,Y
-    LDA ENTITY_Y+2
-    CLC
-    ADC #20
-    STA EB_Y,Y
+    inx
+    cpx #MAX_ENTITIES
+    bne EM_DESCEND
 
-    ; Shoot second if free slot
-    INY
-    CPY #MAX_EB
-    BEQ BU_DEC
-    LDA EB_ACTIVE,Y
-    BNE BU_DEC
-    LDA #1
-    STA EB_ACTIVE,Y
-    LDA ENTITY_X+2
-    CLC
-    ADC #20
-    STA EB_X,Y
-    LDA ENTITY_Y+2
-    CLC
-    ADC #20
-    STA EB_Y,Y
-    JMP BU_DEC
+EM_MOVE:
 
-BU_DEC
-    DEC ENTITY_TIMER+2
+    rts
 
-BU_DEAD
-    RTS
+// Enemy shooting
+ENEMY_SHOOT:
 
-; Simple random generator
-RANDOM
-    LDA RAND_SEED
-    BEQ RAND_INIT
-    ASL
-    BCC RAND_OUT
-    EOR #$1D
-RAND_OUT
-    STA RAND_SEED
-    RTS
-RAND_INIT
-    LDA $D012
-    STA RAND_SEED
-    JMP RANDOM
+    dec ENEMY_SHOOT_INTERVAL
+    bpl ES_DONE
+    lda #30
+    sta ENEMY_SHOOT_INTERVAL
+
+    // Find a random active enemy to shoot
+    jsr RANDOM
+    and #7
+    tax
+    lda ENTITY_ACTIVE,X
+    beq ES_DONE
+    lda ENTITY_TYPE,X
+    cmp #T_ENEMY
+    bne ES_DONE
+
+    // Find free bullet slot
+    ldy #0
+ES_BSLOT:
+
+    lda EB_ACTIVE,Y
+    beq ES_FIRE
+    iny
+    cpy #MAX_EB
+    bne ES_BSLOT
+    rts
+
+ES_FIRE:
+
+    lda #1
+    sta EB_ACTIVE,Y
+    lda ENTITY_X,X
+    sta EB_X,Y
+    lda ENTITY_Y,X
+    clc
+    adc #16
+    sta EB_Y,Y
+ES_DONE:
+
+    rts
+
+// Boss update
+BOSS_UPDATE:
+
+    ldx #2
+    lda ENTITY_ACTIVE+2
+    beq BU_DEAD
+
+    // Movement: side to side
+    lda BOSS_DIR
+    beq BU_LEFT
+    inc ENTITY_X+2
+    lda ENTITY_X+2
+    cmp #280
+    bcc BU_SHOOT
+    lda #0
+    sta BOSS_DIR
+    jmp BU_SHOOT
+BU_LEFT:
+
+    dec ENTITY_X+2
+    lda ENTITY_X+2
+    cmp #40
+    bcs BU_SHOOT
+    lda #1
+    sta BOSS_DIR
+
+BU_SHOOT:
+
+    // Boss shoots every N frames
+    lda ENTITY_TIMER+2
+    bne BU_DEC
+    lda #BOSS_SHOOT_INTERVAL
+    sta ENTITY_TIMER+2
+
+    // Fire 2 bullets
+    ldy #0
+BU_BSLOT:
+
+    lda EB_ACTIVE,Y
+    beq BU_FIRE
+    iny
+    cpy #MAX_EB
+    bne BU_BSLOT
+    jmp BU_DEC
+
+BU_FIRE:
+
+    lda #1
+    sta EB_ACTIVE,Y
+    lda ENTITY_X+2
+    sta EB_X,Y
+    lda ENTITY_Y+2
+    clc
+    adc #20
+    sta EB_Y,Y
+
+    // Shoot second if free slot
+    iny
+    cpy #MAX_EB
+    beq BU_DEC
+    lda EB_ACTIVE,Y
+    bne BU_DEC
+    lda #1
+    sta EB_ACTIVE,Y
+    lda ENTITY_X+2
+    clc
+    adc #20
+    sta EB_X,Y
+    lda ENTITY_Y+2
+    clc
+    adc #20
+    sta EB_Y,Y
+    jmp BU_DEC
+
+BU_DEC:
+
+    dec ENTITY_TIMER+2
+
+BU_DEAD:
+
+    rts
+
+// Simple random generator
+RANDOM:
+
+    lda RAND_SEED
+    beq RAND_INIT
+    asl
+    bcc RAND_OUT
+    eor #$1D
+RAND_OUT:
+
+    sta RAND_SEED
+    rts
+RAND_INIT:
+
+    lda $D012
+    sta RAND_SEED
+    jmp RANDOM

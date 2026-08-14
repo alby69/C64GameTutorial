@@ -3,6 +3,9 @@ manuali/
 *.bin
 *.o
 prg/
+build/
+tools/KickAss.jar
+tools/convert_game.py
 vice-screenshots/
 vice-test-report.md
 

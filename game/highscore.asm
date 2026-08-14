@@ -1,146 +1,161 @@
-; =============================================
-; HIGHSCORE — Save/load high score from disk
-; =============================================
-; Uses KERNAL routines SETNAM ($FFBD),
-; SETLFS ($FFBA), LOAD ($FFD5), SAVE ($FFD8).
-;
-; High score stored on disk as file "HI"
-; with 3 bytes (MSB, byte1, LSB).
-;
-; Include AFTER screen.asm in the chain.
-; =============================================
+#importonce
+// =============================================
+// HIGHSCORE — Save/load high score from disk
+// =============================================
+// Uses KERNAL routines SETNAM ($FFBD),
+// SETLFS ($FFBA), LOAD ($FFD5), SAVE ($FFD8).
+//
+// High score stored on disk as file "HI"
+// with 3 bytes (MSB, byte1, LSB).
+//
+// Include AFTER screen.asm in the chain.
+// =============================================
 
 * = $1400
 
-; Load high score from disk (call at boot/title)
-HS_LOAD
-    LDA #2
-    LDX #<HS_FILENAME
-    LDY #>HS_FILENAME
-    JSR $FFBD          ; SETNAM
+// Load high score from disk (call at boot/title)
+HS_LOAD:
 
-    LDA #1
-    LDX #8
-    LDY #0
-    JSR $FFBA          ; SETLFS (0 = load)
+    lda #2
+    ldx #<HS_FILENAME
+    ldy #>HS_FILENAME
+    jsr $FFBD          // SETNAM
 
-    LDA #0
-    LDX #<HS_DATA
-    LDY #>HS_DATA
-    JSR $FFD5          ; LOAD
+    lda #1
+    ldx #8
+    ldy #0
+    jsr $FFBA          // SETLFS (0 = load)
 
-    BCC HSL_OK
-    ; File not found — init to zero
-    LDA #0
-    STA HS_DATA
-    STA HS_DATA+1
-    STA HS_DATA+2
+    lda #0
+    ldx #<HS_DATA
+    ldy #>HS_DATA
+    jsr $FFD5          // LOAD
 
-HSL_OK
-    RTS
+    bcc HSL_OK
+    // File not found — init to zero
+    lda #0
+    sta HS_DATA
+    sta HS_DATA+1
+    sta HS_DATA+2
 
-; Save high score to disk (call on new record)
-HS_SAVE
-    ; Scratch existing file first (to avoid SAVE error)
-    LDA #2
-    LDX #<HS_FILENAME
-    LDY #>HS_FILENAME
-    JSR $FFBD
+HSL_OK:
 
-    LDA #1
-    LDX #8
-    LDY #$0F           ; channel 15 (command channel)
-    JSR $FFBA
-    LDA #<HS_SCRATCH_CMD
-    LDX #>HS_SCRATCH_CMD
-    LDY #$00
-    JSR $FFBD
-    JSR $FFC0          ; OPEN
-    JSR $FFC3          ; CLOSE
+    rts
 
-    ; Now save
-    LDA #2
-    LDX #<HS_FILENAME
-    LDY #>HS_FILENAME
-    JSR $FFBD
+// Save high score to disk (call on new record)
+HS_SAVE:
 
-    LDA #1
-    LDX #8
-    LDY #1             ; 1 = save
-    JSR $FFBA
+    // Scratch existing file first (to avoid SAVE error)
+    lda #2
+    ldx #<HS_FILENAME
+    ldy #>HS_FILENAME
+    jsr $FFBD
 
-    LDA #<HS_DATA
-    LDX #>HS_DATA
-    LDY #$C0
-    JSR $FFD8          ; SAVE
+    lda #1
+    ldx #8
+    ldy #$0F           // channel 15 (command channel)
+    jsr $FFBA
+    lda #<HS_SCRATCH_CMD
+    ldx #>HS_SCRATCH_CMD
+    ldy #$00
+    jsr $FFBD
+    jsr $FFC0          // OPEN
+    jsr $FFC3          // CLOSE
 
-    RTS
+    // Now save
+    lda #2
+    ldx #<HS_FILENAME
+    ldy #>HS_FILENAME
+    jsr $FFBD
 
-; Compare current score vs high score, save if better
-; Call when game over
-HS_CHECK
-    LDA SCORE_HI
-    CMP HS_DATA+1
-    BCC HSC_OLD
-    BEQ HSC_CHECK_LO
-    BCS HSC_NEW
+    lda #1
+    ldx #8
+    ldy #1             // 1 = save
+    jsr $FFBA
 
-HSC_CHECK_LO
-    LDA SCORE_LO
-    CMP HS_DATA
-    BCC HSC_OLD
+    lda #<HS_DATA
+    ldx #>HS_DATA
+    ldy #$C0
+    jsr $FFD8          // SAVE
 
-HSC_NEW
-    ; New record!
-    LDA SCORE_LO
-    STA HS_DATA
-    LDA SCORE_HI
-    STA HS_DATA+1
-    LDA #0
-    STA HS_DATA+2
+    rts
 
-    JSR HS_SAVE
+// Compare current score vs high score, save if better
+// Call when game over
+HS_CHECK:
 
-    ; Set flag for display
-    LDA #1
-    STA HS_NEW_FLAG
-    RTS
+    lda SCORE_HI
+    cmp HS_DATA+1
+    bcc HSC_OLD
+    beq HSC_CHECK_LO
+    bcs HSC_NEW
 
-HSC_OLD
-    LDA #0
-    STA HS_NEW_FLAG
-    RTS
+HSC_CHECK_LO:
 
-; Print high score on screen at position X (screen offset)
-HS_PRINT
-    ; "HI: "
-    LDY #1
-    LDA #<HS_LABEL
-    STA PTR_LO
-    LDA #>HS_LABEL
-    STA PTR_HI
-    JSR SCREEN_PRINT
+    lda SCORE_LO
+    cmp HS_DATA
+    bcc HSC_OLD
 
-    ; Score digits
-    LDA HS_DATA+1
-    JSR HUD_PRINT_HEX
-    LDA HS_DATA
-    JSR HUD_PRINT_HEX
-    RTS
+HSC_NEW:
 
-; Data
-HS_LABEL
-    .byte "HI:",$FF
+    // New record!
+    lda SCORE_LO
+    sta HS_DATA
+    lda SCORE_HI
+    sta HS_DATA+1
+    lda #0
+    sta HS_DATA+2
 
-HS_FILENAME
+    jsr HS_SAVE
+
+    // Set flag for display
+    lda #1
+    sta HS_NEW_FLAG
+    rts
+
+HSC_OLD:
+
+    lda #0
+    sta HS_NEW_FLAG
+    rts
+
+// Print high score on screen at position X (screen offset)
+HS_PRINT:
+
+    // "HI: "
+    ldy #1
+    lda #<HS_LABEL
+    sta PTR_LO
+    lda #>HS_LABEL
+    sta PTR_HI
+    jsr SCREEN_PRINT
+
+    // Score digits
+    lda HS_DATA+1
+    jsr HUD_PRINT_HEX
+    lda HS_DATA
+    jsr HUD_PRINT_HEX
+    rts
+
+// Data
+HS_LABEL:
+
+    .text "HI:"
+    .byte $FF
+
+HS_FILENAME:
+
     .text "HI"
 
-HS_SCRATCH_CMD
+HS_SCRATCH_CMD:
+
     .text "S0:HI"
 
-; ---- Variables ----
-HS_DATA
-    .byte 0, 0, 0      ; 3-byte high score (LO, HI, unused)
+// ---- Variables ----
+HS_DATA:
 
-HS_NEW_FLAG
-    .byte 0            ; 1 = new record this game
+    .byte 0, 0, 0      // 3-byte high score (LO, HI, unused)
+
+HS_NEW_FLAG:
+
+    .byte 0            // 1 = new record this game
