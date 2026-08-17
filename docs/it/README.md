@@ -85,6 +85,7 @@ md/
 | [appendice-e-schemi-architettura.md](appendice-e-schemi-architettura.md) | 3-layer architecture, state machine, wave system, game loop, scheduler, pool, boss AI | 290 |
 | [appendice-f-schemi-audio.md](appendice-f-schemi-audio.md) | SID registri, forme d'onda, ADSR, pipeline audio, parallasse, budget cicli, CIA/VIC-II control | 232 |
 | [appendice-turbo-macro-pro.md](appendice-turbo-macro-pro.md) | Guida rapida a TMP: installazione, sintassi, pseudo-op, macro, editor, comandi, TMPx | 290 |
+| [appendice-kick-assembler.md](appendice-kick-assembler.md) | Guida rapida a Kick Assembler: sintassi, direttive, macro, segmenti, migrazione | 150 |
 
 ---
 

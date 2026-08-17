@@ -20,17 +20,18 @@ KICKASS_JAR := tools/KickAss.jar
 KICKASS := java -jar $(KICKASS_JAR)
 BUILD := build
 SRC := src
+KICKASS_SOL_DIR := soluzioni/kickass
 
 CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21 22 23 24 25 26 27
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
 PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
-KICKASS_CH := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+KICKASS_CH := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
 KICKASS_PRG_FILES := $(addprefix $(BUILD)/cap, $(addsuffix .prg, $(KICKASS_CH)))
 
 .PHONY: all validate stats clean dirs check-tmpx size-report vice-test kickass-all
 
-all: dirs check-tmpx $(PRG_FILES) $(PRG_DIR)/game.prg kickass-all
+all: dirs kickass-all
 
 dirs:
 	@mkdir -p $(PRG_DIR)
@@ -145,8 +146,10 @@ kickass-all: dirs $(KICKASS_JAR) $(KICKASS_PRG_FILES) $(BUILD)/game.prg
 
 # Template helper macro per i capitoli KickAss
 define KICKASS_CH_RULE
-$(BUILD)/cap$(1).prg: $(SRC)/cap$(1)/cap$(1).asm | dirs $(KICKASS_JAR)
-	$(KICKASS) -o $$@ $$<
+$(BUILD)/cap$(1).prg: $(firstword $(wildcard $(SRC)/cap$(1)/cap$(1).asm) $(wildcard $(KICKASS_SOL_DIR)/cap$(1)-*.asm)) | dirs $(KICKASS_JAR)
+	@if [ -n "$<" ]; then \
+		$(KICKASS) -o $$@ $<; \
+	fi
 cap$(1): $(BUILD)/cap$(1).prg
 endef
 

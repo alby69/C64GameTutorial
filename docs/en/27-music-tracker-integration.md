@@ -223,10 +223,10 @@ GoatTracker exports in `.asm` format:
 ; (example)
 * = $C000
 
-    .include "gt-player.asm"   ; Player engine
+    #import "gt-player.asm"   ; Player engine
 
 ; Song data
-    .include "my-song.asm"
+    #import "my-song.asm"
 
 ; Entry points
 INIT
@@ -260,7 +260,7 @@ to coexist without conflicts.
 
 ### Exercise 5
 Export a simple melody from GoatTracker and integrate it into the
-project with `.include`. Write the INIT/PLAY routines.
+project with `#import`. Write the INIT/PLAY routines.
 
 ---
 

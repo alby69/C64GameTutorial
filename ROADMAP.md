@@ -4,30 +4,28 @@ Analisi effettuata il 2026-06-29 — aggiornata al commit `HEAD`.
 
 ---
 
-## Stato Attuale (32/32 completati — Fase 3+)
+## Stato Attuale (47/47 completati — Fasi 1-5 Complete)
 
-Tutti i 32 punti originali e della Fase 2 sono stati completati. Di seguito i nuovi
-miglioramenti proposti per elevare il tutorial al livello "Master", coprendo le
-tecniche dei leggendari programmatori degli anni '80.
+Tutti i 47 task (Fasi 1, 2, 3, 4 e 5) sono stati completati con successo.
 
 | # | Area | Stato |
 |---|---|---|
 | 1-32 | Fasi 1 e 2 completate (Capitoli 01-27, Tooling, CI/CD) | ✅ |
-| 33 | Capitolo custom charset (tiles) | ❌ |
-| 34 | Creazione immagini disco .d64 | ❌ |
-| 35 | **Capitolo: Self-Modifying Code** (Pattern Braybrook) | ❌ |
-| 36 | **Capitolo: Memory Overlay & Bank Switching** | ❌ |
-| 37 | **Capitolo: Scrolling Full-Screen Professionale** | ❌ |
-| 38 | **Capitolo: Sprite Multiplexing Avanzato** | ❌ |
-| 39 | **Capitolo: Stable Raster & Timing di Ciclo** | ❌ |
-| 40 | **Capitolo: FLI/FLD e Tecniche Demo-Scene** | ❌ |
-| 41 | **Capitolo: SID Avanzato (Filter, Ring Mod, Sync)** | ❌ |
-| 42 | **Capitolo: Entity Component System (ECS) in 6502** | ❌ |
-| 43 | **Capitolo: Compressione e Fast Loader IRQ** | ❌ |
-| 44 | **Capitolo: Debug e Profiling su Hardware Reale** | ❌ |
-| 45 | **Sezione: Code Archaeology** (Analisi Elite/Cadaver) | ❌ |
-| 46 | **Integrazione: Unit Testing Assembly via SDK** | ❌ |
-| 47 | **Integrazione: RAG optimization per Manuale** | ❌ |
+| 33 | Capitolo custom charset (tiles) | ✅ |
+| 34 | Creazione immagini disco .d64 | ✅ |
+| 35 | **Capitolo: Self-Modifying Code** (Pattern Braybrook) | ✅ |
+| 36 | **Capitolo: Memory Overlay & Bank Switching** | ✅ |
+| 37 | **Capitolo: Scrolling Full-Screen Professionale** | ✅ |
+| 38 | **Capitolo: Sprite Multiplexing Avanzato** | ✅ |
+| 39 | **Capitolo: Stable Raster & Timing di Ciclo** | ✅ |
+| 40 | **Capitolo: FLI/FLD e Tecniche Demo-Scene** | ✅ |
+| 41 | **Capitolo: SID Avanzato (Filter, Ring Mod, Sync)** | ✅ |
+| 42 | **Capitolo: Entity Component System (ECS) in 6502** | ✅ |
+| 43 | **Capitolo: Compressione e Fast Loader IRQ** | ✅ |
+| 44 | **Capitolo: Debug e Profiling su Hardware Reale** | ✅ |
+| 45 | **Sezione: Code Archaeology** (Analisi Elite/Cadaver) | ✅ |
+| 46 | **Integrazione: Unit Testing Assembly via SDK** | ✅ |
+| 47 | **Integrazione: RAG optimization per Manuale** | ✅ |
 
 ---
 
