@@ -20,7 +20,7 @@ jobs:
         run: bash tools/build-pdf.sh
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: C64-Game-Tutorial-PDF
           path: pdf/C64-Game-Tutorial.pdf
