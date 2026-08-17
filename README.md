@@ -58,10 +58,12 @@ ROADMAP.md              Miglioramenti proposti per il progetto
 ## Come iniziare (Quick Start)
 
 1.  **Leggi il manuale:** Inizia da `docs/it/01-introduzione-c64-tmp.md` o visita il [sito web](https://anomalyco.github.io/C64GameTutorial/).
-2.  **Prerequisiti:** Installa `tmpx` (cross-assembler) e `VICE` (emulatore).
+2.  **Prerequisiti:** Installa Java 8+ (per KickAssembler) e `VICE` (emulatore).
 3.  **Assembla un esempio:**
     ```bash
-    tmpx -o cap01.prg soluzioni/cap01-introduzione.asm
+    java -jar tools/KickAss.jar -o build/cap01.prg soluzioni/kickass/cap01-introduzione.asm
+    # Oppure usando Make:
+    make kickass-all
     ```
 4.  **Esegui:** Trascina `cap01.prg` su VICE o usa `x64sc cap01.prg`.
 
@@ -80,7 +82,8 @@ L'integrazione permette di:
 
 Per compilare ed eseguire gli esempi e generare il manuale sono necessari:
 
-- **TMPx:** Cross-assembler 6502 ([Download](https://style64.org/release/tmpx-v1.1.0-style)).
+- **KickAssembler / Java:** Cross-assembler 6502 ([KickAssembler](http://theweb.dk/KickAssembler/main.html)).
+- **TMPx:** Cross-assembler 6502 legacy ([Download](https://style64.org/release/tmpx-v1.1.0-style)).
 - **VICE:** Emulatore Commodore 64 (raccomandato `x64sc`).
 - **Make:** Per automatizzare i task (`all`, `validate`, `stats`).
 - **Pandoc & XeLaTeX:** (Opzionale) Per generare il PDF (`make pdf`).

@@ -12,7 +12,7 @@ Dal primo sprite al boss finale, dal raster interrupt al SID, dall'architettura 
 docs/it/                Manuale originale italiano (27 capitoli + 7 appendici + indice)
 docs/en/                Traduzione inglese (completa — 27 capitoli)
 soluzioni/              Soluzioni degli esercizi (.asm)
-game/                   Template gioco completo (multi-file, .include)
+game/                   Template gioco completo (multi-file, #import)
 tools/                  Script di supporto (validate, size-report, vice-test)
 manuali/                PDF di riferimento (C64 Programmer's Guide, Mapping the C64, ecc.)
 ROADMAP.md              Miglioramenti proposti per il progetto

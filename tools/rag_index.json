@@ -1,0 +1,651 @@
+{
+  "project": "C64GameTutorial",
+  "total_documents": 98,
+  "total_assembly_files": 54,
+  "chapters": [
+    {
+      "file": "docs/en/01-c64-tmp-introduction.md",
+      "title": "Chapter 1 \u2014 Introduction to C64 and Turbo Macro Pro",
+      "code_blocks_count": 12,
+      "char_count": 6457
+    },
+    {
+      "file": "docs/en/02-fundamental-instructions.md",
+      "title": "Chapter 2 \u2014 Fundamental Instructions",
+      "code_blocks_count": 18,
+      "char_count": 5769
+    },
+    {
+      "file": "docs/en/03-addressing-loops-delays.md",
+      "title": "Chapter 3 \u2014 Addressing, Loops, and Delays",
+      "code_blocks_count": 14,
+      "char_count": 6218
+    },
+    {
+      "file": "docs/en/04-video-memory-characters.md",
+      "title": "Chapter 4 \u2014 Video Memory and Characters",
+      "code_blocks_count": 12,
+      "char_count": 6440
+    },
+    {
+      "file": "docs/en/05-sprite-hardware-vic-ii.md",
+      "title": "Chapter 5 \u2014 VIC-II Hardware Sprites",
+      "code_blocks_count": 15,
+      "char_count": 6240
+    },
+    {
+      "file": "docs/en/06-sprite-movement-control.md",
+      "title": "Chapter 6 \u2014 Sprite Movement and Control",
+      "code_blocks_count": 14,
+      "char_count": 6867
+    },
+    {
+      "file": "docs/en/07-raster-interrupt.md",
+      "title": "Chapter 7 \u2014 Raster Interrupt",
+      "code_blocks_count": 19,
+      "char_count": 7267
+    },
+    {
+      "file": "docs/en/08-synchronized-game-loop.md",
+      "title": "Chapter 8 \u2014 Game Loop Synchronized at 50 Hz",
+      "code_blocks_count": 12,
+      "char_count": 7499
+    },
+    {
+      "file": "docs/en/09-joystick-input.md",
+      "title": "Chapter 9 \u2014 Joystick and Player Control",
+      "code_blocks_count": 15,
+      "char_count": 7265
+    },
+    {
+      "file": "docs/en/10-software-collisions.md",
+      "title": "Chapter 10 \u2014 Software Collisions Between Sprites",
+      "code_blocks_count": 11,
+      "char_count": 6788
+    },
+    {
+      "file": "docs/en/11-bullet-system.md",
+      "title": "Chapter 11 \u2014 Bullet System",
+      "code_blocks_count": 7,
+      "char_count": 8046
+    },
+    {
+      "file": "docs/en/12-wave-system-ai.md",
+      "title": "Chapter 12 \u2014 Wave System and Enemy AI",
+      "code_blocks_count": 11,
+      "char_count": 7959
+    },
+    {
+      "file": "docs/en/13-score-game-states.md",
+      "title": "Chapter 13 \u2014 Score and Game States",
+      "code_blocks_count": 15,
+      "char_count": 7139
+    },
+    {
+      "file": "docs/en/14-sid-audio-basics.md",
+      "title": "Chapter 14 \u2014 SID Audio: First Sounds",
+      "code_blocks_count": 12,
+      "char_count": 5763
+    },
+    {
+      "file": "docs/en/15-audio-engine-sfx.md",
+      "title": "Chapter 15 \u2014 Audio Engine and SFX Management",
+      "code_blocks_count": 10,
+      "char_count": 6576
+    },
+    {
+      "file": "docs/en/16-sprite-multiplexing.md",
+      "title": "Chapter 16 \u2014 Sprite Multiplexing (8+ Sprites)",
+      "code_blocks_count": 14,
+      "char_count": 7702
+    },
+    {
+      "file": "docs/en/17-parallax-raster-split.md",
+      "title": "Chapter 17 \u2014 Raster Split and Fake Depth (Parallax)",
+      "code_blocks_count": 11,
+      "char_count": 8373
+    },
+    {
+      "file": "docs/en/18-boss-system.md",
+      "title": "Chapter 18 \u2014 Multi-Phase Boss Fight",
+      "code_blocks_count": 10,
+      "char_count": 8282
+    },
+    {
+      "file": "docs/en/19-reusable-kernel-engine.md",
+      "title": "Chapter 19 \u2014 Reusable Kernel Engine",
+      "code_blocks_count": 13,
+      "char_count": 8179
+    },
+    {
+      "file": "docs/en/20-arcade-os-beyond.md",
+      "title": "Chapter 20 \u2014 Towards an Arcade OS and Beyond",
+      "code_blocks_count": 8,
+      "char_count": 7629
+    },
+    {
+      "file": "docs/en/21-custom-loader.md",
+      "title": "Chapter 21 \u2014 Custom Loader",
+      "code_blocks_count": 9,
+      "char_count": 8783
+    },
+    {
+      "file": "docs/en/22-debugging-vice.md",
+      "title": "Chapter 22 \u2014 Debugging with VICE",
+      "code_blocks_count": 18,
+      "char_count": 7218
+    },
+    {
+      "file": "docs/en/23-titolo-highscore.md",
+      "title": "Chapter 23 \u2014 Title Screens and High Score",
+      "code_blocks_count": 9,
+      "char_count": 7567
+    },
+    {
+      "file": "docs/en/24-scrolling.md",
+      "title": "Chapter 24 \u2014 Scrolling on the C64",
+      "code_blocks_count": 10,
+      "char_count": 7074
+    },
+    {
+      "file": "docs/en/25-turbo-loader.md",
+      "title": "Chapter 25 \u2014 Turbo Loader",
+      "code_blocks_count": 9,
+      "char_count": 4821
+    },
+    {
+      "file": "docs/en/26-reu-expansion.md",
+      "title": "Chapter 26 \u2014 REU (RAM Expansion Unit)",
+      "code_blocks_count": 7,
+      "char_count": 4822
+    },
+    {
+      "file": "docs/en/27-music-tracker-integration.md",
+      "title": "Chapter 27 \u2014 Music Tracker Integration",
+      "code_blocks_count": 10,
+      "char_count": 4926
+    },
+    {
+      "file": "docs/en/33-custom-charset.md",
+      "title": "Chapter 33 \u2014 Custom Charset and Tilemaps",
+      "code_blocks_count": 0,
+      "char_count": 1149
+    },
+    {
+      "file": "docs/en/34-disk-images-d64.md",
+      "title": "Chapter 34 \u2014 Disk Image Creation (.D64)",
+      "code_blocks_count": 0,
+      "char_count": 901
+    },
+    {
+      "file": "docs/en/35-self-modifying-code.md",
+      "title": "Chapter 35 \u2014 Self-Modifying Code (SMC)",
+      "code_blocks_count": 0,
+      "char_count": 983
+    },
+    {
+      "file": "docs/en/36-memory-overlay.md",
+      "title": "Chapter 36 \u2014 Memory Overlay & Bank Switching",
+      "code_blocks_count": 0,
+      "char_count": 883
+    },
+    {
+      "file": "docs/en/37-fullscreen-scrolling.md",
+      "title": "Chapter 37 \u2014 Professional Full-Screen Scrolling",
+      "code_blocks_count": 0,
+      "char_count": 995
+    },
+    {
+      "file": "docs/en/38-advanced-sprite-multiplexing.md",
+      "title": "Chapter 38 \u2014 Advanced Sprite Multiplexing",
+      "code_blocks_count": 0,
+      "char_count": 893
+    },
+    {
+      "file": "docs/en/39-stable-raster.md",
+      "title": "Chapter 39 \u2014 Stable Raster & Cycle Timing",
+      "code_blocks_count": 0,
+      "char_count": 860
+    },
+    {
+      "file": "docs/en/40-fli-fld-demo.md",
+      "title": "Chapter 40 \u2014 FLI/FLD and Demo-Scene Techniques",
+      "code_blocks_count": 0,
+      "char_count": 911
+    },
+    {
+      "file": "docs/en/41-advanced-sid.md",
+      "title": "Chapter 41 \u2014 Advanced SID (Filter, Ring Mod, Sync)",
+      "code_blocks_count": 0,
+      "char_count": 962
+    },
+    {
+      "file": "docs/en/42-ecs-6502.md",
+      "title": "Chapter 42 \u2014 Entity Component System (ECS) in 6502",
+      "code_blocks_count": 0,
+      "char_count": 1067
+    },
+    {
+      "file": "docs/en/43-compression-fastload.md",
+      "title": "Chapter 43 \u2014 Compression and IRQ Fast Loader",
+      "code_blocks_count": 0,
+      "char_count": 824
+    },
+    {
+      "file": "docs/en/44-debug-profiling.md",
+      "title": "Chapter 44 \u2014 Debugging and Profiling on Real Hardware",
+      "code_blocks_count": 0,
+      "char_count": 936
+    },
+    {
+      "file": "docs/en/45-code-archaeology.md",
+      "title": "Chapter 45 \u2014 Code Archaeology (Elite, Cadaver, Braybrook)",
+      "code_blocks_count": 0,
+      "char_count": 2383
+    },
+    {
+      "file": "docs/en/README.md",
+      "title": "C64 Arcade Game Programming Manual \u2014 English Version",
+      "code_blocks_count": 1,
+      "char_count": 3456
+    },
+    {
+      "file": "docs/en/appendix-a-reference-tables.md",
+      "title": "Appendix A \u2014 Reference Tables",
+      "code_blocks_count": 1,
+      "char_count": 7419
+    },
+    {
+      "file": "docs/en/appendix-b-glossary.md",
+      "title": "Appendix B \u2014 Glossary",
+      "code_blocks_count": 0,
+      "char_count": 8087
+    },
+    {
+      "file": "docs/en/appendix-c-cpu-memory.md",
+      "title": "Appendix C \u2014 CPU and Memory Quick Reference",
+      "code_blocks_count": 0,
+      "char_count": 138
+    },
+    {
+      "file": "docs/en/appendix-d-video-schematics.md",
+      "title": "Appendix D \u2014 Video and VIC-II Schematics",
+      "code_blocks_count": 0,
+      "char_count": 129
+    },
+    {
+      "file": "docs/en/appendix-e-architecture-schematics.md",
+      "title": "Appendix E \u2014 Architecture Schematics",
+      "code_blocks_count": 0,
+      "char_count": 132
+    },
+    {
+      "file": "docs/en/appendix-f-audio-schematics.md",
+      "title": "Appendix F \u2014 Audio and SID Schematics",
+      "code_blocks_count": 0,
+      "char_count": 126
+    },
+    {
+      "file": "docs/en/appendix-turbo-macro-pro.md",
+      "title": "Appendix \u2014 Turbo Macro Pro Quick Reference",
+      "code_blocks_count": 0,
+      "char_count": 132
+    },
+    {
+      "file": "docs/it/01-introduzione-c64-tmp.md",
+      "title": "Capitolo 1 \u2014 Introduzione al C64 e Turbo Macro Pro",
+      "code_blocks_count": 12,
+      "char_count": 6789
+    },
+    {
+      "file": "docs/it/02-istruzioni-fondamentali.md",
+      "title": "Capitolo 2 \u2014 Istruzioni Fondamentali del 6502",
+      "code_blocks_count": 23,
+      "char_count": 7671
+    },
+    {
+      "file": "docs/it/03-indirizzamento-cicli-ritardi.md",
+      "title": "Capitolo 3 \u2014 Indirizzamento, Cicli e Prime Routine Grafiche",
+      "code_blocks_count": 16,
+      "char_count": 6772
+    },
+    {
+      "file": "docs/it/04-memoria-video-e-caratteri.md",
+      "title": "Capitolo 4 \u2014 Memoria Video e Caratteri",
+      "code_blocks_count": 12,
+      "char_count": 6764
+    },
+    {
+      "file": "docs/it/05-sprite-hardware-vic-ii.md",
+      "title": "Capitolo 5 \u2014 Sprite Hardware del VIC-II",
+      "code_blocks_count": 15,
+      "char_count": 6431
+    },
+    {
+      "file": "docs/it/06-movimento-e-controllo-sprite.md",
+      "title": "Capitolo 6 \u2014 Movimento e Controllo degli Sprite",
+      "code_blocks_count": 14,
+      "char_count": 7104
+    },
+    {
+      "file": "docs/it/07-raster-interrupt.md",
+      "title": "Capitolo 7 \u2014 Raster Interrupt",
+      "code_blocks_count": 19,
+      "char_count": 7502
+    },
+    {
+      "file": "docs/it/08-game-loop-sincronizzato.md",
+      "title": "Capitolo 8 \u2014 Game Loop Sincronizzato a 50 Hz",
+      "code_blocks_count": 12,
+      "char_count": 7794
+    },
+    {
+      "file": "docs/it/09-joystick-e-input.md",
+      "title": "Capitolo 9 \u2014 Joystick e Controllo del Giocatore",
+      "code_blocks_count": 15,
+      "char_count": 7511
+    },
+    {
+      "file": "docs/it/10-collisioni-software.md",
+      "title": "Capitolo 10 \u2014 Collisioni Software tra Sprite",
+      "code_blocks_count": 11,
+      "char_count": 7137
+    },
+    {
+      "file": "docs/it/11-sistema-proiettili.md",
+      "title": "Capitolo 11 \u2014 Sistema Proiettili",
+      "code_blocks_count": 7,
+      "char_count": 8429
+    },
+    {
+      "file": "docs/it/12-wave-system-e-ai-nemici.md",
+      "title": "Capitolo 12 \u2014 Wave System e AI dei Nemici",
+      "code_blocks_count": 11,
+      "char_count": 8259
+    },
+    {
+      "file": "docs/it/13-punteggio-e-stati-gioco.md",
+      "title": "Capitolo 13 \u2014 Punteggio e Stati del Gioco",
+      "code_blocks_count": 16,
+      "char_count": 8038
+    },
+    {
+      "file": "docs/it/14-audio-sid-base.md",
+      "title": "Capitolo 14 \u2014 Audio SID: Primi Suoni",
+      "code_blocks_count": 12,
+      "char_count": 5920
+    },
+    {
+      "file": "docs/it/15-audio-engine-e-sfx.md",
+      "title": "Capitolo 15 \u2014 Audio Engine e Gestione SFX",
+      "code_blocks_count": 10,
+      "char_count": 6712
+    },
+    {
+      "file": "docs/it/16-sprite-multiplexing.md",
+      "title": "Capitolo 16 \u2014 Sprite Multiplexing (8+ Sprite)",
+      "code_blocks_count": 14,
+      "char_count": 7863
+    },
+    {
+      "file": "docs/it/17-parallax-e-raster-split.md",
+      "title": "Capitolo 17 \u2014 Raster Split e Profondita Finta (Parallax)",
+      "code_blocks_count": 11,
+      "char_count": 8507
+    },
+    {
+      "file": "docs/it/18-boss-system.md",
+      "title": "Capitolo 18 \u2014 Boss Fight Multi-Fase",
+      "code_blocks_count": 10,
+      "char_count": 8490
+    },
+    {
+      "file": "docs/it/19-kernel-engine-riutilizzabile.md",
+      "title": "Capitolo 19 \u2014 Kernel Engine Riutilizzabile",
+      "code_blocks_count": 13,
+      "char_count": 8378
+    },
+    {
+      "file": "docs/it/20-arcade-os-e-oltre.md",
+      "title": "Capitolo 20 \u2014 Verso un Arcade OS e Oltre",
+      "code_blocks_count": 8,
+      "char_count": 7865
+    },
+    {
+      "file": "docs/it/21-caricatore-personalizzato.md",
+      "title": "Capitolo 21 \u2014 Caricatore Personalizzato",
+      "code_blocks_count": 9,
+      "char_count": 9478
+    },
+    {
+      "file": "docs/it/22-debugging-vice.md",
+      "title": "Capitolo 22 \u2014 Debugging con VICE",
+      "code_blocks_count": 18,
+      "char_count": 7712
+    },
+    {
+      "file": "docs/it/23-titolo-highscore.md",
+      "title": "Capitolo 23 \u2014 Schermate Titolo e High Score",
+      "code_blocks_count": 9,
+      "char_count": 7824
+    },
+    {
+      "file": "docs/it/24-scrolling.md",
+      "title": "Capitolo 24 \u2014 Scrolling su C64",
+      "code_blocks_count": 10,
+      "char_count": 7369
+    },
+    {
+      "file": "docs/it/25-turbo-loader.md",
+      "title": "Capitolo 25 \u2014 Caricatore Turbo",
+      "code_blocks_count": 9,
+      "char_count": 5089
+    },
+    {
+      "file": "docs/it/26-reu-expansion.md",
+      "title": "Capitolo 26 \u2014 REU (RAM Expansion Unit)",
+      "code_blocks_count": 7,
+      "char_count": 5409
+    },
+    {
+      "file": "docs/it/27-music-tracker.md",
+      "title": "Capitolo 27 \u2014 Integrazione Music Tracker",
+      "code_blocks_count": 10,
+      "char_count": 5077
+    },
+    {
+      "file": "docs/it/33-custom-charset.md",
+      "title": "Capitolo 33 \u2014 Custom Charset e Tilemap",
+      "code_blocks_count": 2,
+      "char_count": 2153
+    },
+    {
+      "file": "docs/it/34-creazione-d64.md",
+      "title": "Capitolo 34 \u2014 Creazione Immagini Disco .D64",
+      "code_blocks_count": 2,
+      "char_count": 2050
+    },
+    {
+      "file": "docs/it/35-self-modifying-code.md",
+      "title": "Capitolo 35 \u2014 Self-Modifying Code (SMC)",
+      "code_blocks_count": 2,
+      "char_count": 1990
+    },
+    {
+      "file": "docs/it/36-memory-overlay.md",
+      "title": "Capitolo 36 \u2014 Memory Overlay & Bank Switching",
+      "code_blocks_count": 0,
+      "char_count": 1651
+    },
+    {
+      "file": "docs/it/37-fullscreen-scrolling.md",
+      "title": "Capitolo 37 \u2014 Scrolling Full-Screen Professionale",
+      "code_blocks_count": 0,
+      "char_count": 1337
+    },
+    {
+      "file": "docs/it/38-sprite-multiplexing-avanzato.md",
+      "title": "Capitolo 38 \u2014 Sprite Multiplexing Avanzato",
+      "code_blocks_count": 0,
+      "char_count": 1241
+    },
+    {
+      "file": "docs/it/39-stable-raster.md",
+      "title": "Capitolo 39 \u2014 Stable Raster & Timing di Ciclo",
+      "code_blocks_count": 0,
+      "char_count": 1279
+    },
+    {
+      "file": "docs/it/40-fli-fld-demo.md",
+      "title": "Capitolo 40 \u2014 FLI/FLD e Tecniche Demo-Scene",
+      "code_blocks_count": 0,
+      "char_count": 1277
+    },
+    {
+      "file": "docs/it/41-sid-avanzato.md",
+      "title": "Capitolo 41 \u2014 SID Avanzato (Filter, Ring Mod, Sync)",
+      "code_blocks_count": 0,
+      "char_count": 1240
+    },
+    {
+      "file": "docs/it/42-ecs-6502.md",
+      "title": "Capitolo 42 \u2014 Entity Component System (ECS) in 6502",
+      "code_blocks_count": 0,
+      "char_count": 1337
+    },
+    {
+      "file": "docs/it/43-compressione-fastload.md",
+      "title": "Capitolo 43 \u2014 Compressione e Fast Loader IRQ",
+      "code_blocks_count": 0,
+      "char_count": 1117
+    },
+    {
+      "file": "docs/it/44-debug-profiling.md",
+      "title": "Capitolo 44 \u2014 Debug e Profiling su Hardware Reale",
+      "code_blocks_count": 0,
+      "char_count": 1324
+    },
+    {
+      "file": "docs/it/45-code-archaeology.md",
+      "title": "Capitolo 45 \u2014 Code Archaeology (Elite, Cadaver, Braybrook)",
+      "code_blocks_count": 1,
+      "char_count": 3512
+    },
+    {
+      "file": "docs/it/INDICE.md",
+      "title": "Indice Analitico",
+      "code_blocks_count": 0,
+      "char_count": 15662
+    },
+    {
+      "file": "docs/it/README.md",
+      "title": "Manuale di Programmazione per Giochi Arcade su C64",
+      "code_blocks_count": 1,
+      "char_count": 6191
+    },
+    {
+      "file": "docs/it/appendice-a-tabelle.md",
+      "title": "Appendice A \u2014 Tabelle di Riferimento",
+      "code_blocks_count": 1,
+      "char_count": 7565
+    },
+    {
+      "file": "docs/it/appendice-b-glossario.md",
+      "title": "Appendice B \u2014 Glossario",
+      "code_blocks_count": 0,
+      "char_count": 8394
+    },
+    {
+      "file": "docs/it/appendice-c-schemi-cpu-memoria.md",
+      "title": "Appendice C \u2014 Schemi Rapidi: CPU e Memoria",
+      "code_blocks_count": 7,
+      "char_count": 5811
+    },
+    {
+      "file": "docs/it/appendice-d-schemi-video.md",
+      "title": "Appendice D \u2014 Schemi Rapidi: Video e Sprite",
+      "code_blocks_count": 15,
+      "char_count": 8003
+    },
+    {
+      "file": "docs/it/appendice-e-schemi-architettura.md",
+      "title": "Appendice E \u2014 Schemi Rapidi: Architettura di Gioco",
+      "code_blocks_count": 12,
+      "char_count": 10513
+    },
+    {
+      "file": "docs/it/appendice-f-schemi-audio.md",
+      "title": "Appendice F \u2014 Schemi Rapidi: Audio e Hardware Avanzato",
+      "code_blocks_count": 9,
+      "char_count": 8745
+    },
+    {
+      "file": "docs/it/appendice-kick-assembler.md",
+      "title": "Appendice KA \u2014 Guida Rapida a Kick Assembler",
+      "code_blocks_count": 12,
+      "char_count": 4614
+    },
+    {
+      "file": "docs/it/appendice-turbo-macro-pro.md",
+      "title": "Appendice TMP \u2014 Guida Rapida a Turbo Macro Pro",
+      "code_blocks_count": 18,
+      "char_count": 11278
+    }
+  ],
+  "assembly_sources": [
+    "game/audio.asm",
+    "game/collision.asm",
+    "game/config.asm",
+    "game/data.asm",
+    "game/enemies.asm",
+    "game/entity.asm",
+    "game/highscore.asm",
+    "game/input.asm",
+    "game/kernel.asm",
+    "game/main.asm",
+    "game/player.asm",
+    "game/screen.asm",
+    "game/scroll.asm",
+    "game/sprite.asm",
+    "game/states.asm",
+    "soluzioni/kickass/cap01-introduzione.asm",
+    "soluzioni/kickass/cap02-istruzioni.asm",
+    "soluzioni/kickass/cap03-indirizzamento.asm",
+    "soluzioni/kickass/cap04-memoria-video.asm",
+    "soluzioni/kickass/cap05-sprite.asm",
+    "soluzioni/kickass/cap06-movimento-sprite.asm",
+    "soluzioni/kickass/cap07-raster.asm",
+    "soluzioni/kickass/cap08-game-loop.asm",
+    "soluzioni/kickass/cap09-joystick.asm",
+    "soluzioni/kickass/cap10-collisioni.asm",
+    "soluzioni/kickass/cap11-proiettili.asm",
+    "soluzioni/kickass/cap12-wave-ai.asm",
+    "soluzioni/kickass/cap13-punteggio-stati.asm",
+    "soluzioni/kickass/cap14-audio-base.asm",
+    "soluzioni/kickass/cap15-audio-engine.asm",
+    "soluzioni/kickass/cap16-multiplexing.asm",
+    "soluzioni/kickass/cap17-parallax-raster-split.asm",
+    "soluzioni/kickass/cap18-boss.asm",
+    "soluzioni/kickass/cap19-kernel-engine.asm",
+    "soluzioni/kickass/cap20-arcade-os.asm",
+    "soluzioni/kickass/cap21-caricatore.asm",
+    "soluzioni/kickass/cap22-debugging.asm",
+    "soluzioni/kickass/cap23-titolo-highscore.asm",
+    "soluzioni/kickass/cap24-scrolling.asm",
+    "soluzioni/kickass/cap25-turbo-loader.asm",
+    "soluzioni/kickass/cap26-reu-expansion.asm",
+    "soluzioni/kickass/cap27-music-tracker.asm",
+    "soluzioni/kickass/cap33-custom-charset.asm",
+    "soluzioni/kickass/cap34-creazione-d64.asm",
+    "soluzioni/kickass/cap35-smc.asm",
+    "soluzioni/kickass/cap36-overlay.asm",
+    "soluzioni/kickass/cap37-scroll.asm",
+    "soluzioni/kickass/cap38-multiplex-adv.asm",
+    "soluzioni/kickass/cap39-stable-raster.asm",
+    "soluzioni/kickass/cap40-fli-fld.asm",
+    "soluzioni/kickass/cap41-sid-adv.asm",
+    "soluzioni/kickass/cap42-ecs.asm",
+    "soluzioni/kickass/cap43-fastload.asm",
+    "soluzioni/kickass/cap44-debug.asm"
+  ]
+}

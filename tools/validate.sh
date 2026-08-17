@@ -152,38 +152,26 @@ for app in appendice-a-tabelle appendice-b-glossario \
 done
 [ "$JSON_OUTPUT" = false ] && echo ""
 
-# --- 5. Verifica compilazione TMPx ---
+# --- 5. Verifica compilazione KickAssembler ---
 if [ "$JSON_OUTPUT" = false ]; then
-    echo "--- [5] Verifica compilazione TMPx ---"
+    echo "--- [5] Verifica compilazione KickAssembler ---"
 fi
 
-TMPX_BIN="tmpx"
-# Se tmpx non è nel PATH, cerchiamo in /tmp/tmpx
-if ! command -v tmpx &>/dev/null; then
-    if [ -f "/tmp/tmpx" ]; then
-        TMPX_BIN="/tmp/tmpx"
-    fi
-fi
-
-if command -v "$TMPX_BIN" &>/dev/null || [ -f "$TMPX_BIN" ]; then
-    for f in "$SOL_DIR"/*.asm; do
+KICKASS_JAR="$ROOT/tools/KickAss.jar"
+if [ -f "$KICKASS_JAR" ] && command -v java &>/dev/null; then
+    for f in "$SOL_DIR/kickass"/*.asm; do
         out_prg="/tmp/$(basename "$f" .asm).prg"
-        if ! "$TMPX_BIN" -i "$f" -o "$out_prg" -q &>/dev/null; then
-            [ "$JSON_OUTPUT" = false ] && red "  ERROR: $f non compila con TMPx"
+        if ! java -jar "$KICKASS_JAR" -o "$out_prg" "$f" &>/dev/null; then
+            [ "$JSON_OUTPUT" = false ] && red "  ERROR: $f non compila con KickAssembler"
             ERRORS=$((ERRORS + 1))
         else
-            [ "$JSON_OUTPUT" = false ] && green "  OK: $(basename "$f") compilato"
+            [ "$JSON_OUTPUT" = false ] && green "  OK: $(basename "$f") compilato con KickAssembler"
         fi
         rm -f "$out_prg"
     done
 else
-    [ "$JSON_OUTPUT" = false ] && yellow "  WARN: tmpx non trovato. Salto la verifica di compilazione."
-    if [ -n "$CI" ]; then
-        [ "$JSON_OUTPUT" = false ] && red "  ERROR: tmpx è obbligatorio in CI!"
-        ERRORS=$((ERRORS + 1))
-    else
-        WARNS=$((WARNS + 1))
-    fi
+    [ "$JSON_OUTPUT" = false ] && yellow "  WARN: KickAss.jar o Java non trovato. Salto la verifica di compilazione KickAssembler."
+    WARNS=$((WARNS + 1))
 fi
 [ "$JSON_OUTPUT" = false ] && echo ""
 

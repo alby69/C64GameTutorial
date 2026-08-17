@@ -10,7 +10,8 @@
 // =============================================
 //
 // Assemblare con:
-//   tmpx -o game.prg game/main.asm
+//   java -jar tools/KickAss.jar -o build/game.prg game/main.asm
+//   oppure: make game-kickass
 //
 // Gioco completo: Space Commander
 // Unisce tutti i concetti del tutorial C64:
