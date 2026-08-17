@@ -1,0 +1,13 @@
+name: tutorial
+display_name: "C64GameTutorial — Manuale didattico"
+version: "0.1.0"
+sdk_api_version: "1"
+description: "Manuale didattico (27 capitoli), soluzioni assembly, template gioco e appendici per lo sviluppo C64."
+entry_points: {}
+capabilities:
+  - manual
+  - tutorials
+  - assembly-examples
+  - game-template
+requires_python: ">=3.8"
+standalone: true
