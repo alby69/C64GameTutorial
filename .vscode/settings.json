@@ -1,0 +1,7 @@
+{
+    "kickassembler.assemblerPath": "tools/KickAss.jar",
+    "kickassembler.vicePath": "x64sc",
+    "kickassembler.javaPath": "java",
+    "kickassembler.outputDirectory": "build",
+    "kickassembler.runFile": true
+}

@@ -1,11 +1,13 @@
-; =============================================
-; DATA — Sprite bitmaps, tabelle
-; =============================================
+#importonce
+// =============================================
+// DATA — Sprite bitmaps, tabelle
+// =============================================
 
 * = $2000
 
-; Sprite 0: Player ship (24x21 px)
-SPR_PLAYER
+// Sprite 0: Player ship (24x21 px)
+SPR_PLAYER:
+
 .byte %00000000,%01111110,%00000000
 .byte %00000000,%11111111,%00000000
 .byte %00000001,%11111111,%10000000
@@ -28,8 +30,9 @@ SPR_PLAYER
 .byte %00000000,%11111111,%00000000
 .byte %00000000,%01111110,%00000000
 
-; Sprite 1: Player bullet (24x21 px)
-SPR_BULLET
+// Sprite 1: Player bullet (24x21 px)
+SPR_BULLET:
+
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
@@ -52,8 +55,9 @@ SPR_BULLET
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 
-; Sprite 2: Enemy basic (24x21 px)
-SPR_ENEMY
+// Sprite 2: Enemy basic (24x21 px)
+SPR_ENEMY:
+
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%11111110,%00000000
 .byte %00000001,%11111111,%00000000
@@ -76,8 +80,9 @@ SPR_ENEMY
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 
-; Sprite 3: Enemy alt (24x21 px)
-SPR_ENEMY2
+// Sprite 3: Enemy alt (24x21 px)
+SPR_ENEMY2:
+
 .byte %00000000,%00011000,%00000000
 .byte %00000000,%00111100,%00000000
 .byte %00000000,%01111110,%00000000
@@ -100,8 +105,9 @@ SPR_ENEMY2
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 
-; Sprite 4: Boss (24x21 px)
-SPR_BOSS
+// Sprite 4: Boss (24x21 px)
+SPR_BOSS:
+
 .byte %00011111,%11111111,%11111000
 .byte %00111111,%11111111,%11111100
 .byte %01111111,%11111111,%11111110
@@ -124,8 +130,9 @@ SPR_BOSS
 .byte %00000000,%01111110,%00000000
 .byte %00000000,%00011000,%00000000
 
-; Sprite 5: Explosion frame 1 (24x21 px)
-SPR_EXPLODE1
+// Sprite 5: Explosion frame 1 (24x21 px)
+SPR_EXPLODE1:
+
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00011000,%00000000
 .byte %00000000,%00111100,%00000000
@@ -148,8 +155,9 @@ SPR_EXPLODE1
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 
-; Sprite 6: Explosion frame 2 (24x21 px)
-SPR_EXPLODE2
+// Sprite 6: Explosion frame 2 (24x21 px)
+SPR_EXPLODE2:
+
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00011000,%00000000
@@ -172,20 +180,21 @@ SPR_EXPLODE2
 .byte %00000000,%00000000,%00000000
 .byte %00000000,%00000000,%00000000
 
-; Sprite pointers (index into $2000 block, in 64-byte units)
-SPR_PTR_PLAYER   = (SPR_PLAYER - $2000) / 64
-SPR_PTR_BULLET   = (SPR_BULLET - $2000) / 64
-SPR_PTR_ENEMY    = (SPR_ENEMY - $2000) / 64
-SPR_PTR_ENEMY2   = (SPR_ENEMY2 - $2000) / 64
-SPR_PTR_BOSS     = (SPR_BOSS - $2000) / 64
-SPR_PTR_EXPLODE1 = (SPR_EXPLODE1 - $2000) / 64
-SPR_PTR_EXPLODE2 = (SPR_EXPLODE2 - $2000) / 64
+// Sprite pointers (index into $2000 block, in 64-byte units)
+.const SPR_PTR_PLAYER = (SPR_PLAYER - $2000) / 64
+.const SPR_PTR_BULLET = (SPR_BULLET - $2000) / 64
+.const SPR_PTR_ENEMY = (SPR_ENEMY - $2000) / 64
+.const SPR_PTR_ENEMY2 = (SPR_ENEMY2 - $2000) / 64
+.const SPR_PTR_BOSS = (SPR_BOSS - $2000) / 64
+.const SPR_PTR_EXPLODE1 = (SPR_EXPLODE1 - $2000) / 64
+.const SPR_PTR_EXPLODE2 = (SPR_EXPLODE2 - $2000) / 64
 
-; ---- Lookup tables ($6000) ----
+// ---- Lookup tables ($6000) ----
 * = $6000
 
-; Sine table for enemy movement (256 bytes)
-SINE_TABLE
+// Sine table for enemy movement (256 bytes)
+SINE_TABLE:
+
 .byte 0,0,0,1,1,2,2,3,3,4,5,5,6,7,7,8
 .byte 9,10,10,11,12,13,14,15,16,17,18,19,20,21,22,23
 .byte 24,25,26,27,28,30,31,32,33,34,35,36,38,39,40,41
@@ -203,22 +212,24 @@ SINE_TABLE
 .byte 65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50
 .byte 49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34
 
-; Level data (wave configurations)
-WAVE_DATA
-.byte 6,  1, 60    ; wave 1: 6 enemies, type 1, shoot interval 60
-.byte 8,  1, 50    ; wave 2: 8 enemies, type 1, shoot interval 50
-.byte 10, 1, 45    ; wave 3: 10 enemies, type 1, shoot interval 45
-.byte 8,  2, 50    ; wave 4: 8 enemies, type 2, shoot interval 50
-.byte 12, 2, 40    ; wave 5: 12 enemies, type 2, shoot interval 40
-.byte 10, 1, 35    ; wave 6: 10 enemies, type 1+2 mix
-.byte 14, 2, 30    ; wave 7: 14 enemies, fast
-.byte 1,  3, 20    ; wave 8: BOSS wave
+// Level data (wave configurations)
+WAVE_DATA:
 
-; Enemy type data
-ENEMY_DATA
-.byte SPR_PTR_ENEMY   ; type 1: sprite pointer
-.byte 1                ;          HP
-.byte SPR_PTR_ENEMY2  ; type 2: sprite pointer
-.byte 2                ;          HP
-.byte SPR_PTR_BOSS    ; type 3 (boss): sprite pointer
-.byte BOSS_HP          ;          HP
+.byte 6,  1, 60    // wave 1: 6 enemies, type 1, shoot interval 60
+.byte 8,  1, 50    // wave 2: 8 enemies, type 1, shoot interval 50
+.byte 10, 1, 45    // wave 3: 10 enemies, type 1, shoot interval 45
+.byte 8,  2, 50    // wave 4: 8 enemies, type 2, shoot interval 50
+.byte 12, 2, 40    // wave 5: 12 enemies, type 2, shoot interval 40
+.byte 10, 1, 35    // wave 6: 10 enemies, type 1+2 mix
+.byte 14, 2, 30    // wave 7: 14 enemies, fast
+.byte 1,  3, 20    // wave 8: BOSS wave
+
+// Enemy type data
+ENEMY_DATA:
+
+.byte SPR_PTR_ENEMY   // type 1: sprite pointer
+.byte 1                //          HP
+.byte SPR_PTR_ENEMY2  // type 2: sprite pointer
+.byte 2                //          HP
+.byte SPR_PTR_BOSS    // type 3 (boss): sprite pointer
+.byte BOSS_HP          //          HP

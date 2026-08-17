@@ -2,29 +2,45 @@
 #
 # Prerequisiti:
 #   TMPx cross-assembler: https://style64.org/release/tmpx-v1.1.0-style
-#   Oppure su Debian/Ubuntu: sudo apt install tmpx (se disponibile)
+#   KickAssembler: java -jar tools/KickAss.jar
 #
 # Obiettivi principali:
-#   make all       — assembla tutte le soluzioni in .prg
-#   make validate  — controlla consistenza esercizi/capitoli
-#   make stats     — mostra statistiche righe/byte per capitolo
-#   make clean     — rimuove i .prg generati
+#   make all            — assembla tutte le soluzioni TMPx e KickAssembler
+#   make validate       — controlla consistenza esercizi/capitoli
+#   make stats          — mostra statistiche righe/byte per capitolo
+#   make clean          — rimuove i .prg generati
 
 TMPX := tmpx
 SOL_DIR := soluzioni
 PRG_DIR := prg
 MD_DIR := docs/it
 
+# KickAssembler Configuration
+KICKASS_JAR := tools/KickAss.jar
+KICKASS := java -jar $(KICKASS_JAR)
+BUILD := build
+SRC := src
+
 CHAPTERS := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 21 22 23 24 25 26 27
 SOL_FILES := $(addprefix $(SOL_DIR)/cap, $(addsuffix -*, $(CHAPTERS)))
 PRG_FILES := $(addprefix $(PRG_DIR)/cap, $(addsuffix .prg, $(CHAPTERS)))
 
-.PHONY: all validate stats clean dirs check-tmpx size-report vice-test
+KICKASS_CH := 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+KICKASS_PRG_FILES := $(addprefix $(BUILD)/cap, $(addsuffix .prg, $(KICKASS_CH)))
 
-all: dirs check-tmpx $(PRG_FILES) $(PRG_DIR)/game.prg
+.PHONY: all validate stats clean dirs check-tmpx size-report vice-test kickass-all
+
+all: dirs check-tmpx $(PRG_FILES) $(PRG_DIR)/game.prg kickass-all
 
 dirs:
 	@mkdir -p $(PRG_DIR)
+	@mkdir -p $(BUILD)
+
+$(KICKASS_JAR):
+	@mkdir -p tools
+	@wget -q http://theweb.dk/KickAssembler/KickAssembler.zip -O /tmp/KickAssembler.zip
+	@unzip -q -o /tmp/KickAssembler.zip -d /tmp/kickass-extracted
+	@cp /tmp/kickass-extracted/KickAss.jar $(KICKASS_JAR)
 
 check-tmpx:
 	@command -v $(TMPX) >/dev/null 2>&1 || { \
@@ -33,7 +49,7 @@ check-tmpx:
 		exit 1; \
 	}
 
-# Regola generica: .asm → .prg
+# Regola generica: .asm → .prg per TMPx
 $(PRG_DIR)/cap01.prg: $(SOL_DIR)/cap01-introduzione.asm
 	$(TMPX) -o $@ $<
 
@@ -112,12 +128,34 @@ $(PRG_DIR)/cap26.prg: $(SOL_DIR)/cap26-reu-expansion.asm
 $(PRG_DIR)/cap27.prg: $(SOL_DIR)/cap27-music-tracker.asm
 	$(TMPX) -o $@ $<
 
-# Gioco completo unificato (ROADMAP #16)
+# Gioco completo unificato (TMPx)
 GAME_DIR := game
 GAME_DEPS := $(wildcard $(GAME_DIR)/*.asm)
 
 $(PRG_DIR)/game.prg: $(GAME_DIR)/main.asm $(GAME_DEPS)
-	$(TMPX) -o $@ $<
+	@if grep -q "BasicUpstart" $(GAME_DIR)/main.asm; then \
+		echo "Skipping TMPx compilation for game.prg because game is now converted to KickAssembler."; \
+	else \
+		$(TMPX) -o $@ $<; \
+	fi
+
+# --- KickAssembler Targets ---
+
+kickass-all: dirs $(KICKASS_JAR) $(KICKASS_PRG_FILES) $(BUILD)/game.prg
+
+# Template helper macro per i capitoli KickAss
+define KICKASS_CH_RULE
+$(BUILD)/cap$(1).prg: $(SRC)/cap$(1)/cap$(1).asm | dirs $(KICKASS_JAR)
+	$(KICKASS) -o $$@ $$<
+cap$(1): $(BUILD)/cap$(1).prg
+endef
+
+$(foreach ch,$(KICKASS_CH),$(eval $(call KICKASS_CH_RULE,$(ch))))
+
+# Gioco completo KickAss
+$(BUILD)/game.prg: game/main.asm $(GAME_DEPS) | dirs $(KICKASS_JAR)
+	$(KICKASS) -o $@ $<
+game-kickass: $(BUILD)/game.prg
 
 # Statistiche
 stats:
@@ -160,3 +198,4 @@ vice-test:
 # Pulisci .prg generati
 clean:
 	rm -rf $(PRG_DIR)
+	rm -rf $(BUILD)

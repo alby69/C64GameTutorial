@@ -1,166 +1,185 @@
-; =============================================
-; PLAYER — Player ship logic
-; =============================================
+#importonce
+// =============================================
+// PLAYER — Player ship logic
+// =============================================
 
 * = $4000
 
-GAME_PLAYER_INIT
-    LDA #1
-    STA ENTITY_ACTIVE
-    LDA #T_PLAYER
-    STA ENTITY_TYPE
-    LDA #160
-    STA ENTITY_X
-    STA PLAYER_RESPAWN_X
-    LDA #PLAYER_Y_POS
-    STA ENTITY_Y
-    LDA #MAX_LIVES
-    STA PLAYER_LIVES
-    LDA #0
-    STA ENTITY_FLAGS
-    STA SHOT_COOLDOWN
-    RTS
+GAME_PLAYER_INIT:
 
-GAME_PLAYER_UPDATE
-    LDA PLAYER_LIVES
-    BEQ GPU_DEAD
-    LDA ENTITY_FLAGS
-    AND #1
-    BEQ GPU_NORMAL
+    lda #1
+    sta ENTITY_ACTIVE
+    lda #T_PLAYER
+    sta ENTITY_TYPE
+    lda #160
+    sta ENTITY_X
+    sta PLAYER_RESPAWN_X
+    lda #PLAYER_Y_POS
+    sta ENTITY_Y
+    lda #MAX_LIVES
+    sta PLAYER_LIVES
+    lda #0
+    sta ENTITY_FLAGS
+    sta SHOT_COOLDOWN
+    rts
 
-    ; Invincible: decrement timer
-    DEC ENTITY_TIMER
-    LDA ENTITY_TIMER
-    BMI GPU_INV_END
-    ; Flash: show/hide every 4 frames
-    LDA ENTITY_TIMER
-    LSR
-    LSR
-    AND #1
-    BEQ GPU_INV_HIDE
-    LDA VIC_SPRITE_EN
-    ORA #%00000001
-    STA VIC_SPRITE_EN
-    JMP GPU_NORMAL
+GAME_PLAYER_UPDATE:
 
-GPU_INV_HIDE
-    LDA VIC_SPRITE_EN
-    AND #%11111110
-    STA VIC_SPRITE_EN
-    JMP GPU_NORMAL
+    lda PLAYER_LIVES
+    beq GPU_DEAD
+    lda ENTITY_FLAGS
+    and #1
+    beq GPU_NORMAL
 
-GPU_INV_END
-    LDA #0
-    STA ENTITY_FLAGS
-    LDA VIC_SPRITE_EN
-    ORA #%00000001
-    STA VIC_SPRITE_EN
+    // Invincible: decrement timer
+    dec ENTITY_TIMER
+    lda ENTITY_TIMER
+    bmi GPU_INV_END
+    // Flash: show/hide every 4 frames
+    lda ENTITY_TIMER
+    lsr
+    lsr
+    and #1
+    beq GPU_INV_HIDE
+    lda VIC_SPRITE_EN
+    ora #%00000001
+    sta VIC_SPRITE_EN
+    jmp GPU_NORMAL
 
-GPU_NORMAL
-    ; Movement
-    LDA JOY_STATE
-    AND #%00000100
-    BEQ GPU_RIGHT
-    LDA ENTITY_X
-    CMP #PLAYER_MIN_X
-    BCC GPU_RIGHT
-    DEC ENTITY_X
+GPU_INV_HIDE:
 
-GPU_RIGHT
-    LDA JOY_STATE
-    AND #%00001000
-    BEQ GPU_FIRE
-    LDA ENTITY_X
-    CMP #PLAYER_MAX_X
-    BCS GPU_FIRE
-    INC ENTITY_X
+    lda VIC_SPRITE_EN
+    and #%11111110
+    sta VIC_SPRITE_EN
+    jmp GPU_NORMAL
 
-GPU_FIRE
-    LDA JOY_STATE
-    AND #%00010000
-    BEQ GPU_DONE
-    LDA SHOT_COOLDOWN
-    BNE GPU_DONE
-    JSR PLAYER_FIRE
+GPU_INV_END:
 
-GPU_DONE
-    LDA SHOT_COOLDOWN
-    BEQ GPU_SKIP_CD
-    DEC SHOT_COOLDOWN
-GPU_SKIP_CD
-    RTS
+    lda #0
+    sta ENTITY_FLAGS
+    lda VIC_SPRITE_EN
+    ora #%00000001
+    sta VIC_SPRITE_EN
 
-GPU_DEAD
-    RTS
+GPU_NORMAL:
 
-PLAYER_FIRE
-    LDA PB_ACTIVE
-    BNE PF_DONE
-    LDA #1
-    STA PB_ACTIVE
-    LDA ENTITY_X
-    STA PB_X
-    LDA ENTITY_Y
-    SEC
-    SBC #20
-    STA PB_Y
-    JSR SFX_SHOOT
-    LDA #8
-    STA SHOT_COOLDOWN
-PF_DONE
-    RTS
+    // Movement
+    lda JOY_STATE
+    and #%00000100
+    beq GPU_RIGHT
+    lda ENTITY_X
+    cmp #PLAYER_MIN_X
+    bcc GPU_RIGHT
+    dec ENTITY_X
 
-PLAYER_HIT
-    DEC PLAYER_LIVES
-    LDA PLAYER_LIVES
-    BEQ PH_DIED
-    ; Start invincibility
-    LDA #1
-    STA ENTITY_FLAGS
-    LDA #INVINCIBLE_TICKS
-    STA ENTITY_TIMER
-    JSR SFX_DIE
-    RTS
+GPU_RIGHT:
 
-PH_DIED
-    LDA #0
-    STA ENTITY_ACTIVE
-    JSR SFX_DIE
-    JSR GAME_OVER_SETUP
-    LDA #2
-    STA GAME_STATE
-    RTS
+    lda JOY_STATE
+    and #%00001000
+    beq GPU_FIRE
+    lda ENTITY_X
+    cmp #PLAYER_MAX_X
+    bcs GPU_FIRE
+    inc ENTITY_X
 
-; Bullet update
-GAME_BULLETS_UPDATE
-    ; Player bullet
-    LDA PB_ACTIVE
-    BEQ GBU_EB
-    LDA PB_Y
-    SEC
-    SBC #BULLET_SPEED
-    STA PB_Y
-    CMP #10
-    BCS GBU_EB
-    LDA #0
-    STA PB_ACTIVE
+GPU_FIRE:
 
-GBU_EB
-    ; Enemy bullets
-    LDX #0
-GBU_LOOP
-    LDA EB_ACTIVE,X
-    BEQ GBU_SKIP
-    LDA EB_Y,X
-    CLC
-    ADC #2
-    STA EB_Y,X
-    CMP #250
-    BCC GBU_SKIP
-    LDA #0
-    STA EB_ACTIVE,X
-GBU_SKIP
-    INX
-    CPX #MAX_EB
-    BNE GBU_LOOP
-    RTS
+    lda JOY_STATE
+    and #%00010000
+    beq GPU_DONE
+    lda SHOT_COOLDOWN
+    bne GPU_DONE
+    jsr PLAYER_FIRE
+
+GPU_DONE:
+
+    lda SHOT_COOLDOWN
+    beq GPU_SKIP_CD
+    dec SHOT_COOLDOWN
+GPU_SKIP_CD:
+
+    rts
+
+GPU_DEAD:
+
+    rts
+
+PLAYER_FIRE:
+
+    lda PB_ACTIVE
+    bne PF_DONE
+    lda #1
+    sta PB_ACTIVE
+    lda ENTITY_X
+    sta PB_X
+    lda ENTITY_Y
+    sec
+    sbc #20
+    sta PB_Y
+    jsr SFX_SHOOT
+    lda #8
+    sta SHOT_COOLDOWN
+PF_DONE:
+
+    rts
+
+PLAYER_HIT:
+
+    dec PLAYER_LIVES
+    lda PLAYER_LIVES
+    beq PH_DIED
+    // Start invincibility
+    lda #1
+    sta ENTITY_FLAGS
+    lda #INVINCIBLE_TICKS
+    sta ENTITY_TIMER
+    jsr SFX_DIE
+    rts
+
+PH_DIED:
+
+    lda #0
+    sta ENTITY_ACTIVE
+    jsr SFX_DIE
+    jsr GAME_OVER_SETUP
+    lda #2
+    sta GAME_STATE
+    rts
+
+// Bullet update
+GAME_BULLETS_UPDATE:
+
+    // Player bullet
+    lda PB_ACTIVE
+    beq GBU_EB
+    lda PB_Y
+    sec
+    sbc #BULLET_SPEED
+    sta PB_Y
+    cmp #10
+    bcs GBU_EB
+    lda #0
+    sta PB_ACTIVE
+
+GBU_EB:
+
+    // Enemy bullets
+    ldx #0
+GBU_LOOP:
+
+    lda EB_ACTIVE,X
+    beq GBU_SKIP
+    lda EB_Y,X
+    clc
+    adc #2
+    sta EB_Y,X
+    cmp #250
+    bcc GBU_SKIP
+    lda #0
+    sta EB_ACTIVE,X
+GBU_SKIP:
+
+    inx
+    cpx #MAX_EB
+    bne GBU_LOOP
+    rts
